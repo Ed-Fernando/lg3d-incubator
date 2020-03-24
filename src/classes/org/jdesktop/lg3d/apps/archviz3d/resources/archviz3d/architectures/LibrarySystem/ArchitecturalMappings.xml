@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE types SYSTEM "/home/teyseyre/WorkSpace/ReqViz3DEclipse/src/schemas/ArchitecturalMappings.xsd">
+
+<po:architectural-information xmlns:po="http://reqarch3d.org"> 
+    <po:system> Library System</po:system>
+
+    <po:map>
+        <po:component>Port</po:component>
+        <po:type>Port</po:type>
+        <po:arc-type>Port</po:arc-type>
+    </po:map>
+
+    <po:map>
+        <po:component>LibrarySystem</po:component>
+        <po:type>Configuration</po:type>
+        <po:arc-type>Server</po:arc-type>
+    </po:map>
+
+    <po:map>
+        <po:component>Admin</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>Client</po:arc-type>
+		<po:property name="Performance" value="5"/>
+    </po:map>
+
+    <po:map>
+        <po:component>Member</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>Client</po:arc-type>
+		<po:property name="Performance" value="9"/>
+    </po:map>
+
+    <po:map>
+        <po:component>DAO</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>DAO</po:arc-type>
+		<po:property name="Performance" value="5"/>
+		<po:property name="Reliability" value="8"/>
+		<po:property name="Reusability" value="8"/>
+    </po:map>
+
+    <po:map>
+        <po:component>DB</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>DB</po:arc-type>
+		<po:property name="Performance" value="5"/>
+		<po:property name="Reliability" value="8"/>
+		<po:property name="Reusability" value="8"/>
+		<po:property name="Modificability" value="3"/>
+    </po:map>
+
+    <po:map>
+        <po:component>Firewall</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>Firewall</po:arc-type>
+		<po:property name="Performance" value="7"/>
+		<po:property name="Reliability" value="10"/>
+    </po:map>
+
+    <po:map>
+        <po:component>HTMLFormatter</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>HTMLFormatter</po:arc-type>
+    </po:map>
+
+    <po:map>
+        <po:component>WAPFormatter</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>WAPFormatter</po:arc-type>
+    </po:map>
+
+    <po:map>
+        <po:component>DynamicPageGenerator</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>DynamicPageGenerator</po:arc-type>
+    </po:map>
+
+    <po:map>
+        <po:component>SessionManager</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>SessionManager</po:arc-type>
+    </po:map>
+
+    <po:map>
+        <po:component>WebContainer</po:component>
+        <po:type>Configuration</po:type>
+        <po:arc-type>Server</po:arc-type>
+		<po:property name="Performance" value="3"/>
+		<po:property name="Reliability" value="7"/>
+		<po:property name="Reusability" value="9"/>
+		<po:property name="Modificability" value="9"/>
+    </po:map>
+
+    <po:map>
+        <po:component>LibraryServer</po:component>
+        <po:type>Configuration</po:type>
+        <po:arc-type>Server</po:arc-type>
+    </po:map>
+
+    <po:map>
+        <po:component>RPC</po:component>
+        <po:type>Connector</po:type>
+        <po:arc-type>RPC</po:arc-type>
+		<po:property name="Performance" value="6"/>
+    </po:map>
+
+    <po:map>
+        <po:component>FC</po:component>
+        <po:type>Connector</po:type>
+        <po:arc-type>FC</po:arc-type>
+		<po:property name="Performance" value="8"/>
+    </po:map>
+
+</po:architectural-information>

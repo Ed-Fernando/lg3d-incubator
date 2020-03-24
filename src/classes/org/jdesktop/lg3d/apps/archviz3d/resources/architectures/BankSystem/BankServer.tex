@@ -1,0 +1,182 @@
+\begin{zed}
+MESSAGE & \ddef & same\_account\_for\_src\_and\_dst \\ 
+& \bbar & not\_enough\_money\_in\_src \\ 
+& \bbar & ok 
+\end{zed}
+
+\begin{zed}
+MESSAGEINIT & \ddef & not\_user \\
+& \bbar & ok 
+\end{zed}
+
+\begin{zed}
+TRANSACTION & \ddef & deposit \\ 
+& \bbar &  withdraw \\ 
+& \bbar & tranfer 
+\end{zed}
+
+\begin{schema}{BankServer}
+callerB:  Port \\
+definer: Port \\
+pipeline: Port \\
+pipelineS: PipeLine \\
+bal : \nat \pfun \nat \\
+pass : \nat \pfun \nat  \\
+log : \nat \cross TRANSACTION  \cross \nat \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port 
+\end{schema}
+
+\begin{zed}
+init\_BankServer \sdef \lsch BankServer' \bbar  pipelineS' = \new PipeLine \land callerB' = \new Port \land callerB'.setiVar(element,This)  \land definer' = \new Port \land definer'.setiVar(element,This) \land pipeline' = \new Port \land pipeline'.setiVar(element,This) \land bal' = \{ 1 \map 100 , 2 \map 0 \} \land pass' = \{ 1 \map 1111 , 2 \map 2222 \}  \land  log' = \{ (1,deposit,100) , (1,deposit,10) , (2,deposit,00) \}  \land components' = \{ pipelineS' \} \land connectors' = \{  \} \land events'= \{ validateUser, balance , transfer , credit , widthdraw , listing \}  \land ports' = \{ callerB' , definer'  \}  \rsch  \end{zed}
+
+\begin{schema}{InitService}
+\Delta BankServer 
+\where 
+pipeline.setiVar(next,pipelineS.definer) \\
+SE = \lseq bankserver  This \rseq \\
+callerB.Initiate(registry,This, SE  ,Res) 
+\end{schema}
+
+
+\begin{schema}{ValidateUserOk}
+\Delta BankServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGEINIT
+\where event = validateUser \\
+Id = \head inputP \\
+Password = \head (\tail inputP) \\
+pass ( Id ) = Password  \\
+report! = ok 
+\end{schema}
+
+
+\begin{schema}{ValidateUserBad}
+\Delta BankServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGEINIT
+\where event = validateUser \\
+Id = \head inputP \\
+Password = \head (\tail inputP) \\
+pass ( Id ) \neq Password  \\
+report! = not\_user
+\end{schema}
+
+\begin{schema}{Balance}
+\Xi BankServer \\
+event: EVENT \\
+instance: ELEMENT \\
+src: LIST \\
+amount!: MESSAGEINIT
+\where event = balance \\
+amount! = bal ( src ) 
+\end{schema}
+
+\begin{schema}{TransferOk}
+\Delta BankServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGEINIT
+\where event = transfer \\
+Amount = \head inputP \\
+Src = \head (\tail inputP) \\
+Dst = \head (\tail (\tail inputP)) \\
+Src \neq Dst \\
+bal ( Src ) \geq Amount  \\
+bal' = bal \oplus  \{ Src \map bal ( Src ) - Amount , Dst \map bal ( Dst ) + Amount \} \\
+pass' =pass \\
+log' = log \uni \{ (Src, tranfer, Amount) \} \\
+report! = ok 
+\end{schema}
+
+\begin{schema}{SameAcct}
+\Xi BankServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGEINIT
+\where event = transfer \\
+Amount = \head inputP \\
+Src = \head (\tail inputP) \\
+Dst = \head (\tail (\tail inputP)) \\
+Src = Dst \\
+report! = same\_account\_for\_src\_and\_dst 
+\end{schema}
+
+\begin{schema}{NotEnoughTransfer}
+\Xi BankServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGEINIT
+\where event = transfer \\
+Amount = \head inputP \\
+Src = \head (\tail inputP) \\
+Dst = \head (\tail (\tail inputP)) \\
+bal ( Src ) < Amount \\
+report! = not\_enough\_money\_in\_src 
+\end{schema}
+
+
+\begin{schema}{Credit}
+\Delta BankServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGEINIT
+\where event = credit \\
+Amount = \head inputP \\
+Dst = \head (\tail inputP) \\
+bal' = bal \oplus \{ Dst \map bal ( Dst ) + Amount \} \\
+log' = log \uni \{ (Dst, deposit, Amount) \} \\
+report! = ok 
+\end{schema}
+
+\begin{schema}{WidthdrawOk}
+\Delta BankServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGEINIT
+\where event = widthdraw \\
+Amount = \head inputP \\
+Src = \head (\tail inputP) \\
+bal ( Src ) \geq Amount \\
+bal' = bal \oplus \{ Src \map bal ( Src ) - Amount \} \\
+log' = log \uni \{ (Src, withdraw, Amount) \} \\
+report! = ok 
+\end{schema}
+
+\begin{schema}{NotEnough}
+\Xi BankServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGEINIT
+\where event = widthdraw \\
+Amount = \head inputP \\
+Src = \head (\tail inputP) \\
+bal ( Src ) < Amount \\
+report! = not\_enough\_money\_in\_src 
+\end{schema}
+
+\begin{schema}{Listing}
+\Xi BankServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGEINIT
+\where event = listing \\
+pipeline.Initiate(in,This, log ,Res)  \\
+report! = Res
+\end{schema}
+
+
+\begin{zed} ProcessEvent \sdef  ValidateUserOk \lor   ValidateUserBad \lor  Balance \lor  TransferOk \lor SameAcct \lor NotEnoughTransfer \lor Credit \lor WidthdrawOk \lor NotEnough \lor Listing \end{zed}

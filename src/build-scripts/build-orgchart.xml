@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="orgchart" default="all" basedir=".">
+    <target name="compile" description="Compile orgchart">
+        <javac debug="true"
+                deprecation="false"
+                destdir="${build.classes.dir}"
+                nowarn="true"
+                source="1.5"
+                sourcepath=""
+                target="1.5">
+            <classpath>
+                <pathelement location="${classpath}"/>
+                <pathelement path="${j3d.classpath}"/>
+                <fileset dir="../lg3d-core/ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+                <fileset dir="ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+            </classpath>
+            <src path="${javasrc.dir}"/>
+            <include name="org/jdesktop/lg3d/apps/orgchart/**"/>
+
+        </javac>
+    </target>
+
+    <target name="extras" description="Extra steps for orgchart build">
+        <copy todir="${build.classes.dir}">
+            <fileset dir="${javasrc.dir}" includes="org/jdesktop/lg3d/apps/orgchart/ui/images/**/*,org/jdesktop/lg3d/apps/orgchart/**/*.properties,org/jdesktop/lg3d/apps/orgchart/**/*.xml" />
+        </copy>
+    </target>
+    <target name="jar" depends="compile,extras" description="Jar up the orgchart app">
+        <jar compress="${jar.compress}" jarfile="${build.app.dir}/orgchart.jar">
+             <manifest>
+                <attribute name="Config-File" value="chart.lgcfg;prefuse.lgcfg;contact.lgcfg"/>
+             </manifest>
+             <fileset dir="${build.classes.dir}/">
+                <include name="org/jdesktop/lg3d/apps/orgchart/**"/>
+             </fileset>
+             <fileset dir="${src.dir}/config">
+                <include name="chart.lgcfg"/>
+                <include name="prefuse.lgcfg"/>
+                <include name="contact.lgcfg"/>
+             </fileset>
+        </jar>
+    </target>
+</project>

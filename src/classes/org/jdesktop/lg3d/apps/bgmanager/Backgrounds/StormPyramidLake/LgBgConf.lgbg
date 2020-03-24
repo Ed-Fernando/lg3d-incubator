@@ -1,0 +1,14 @@
+<Background>
+<Name>Storm Pyramid Lake</Name>
+<Thumbnail>resources/Backgrounds/StormPyramidLake/thumb.jpg</Thumbnail>
+<Author></Author>
+<Date>11-03-2005</Date>
+<Description>Storm Pyramid Lake</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>1</InitialBackground>
+	<Image>resources/Backgrounds/StormPyramidLake/storm-pyramid-lake-0.jpg</Image>
+	<Image>resources/Backgrounds/StormPyramidLake/storm-pyramid-lake-1.jpg</Image>
+	<Image>resources/Backgrounds/StormPyramidLake/storm-pyramid-lake-2.jpg</Image>
+   
+
+</Background>

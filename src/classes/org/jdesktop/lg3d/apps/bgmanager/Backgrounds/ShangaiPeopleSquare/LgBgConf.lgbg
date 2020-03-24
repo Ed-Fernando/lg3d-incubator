@@ -1,0 +1,14 @@
+<Background>
+<Name>Shangai People Square</Name>
+<Thumbnail>resources/Backgrounds/ShangaiPeopleSquare/thumb.jpg</Thumbnail>
+<Author>Brad Templeton of www.templetons.com/brad</Author>
+<Date>11-03-2005</Date>
+<Description>Shangai People Square</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>1</InitialBackground>
+	<Image>resources/Backgrounds/ShangaiPeopleSquare/Shangai-PeopleSquare-360-0.jpg</Image>
+	<Image>resources/Backgrounds/ShangaiPeopleSquare/Shangai-PeopleSquare-360-1.jpg</Image>
+	<Image>resources/Backgrounds/ShangaiPeopleSquare/Shangai-PeopleSquare-360-2.jpg</Image>
+	<Image>resources/Backgrounds/ShangaiPeopleSquare/Shangai-PeopleSquare-360-3.jpg</Image>
+
+</Background>

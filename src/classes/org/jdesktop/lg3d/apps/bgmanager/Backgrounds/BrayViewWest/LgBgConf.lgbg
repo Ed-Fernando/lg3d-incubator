@@ -1,0 +1,12 @@
+<Background>
+<Name>Bray View West</Name>
+<Thumbnail>resources/Backgrounds/BrayViewWest/thumb.jpg</Thumbnail>
+<Author>Brian Nitz of Sun Microsystems</Author>
+<Date>11-03-2005</Date>
+<Description>Bray View West</Description>
+<BGType>Simple Background</BGType>
+
+	<Image>resources/Backgrounds/BrayViewWest/BrayViewWest.jpg</Image>
+	
+
+</Background>

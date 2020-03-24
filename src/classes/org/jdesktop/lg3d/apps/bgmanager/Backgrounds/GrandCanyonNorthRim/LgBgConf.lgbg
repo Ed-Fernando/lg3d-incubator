@@ -1,0 +1,15 @@
+<Background>
+<Name>Grand Canyon North Rim</Name>
+<Thumbnail>resources/Backgrounds/GrandCanyonNorthRim/thumb.jpg</Thumbnail>
+<Author>Brad Templeton of www.templetons.com/brad</Author>
+<Date>11-03-2005</Date>
+<Description>Grand Canyon North Rim</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>1</InitialBackground>
+	<Image>resources/Backgrounds/GrandCanyonNorthRim/Grand-Canyon-North-Rim-0.jpg</Image>
+	<Image>resources/Backgrounds/GrandCanyonNorthRim/Grand-Canyon-North-Rim-1.jpg</Image>
+	<Image>resources/Backgrounds/GrandCanyonNorthRim/Grand-Canyon-North-Rim-2.jpg</Image>
+	<Image>resources/Backgrounds/GrandCanyonNorthRim/Grand-Canyon-North-Rim-3.jpg</Image>
+	
+
+</Background>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="all" name="lg3d-incubator">
+
+    <property name="top.dir" location=".."/>
+    <property name="current.dir" location="."/>
+
+    <!-- Use my-build.properties to override default values in build.properties -->
+    <property file="my.build.properties"/>
+    <property file="build.properties"/>
+
+    <property name="project.name" value="${ant.project.name}"/>
+
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+        <classpath>
+            <pathelement location="${build-import.dir}/ant-contrib.jar"/>
+        </classpath>
+    </taskdef>
+    
+    <!-- Do platform/x11/environment specific setup common to all tasks -->
+    <import file="${build-import.dir}/build-setup.xml"/>
+
+    <!-- copy over the properties so that we dont have to change all the xml
+	 build files in src/build-scripts -->
+    <property name="build.app.dir" location="${build.platform.dir}/app"/>
+
+    <target name="init" description="Initial set-up" unless="init.done">
+        <property name="init.done" value="true"/>
+
+        <mkdir dir="${build.classes.dir}"/>
+        <mkdir dir="${build.lib.dir}"/>
+        <mkdir dir="${build.app.dir}"/>
+    </target>
+
+    <property name="build.excludes.common"
+	      value="build-jmf.xml build-luncher.xml build-nlc.xml build-orgchart.xml build-archviz3d.xml"/>
+    <if>
+	<isset property="build.java6"/>
+	<then>
+	    <property name="build.excludes.java5" value=""/>
+	</then>
+	<else>
+	    <property name="build.excludes.java5"
+		      value="build-desktop.xml build-presentoire.xml"/>
+	</else>
+    </if>
+
+    <target name="jar" depends="init" description="Build jar">
+      <subant inheritall="true" failonerror="false" target="jar">
+          <fileset dir="${build-scripts.dir}"
+		   includes="build-*.xml"
+		   excludes="${build.excludes.common} ${build.excludes.java5}"/>
+      </subant>
+
+      <!-- copy all incubator jars to the ext/app directory -->
+	  <antcall target="copyapp">
+          <param name="target.dir" value="${core.ext.dir}/app"/>
+	  </antcall>
+
+      <!-- copy all extra jars that the incubator apps depend upon to the ext dir -->
+	  <antcall target="copyext">
+	      <param name="target.dir" value="${core.ext.dir}"/>
+      </antcall>
+    </target>
+
+    <target depends="init,jar" description="Build everything." name="all">
+    </target>
+
+    <target depends="init" description="Javadoc for my API." name="javadoc" unless="nojavadoc">
+        <mkdir dir="${release.javadoc.dir}"/>
+        <javadoc destdir="${release.javadoc.dir}" packagenames="*">
+            <sourcepath>
+                <pathelement location="${javasrc.dir}"/>
+            </sourcepath>
+        </javadoc>
+    </target>
+
+    <target depends="init" description="Clean all build products." name="clean">
+        <delete dir="${build.platform.dir}"/>
+        <delete dir="${release.javadoc.dir}"/>
+        <delete dir="ext/models"/>
+    </target>
+
+    <target depends="init" name="cleanin">
+        <delete dir="${build.platform.dir}"/>
+    </target>
+
+	<target depends="init" name="copyapp">
+      <copy todir="${target.dir}">
+	    <fileset dir="${build.app.dir}"/>
+	    <fileset dir="${build.classes.dir}/resources" includes="GoMonkeyDemo.ogg"/>
+      </copy>
+      <subant inheritall="true" failonerror="false" target="copyapp">
+	      <property name="target.app.dir" value="${target.dir}"/>
+          <fileset dir="${build-scripts.dir}"
+		   includes="build-*.xml"
+		   excludes="${build.excludes.common} ${build.excludes.java5}"/>
+      </subant>
+	</target>
+
+	<target depends="init" name="copyext">
+      <copy todir="${target.dir}">
+	    <fileset dir="ext"
+		     includes="commons-cli-1.0.jar jxta.jar svgSalamander.jar"/>
+      </copy>
+      <subant inheritall="true" failonerror="false" target="copyext">
+	      <property name="target.ext.dir" value="${target.dir}"/>
+          <fileset dir="${build-scripts.dir}"
+		   includes="build-*.xml"
+		   excludes="${build.excludes.common} ${build.excludes.java5}"/>
+      </subant>
+	</target>
+
+	<target depends="jar" name="release-incubator">
+
+      <!-- copy all incubator jars to the ext/app directory -->
+	  <antcall target="copyapp">
+          <param name="target.dir" value="${release.dir.lg3d}/ext/app"/>
+	  </antcall>
+	
+      <!-- copy all extra jars that the incubator apps depend upon to the ext dir -->
+      <antcall target="copyext">
+	  	<param name="target.dir" value="${release.dir.lg3d}/ext"/>
+	  </antcall>
+
+      <subant inheritall="true" failonerror="false" target="release">
+	      <property name="release.dir.lg3d" value="${release.dir.lg3d}"/>
+          <fileset dir="${build-scripts.dir}"
+		   includes="build-*.xml"
+		   excludes="${build.excludes.common} ${build.excludes.java5}"/>
+      </subant>
+	</target>
+
+</project>

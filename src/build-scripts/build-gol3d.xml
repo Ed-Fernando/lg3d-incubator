@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="gol3d" default="all" basedir=".">
+    <target name="compile" description="Compile Game Of Life 3D">
+        <javac debug="true"
+                deprecation="false"
+                destdir="${build.classes.dir}"
+                nowarn="true"
+                source="1.5"
+                sourcepath=""
+                target="1.5">
+            <classpath>
+                <pathelement location="${classpath}"/>
+                <pathelement path="${j3d.classpath}"/>
+                <fileset dir="../lg3d-core/ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+            </classpath>
+            <src path="${javasrc.dir}"/>
+            <include name="org/jdesktop/lg3d/apps/gol3d/**"/>
+
+        </javac>
+    </target>
+
+    <target name="extras" description="Extra steps for Game Of Life 3D">
+            <copy todir="${build.classes.dir}/org/jdesktop/lg3d/apps/gol3d/images">
+                <fileset dir="${javasrc.dir}/org/jdesktop/lg3d/apps/gol3d/images" />
+            </copy>
+
+            <copy todir="${build.classes.dir}/org/jdesktop/lg3d/apps/gol3d/configs">
+                <fileset dir="${javasrc.dir}/org/jdesktop/lg3d/apps/gol3d/configs" />
+            </copy>
+
+           <copy todir="${build.classes.dir}/org/jdesktop/lg3d/apps/gol3d"
+                file="${javasrc.dir}/org/jdesktop/lg3d/apps/gol3d/GolConfig.xml" />
+    </target>
+
+    <target name="jar" depends="compile,extras" description="Jar up the Game Of Life 3D app">
+        <jar compress="${jar.compress}" jarfile="${build.app.dir}/gol3d.jar">
+             <manifest>
+                <attribute name="Config-File" value="gol3d.lgcfg"/>
+             </manifest>
+             <fileset dir="${build.classes.dir}/">
+                <include name="org/jdesktop/lg3d/apps/gol3d/**"/>
+             </fileset>
+             <fileset dir="${src.dir}/config">
+                <include name="gol3d.lgcfg"/>
+             </fileset>
+        </jar>
+    </target>
+</project>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.5.0" class="java.beans.XMLDecoder">
+ <!-- Taskbar item -->
+ <!--
+ <object class="org.jdesktop.lg3d.scenemanager.config.ApplicationDescription">$
+  <void property="exec">
+   <string>java org.jdesktop.lg3d.apps.googler.Main</string>
+  </void>
+  <void property="iconFilename">
+   <string>resources/images/icon/GooglerIcon.png</string>
+  </void>
+  <void property="name">
+   <string>Googler</string>
+  </void>
+ </object>
+ -->
+ <!-- Start Menu item -->
+ <object class="org.jdesktop.lg3d.scenemanager.utils.startmenu.StartMenuItemConfig"> 
+  <void property="command"> 
+   <string>java org.jdesktop.lg3d.apps.googler.Main</string> 
+  </void> 
+  <void property="desc"> 
+   <string>Google Desktop Search</string> 
+  </void> 
+  <void property="displayResourceType">
+   <string>ICON</string>
+  </void> 
+  <void property="displayResourceUrlName">
+   <string>resource:///resources/images/icon/GooglerIcon.png</string>
+  </void>
+  <void property="menuGroup"> 
+   <string>Internet</string> 
+  </void> 
+  <void property="name"> 
+   <string>Googler</string> 
+  </void> 
+  <void property="classpathJars">
+    <string>googler.jar 
+            libs/axis.jar 
+            libs/commons-discovery-0.2.jar 
+            libs/commons-logging-1.0.4.jar 
+            libs/jaxrpc.jar 
+            libs/log4j-1.2.8.jar 
+            libs/saaj.jar 
+            libs/wsdl4j-1.5.1.jar 
+            libs/xercesImpl.jar</string>
+  </void>
+ </object> 
+</java>

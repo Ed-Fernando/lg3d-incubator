@@ -1,0 +1,32 @@
+\begin{zed}
+TRANSACTION & \ddef & deposit \\ 
+& \bbar &  withdraw \\ 
+& \bbar & tranfer 
+\end{zed}
+
+
+
+\begin{schema}{FilterOp}
+input:  Port \\
+output: Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port 
+\end{schema}
+
+
+\begin{zed}
+init\_FilterOp \sdef \lsch FilterOp' \bbar input' = \new Port \land input'.setiVar(element,This) \land output' = \new Port \land output'.setiVar(element,This) \land  components' = \{ \} \land  connectors' = \{ \} \land events'= \{ in \}  \land ports' = \{ input', output'   \} \rsch  \end{zed}
+
+\begin{schema}{ProcessEvent}
+\Delta FilterOp \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST 
+\where event = in \\
+Report = \{ X : \nat \bbar X \mem inputP \land \nth( X , 2 ) = deposit \} \\
+output.Initiate(event,This,Report,outputP)
+\end{schema}
+

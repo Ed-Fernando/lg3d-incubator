@@ -1,0 +1,12 @@
+<Background>
+<Name>The Road To No Where</Name>
+<Thumbnail>resources/Backgrounds/TheRoadToNoWhere/thumb.jpg</Thumbnail>
+<Author>Ricardo Wagemaker of www.gcclinux.com</Author>
+<Date>11-03-2005</Date>
+<Description>The Road To No Where</Description>
+<BGType>Simple Background</BGType>
+
+	<Image>resources/Backgrounds/TheRoadToNoWhere/TheRoadToNoWhere.jpg</Image>
+	
+
+</Background>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<uc:use-case-information xmlns:uc="http://reqarch3d.org">
+
+    <uc:ucmap>
+        <uc:name>ATM Registration</uc:name>
+        <uc:component-list>
+			<uc:component>ATM</uc:component>
+			<uc:component>RPC_11</uc:component>
+			<uc:component>RPC_12</uc:component>
+			<uc:component>Broker</uc:component>
+			<uc:component>Broker-Registry</uc:component>
+        </uc:component-list>
+    </uc:ucmap>
+
+    <uc:ucmap>
+        <uc:name>BankServer Registration</uc:name>
+        <uc:component-list>
+			<uc:component>BankServer</uc:component>
+			<uc:component>PipeLine</uc:component>
+			<uc:component>Filter</uc:component>
+			<uc:component>RPC_31</uc:component>
+			<uc:component>RPC_32</uc:component>
+			<uc:component>Broker</uc:component>
+			<uc:component>Broker-Registry</uc:component>
+			<uc:component>PipeLine</uc:component>
+			<uc:component>BankServer</uc:component>
+        </uc:component-list>
+    </uc:ucmap>
+
+    <uc:ucmap>
+        <uc:name>Balance</uc:name>
+        <uc:component-list>
+			<!--ATM busca direccion del servidor-->
+			<uc:component>ATM</uc:component>
+			<uc:component>RPC_11</uc:component>
+			<uc:component>RPC_12</uc:component>
+			<uc:component>Broker</uc:component>
+			<uc:component>Broker-LookUp</uc:component>
+			<!--Broker responde con la direccion del servidor-->
+			<uc:component>RPC_12</uc:component>
+			<uc:component>RPC_11</uc:component>
+			<uc:component>ATM</uc:component>
+			<!--ATM ejecuta servicio-->
+			<uc:component>RPC_11</uc:component>
+			<uc:component>RPC_22</uc:component>
+			<uc:component>BankServer</uc:component>
+			<uc:component>PipeLine</uc:component>
+			<uc:component>PipeLine-In</uc:component>
+			<uc:component>Filter</uc:component>
+			<uc:component>Pipe_11</uc:component>
+			<uc:component>FilterOp</uc:component>
+			<uc:component>Pipe_21</uc:component>
+			<uc:component>Filter2</uc:component>
+			<uc:component>BankServer-Balance</uc:component>
+			<!--BankServer contesta-->
+			<uc:component>Filter2</uc:component>
+			<uc:component>Pipe_21</uc:component>
+			<uc:component>FilterOp</uc:component>
+			<uc:component>Pipe_11</uc:component>
+			<uc:component>Filter</uc:component>
+			<uc:component>RPC_22</uc:component>
+			<uc:component>RPC_11</uc:component>
+			<uc:component>ATM</uc:component>
+			<uc:component>PipeLine</uc:component>
+			<uc:component>BankServer</uc:component>
+        </uc:component-list>
+    </uc:ucmap>
+
+</uc:use-case-information>

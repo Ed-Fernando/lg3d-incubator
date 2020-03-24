@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd">
+<!--
+    The default preferences initialization file for PingPong
+-->
+<preferences EXTERNAL_XML_VERSION="1.0">
+  <root type="user">
+    <map/>
+    <node name="org">
+      <map/>
+      <node name="jdesktop">
+        <map/>
+        <node name="lg3d">
+          <map/>
+          <node name="apps">
+            <map/>
+            <node name="pingpong">
+              <map>
+                <!-- 
+                    user:/org/jdesktop/lg3d/apps/pingpong
+                    Default user configuration for the PingPong demo
+                -->
+                <entry key="table-color-r" value="0.6f"/>
+                <entry key="table-color-g" value="1.0f"/>
+                <entry key="table-color-b" value="0.6f"/>
+              </map>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+</preferences>

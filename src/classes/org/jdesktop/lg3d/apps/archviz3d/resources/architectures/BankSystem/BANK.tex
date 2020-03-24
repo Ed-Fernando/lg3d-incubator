@@ -1,0 +1,167 @@
+\begin{zed}
+MESSAGE & \ddef & same\_account\_for\_src\_and\_dst \\ 
+& \bbar & not\_enough\_money\_in\_src \\ 
+& \bbar & ok 
+\end{zed}
+
+\begin{zed}
+MESSAGEINIT & \ddef & not\_user \\
+& \bbar & ok 
+\end{zed}
+
+\begin{zed}
+TRANSACTION & \ddef & deposit \\ 
+& \bbar &  withdraw \\ 
+& \bbar & tranfer 
+\end{zed}
+
+
+
+\begin{schema}{BANK}
+bal : \nat \pfun \nat \\
+pass : \nat \pfun \nat  \\
+log : \nat \rel TRANSACTION \\
+user: \nat
+\end{schema}
+
+
+\begin{zed}
+init\_BANK \sdef \lsch BANK' \bbar user'=0 \land bal' = \{ 1 \map 100 , 2 \map 0 \} \land pass' = \{ 1 \map 1111 , 2 \map 2222 \}  \land log' = \{ (1,deposit,100) , (1,deposit,10) , (2,deposit,00)\} \rsch  \end{zed}
+
+\begin{schema}{SetUserOk}
+\Delta BANK \\ 
+id? : \nat  \\ 
+password : \nat  \\ 
+report! : MESSAGEINIT 
+\where
+pass ( id? ) = password  \\
+user' = id? \\
+pass' = pass \\
+bal' = bal \\
+report! = ok 
+\end{schema}
+
+\begin{schema}{SetUserBad}
+\Xi BANK  \\ 
+id? : \nat  \\ 
+password : \nat  \\ 
+report! : MESSAGEINIT 
+\where
+pass ( id? ) \neq password  \\
+report! = not\_user
+\end{schema}
+
+\begin{schema}{getUser}
+\Xi BANK  \\ 
+current! : \nat  
+\where
+current! = user
+\end{schema}
+
+\begin{zed}
+SetUser \sdef  SetUserBad \lor   SetUserOk
+\end{zed}
+
+
+\begin{schema}{EndUser}
+\Delta BANK \\ 
+report! : MESSAGEINIT 
+\where
+user \neq 0 \\
+user' = 0 \\
+report! = ok 
+\end{schema}
+
+\begin{schema}{Balance}
+\Xi BANK \\ 
+src? : \nat \\ 
+amount! : \nat   
+\where
+amount! = bal ( src? ) 
+\end{schema}
+
+
+
+\begin{schema}{TransferOk}
+\Delta BANK \\ 
+amount? : \nat  \\ 
+src? , dst? : \nat \\
+report! : MESSAGE 
+\where
+src? \neq dst? \\
+bal ( src? ) \geq amount?  \\
+bal' = bal \oplus  \{ src? \map bal ( src? ) - amount? , dst? \map bal ( dst? ) + amount? \} \\
+pass' =pass \\
+user' = user \\
+report! = ok 
+\end{schema}
+
+
+\begin{schema}{SameAcct}
+\Xi BANK \\ 
+amount? : \nat  \\ 
+src? , dst? : \nat \\ 
+report! : MESSAGE 
+\where
+src? = dst? \\
+report! = same\_account\_for\_src\_and\_dst 
+\end{schema}
+
+\begin{schema}{NotEnoughTransfer}
+\Xi BANK \\ 
+amount? : \nat  \\ 
+src? , dst? : \nat \\ 
+report! : MESSAGE 
+\where
+bal ( src? ) < amount? \\
+report! = not\_enough\_money\_in\_src 
+\end{schema}
+
+
+
+\begin{zed}
+Transfer \sdef  NotEnoughTransfer \lor  SameAcct \lor   TransferOk
+\end{zed}
+
+
+
+
+\begin{schema}{Credit}
+\Delta BANK \\ 
+amount? : \nat  \\ 
+dst? : \nat \\
+report! : MESSAGE 
+\where
+bal' = bal \oplus \{ dst? \map bal ( dst? ) + amount? \} \\
+report! = ok 
+\end{schema}
+
+
+
+\begin{schema}{WidthdrawOk}
+\Delta BANK \\ 
+amount? : \nat  \\ 
+src? : \nat \\
+report! : MESSAGE 
+\where
+bal ( src? ) \geq amount? \\
+bal' = bal \oplus \{ src? \map bal ( src? ) - amount? \} \\
+report! = ok 
+\end{schema}
+
+\begin{schema}{NotEnough}
+\Xi BANK \\ 
+amount? : \nat  \\ 
+src? : \nat \\ 
+report! : MESSAGE 
+\where
+bal ( src? ) < amount? \\
+report! = not\_enough\_money\_in\_src 
+\end{schema}
+
+\begin{zed}
+Widthdraw \sdef NotEnough \lor   WidthdrawOk
+\end{zed}
+
+
+

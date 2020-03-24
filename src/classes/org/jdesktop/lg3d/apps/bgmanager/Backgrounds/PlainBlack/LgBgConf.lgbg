@@ -1,0 +1,9 @@
+<Background>
+<Name>Plain Black</Name>
+<Thumbnail>resources/Backgrounds/PlainBlack/thumb.jpg</Thumbnail>
+<Author></Author>
+<Date>03-08-2006</Date>
+<Description>Plain Black Background</Description>
+<BGType>Simple Background</BGType>
+	<Image>resources/Backgrounds/PlainBlack/black.jpg</Image>
+</Background>

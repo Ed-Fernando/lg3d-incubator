@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="EUC-JP"?>
+<holidays>
+<holiday date="2005/1/1" name="元 日"/>
+<holiday date="2005/1/10" name="成人の日"/>
+<holiday date="2005/2/11" name="建国記念の日"/>
+<holiday date="2005/3/20" name="春分の日"/>
+<holiday date="2005/3/21" name="振替休日"/>
+<holiday date="2005/4/29" name="みどりの日"/>
+<holiday date="2005/5/3" name="憲法記念日"/>
+<holiday date="2005/5/4" name="ゴールデンウィーク？"/>
+<holiday date="2005/5/5" name="こどもの日"/>
+<holiday date="2005/7/18" name="海の日"/>
+<holiday date="2005/9/19" name="敬老の日"/>
+<holiday date="2005/9/23" name="秋分の日"/>
+<holiday date="2005/10/10" name="体育の日"/>
+<holiday date="2005/11/3" name="文化の日"/>
+<holiday date="2005/11/23" name="勤労感謝の日"/>
+<holiday date="2005/12/23" name="天皇誕生日"/>
+
+<holiday date="2006/1/1" name="元 日"/>
+<holiday date="2006/1/2" name="振替休日"/>
+<holiday date="2006/1/9" name="成人の日"/>
+<holiday date="2006/2/11" name="建国記念の日"/>
+<holiday date="2006/3/21" name="春分の日"/>
+<holiday date="2006/4/29" name="みどりの日"/>
+<holiday date="2006/5/3" name="憲法記念日"/>
+<holiday date="2006/5/4" name="ゴールデンウィーク？"/>
+<holiday date="2006/5/5" name="こどもの日"/>
+<holiday date="2006/7/17" name="海の日"/>
+<holiday date="2006/9/18" name="敬老の日"/>
+<holiday date="2006/9/23" name="秋分の日"/>
+<holiday date="2006/10/9" name="体育の日"/>
+<holiday date="2006/11/3" name="文化の日"/>
+<holiday date="2006/11/23" name="勤労感謝の日"/>
+<holiday date="2006/12/23" name="天皇誕生日"/>
+</holidays>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE types SYSTEM "//ArchivosMios/ArchiEclipse/LG3D-3D/ReqViz3D/src/schema/VisualMappings.xsd">
+
+<cc:visual-information xmlns:cc="http://candc.org">
+    <cc:name>BankSystem</cc:name>
+    <cc:architecture-scale>0.055</cc:architecture-scale>
+    <cc:architecture-translation x="-0.2" y="0.2" z="0.0"/>
+
+    <cc:ccmap>
+		<cc:component>BankSystem</cc:component>
+		<cc:class>org.jdesktop.lg3d.apps.archviz3d.geons.GeonCluster</cc:class>
+		<cc:builder>org.jdesktop.lg3d.apps.archviz3d.geons.builders.GeonBuilderCluster</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:layout>archviz3d/architectures/BankSystem/banklayout.bsh</cc:layout>
+        <cc:wrapper-class>org.jdesktop.lg3d.apps.archviz3d.geons.wrappers.SphereWrapper</cc:wrapper-class>
+        <cc:color red="1.0" green="1.0" blue="1.0"/>
+        <cc:geon-list>
+			<cc:geon>barrel</cc:geon>
+        </cc:geon-list>
+    </cc:ccmap>
+
+    <cc:ccmap>
+        <cc:component>BankServer</cc:component>
+        <cc:class>org.jdesktop.lg3d.apps.archviz3d.geons.GeonCluster</cc:class>
+        <cc:builder>org.jdesktop.lg3d.apps.archviz3d.geons.builders.GeonBuilderCluster</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:layout>archviz3d/architectures/BankSystem/pipelinelayout.bsh</cc:layout>
+        <cc:wrapper-class>org.jdesktop.lg3d.apps.archviz3d.geons.wrappers.GeonWrapperSpherical</cc:wrapper-class>
+        <cc:color red="1.0" green="0.8" blue="0.8"/>
+        <cc:geon-list>
+			<cc:geon>barrel</cc:geon>
+			<cc:geon>cube</cc:geon>
+			<cc:geon>cylinder</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+			<cc:geon>barrel</cc:geon>
+			<cc:geon>cone</cc:geon>
+			<cc:geon>cube</cc:geon>
+			<cc:geon>cylinder</cc:geon>
+			<cc:geon>handle</cc:geon>
+			<cc:geon>pyramid</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>
+
+    <cc:ccmap>
+        <cc:component>PipeLine</cc:component>
+		<cc:class>org.jdesktop.lg3d.apps.archviz3d.geons.GeonCluster</cc:class>
+		<cc:builder>org.jdesktop.lg3d.apps.archviz3d.geons.builders.GeonBuilderCluster</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:layout>archviz3d/architectures/BankSystem/pipelinelayout.bsh</cc:layout>
+        <cc:wrapper-class>org.jdesktop.lg3d.apps.archviz3d.geons.wrappers.GeonWrapperLineal</cc:wrapper-class>
+        <cc:color red="0.8" green="1.0" blue="0.8"/>
+        <cc:geon-list>
+			<cc:geon>pipeline-halfsphere</cc:geon>
+			<cc:geon>pipeline-cylinder</cc:geon>
+			<cc:geon>pipeline-rectangle</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+			<cc:geon>handle</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>
+
+    <cc:ccmap>
+        <cc:component>ATM</cc:component>
+        <cc:class>org.jdesktop.lg3d.apps.archviz3d.geons.GeonSimple</cc:class>
+        <cc:builder>org.jdesktop.lg3d.apps.archviz3d.geons.builders.GeonBuilderSimple</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.0" green="0.5" blue="0.5"/>
+        <cc:geon-list>
+			<cc:geon>halfcone-cylinder</cc:geon>
+			<cc:geon>halfsphere-large</cc:geon>
+			<cc:geon>barrel</cc:geon>
+			<cc:geon>cone</cc:geon>
+			<cc:geon>cube</cc:geon>
+			<cc:geon>cylinder</cc:geon>
+			<cc:geon>halfcone</cc:geon>
+			<cc:geon>halfsphere-cube</cc:geon>
+			<cc:geon>halfsphere</cc:geon>
+			<cc:geon>pyramid</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+			<cc:geon>barrel</cc:geon>
+			<cc:geon>cone</cc:geon>
+			<cc:geon>cube</cc:geon>
+			<cc:geon>cylinder</cc:geon>
+			<cc:geon>handle</cc:geon>
+			<cc:geon>pyramid</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>
+
+    <cc:ccmap>
+        <cc:component>Broker</cc:component>
+        <cc:class>org.jdesktop.lg3d.apps.archviz3d.geons.GeonSimple</cc:class>
+        <cc:builder>org.jdesktop.lg3d.apps.archviz3d.geons.builders.GeonBuilderSimple</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.4" green="0.2" blue="0.0"/>
+        <cc:geon-list>
+			<cc:geon>halfsphere-large</cc:geon>
+			<cc:geon>halfsphere</cc:geon>
+			<cc:geon>barrel</cc:geon>
+			<cc:geon>cone</cc:geon>
+			<cc:geon>cube</cc:geon>
+			<cc:geon>cylinder</cc:geon>
+			<cc:geon>halfcone-cylinder</cc:geon>
+			<cc:geon>halfcone</cc:geon>
+			<cc:geon>halfsphere-cube</cc:geon>
+			<cc:geon>pyramid</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+			<cc:geon>barrel</cc:geon>
+			<cc:geon>cone</cc:geon>
+			<cc:geon>cube</cc:geon>
+			<cc:geon>cylinder</cc:geon>
+			<cc:geon>handle</cc:geon>
+			<cc:geon>pyramid</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>
+
+    <cc:ccmap>
+        <cc:component>Filter</cc:component>
+        <cc:class>org.jdesktop.lg3d.apps.archviz3d.geons.GeonSimple</cc:class>
+        <cc:builder>org.jdesktop.lg3d.apps.archviz3d.geons.builders.GeonBuilderSimple</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.8" green="0.0" blue="0.0"/>
+        <cc:geon-list>
+			<cc:geon>halfsphere-cube</cc:geon>
+			<cc:geon>halfsphere-large</cc:geon>
+			<cc:geon>halfcone-cylinder</cc:geon>
+			<cc:geon>barrel</cc:geon>
+			<cc:geon>cone</cc:geon>
+			<cc:geon>cube</cc:geon>
+			<cc:geon>cylinder</cc:geon>
+			<cc:geon>halfcone</cc:geon>
+			<cc:geon>halfsphere</cc:geon>
+			<cc:geon>pyramid</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+			<cc:geon>barrel</cc:geon>
+			<cc:geon>cone</cc:geon>
+			<cc:geon>cube</cc:geon>
+			<cc:geon>cylinder</cc:geon>
+			<cc:geon>handle</cc:geon>
+			<cc:geon>pyramid</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>
+
+    <cc:ccmap>
+        <cc:component>Filter2</cc:component>
+        <cc:class>org.jdesktop.lg3d.apps.archviz3d.geons.GeonSimple</cc:class>
+        <cc:builder>org.jdesktop.lg3d.apps.archviz3d.geons.builders.GeonBuilderSimple</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.8" green="0.0" blue="0.0"/>
+        <cc:geon-list>
+			<cc:geon>halfsphere-cube</cc:geon>
+			<cc:geon>halfsphere-large</cc:geon>
+			<cc:geon>halfcone-cylinder</cc:geon>
+			<cc:geon>barrel</cc:geon>
+			<cc:geon>cone</cc:geon>
+			<cc:geon>cube</cc:geon>
+			<cc:geon>cylinder</cc:geon>
+			<cc:geon>halfcone</cc:geon>
+			<cc:geon>halfsphere</cc:geon>
+			<cc:geon>pyramid</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+			<cc:geon>barrel</cc:geon>
+			<cc:geon>cone</cc:geon>
+			<cc:geon>cube</cc:geon>
+			<cc:geon>cylinder</cc:geon>
+			<cc:geon>handle</cc:geon>
+			<cc:geon>pyramid</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>
+
+    <cc:ccmap>
+        <cc:component>FilterOp</cc:component>
+        <cc:class>org.jdesktop.lg3d.apps.archviz3d.geons.GeonSimple</cc:class>
+        <cc:builder>org.jdesktop.lg3d.apps.archviz3d.geons.builders.GeonBuilderSimple</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.8" green="0.0" blue="0.0"/>
+        <cc:geon-list>
+			<cc:geon>halfsphere-cube</cc:geon>
+			<cc:geon>halfcone-cylinder</cc:geon>
+			<cc:geon>barrel</cc:geon>
+			<cc:geon>cone</cc:geon>
+			<cc:geon>cube</cc:geon>
+			<cc:geon>cylinder</cc:geon>
+			<cc:geon>halfcone</cc:geon>
+			<cc:geon>halfsphere-large</cc:geon>
+			<cc:geon>halfsphere</cc:geon>
+			<cc:geon>pyramid</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+			<cc:geon>barrel</cc:geon>
+			<cc:geon>cone</cc:geon>
+			<cc:geon>cube</cc:geon>
+			<cc:geon>cylinder</cc:geon>
+			<cc:geon>handle</cc:geon>
+			<cc:geon>pyramid</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>
+
+    <cc:ccmap>
+        <cc:component>Pipe</cc:component>
+        <cc:class>org.jdesktop.lg3d.apps.archviz3d.manifest3D.objects.ManhatanLink3D</cc:class>
+        <cc:builder>org.jdesktop.lg3d.apps.archviz3d.manifest3D.builders.ManhatanLinkBuilder3D</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.1" green="0.1" blue="0.6"/>
+        <cc:geon-list>
+			<cc:geon>cylinder</cc:geon>
+        </cc:geon-list>
+    </cc:ccmap>
+
+    <cc:ccmap>
+        <cc:component>RPC</cc:component>
+        <cc:class>org.jdesktop.lg3d.apps.archviz3d.manifest3D.objects.ManhatanLink3D</cc:class>
+        <cc:builder>org.jdesktop.lg3d.apps.archviz3d.manifest3D.builders.ManhatanLinkBuilder3D</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.1" green="0.1" blue="0.6"/>
+        <cc:geon-list>
+			<cc:geon>cylinder</cc:geon>
+        </cc:geon-list>
+    </cc:ccmap>
+
+</cc:visual-information>

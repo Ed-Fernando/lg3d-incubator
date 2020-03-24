@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.5.0" class="java.beans.XMLDecoder">
+ <!-- Taskbar item -->
+ <!--
+ <object class="org.jdesktop.lg3d.scenemanager.config.ApplicationDescription">$
+  <void property="exec">
+   <string>java org.jdesktop.lg3d.apps.clock.ClockContainer</string>
+  </void>
+  <void property="iconFilename">
+   <string>resources/images/icon/ClockIcon.png</string>
+  </void>
+  <void property="name">
+   <string>Clock</string>
+  </void>
+ </object>
+ -->
+ <!-- Start Menu item -->
+ <object class="org.jdesktop.lg3d.scenemanager.utils.startmenu.StartMenuItemConfig"> 
+  <void property="command"> 
+   <string>java org.jdesktop.lg3d.apps.clock.ClockContainer</string> 
+  </void> 
+  <void property="desc"> 
+   <string>3D Clock</string> 
+  </void> 
+  <void property="displayResourceType"> 
+   <string>TAPP</string> 
+  </void> 
+  <void property="displayResourceClassname"> 
+   <string>org.jdesktop.lg3d.apps.clock.StartMenuTapp</string> 
+  </void> 
+  <void property="menuGroup"> 
+   <string>Utilities</string> 
+  </void> 
+  <void property="name"> 
+   <string>Clock</string> 
+  </void> 
+  <void property="classpathJars">
+    <string>clock.jar</string>
+  </void>
+ </object> 
+</java>

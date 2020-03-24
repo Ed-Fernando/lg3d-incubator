@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Zoetrope" default="main" basedir=".">
+  
+  <property name="home" value="."/>
+  <property name="src.dir" value="${home}/src/classes"/>
+  <property name="build.dir" value="${home}/build"/>
+  <property name="classes.dir" value="${build.dir}/classes"/>
+  <property name="lg3d.dir" value="${home}/../lg3d"/>
+  
+  <!-- =================================================================== -->
+  <!-- all                                                                 -->
+  <!-- =================================================================== -->
+  <target name="main" depends="all">
+  </target>
+
+  <target name="all" depends="compile">
+  </target>
+
+  <target name="init">
+    <mkdir dir="${classes.dir}"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Compiles the source code                                            -->
+  <!-- =================================================================== -->
+  <target name="compile" depends="init">
+    <mkdir dir="${classes.dir}"/>
+    <javac srcdir="${src.dir}"
+           deprecation="true" 
+           classpath="${lg3d.dir}/lib/ext/lg3d-core.jar"
+           debug="on"
+           destdir="${classes.dir}">
+    </javac>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Making the JAR file with Sample Images                              -->
+  <!-- =================================================================== -->
+  <target name="sample-jar" depends="compile">
+    <copy todir="${classes.dir}/org/jdesktop/lg3d/apps/zoetrope/resources">
+        <fileset dir="${src.dir}/org/jdesktop/lg3d/apps/zoetrope/resources" />
+    </copy>
+    <copy todir="${classes.dir}" file="${src.dir}/org/jdesktop/lg3d/apps/zoetrope/resources/images/sample/images.txt" />
+    <copy todir="${classes.dir}/config/incubator">
+        <fileset dir="${src.dir}/../config" />
+    </copy>
+    <mkdir dir="${build.dir}/lib"/>
+    <jar compress="false" jarfile="${build.dir}/lib/zoetrope.jar">
+        <fileset dir="${classes.dir}/"/>
+    </jar>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Making the JAR file without Sample Images                              -->
+  <!-- =================================================================== -->
+  <target name="jar" depends="compile">
+    <copy todir="${classes.dir}/org/jdesktop/lg3d/apps/zoetrope/resources"
+        file="${src.dir}/org/jdesktop/lg3d/apps/zoetrope/resources/images/icon/zoetrope.png" />
+    <copy todir="${classes.dir}/config/incubator">
+        <fileset dir="${src.dir}/../config" />
+    </copy>
+    <mkdir dir="${build.dir}/lib"/>
+    <jar compress="false" jarfile="${build.dir}/lib/zoetrope.jar">
+        <fileset dir="${classes.dir}/"/>
+    </jar>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Cleans up generated stuff                                           -->
+  <!-- =================================================================== -->
+  <target name="clean">
+    <delete>
+      <fileset dir="${home}" includes="**/*.bak" />
+    </delete>
+    <delete>
+      <fileset defaultexcludes="no" dir="${home}" includes="**/*~" />
+    </delete>
+    <delete>
+      <fileset dir="${home}" includes="**/*.class" />
+    </delete>
+  </target>
+
+</project>
+

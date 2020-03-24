@@ -1,0 +1,28 @@
+\begin{schema}{PrintManager}
+caller:  Port \\
+called:  Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+ports: \pset Port
+\end{schema}
+
+
+\begin{zed}
+init\_PrintManager \sdef \lsch PrintManager' 
+                   \bbar caller' = \new Port
+                   \land caller'.setiVar(element,This)
+                   \land called' = \new Port
+                   \land called'.setiVar(element,This)
+                   \land components' = \{ \}
+                   \land connectors' = \{ \}
+                   \land ports' = \{ caller', called' \}  \rsch
+                   \end{zed}
+
+
+\begin{schema}{ProcessEvent}
+\Delta PrintManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\end{schema}

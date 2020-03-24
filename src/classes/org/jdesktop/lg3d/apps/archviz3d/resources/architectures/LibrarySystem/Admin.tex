@@ -1,0 +1,658 @@
+\begin{zed}
+MESSAGE & \ddef & ok \\ 
+& \bbar & not\_valid\_user \\
+& \bbar & not\_valid\_data \\
+& \bbar & inexistent\_record \\
+& \bbar & not\_enough\_books \\
+& \bbar & not\_valid\_connection\_or\_expired\_session \\
+& \bbar & member\_already\_existent \\
+& \bbar & book\_already\_existent \\
+& \bbar & book\_with\_loans
+\end{zed}
+
+\begin{schema}{Admin}
+ip: \nat \\
+device: \nat \\
+callerSA: Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port
+\end{schema}
+
+\begin{zed}
+init\_Admin \sdef \lsch 
+Admin' \bbar 
+ip'=0
+\land device'=0 
+\land callerSA' = \new Port 
+\land callerSA'.setiVar(element,This)  
+\land components' = \{ \}
+\land connectors' = \{ \}
+\land events' = \{ login, assignIP, getIP, assignDevice, getDevice, logout, searchMember, searchBook, searchLoan, booksRanking, returnBook, addLoan, addMember, deleteMember, deleteBook, addBook \}
+\land ports' = \{ callerSA' \}  
+\rsch  \end{zed}
+
+\begin{schema}{AssignIP}
+\Delta Admin  \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = assignIP \\
+IpAssigned = \head inputP \\
+ip' = IpAssigned \\
+report! = ok 
+\end{schema}
+
+\begin{schema}{GetIP}
+\Delta Admin \\ 
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = getIP \\
+report! = ip 
+\end{schema}
+
+\begin{schema}{AssignDevice}
+\Delta Admin \\ 
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = assignDevice \\
+DeviceAssigned = \head inputP \\
+device' = DeviceAssigned \\
+report! = ok 
+\end{schema}
+
+\begin{schema}{GetDevice}
+\Delta Admin \\ 
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = getDevice \\
+report! = device 
+\end{schema}
+
+\begin{schema}{LoginAdminOK}
+\Delta Admin  \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = login \\
+Id = \head inputP \\
+Password = \head (\tail inputP) \\
+SE = \lseq ip Id Password device \rseq \\
+callerSA.Initiate(validateUser, This, SE, R)\\
+R = ok \\
+report! = R 
+\end{schema}
+
+\begin{schema}{LoginAdminFailed}
+\Delta Admin  \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = login \\
+Id = \head inputP \\
+Password = \head (\tail inputP) \\
+SE = \lseq ip Id Password \rseq \\
+callerSA.Initiate(validateUser, This, SE, R)\\
+R = not\_valid\_user \\ 
+report! = R
+\end{schema}
+
+\begin{schema}{LoginAdminInvalidConnection}
+\Delta Admin  \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = login \\
+SE = \lseq ip \rseq \\
+callerSA.Initiate(validateUser, This, SE, R) \\
+R = not\_valid\_connection\_or\_expired\_session \\ 
+report! = R
+\end{schema}
+
+\begin{schema}{LoginAdminInexistent}
+\Delta Admin  \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = login \\
+Id = \head inputP \\
+Password = \head (\tail inputP) \\
+SE = \lseq ip Id Password  \rseq \\
+callerSA.Initiate(validateUser, This, SE, R)\\
+R = inexistent\_record \\
+report! = R 
+\end{schema}
+
+\begin{schema}{Logout}
+\Delta Admin \\ 
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = logout \\
+SD = \lseq ip \rseq \\
+callerSA.Initiate(logout, This, SD, R) \\
+R = ok \\
+ip' = 0 \\
+report! = R 
+\end{schema}
+
+\begin{schema}{SearchMemberOK}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = searchMember \\
+Id = \head inputP \\
+SE = \lseq ip Id \rseq \\
+callerSA.Initiate(searchMember,This,SE,R)\\
+report! = R
+\end{schema}
+
+\begin{schema}{SearchMemberInvalidConnection}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = searchMember \\
+SE = \lseq ip \rseq \\
+callerSA.Initiate(searchMember,This,SE,R) \\
+R = not\_valid\_connection\_or\_expired\_session \\ 
+report! = R
+\end{schema}
+
+\begin{schema}{SearchBookOK}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = searchBook \\
+BookName = \head inputP \\
+SE = \lseq ip BookName \rseq \\
+callerSA.Initiate(searchBook,This,SE,R) \\
+report! = R
+\end{schema}
+
+\begin{schema}{SearchBookInvalidConnection}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = searchBook \\
+SE = \lseq ip \rseq \\
+callerSA.Initiate(searchBook,This,SE,R) \\
+R = not\_valid\_connection\_or\_expired\_session \\ 
+report! = R
+\end{schema}
+
+\begin{schema} {AddLoanOK}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = addLoan \\
+IdM = \head inputP \\ 
+IdB = \head (\tail inputP) \\ 
+SE = \lseq ip IdM IdB \rseq \\
+callerSA.Initiate(addLoan, This, SE, R)\\
+R = ok \\
+report! = R 
+\end{schema}
+
+\begin{schema} {AddLoanInvalidConnection}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = addLoan \\
+SE = \lseq ip \rseq \\
+callerSA.Initiate(addLoan, This, SE, R) \\
+R = not\_valid\_connection\_or\_expired\_session \\
+report! = R 
+\end{schema}
+
+\begin{schema}{AddLoanInvalidData}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = addLoan \\
+IdM = \head inputP \\ 
+IdB = \head (\tail inputP) \\ 
+SE = \lseq ip IdM IdB \rseq \\
+callerSA.Initiate(addLoan, This, SE, R) \\
+R = not\_valid\_data \\ 
+report! = R
+\end{schema}
+
+
+\begin{schema}{AddLoanNotEnoughBooks}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = addLoan \\
+IdM = \head inputP \\ 
+IdB = \head (\tail inputP) \\ 
+SE = \lseq ip IdM IdB \rseq \\
+callerSA.Initiate(addLoan, This, SE, R) \\
+R = not\_enough\_books \\ 
+report! = R
+\end{schema}
+
+\begin{schema}{BooksRankingOK}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = booksRanking \\ 
+SE = \lseq ip \rseq \\
+callerSA.Initiate(booksRanking,This,SE,R) \\
+report! = R
+\end{schema}
+
+\begin{schema}{BooksRankingInvalidConnection}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = booksRanking \\
+SE = \lseq ip \rseq \\
+callerSA.Initiate(booksRanking,This,SE,R) \\
+R = not\_valid\_connection\_or\_expired\_session \\ 
+report! = R
+\end{schema}
+
+
+\begin{schema}{SearchLoanOK}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = searchLoan \\
+Id = \head inputP \\
+SE = \lseq ip Id \rseq \\
+callerSA.Initiate(searchLoan,This,SE,R)\\
+R = ok \\
+report! = R
+\end{schema}
+
+
+\begin{schema}{SearchLoanInvalidConnection}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = searchLoan \\
+SE = \lseq ip \rseq \\
+callerSA.Initiate(searchLoan,This,SE,R) \\
+R = not\_valid\_connection\_or\_expired\_session \\ 
+report! = R
+\end{schema}
+
+\begin{schema} {ReturnBookInvalidConnection}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = returnBook \\
+SE = \lseq ip \rseq \\
+callerSA.Initiate(returnBook, This, SE, R) \\
+R = not\_valid\_connection\_or\_expired\_session \\
+report! = R 
+\end{schema}
+
+
+\begin{schema} {ReturnBookOK}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = returnBook \\
+IdM = \head inputP \\ 
+IdB = \head (\tail inputP) \\ 
+SE = \lseq ip IdM IdB \rseq \\
+callerSA.Initiate(returnBook, This, SE, R) \\
+R = ok \\
+report! = R 
+\end{schema}
+
+\begin{schema}{ReturnBookInvalidData}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = returnBook \\
+IdM = \head inputP \\ 
+IdB = \head (\tail inputP) \\ 
+SE = \lseq ip IdM IdB \rseq \\
+callerSA.Initiate(returnBook, This, SE, R) \\
+R = not\_valid\_data \\ 
+report! = R
+\end{schema}
+
+
+\begin{schema}{AddMemberOK}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = addMember \\
+Id = \head inputP \\
+Password= \head (\tail inputP) \\
+MemberName = \head (\tail (\tail inputP)) \\
+SE = \lseq ip Id Password MemberName \rseq \\
+callerSA.Initiate(addMember, This, SE, R) \\
+R = ok \\
+report! = R 
+\end{schema}
+
+\begin{schema}{AddMemberInvalidConnection}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = addMember \\
+SE = \lseq ip \rseq \\
+callerSA.Initiate(addMember, This, SE, R) \\
+R = not\_valid\_connection\_or\_expired\_session \\
+report! = R 
+\end{schema}
+
+
+\begin{schema}{AddMemberInvalidData}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = addMember \\
+Id = \head inputP \\
+Password= \head (\tail inputP) \\
+MemberName = \head (\tail (\tail inputP)) \\
+SE = \lseq ip Id Password MemberName \rseq \\
+callerSA.Initiate(addMember, This, SE, R) \\
+R = not\_valid\_data \\ 
+report! = R
+\end{schema}
+
+\begin{schema}{AddMemberAlreadyExistent}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = addMember \\
+Id = \head inputP \\
+Password= \head (\tail inputP) \\
+MemberName = \head (\tail (\tail inputP)) \\
+SE = \lseq ip Id Password MemberName \rseq \\
+callerSA.Initiate(addMember, This, SE, R) \\
+R = member\_already\_existent \\ 
+report! = R
+\end{schema}
+
+\begin{schema}{AddBookOK}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = addBook \\
+Id = \head inputP \\
+BookName = \head (\tail inputP) \\
+Amount = \head (\tail (\tail inputP)) \\
+SE = \lseq ip Id BookName Amount \rseq \\
+callerSA.Initiate(addBook, This, SE, R) \\
+R = ok \\
+report! = R 
+\end{schema}
+
+\begin{schema}{AddBookInvalidConnection}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = addBook \\
+SE = \lseq ip \rseq \\
+callerSA.Initiate(addBook, This, SE, R) \\
+R = not\_valid\_connection\_or\_expired\_session \\ 
+report! = R
+\end{schema}
+
+\begin{schema}{AddBookInvalidData}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = addBook \\
+Id = \head inputP \\
+BookName = \head (\tail inputP) \\
+Amount = \head (\tail (\tail inputP)) \\
+SE = \lseq ip Id BookName Amount \rseq \\
+callerSA.Initiate(addBook, This, SE, R) \\
+R = not\_valid\_data \\ 
+report! = R
+\end{schema}
+
+\begin{schema}{AddBookAlreadyExistent}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = addBook \\
+Id = \head inputP \\
+BookName = \head (\tail inputP) \\
+Amount = \head (\tail (\tail inputP)) \\
+SE = \lseq ip Id BookName Amount \rseq \\
+callerSA.Initiate(addBook, This, SE, R) \\
+R = book\_already\_existent \\ 
+report! = R
+\end{schema}
+
+\begin{schema}{DeleteMemberOK}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = deleteMember \\
+Id = \head inputP \\
+SE = \lseq ip Id \rseq \\
+callerSA.Initiate(deleteMember, This, SE, R) \\
+R = ok \\
+report! = R 
+\end{schema}
+
+\begin{schema}{DeleteMemberInvalidConnection}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = deleteMember \\
+SE = \lseq ip \rseq \\
+callerSA.Initiate(deleteMember, This, SE, R) \\
+R = not\_valid\_connection\_or\_expired\_session \\ 
+report! = R 
+\end{schema}
+
+
+\begin{schema}{DeleteMemberInvalidData}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = deleteMember \\
+Id = \head inputP \\
+SE = \lseq ip Id \rseq \\
+callerSA.Initiate(deleteMember, This, SE, R) \\
+R = not\_valid\_data \\
+report! = R
+\end{schema}
+
+\begin{schema}{DeleteMemberInexistent}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = deleteMember \\
+Id = \head inputP \\
+SE = \lseq ip Id \rseq \\
+callerSA.Initiate(deleteMember, This, SE, R) \\
+R = inexistent\_record \\
+report! = R
+\end{schema}
+
+
+\begin{schema}{DeleteBookOK}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = deleteBook \\
+Id = \head inputP \\
+SE = \lseq ip Id \rseq \\
+callerSA.Initiate(deleteBook, This, SE, R) \\
+R = ok \\
+report! = R 
+\end{schema}
+
+\begin{schema}{DeleteBookWithLoans}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = deleteBook \\
+Id = \head inputP \\
+SE = \lseq ip Id \rseq \\
+callerSA.Initiate(deleteBook, This, SE, R) \\
+R = ok \\
+report! = R 
+\end{schema}
+
+\begin{schema}{DeleteBookInvalidConnection}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = deleteBook \\
+Id = \head inputP \\
+SE = \lseq ip Id \rseq \\
+callerSA.Initiate(deleteBook, This, SE, R) \\
+R = not\_valid\_connection\_or\_expired\_session \\ 
+report! = R 
+\end{schema}
+
+
+\begin{schema}{DeleteBookInvalidData}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = deleteBook \\
+Id = \head inputP \\
+SE = \lseq ip Id \rseq \\
+callerSA.Initiate(deleteBook, This, SE, R) \\
+R = not\_valid\_data \\ 
+report! = R
+\end{schema}
+
+
+\begin{schema}{DeleteBookInexistent}
+\Xi Admin \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = deleteBook \\
+Id = \head inputP \\
+SE = \lseq ip Id \rseq \\
+callerSA.Initiate(deleteBook, This, SE, R) \\
+R = inexistent\_record \\ 
+report! = R
+\end{schema}
+
+\begin{zed} ProcessEvent \sdef AssignIP
+\lor GetIP
+\lor AssignDevice
+\lor GetDevice
+\lor LoginAdminOK
+\lor LoginAdminFailed
+\lor LoginAdminInvalidConnection
+\lor LoginAdminInexistent
+\lor Logout
+\lor SearchMemberOK
+\lor SearchMemberInvalidConnection
+\lor SearchBookOK
+\lor SearchBookInvalidConnection
+\lor SearchLoanOK
+\lor SearchLoanInvalidConnection
+\lor BooksRankingOK
+\lor BooksRankingInvalidConnection
+\lor AddLoanInvalidConnection
+\lor AddLoanOK
+\lor AddLoanInvalidData
+\lor AddLoanNotEnoughBooks
+\lor ReturnBookInvalidConnection
+\lor ReturnBookOK
+\lor ReturnBookInvalidData
+\lor AddMemberAlreadyExistent
+\lor AddMemberInvalidConnection
+\lor AddMemberOK
+\lor AddMemberInvalidData
+\lor DeleteMemberInvalidConnection
+\lor DeleteMemberOK
+\lor DeleteMemberInvalidData
+\lor DeleteMemberInexistent
+\lor DeleteBookInvalidConnection
+\lor DeleteBookOK
+\lor DeleteBookInvalidData
+\lor DeleteBookInexistent
+\lor DeleteBookWithLoans
+\lor AddBookInvalidConnection
+\lor AddBookOK
+\lor AddBookInvalidData
+\lor AddBookAlreadyExistent
+\end{zed}
+
+
+

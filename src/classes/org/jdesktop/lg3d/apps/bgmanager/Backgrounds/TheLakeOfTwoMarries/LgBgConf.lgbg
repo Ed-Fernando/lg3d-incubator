@@ -1,0 +1,12 @@
+<Background>
+<Name>The Lake Of Two Marries</Name>
+<Thumbnail>resources/Backgrounds/TheLakeOfTwoMarries/thumb.jpg</Thumbnail>
+<Author>Ricardo Wagemaker of www.gcclinux.com</Author>
+<Date>11-03-2005</Date>
+<Description>The Lake Of Two Marries</Description>
+<BGType>Simple Background</BGType>
+
+	<Image>resources/Backgrounds/TheLakeOfTwoMarries/TheLakeOfTwoMarries.jpg</Image>
+	
+
+</Background>

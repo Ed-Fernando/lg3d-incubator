@@ -1,0 +1,21 @@
+<Background>
+<Name>Grand Canyon</Name>
+<Thumbnail>resources/Backgrounds/GrandCanyon/GrandCanyon-thumb.jpg</Thumbnail>
+<Author>Hideya</Author>
+<Date>11-03-2005</Date>
+<Description>Canyon somwhere in USA. In field date time of
+creation this configuration file </Description>
+<BGType>Layered Background</BGType>
+<Layer>
+	<Image>resources/Backgrounds/GrandCanyon/GrandCanyon-0.jpg</Image>
+	<TranslationX>1</TranslationX>
+	<TranslationY>0</TranslationY>
+	<TranslationZ>1</TranslationZ>
+ </Layer>
+ <Layer>
+	<Image>resources/Backgrounds/GrandCanyon/GrandCanyon-1.png</Image>
+	<TranslationX>0.5</TranslationX>
+	<TranslationY>-0.22</TranslationY>
+	<TranslationZ>2.0</TranslationZ>
+ </Layer>
+</Background>

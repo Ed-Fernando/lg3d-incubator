@@ -1,0 +1,119 @@
+\begin{zed}
+MESSAGE & \ddef & add\_user\_ok \\ 
+& \bbar & delete\_user\_ok \\
+& \bbar & exist\_user \\
+& \bbar & not\_exist\_user \\
+& \bbar & permission\_accepted \\
+& \bbar & permission\_rejected
+
+
+\end{zed}
+
+\begin{schema}{ClientAdministrator}
+caller:  Port \\
+called:  Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+ports: \pset Port
+\end{schema}
+
+
+\begin{zed}
+init\_ClientAdministrator \sdef \lsch ClientAdministrator'
+                          \bbar caller' = \new Port
+                          \land caller'.setiVar(element,This)
+                          \land called' = \new Port
+                          \land called'.setiVar(element,This)
+                          \land components' = \{ \}
+                          \land connectors' = \{ \}
+                          \land ports' = \{ caller', called' \}  \rsch
+                          \end{zed}
+
+
+\begin{schema}{AddUserOk}
+\Delta ClientAdministrator \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = addUser \\
+Nick = \head inputP \\
+SE = \lseq Nick \rseq \\
+called.Initiate(validateUser,This,SE,VR) \\
+VR = not\_exist\_user \\
+called.Initiate(addUser,This,inputP,R) \\
+R = add\_user\_ok \\
+report! = add\_user\_ok
+\end{schema}
+
+\begin{schema}{AddUserFailed}
+\Delta ClientAdministrator \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = addUser \\
+Nick = \head inputP \\
+SE = \lseq Nick \rseq \\
+called.Initiate(validateUser,This,SE,VR) \\
+VR = exist\_user \\
+report! = exist\_user
+\end{schema}
+
+
+\begin{schema}{DeleteUserOk}
+\Delta ClientAdministrator \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = deleteUser \\
+called.Initiate(validateUser,This,inputP,VR) \\
+VR = exist\_user \\
+called.Initiate(deleteUser,This,inputP,R) \\
+R = delete\_user\_ok \\
+report! = delete\_user\_ok
+\end{schema}
+
+\begin{schema}{DeleteUserFailed}
+\Delta ClientAdministrator \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = deleteUser \\
+called.Initiate(validateUser,This,inputP,VR) \\
+VR = not\_exist\_user \\
+report! = not\_exist\_user
+\end{schema}
+
+\begin{schema}{VerifyPermission}
+\Delta ClientAdministrator \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = verifyPermission \\
+called.Initiate(verifyPermission,This,inputP,outputP)
+\end{schema}
+
+
+\begin{schema}{ListUsers}
+\Delta ClientAdministrator \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = listUsers \\
+called.Initiate(listUsers,This,inputP,outputP)
+\end{schema}
+
+\begin{zed}
+ProcessEvent 
+             \sdef AddUserOk 
+             \lor AddUserFailed 
+             \lor DeleteUserOk 
+             \lor DeleteUserFailed
+             \lor VerifyPermission
+             \lor ListUsers
+\end{zed}

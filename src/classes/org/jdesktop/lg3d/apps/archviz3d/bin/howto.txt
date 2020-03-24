@@ -1,0 +1,9 @@
+For use ArchViz3D:
+
+1) Copy ArchViz3D.jar and libs-archviz3d to <LG3D_HOME>/ext/app.
+
+2) Copy archviz3d to <LG3D_HOME>/resources (delete all Cvs directories inside archviz3d).
+
+3) Execute LG3D and go to developers -> ArchViz3D.
+
+NOTE 1: ArchViz3D doesn't work for LG3D version 1.0.1, use version 1.0.0.

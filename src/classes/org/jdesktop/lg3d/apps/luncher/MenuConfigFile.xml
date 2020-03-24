@@ -1,0 +1,49 @@
+<!--
+  - Configuration file for the menu objects.
+  -
+  - DTD:
+  -  <!ELEMENT menu (name, card*)>
+  -  <!ELEMENT name (#PCDATA)>
+  -  <!ELEMENT card (icon, command)>
+  -  <!ELEMENT icon (#PCDATA)>
+  -  <!ELEMENT command (#PCDATA)>
+  -
+  -->
+
+<menu>
+  <card>
+    <name>START</name>
+    <shortcut>
+      <icon>resources/images/icon/system.png</icon>
+      <command>xterm -display :0</command>
+    </shortcut>
+    <shortcut>
+      <icon>resources/images/icon/staroffice.png</icon>
+      <command>java org.jdesktop.lg3d.apps.help.Lg3dHelp</command>
+    </shortcut>
+  </card>
+  <card>
+    <name>Menu 1</name>
+    <shortcut>
+      <icon>resources/images/icon/staroffice.png</icon>
+      <command>java org.jdesktop.lg3d.apps.help.Lg3dHelp</command>
+    </shortcut>
+    <shortcut>
+      <icon>resources/images/icon/CD-s.png</icon>
+      <command>java org.jdesktop.lg3d.apps.cdviewer.CDViewer</command>
+    </shortcut>
+  </card>
+<!--
+  <card>
+    <name>Tutorials</name>
+    <shortcut>
+      <icon>/org/jdesktop/lg3d/apps/tutorial/resources/images/icon/tutorial1.png</icon>
+      <command>java org.jdesktop.lg3d.apps.tutorial.Tutorial1</command>
+    </shortcut>
+    <shortcut>
+      <icon>/org/jdesktop/lg3d/apps/tutorial/resources/images/icon/tutorial2.png</icon>
+      <command>java org.jdesktop.lg3d.apps.tutorial.Tutorial2</command>
+    </shortcut>
+  </card>
+-->  
+</menu>

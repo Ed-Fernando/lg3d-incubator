@@ -1,0 +1,48 @@
+<root>
+	<applications>
+		<application>
+			<name>LG3D Helper</name>
+			<command>java org.jdesktop.lg3d.apps.help.Lg3dHelp</command>
+			<entity>helper</entity>
+		</application>
+		<application>
+			<name>CD Viewer</name>
+			<command>java org.jdesktop.lg3d.apps.cdviewer.CDViewer</command>
+			<entity>application</entity>
+			<synonyms>
+				<synonym>cd</synonym>
+				<synonym>music</synonym>
+				<synonym>viewer</synonym>
+			</synonyms>
+		</application>
+		<application>
+			<name>googler</name>
+			<command>java org.jdesktop.lg3d.apps.googler.Main</command>
+			<entity>search</entity>
+			<synonyms>
+				<synonym>google</synonym>
+				<synonym>googler</synonym>
+			</synonyms>
+		</application>
+		<application>
+			<name>clock</name>
+			<command>java org.jdesktop.lg3d.apps.clock.ClockContainer</command>
+			<entity>application</entity>
+			<synonyms>
+				<synonym>clock</synonym>
+				<synonym>time</synonym>
+			</synonyms>
+		</application>
+		<application>
+			<name>pingpong</name>
+			<command>java org.jdesktop.lg3d.apps.pingpong.PingPong</command>	
+			<entity>game</entity>
+			<synonyms>
+				<synonym>pingpong</synonym>
+				<synonym>table</synonym>
+				<synonym>tennis</synonym>
+				<synonym>tt</synonym>
+			</synonyms>
+		</application>
+	</applications>
+</root>

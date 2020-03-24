@@ -1,0 +1,12 @@
+<Background>
+<Name>Trillium Lake,Oregon</Name>
+<Thumbnail>resources/Backgrounds/TrilliumLakeOregon/thumb.jpg</Thumbnail>
+<Author>Brad Templeton of www.templetons.com/brad</Author>
+<Date>TODO</Date>
+<Description>Trillium Lake in Oregon state</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>0</InitialBackground>
+	<Image>resources/Backgrounds/TrilliumLakeOregon/Trillium-Lake-Oregon-0.jpg</Image>
+	<Image>resources/Backgrounds/TrilliumLakeOregon/Trillium-Lake-Oregon-1.jpg</Image>
+	<Image>resources/Backgrounds/TrilliumLakeOregon/Trillium-Lake-Oregon-2.jpg</Image>
+</Background>

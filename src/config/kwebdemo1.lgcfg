@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.5.0" class="java.beans.XMLDecoder">
+ <!-- Taskbar item -->
+ <!--
+ <object class="org.jdesktop.lg3d.scenemanager.config.ApplicationDescription">$
+  <void property="exec">
+   <string>java org.jdesktop.lg3d.apps.kwebdemo1.Application</string>
+  </void>
+  <void property="iconFilename">
+   <string>resources/images/icon/K1.png</string>
+  </void>
+  <void property="name">
+   <string>K-Web 3D UI demo</string>
+  </void>
+ </object>
+ -->
+ <!-- Start Menu Item -->
+ <object class="org.jdesktop.lg3d.scenemanager.utils.startmenu.StartMenuItemConfig"> 
+  <void property="command"> 
+   <string>java org.jdesktop.lg3d.apps.kwebdemo1.Application</string> 
+  </void> 
+  <void property="desc"> 
+   <string>K1 K-Web 3D UI Demo</string> 
+  </void> 
+  <void property="displayResourceType">
+   <string>ICON</string>
+  </void> 
+  <void property="displayResourceUrlName">
+   <string>resource:///resources/images/icon/K1.png</string>
+  </void>
+  <void property="menuGroup"> 
+   <string>Media</string> 
+  </void> 
+  <void property="name"> 
+   <string>K-Web 3D UI Demo</string> 
+  </void> 
+  <void property="classpathJars">
+    <string>kwebdemo1.jar</string>
+  </void>
+ </object> 
+</java>

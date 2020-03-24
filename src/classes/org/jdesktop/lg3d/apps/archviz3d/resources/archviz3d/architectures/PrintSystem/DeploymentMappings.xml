@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mo:visual-information xmlns:mo="http://module.org">
+
+    <mo:momap>
+        <mo:name value="Client1" visible="true"/>
+		<mo:scale>0.02</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="-0.07" y="0.07" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.5" blue="0.5"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>halfcone-cylinder</mo:geon>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfcone</mo:geon>
+			<mo:geon>halfsphere-cube</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="withdraw" value="withdraw money from the account"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="HardClient1" visible="true"/>
+		<mo:scale>0.03</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="-0.07" y="0.07" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="1.0" green="0.8" blue="0.8"/>
+		<mo:transparent>true</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>cube</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="Client2" visible="true"/>
+		<mo:scale>0.02</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.0" y="0.07" z="-0.06"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.5" blue="0.5"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>halfcone-cylinder</mo:geon>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfcone</mo:geon>
+			<mo:geon>halfsphere-cube</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="withdraw" value="withdraw money from the account"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="HardClient2" visible="true"/>
+		<mo:scale>0.03</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.0" y="0.07" z="-0.06"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="1.0" green="0.8" blue="0.8"/>
+		<mo:transparent>true</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>cube</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="ApplicationManager" visible="true"/>
+		<mo:scale>0.015</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.03" y="-0.05" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.2" green="0.6" blue="0.2"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>halfcone-cylinder</mo:geon>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfcone</mo:geon>
+			<mo:geon>halfsphere-cube</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="withdraw" value="withdraw money from the account"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="ClientAdministrator" visible="true"/>
+		<mo:scale>0.015</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.07" y="-0.05" z="-0.01"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.4" green="0.4" blue="0.2"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>pyramid</mo:geon>
+			<mo:geon>halfcone-cylinder</mo:geon>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfcone</mo:geon>
+			<mo:geon>halfsphere-cube</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="withdraw" value="withdraw money from the account"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="PrintDriver" visible="true"/>
+		<mo:scale>0.015</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.08" y="0.07" z="-0.03"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.1" green="0.1" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+			<mo:geon>halfcone-cylinder</mo:geon>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfcone</mo:geon>
+			<mo:geon>halfsphere-cube</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="withdraw" value="withdraw money from the account"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="DAO" visible="true"/>
+		<mo:scale>0.015</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.11" y="0.08" z="-0.04"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.8" green="0.2" blue="0.6"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+			<mo:geon>halfcone-cylinder</mo:geon>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>halfcone</mo:geon>
+			<mo:geon>halfsphere-cube</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="withdraw" value="withdraw money from the account"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="Repository" visible="true"/>
+		<mo:scale>0.015</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.14" y="0.07" z="-0.03"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.6" green="0.2" blue="0.6"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+			<mo:geon>halfcone-cylinder</mo:geon>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>halfcone</mo:geon>
+			<mo:geon>halfsphere-cube</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="withdraw" value="withdraw money from the account"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="Printer1" visible="true"/>
+		<mo:scale>0.02</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.06" y="0.02" z="-0.03"/>
+        <mo:abstraction level1="true" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.5" blue="0.5"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>halfcone-cylinder</mo:geon>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfcone</mo:geon>
+			<mo:geon>halfsphere-cube</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="withdraw" value="withdraw money from the account"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="Printer2" visible="true"/>
+		<mo:scale>0.02</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.14" y="0.02" z="-0.03"/>
+        <mo:abstraction level1="true" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.5" blue="0.5"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>halfcone-cylinder</mo:geon>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfcone</mo:geon>
+			<mo:geon>halfsphere-cube</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="withdraw" value="withdraw money from the account"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="ApplicationServer" visible="true"/>
+		<mo:scale>0.04</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.05" y="-0.05" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="1.0" green="0.8" blue="0.8"/>
+		<mo:transparent>true</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>pipeline-halfsphere</mo:geon>
+			<mo:geon>pipeline-cylinder</mo:geon>
+			<mo:geon>pipeline-rectangle</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="PrintServer" visible="true"/>
+		<mo:scale>0.05</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.11" y="0.07" z="-0.03"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="1.0" green="0.8" blue="0.8"/>
+		<mo:transparent>true</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>pipeline-cylinder</mo:geon>
+			<mo:geon>pipeline-halfsphere</mo:geon>
+			<mo:geon>pipeline-rectangle</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+    <mo:momap> <!--Entre el HardClient1 y ApplicationServer-->
+        <mo:name value="ethernet" visible="true"/>
+		<mo:scale>0.15</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="1" arrow="false">
+			<mo:point x="-0.5" y="0.35" z="0.0"/>
+			<mo:point x="-0.5" y="0.0" z="0.0"/>
+			<mo:point x="0.0" y="0.0" z="0.0"/>
+			<mo:point x="0.35" y="0.0" z="0.0"/>
+			<mo:point x="0.35" y="-0.23" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+    <mo:momap> <!--Entre el HardClient2 y Ethernet-->
+        <mo:name value="ethernet" visible="true"/>
+		<mo:scale>0.15</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="1" arrow="false">
+			<mo:point x="0.0" y="0.35" z="-0.4"/>
+			<mo:point x="0.0" y="0.0" z="-0.4"/>
+			<mo:point x="0.0" y="0.0" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+    <mo:momap> <!--Entre el PrintServer y Ethernet-->
+        <mo:name value="ethernet" visible="true"/>
+		<mo:scale>0.15</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="1" arrow="false">
+			<mo:point x="0.7" y="0.35" z="-0.2"/>
+			<mo:point x="0.7" y="0.0" z="-0.2"/>
+			<mo:point x="0.7" y="0.0" z="0.0"/>
+			<mo:point x="0.35" y="0.0" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+    <mo:momap> <!--Entre el Print1 y PrintServer-->
+        <mo:name value="ethernet" visible="true"/>
+		<mo:scale>0.15</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="1" arrow="false">
+			<mo:point x="0.4" y="0.35" z="-0.2"/>
+			<mo:point x="0.4" y="0.22" z="-0.2"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+    <mo:momap> <!--Entre el Print2 y PrintServer-->
+        <mo:name value="ethernet" visible="true"/>
+		<mo:scale>0.15</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="1" arrow="false">
+			<mo:point x="0.93" y="0.35" z="-0.2"/>
+			<mo:point x="0.93" y="0.22" z="-0.2"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+</mo:visual-information>

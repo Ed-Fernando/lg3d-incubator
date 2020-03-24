@@ -1,0 +1,31 @@
+\begin{schema}{Port}
+number : \nat \\
+element: ELEMENT \\
+next : Port2
+\where
+0=0
+\end{schema}
+
+
+\begin{zed}
+init\_Port \sdef \lsch Port' \bbar number' = 0 \land next' = 0 \land element' = 0  \rsch  \end{zed}
+
+\begin{schema}{Initiate}
+\Delta Port \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST 
+\where
+next.ProcessInitiate(event,instance,inputP,outputP) 
+\end{schema}
+
+\begin{schema}{ProcessInitiate}
+\Delta Port \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST 
+\where
+element.ProcessEvent(event,instance,inputP,outputP)
+\end{schema}

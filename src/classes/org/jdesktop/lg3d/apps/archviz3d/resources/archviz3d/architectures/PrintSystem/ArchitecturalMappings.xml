@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE types SYSTEM "/home/teyseyre/WorkSpace/ReqViz3DEclipse/src/schemas/ArchitecturalMappings.xsd">
+
+<po:architectural-information xmlns:po="http://reqarch3d.org"> 
+    <po:system> Print System</po:system>
+
+    <po:map>
+        <po:component>Port</po:component>
+        <po:type>Port</po:type>
+        <po:arc-type>Port</po:arc-type>
+    </po:map>
+
+    <po:map>
+        <po:component>PrintSystem</po:component>
+        <po:type>Configuration</po:type>
+        <po:arc-type>PrintSystem</po:arc-type>
+    </po:map>
+
+    <po:map>
+        <po:component>Client</po:component>
+        <po:type>Configuration</po:type>
+        <po:arc-type>Client</po:arc-type>
+		<po:property name="Performance" value="9"/>
+		<po:property name="Reliability" value="8"/>
+		<po:property name="Reusability" value="8"/>
+		<po:property name="Modificability" value="8"/>
+    </po:map>
+
+    <po:map>
+        <po:component>PrintServer</po:component>
+        <po:type>Configuration</po:type>
+        <po:arc-type>PrintServer</po:arc-type>
+		<po:property name="Performance" value="9"/>
+		<po:property name="Reliability" value="3"/>
+		<po:property name="Reusability" value="8"/>
+    </po:map>
+
+    <po:map>
+        <po:component>ApplicationServer</po:component>
+        <po:type>Configuration</po:type>
+        <po:arc-type>ApplicationServer</po:arc-type>
+		<po:property name="Performance" value="9"/>
+		<po:property name="Reliability" value="8"/>
+		<po:property name="Modificability" value="7"/>
+    </po:map>
+
+    <po:map>
+        <po:component>RPC</po:component>
+        <po:type>Connector</po:type>
+        <po:arc-type>RPC</po:arc-type>
+    </po:map>
+
+    <po:map>
+        <po:component>FunctionCall</po:component>
+        <po:type>Connector</po:type>
+        <po:arc-type>FunctionCall</po:arc-type>
+		<po:property name="Performance" value="9"/>
+    </po:map>
+
+    <po:map>
+        <po:component>PrintRouter</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>PrintRouter</po:arc-type>
+		<po:property name="Performance" value="5"/>
+		<po:property name="Reliability" value="6"/>
+		<po:property name="Reusability" value="7"/>
+    </po:map>
+
+    <po:map>
+        <po:component>PrintManager</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>PrintManager</po:arc-type>
+    </po:map>
+
+    <po:map>
+        <po:component>PrintDriver</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>PrintDriver</po:arc-type>
+    </po:map>
+
+    <po:map>
+        <po:component>DAO</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>DAO</po:arc-type>
+		<po:property name="Performance" value="6"/>
+		<po:property name="Reliability" value="8"/>
+		<po:property name="Modificability" value="9"/>
+    </po:map>
+
+    <po:map>
+        <po:component>Repository</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>Repository</po:arc-type>
+		<po:property name="Performance" value="9"/>
+		<po:property name="Reliability" value="9"/>
+		<po:property name="Reusability" value="9"/>
+		<po:property name="Modificability" value="9"/>
+    </po:map>
+
+    <po:map>
+        <po:component>ApplicationRouter</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>ApplicationRouter</po:arc-type>
+		<po:property name="Performance" value="9"/>
+    </po:map>
+
+    <po:map>
+        <po:component>ApplicationRouterOut</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>ApplicationRouterOut</po:arc-type>
+		<po:property name="Performance" value="9"/>
+    </po:map>
+
+    <po:map>
+        <po:component>ApplicationManager</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>ApplicationManager</po:arc-type>
+		<po:property name="Reliability" value="8"/>
+		<po:property name="Modificability" value="5"/>
+    </po:map>
+
+    <po:map>
+        <po:component>ClientAdministrator</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>ClientAdministrator</po:arc-type>
+		<po:property name="Modificability" value="8"/>
+    </po:map>
+
+    <po:map>
+        <po:component>Printer</po:component>
+        <po:type>Component</po:type>
+        <po:arc-type>Printer</po:arc-type>
+		<po:property name="Modificability" value="8"/>
+    </po:map>
+
+</po:architectural-information>

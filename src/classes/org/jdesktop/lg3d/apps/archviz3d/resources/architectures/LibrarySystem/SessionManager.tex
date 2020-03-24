@@ -1,0 +1,136 @@
+\begin{zed}
+MESSAGE & \ddef & ok \\
+& \bbar & not\_valid\_connection\_or\_expired\_session \\
+& \bbar & valid\_connection\_and\_active\_session  
+\end{zed}
+
+\begin{schema}{SessionManager}
+sessionsCount : \nat \\
+sessions: \nat \cross \nat \cross \nat \\
+input:  Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port 
+\end{schema}
+
+\begin{zed}
+init\_SessionManager \sdef \lsch 
+SessionManager' \bbar 
+sessionsCount' = 1 
+\land input' = \new Port 
+\land input'.setiVar(element,This) 
+\land sessions'= \{ \} 
+\land components' = \{ \} 
+\land connectors' = \{ \} 
+\land ports' = \{ input' \} 
+\land events'= \{ listing, openSession, closeSession, timeElapsed, getDevice, checkSession \}  
+\rsch \end{zed}
+
+\begin{schema}{SessionsListing}
+\Delta SessionManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = listing \\
+report!= sessions
+\end{schema}
+
+\begin{schema} {OpenSession}
+\Delta SessionManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = openSession \\ 
+Ip = \head inputP \\
+Device = \head (\tail inputP) \\
+User = sessionsCount \\
+sessionsCount' = sessionsCount + 1 \\ 
+sessions' = sessions \uni \{ (Ip,User,Device) \} \\
+report! = ok 
+\end{schema}
+
+\begin{schema} {CloseSession}
+\Delta SessionManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = closeSession \\ 
+Ip = \head inputP \\
+Session = \{ X : \nat \bbar X \mem sessions \land \nth( X , 1 ) = Ip \} \\
+Ip1 = \nth(\head Session, 1) \\
+User1 = \nth(\head Session, 2) \\
+Device1 = \nth(\head Session, 3) \\
+sessions' = sessions \setminus \{ (Ip1,User1,Device1) \} \\
+sessionsCount' = sessionsCount - 1 \\ 
+report! = ok 
+\end{schema}
+
+\begin{schema}{CheckSessionInvalid}
+\Delta SessionManager \\ 
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = checkSession \\ 
+Ip = \head inputP \\
+Session = \{ X : \nat \bbar X \mem sessions \land \nth( X , 1 ) = Ip \} \\
+Session = \emptyset \\
+report! = not\_valid\_connection\_or\_expired\_session 
+\end{schema}
+
+\begin{schema}{CheckSessionValid}
+\Delta SessionManager \\ 
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = checkSession \\ 
+Ip = \head inputP \\
+Session = \{ X : \nat \bbar X \mem sessions \land \nth( X , 1 ) = Ip \} \\
+Session \neq \emptyset \\
+report! = valid\_connection\_and\_active\_session 
+\end{schema}
+
+\begin{schema} {SessionExpired}
+\Delta SessionManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = timeElapsed \\ 
+Ip = \head inputP \\
+Session = \{ X : \nat \bbar X \mem sessions \land \nth( X , 1 ) = Ip \} \\
+Ip1 = \nth(\head Session, 1) \\
+User1 = \nth(\head Session, 2) \\
+Device1 = \nth(\head Session, 3) \\
+sessions' = sessions \setminus \{ (Ip1,User1,Device1) \} \\
+sessionsCount' = sessionsCount - 1 \\ 
+report! = ok 
+\end{schema}
+
+\begin{schema}{GetSessionDevice}
+\Delta SessionManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = getDevice \\ 
+Ip = \head inputP \\
+Device = \{ X : \nat \bbar X \mem sessions \land \nth( X , 1 ) = Ip \} \\
+R = Device \\
+report! = R 
+\end{schema}
+
+\begin{zed} ProcessEvent \sdef SessionsListing
+\lor CheckSessionValid
+\lor CheckSessionInvalid
+\lor OpenSession
+\lor CloseSession
+\lor SessionExpired
+\lor GetSessionDevice
+\end{zed}
+

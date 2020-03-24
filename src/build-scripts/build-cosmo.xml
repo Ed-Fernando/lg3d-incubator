@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="clock" default="all" basedir=".">
+    <target name="compile" description="Compile CosmoSchedularD">
+        <javac debug="true"
+                deprecation="false"
+                destdir="${build.classes.dir}"
+                nowarn="true"
+                source="1.5"
+                sourcepath=""
+                target="1.5">
+            <classpath>
+                <pathelement location="${classpath}"/>
+                <pathelement path="${j3d.classpath}"/>
+                <fileset dir="../lg3d-core/ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+                <fileset dir="ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+            </classpath>
+            <src path="${javasrc.dir}"/>
+            <include name="nu/**"/>
+
+        </javac>
+    </target>
+
+    <target name="extras" description="Extra steps for CosmoSchedularD build">
+        <copy todir="${build.classes.dir}/resources/images/icon"
+    	    file="${javasrc.dir}/nu/koidelab/resources/cosmo/images/icon/csdicon.png"/>
+        <copy todir="${build.classes.dir}/resources/cosmo">
+          <fileset dir="${javasrc.dir}/nu/koidelab/resources/cosmo" />
+        </copy>
+    </target>
+
+    <target name="jar" depends="compile,extras" description="Jar up the CosmoSchedularD app">
+        <jar compress="${jar.compress}" jarfile="${build.app.dir}/cosmo.jar">
+             <manifest>
+                <attribute name="Config-File" value="cosmo.lgcfg"/>
+             </manifest>
+             <fileset dir="${build.classes.dir}/">
+                <include name="nu/**"/>
+                <include name="resources/images/icon/csdicon.png"/>
+                <include name="resources/cosmo/**"/>
+             </fileset>
+             <fileset dir="${src.dir}/config">
+                <include name="cosmo.lgcfg"/>
+             </fileset>
+        </jar>
+    </target>
+</project>
+

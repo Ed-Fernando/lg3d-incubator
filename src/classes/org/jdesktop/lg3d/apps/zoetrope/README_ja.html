@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Zoetrope</title>
+</head>
+
+<body>
+<h1>Zoetrope - Image Viewer for LG3D</h1>
+<h3>実行方法</h3>
+<h4>Linux の場合</h4>
+<ol>
+  <li><span style="font-family: mono">build.xml, zoetrope.sh</span> を <span style="font-family: mono">lg3d-incubator</span> ディレクトリにコピーする。</li>
+  <li><span style="font-family: mono">lg3d-incubator</span> ディレクトリに移動</li>
+  <li>ant を実行する<pre>&gt; ant sample-jar</pre>
+  </li>
+  <li>LG3D がインストールされたディレクトリが <span style="font-family: mono">../lg3d</span> でない場合、<span style="font-family: mono">zoetrope.sh</span> の LG3DHOME を編集して、正しいディレクトリを指すようにする</li>
+  <li><span style="font-family: mono">zoetrope.sh</span> を実行</li>
+</ol>
+<h4>Windows の場合</h4>
+<ol>
+  <li><span style="font-family: mono">build.xml, zoetrope.bat</span> を <span style="font-family: mono">lg3d-incubator</span> ディレクトリにコピーする。</li>
+  <li><span style="font-family: mono">lg3d-incubator</span> ディレクトリに移動</li>
+  <li>ant を実行する <pre>ant sample-jar</pre></li>
+  <li>LG3D がインストールされたディレクトリが <span style="font-family: mono">..\lg3d</span> でない場合、<span style="font-family: mono">zoetrope.bat</span> の LG3DHOME を編集して、正しいディレクトリを指すようにする</li>
+  <li><span style="font-family: mono">zoetrope.bat</span> を実行</li>
+</ol>
+<p>Zoetrope はクラスパス中にある <span style="font-family: mono">images.txt</span> ファイルを読み込んで、表示するイメージを決定します。イメージは JAR ファイルに含まれるものでも、通常のファイルでもかまわないません。</p>
+<p>サンプルの <span style="font-family: mono">images.txt</span> は <span style="font-family: mono">org/jdesktop/lg3d/apps/zoetrope/resources/images/sample</span> ディレクトリにあり、このディレクトリのイメージを表示するようになっています。</p>
+<p><span style="font-family: mono">lg3d-incubator</span> ディレクトリに <span style="font-family: mono">images.txt</span> が存在すれば、それを優先して読み込むので任意のイメージファイルを読み込むことが可能です。<span style="font-family: mono">images.txt</span> は単に画像ファイルを 1 行に 1 つづつ表記しただけです。</p>
+<p>また、<span style="font-family: mono">zoetrope.sh/zoetrope.bat</span> の引数に読み込む画像ファイルの一覧を表したファイルを指定することもできます。</p>
+<p>&nbsp;</p>
+</body>
+</html>

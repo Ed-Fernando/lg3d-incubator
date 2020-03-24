@@ -1,0 +1,57 @@
+The Luncher objects is a simulator of the GlassyTaskbar object and is used
+to demonstrate how a Star Menu system could be integrated in lg3d.
+
+I am trying two ideas: The first idea is that a menu is a 3 dimension stack
+of cards (GlassyPanel objects) you can chouse from. You activate the menu by
+clicking on the Menu icon and deactivate it with a second click. The stack
+can be turned by using button 3 on the mouse and each card can be moved by
+dragging it, using mouse button1. You chouse a new menu by clicking on a card,
+the result is that the icons on the taskbar will change to present the menu.
+The Luncher1 object simulate this.
+The second idea, is a Cube Menu as suggested on the 3DStartMenu Wiki page for 
+the lg3d project. The menu is presented by a cube where each side is a menu
+point. You can turn the cube by using mouse button 3.
+The Luncher2 object simulate this menu. I have also tried to integreate the
+Cube menu in the task bar, see below.
+
+To see how it functions you have to copy the MenuConfigFile.xml file to the
+etc/lg3d directory and the GlassyCardIcon.png file to the resources/images/icon
+directory. To actual lunch the Luncher1 or Luncher2 you have to change the
+GlassyTaskbar, see the source around line 90.
+
+File and object explanation:
+
+MyTextPanel:
+ This object is a copy of the TextPanel, with a more dark text color. It would
+ be nice if this was a property of the TextPanel together with the text font.
+
+MouseDraggedButtonEventAdapter:
+ This object does almost the same thing as the MouseDraggedEventAdapter, only
+ it is mouse button sensitive. These two objects could easy be merged.
+
+GlassyCardMenu:
+ This object is the actual Start Menu using the card stack idea.
+
+GlassyCubeMenu:
+ This object is the actual Start Menu using the cube idea.
+
+MenuConfigFileReader:
+ This object can read a XML configuration file for the Menu object.
+
+GlassyCardMenuHolder:
+ The parent node of the GlassyCardMenu object should implement the
+ GlassyCardMenuHolder interface so the GlassyCardMenu can change its icons.
+
+GlassyCardIcon.png
+ Is an icon used by the GlassyCardMenu object. It should exits in the
+ resources/images/icon directory.
+
+MenuConfigFile.xml
+ Is a XML configuration file for the GlassyCardMenu. The file is used to define
+ shortcuts and belonging icons for the GlassyCardMenu. Take a look it is not
+ difficult to understand.
+
+GlassyTaskbar:
+ Is a copy of the org.jdesktop.lg3d.scenemanager.utils.taskbar.GlassyTaskbar
+ object where the GlassyCubeMenu is integrated. Copy it over the existing java
+ file and the Taskbar has a menu system read from a configuration file.

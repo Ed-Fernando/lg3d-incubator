@@ -1,0 +1,142 @@
+\begin{zed}
+MESSAGE & \ddef & same\_account\_for\_src\_and\_dst \\ 
+& \bbar & not\_enough\_money\_in\_src \\ 
+& \bbar & ok 
+\end{zed}
+
+\begin{zed}
+MESSAGEINIT & \ddef & not\_user \\
+& \bbar & ok 
+\end{zed}
+
+\begin{zed}
+TRANSACTION & \ddef & deposit \\ 
+& \bbar &  withdraw \\ 
+& \bbar & tranfer 
+\end{zed}
+
+
+\begin{schema}{ATM}
+callerB:  Port \\
+callerS: Port \\
+user: \nat \\
+components: \pset Element \\
+connectors: \pset Element \\
+ports: \pset Port 
+\end{schema}
+
+
+\begin{zed}
+init\_ATM \sdef \lsch ATM' \bbar user'=0 \land callerB' = \new Port \land callerB'.setiVar(element,This) \land callerS' = \new Port \land callerS'.setiVar(element,This)  \land components' = \{ \} \land connectors' = \{ \} \land ports' = \{ callerB' , callerS'\}  \rsch  \end{zed}
+
+
+\begin{schema}{Connect}
+\Delta ATM 
+\where callerB.Initiate(lookUp,This, bankserver ,Res) \\
+Irpc = \new RPC \\
+callerS.setiVar(next,Irpc.caller) \\
+Irpc.caller.setiVar(next,callerS) \\
+Irpc.called.setiVar(next,Res.definer) 
+\end{schema}
+
+\begin{schema}{SetUserOk}
+\Delta ATM \\ 
+id? : \nat  \\ 
+password? : \nat  \\ 
+report! : MESSAGEINIT 
+\where
+SE = \lseq id password  \rseq \\
+callerS.Initiate(validateUser,This,  SE  , R) \\
+R = ok \\
+user' = id? \\
+report! = ok 
+\end{schema}
+
+\begin{schema}{SetUserBad}
+\Xi ATM  \\ 
+id? : \nat  \\ 
+password? : \nat  \\ 
+report! : MESSAGEINIT 
+\where
+SE = \lseq id password  \rseq \\
+callerS.Initiate(validateUser,This,  SE  , R) \\
+R = not\_user \\
+report! = R 
+\end{schema}
+
+\begin{schema}{getUser}
+\Xi ATM  \\ 
+current! : \nat  
+\where
+current! = user
+\end{schema}
+
+\begin{zed}
+SetUser \sdef  SetUserBad \lor   SetUserOk
+\end{zed}
+
+
+\begin{schema}{EndUser}
+\Delta ATM \\ 
+report! : MESSAGEINIT 
+\where
+user \neq 0 \\
+user' = 0 \\
+report! = ok 
+\end{schema}
+
+\begin{schema}{Balance}
+\Xi ATM \\ 
+src : \nat \\ 
+amount! : \nat   
+\where
+callerS.Initiate(balance,This,  src  , R) \\
+amount! = R 
+\end{schema}
+
+\begin{schema}{Transfer}
+\Delta ATM \\ 
+amount? : \nat  \\ 
+src? , dst? : \nat \\
+report! : MESSAGE 
+\where
+SE = \lseq amount src dst  \rseq \\
+callerS.Initiate(transfer,This,  SE  , R) \\
+report! = R 
+\end{schema}
+
+
+\begin{schema}{Credit}
+\Delta ATM \\ 
+amount? : \nat  \\ 
+dst? : \nat \\
+report! : MESSAGE 
+\where
+SE = \lseq amount dst  \rseq \\
+callerS.Initiate(credit,This,  SE  , R) \\
+report! = R 
+\end{schema}
+
+
+\begin{schema}{Widthdraw}
+\Delta ATM \\ 
+amount? : \nat  \\ 
+src? : \nat \\
+report! : MESSAGE 
+\where
+SE = \lseq amount src  \rseq \\
+callerS.Initiate(widthdraw,This,  SE  , R) \\
+report! = R 
+\end{schema}
+
+\begin{schema}{Listing}
+\Xi ATM \\ 
+src : \nat \\ 
+amount! : \nat   
+\where
+callerS.Initiate(listing,This,  src  , R) \\
+amount! = R 
+\end{schema}
+
+
+

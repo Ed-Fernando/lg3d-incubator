@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="blackgoat" default="compile" basedir=".">
+
+    <target name="compile" description="Compile BlackGoat">
+        <javac debug="true"
+                deprecation="false"
+                destdir="${build.classes.dir}"
+                nowarn="true"
+                source="1.5"
+                sourcepath=""
+                target="1.5">
+            <classpath>
+                <pathelement location="${classpath}"/>
+                <pathelement path="${j3d.classpath}"/>
+                <fileset dir="../lg3d-core/ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+                <pathelement location="ext/mail.jar"/>
+            </classpath>
+            <src path="${javasrc.dir}"/>
+            <include name="org/jdesktop/lg3d/apps/blackgoat/**"/>
+
+        </javac>
+    </target>
+
+    <target name="extras" description="Extra steps for BlackGoat build">
+	    	<copy todir="${build.classes.dir}/resources/images/blackgoat/icon" file="${javasrc.dir}/org/jdesktop/lg3d/apps/blackgoat/resources/images/BlackGoatIcon.png"/>
+	  	 	<copy todir="${build.classes.dir}/resources/images/blackgoat/util">
+	  	    	<fileset dir="${javasrc.dir}/org/jdesktop/lg3d/apps/blackgoat/resources/images"/>
+	  	 	</copy>
+    </target>
+
+    <target name="jar" depends="compile,extras" description="Jar up blackgoat app">
+        <jar compress="${jar.compress}" jarfile="${build.app.dir}/blackgoat.jar">
+             <manifest>
+                <attribute name="Config-File" value="blackgoat.lgcfg"/>
+             </manifest>
+             <fileset dir="${build.classes.dir}/">
+                <include name="org/jdesktop/lg3d/apps/blackgoat/**"/>
+                <include name="resources/images/blackgoat/**"/>
+             </fileset>
+             <fileset dir="${src.dir}/config">
+                <include name="blackgoat.lgcfg"/>
+             </fileset>
+        </jar>
+    </target>
+</project>

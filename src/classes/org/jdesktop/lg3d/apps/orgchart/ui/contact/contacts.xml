@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd">
+<preferences EXTERNAL_XML_VERSION="1.0">
+    <!-- This is a regular Java preferences file that is imported. 
+         The default source code manually imports the preferences each time
+         Contact3D is run to load the latest information. However, you can
+         modify the code to not do that.
+         Each node under "contacts" contains definition for a contact.
+         The attribute/key names should be relatively self-explanatory.
+         Only a fraction of the attributes are currently used.
+         You can add nodes or modify them to obtain a different set of
+         contacts.
+    -->
+    <root type="user">
+        <map/>
+        <node name="contacts">
+            <map/>
+            <node name="Hideya Kawahara">
+                <map>
+                    <entry key="calendar" value="hideya"/>
+                    <entry key="cn" value="Hideya Kawahara"/>
+                    <entry key="telephoneNumber" value="x17465/+1 408 276 7465"/>
+                    <entry key="employeeNumber" value="73582"/>
+                    <entry key="givenName" value="Hideya"/>
+                    <entry key="l" value="SANTA CLARA, UNITED STATES"/>
+                    <entry key="locale" value="en_US"/>
+                    <entry key="email" value="Hideya.Kawahara@Sun.COM"/>
+                    <entry key="manager" value="Juan Soto"/>
+                    <entry key="photoURL" value="https://lg3d-core.dev.java.net/images/contributors/hideya.jpg"/>
+                    <entry key="screenName" value="hideya@jaba.red.iplanet.com"/>
+                    <entry key="sn" value="Kawahara"/>
+                    <entry key="timezone" value="US/Pacific"/>
+                    <entry key="uid" value="hideya"/>
+                    <entry key="url" value="https://lg3d-core.dev.java.net/lg3d-contributorspotlight.html"/>
+                </map>
+            </node>
+            <node name="Paul Byrne">
+                <map>
+                    <entry key="calendar" value="paulby"/>
+                    <entry key="cn" value="Paul Byrne"/>
+                    <entry key="telephoneNumber" value="x15618/+1 408 276 5618"/>
+                    <entry key="employeeNumber" value="25417"/>
+                    <entry key="givenName" value="Paul"/>
+                    <entry key="l" value="SANTA CLARA, UNITED STATES"/>
+                    <entry key="locale" value="en_US"/>
+                    <entry key="email" value="Paul.Byrne@Sun.COM"/>
+                    <entry key="manager" value="Juan Soto"/>
+                    <entry key="photoURL" value="https://lg3d-core.dev.java.net/images/contributors/paulby.jpg"/>
+                    <entry key="screenName" value="paulby@jaba.red.iplanet.com"/>
+                    <entry key="sn" value="Byrne"/>
+                    <entry key="timezone" value="US/Pacific"/>
+                    <entry key="uid" value="paulby"/>
+                    <entry key="url" value="https://lg3d-core.dev.java.net/lg3d-contributorspotlight.html"/>
+                </map>
+            </node>
+            <node name="Deron Johnson">
+                <map>
+                    <entry key="calendar" value="deronj"/>
+                    <entry key="cn" value="Deron Johnson"/>
+                    <entry key="telephoneNumber" value="x49276/+1 510 996-1790"/>
+                    <entry key="employeeNumber" value="4236"/>
+                    <entry key="givenName" value="Deron"/>
+                    <entry key="l" value="NEWARK, UNITED STATES"/>
+                    <entry key="locale" value="en_CA"/>
+                    <entry key="manager" value="Juan Soto"/>
+                    <entry key="email" value="Deron.Johnson@Sun.COM"/>
+                    <entry key="photoURL" value="https://lg3d-core.dev.java.net/images/contributors/deronj.jpg"/>
+                    <entry key="screenName" value="deronj@jaba.red.iplanet.com"/>
+                    <entry key="sn" value="Johnson"/>
+                    <entry key="timezone" value="US/Pacific"/>
+                    <entry key="uid" value="deronj"/>
+                    <entry key="url" value="https://lg3d-core.dev.java.net/lg3d-contributorspotlight.html"/>
+                </map>
+            </node>
+            <node name="Duke">
+                <map>
+                    <entry key="calendar" value="duke"/>
+                    <entry key="cn" value="Duke"/>
+                    <entry key="employeeNumber" value="1"/>
+                    <entry key="givenName" value="Duke"/>
+                    <entry key="l" value="LALALAND"/>
+                    <entry key="locale" value="en_CA"/>
+                    <entry key="photoURL" value="https://lg3d-incubator.dev.java.net/images/duke.png"/>
+                    <entry key="screenName" value="duke@jaba.red.iplanet.com"/>
+                    <entry key="sn" value="Duke"/>
+                    <entry key="timezone" value="US/Pacific"/>
+                    <entry key="uid" value="duke"/>
+                    <entry key="url" value="https://lg3d-core.dev.java.net/lg3d-contributorspotlight.html"/>
+                </map>
+            </node>
+        </node>
+    </root>
+</preferences>

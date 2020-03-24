@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.5.0" class="java.beans.XMLDecoder"> 
+ <object class="org.jdesktop.lg3d.scenemanager.utils.taskbar.TaskbarItemConfig"> 
+  <void property="itemClass"> 
+   <string>org.jdesktop.lg3d.apps.luncher.GlassyCubeTaskbarItem</string> 
+  </void> 
+  <void property="ignoreConfig"> 
+   <boolean>true</boolean>
+  </void> 
+ </object> 
+</java> 

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.5.0" class="java.beans.XMLDecoder"> 
+ <!-- Taskbar item -->
+ <!--
+ <object class="org.jdesktop.lg3d.scenemanager.config.ApplicationDescription"> 
+  <void property="exec"> 
+   <string>java org.jdesktop.lg3d.apps.browser.Browser3DApp</string> 
+  </void> 
+  <void property="iconFilename"> 
+   <string>resources/images/icon/browser.png</string> 
+  </void> 
+  <void property="name"> 
+   <string>Browser</string> 
+  </void> 
+ </object> 
+ -->
+<!-- Start Menu item -->
+ <object class="org.jdesktop.lg3d.scenemanager.utils.startmenu.StartMenuItemConfig"> 
+  <void property="command"> 
+   <string>java org.jdesktop.lg3d.apps.browser.Browser3DApp</string> 
+  </void> 
+  <void property="desc"> 
+   <string>3D Browser</string> 
+  </void> 
+  <void property="displayResourceType">
+   <string>ICON</string>
+  </void> 
+  <void property="displayResourceUrlName">
+   <string>resource:///resources/images/icon/browser.png</string>
+  </void>
+  <void property="menuGroup"> 
+   <string>Early Prototypes</string> 
+  </void> 
+  <void property="name"> 
+   <string>3D Browser</string> 
+  </void> 
+  <void property="classpathJars">
+    <string>browser.jar</string>
+  </void>
+ </object> 
+</java>
+ 

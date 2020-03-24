@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<uc:use-case-information xmlns:uc="http://reqarch3d.org">
+
+    <uc:ucmap>
+        <uc:name>Admin Login</uc:name>
+        <uc:component-list>
+			<uc:component>Admin</uc:component>
+			<uc:component>RPC_11</uc:component>
+			<uc:component>RPC_12</uc:component>
+			<uc:component>LibraryServer</uc:component>
+			<uc:component>WebContainer</uc:component>
+			<uc:component>Firewall</uc:component>
+			<uc:component>SessionManager</uc:component>
+			<uc:component>WebContainer</uc:component>
+			<uc:component>LibraryServer</uc:component>
+        </uc:component-list>
+    </uc:ucmap>
+
+    <uc:ucmap>
+        <uc:name>Add Member</uc:name>
+        <uc:component-list>
+			<uc:component>Member</uc:component>
+			<uc:component>RPC_21</uc:component>
+			<uc:component>RPC_22</uc:component>
+			<uc:component>RPC_23</uc:component>
+			<uc:component>LibraryServer</uc:component>
+			<uc:component>WebContainer</uc:component>
+			<uc:component>Firewall</uc:component>
+			<uc:component>SessionManager</uc:component>
+			<uc:component>FC_11</uc:component>
+			<uc:component>FC_13</uc:component>
+			<uc:component>DAO</uc:component>
+			<uc:component>FC_21</uc:component>
+			<uc:component>FC_23</uc:component>
+			<uc:component>DB</uc:component>
+			<uc:component>WebContainer</uc:component>
+			<uc:component>LibraryServer</uc:component>
+		</uc:component-list>
+    </uc:ucmap>
+
+</uc:use-case-information>

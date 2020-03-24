@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="luncher" default="all" basedir=".">
+    <target name="compile" description="Compile Luncher">
+        <javac debug="true"
+                deprecation="false"
+                destdir="${build.classes.dir}"
+                nowarn="true"
+                source="1.5"
+                sourcepath=""
+                target="1.5">
+            <classpath>
+                <pathelement location="${classpath}"/>
+                <pathelement path="${j3d.classpath}"/>
+                <fileset dir="../lg3d-core/ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+            </classpath>
+            <src path="${javasrc.dir}"/>
+            <include name="org/jdesktop/lg3d/apps/luncher/**"/>
+
+        </javac>
+    </target>
+
+    <target name="extras" description="Extra steps for luncher build">
+        <copy todir="${build.classes.dir}/resources/images/icon" file="src/classes/org/jdesktop/lg3d/apps/luncher/GlassyCardIcon.png"/>
+        <copy todir="${build.classes.dir}/etc/lg3d" file="src/classes/org/jdesktop/lg3d/apps/luncher/MenuConfigFile.xml"/>
+    </target>
+
+    <target name="jar" depends="compile,extras" description="Jar up the luncher app">
+        <jar compress="${jar.compress}" jarfile="${build.app.dir}/luncher.jar">
+             <manifest>
+                <attribute name="Config-File" value="luncher.lgcfg"/>
+             </manifest>
+             <fileset dir="${build.classes.dir}/">
+                <include name="org/jdesktop/lg3d/apps/luncher/**"/>
+                <include name="resources/images/icon/GlassyCardIcon.png"/>
+                <include name="etc/lg3d/MenuConfigFile.xml"/>
+             </fileset>
+             <fileset dir="${src.dir}/config">
+                <include name="luncher.lgcfg"/>
+             </fileset>
+        </jar>
+    </target>
+</project>

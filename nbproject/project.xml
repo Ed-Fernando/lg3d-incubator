@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.ant.freeform</type>
+    <configuration>
+        <general-data xmlns="http://www.netbeans.org/ns/freeform-project/1">
+            <!--Do not use Project Properties customizer when editing this file manually.-->
+            <name>lg3d-incubator</name>
+            <properties/>
+            <folders>
+                <source-folder>
+                    <label>src/classes</label>
+                    <type>java</type>
+                    <location>src/classes</location>
+                </source-folder>
+            </folders>
+            <ide-actions>
+                <action name="build">
+                    <target>compile</target>
+                </action>
+                <action name="clean">
+                    <target>clean</target>
+                </action>
+                <action name="javadoc">
+                    <target>javadoc</target>
+                </action>
+                <action name="rebuild">
+                    <target>clean</target>
+                    <target>compile</target>
+                </action>
+            </ide-actions>
+            <export>
+                <type>jar</type>
+                <location>build/lib/lg3d-backgrounds.jar</location>
+                <build-target>compile</build-target>
+            </export>
+            <export>
+                <type>jar</type>
+                <location>build/lib/lg3d-incubator.jar</location>
+                <build-target>compile</build-target>
+            </export>
+            <view>
+                <items>
+                    <source-folder style="packages">
+                        <label>src/classes</label>
+                        <location>src/classes</location>
+                    </source-folder>
+                    <source-file>
+                        <location>build.xml</location>
+                    </source-file>
+                </items>
+                <context-menu>
+                    <ide-action name="build"/>
+                    <ide-action name="clean"/>
+                    <ide-action name="javadoc"/>
+                    <ide-action name="rebuild"/>
+                </context-menu>
+            </view>
+            <subprojects/>
+        </general-data>
+        <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/1">
+            <compilation-unit>
+                <package-root>src/classes</package-root>
+                <classpath mode="compile">../lg3d-core/build/current/debug/classes:../lg3d-demo-apps/build/current/debug/classes:build/current/debug/classes:../lg3d-awt/build/current/debug/classes:../lg3d-wonderland/build/current/debug/classes:../lg3d-wonderland/ext/linux/jars/j3dcore.jar:../lg3d-wonderland/ext/linux/jars/j3dutils.jar:../lg3d-wonderland/ext/linux/jars/vecmath.jar:../lg3d-wonderland/ext/linux/jars/jmf.jar:../lg3d-wonderland/ext/linux/jars/mediaplayer.jar:../lg3d-wonderland/ext/linux/jars/multiplayer.jar:../lg3d-wonderland/ext/linux/jars/fobs4jmf.jar:../lg3d-wonderland/ext/linux/jars/joal.jar:../lg3d-wonderland/ext/linux/jars/gluegen-rt.jar:../lg3d-wonderland/ext/linux/jars/jinput.jar:../lg3d-wonderland/ext/linux/jars/jinput-test.jar:../lg3d-wonderland/ext/linux/jars/jai_codec.jar:../lg3d-wonderland/ext/linux/jars/jai_core.jar:../lg3d-wonderland/ext/linux/jars/mlibwrapper_jai.jar</classpath>
+                <built-to>build/lib/lg3d-backgrounds.jar</built-to>
+                <built-to>build/lib/lg3d-incubator.jar</built-to>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+        </java-data>
+    </configuration>
+</project>

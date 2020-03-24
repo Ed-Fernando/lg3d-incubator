@@ -1,0 +1,12 @@
+<Background>
+<Name>Yellow Dahlia</Name>
+<Thumbnail>resources/Backgrounds/YellowDahlia/thumb.jpg</Thumbnail>
+<Author>Nathan Roarty of Sun Microsystems</Author>
+<Date>11-03-2005</Date>
+<Description>Yellow Dahlia</Description>
+<BGType>Simple Background</BGType>
+
+	<Image>resources/Backgrounds/YellowDahlia/YellowDahlia.jpg</Image>
+	
+
+</Background>

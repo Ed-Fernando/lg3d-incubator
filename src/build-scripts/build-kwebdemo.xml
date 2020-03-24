@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="kwebdemo" default="all" basedir=".">
+    <target name="compile" description="Compile KWebDemo">
+        <javac debug="true"
+                deprecation="false"
+                destdir="${build.classes.dir}"
+                nowarn="true"
+                source="1.5"
+                sourcepath=""
+                target="1.5">
+            <classpath>
+                <pathelement location="${classpath}"/>
+                <pathelement path="${j3d.classpath}"/>
+                <fileset dir="../lg3d-core/ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+            </classpath>
+            <src path="${javasrc.dir}"/>
+            <include name="org/jdesktop/lg3d/apps/kwebdemo1/**"/>
+
+        </javac>
+    </target>
+
+    <target name="extras" description="Extra steps for kweb demo 1 build">
+        <copy todir="${build.classes.dir}/resources/images/icon"
+              file="${javasrc.dir}/org/jdesktop/lg3d/apps/kwebdemo1/resources/images/icon/K1.png"/>
+        <copy todir="${build.classes.dir}/org/jdesktop/lg3d/apps/kwebdemo1/resources">
+          <fileset dir="${javasrc.dir}/org/jdesktop/lg3d/apps/kwebdemo1/resources" />
+        </copy>
+    </target>
+
+    <target name="jar" depends="compile,extras" description="Jar up the kweb demo app">
+        <jar compress="${jar.compress}" jarfile="${build.app.dir}/kwebdemo1.jar">
+             <manifest>
+                <attribute name="Config-File" value="kwebdemo1.lgcfg"/>
+             </manifest>
+             <fileset dir="${build.classes.dir}/">
+                <include name="org/jdesktop/lg3d/apps/kwebdemo1/**"/>
+                <include name="resources/images/icon/K1.png"/>
+             </fileset>
+             <fileset dir="${src.dir}/config">
+                <include name="kwebdemo1.lgcfg"/>
+             </fileset>
+        </jar>
+    </target>
+</project>

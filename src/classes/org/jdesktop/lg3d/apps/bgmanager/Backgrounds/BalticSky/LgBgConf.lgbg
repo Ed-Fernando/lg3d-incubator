@@ -1,0 +1,12 @@
+<Background>
+<Name>Baltic Sky</Name>
+<Thumbnail>resources/Backgrounds/BalticSky/thumb.jpg</Thumbnail>
+<Author>Radek Kierner</Author>
+<Date>11-03-2005</Date>
+<Description>Baltic Sky</Description>
+<BGType>Simple Background</BGType>
+
+	<Image>resources/Backgrounds/BalticSky/balticsky.jpg</Image>
+	
+
+</Background>

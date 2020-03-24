@@ -1,0 +1,7 @@
+if you have a webcam try 
+./runtutorial DemoJMFJ3D -m "v4l:0"
+or you can specify some file
+./runtutorial DemoJMFJ3D -m "file:/home/sat1196/Desktop/GO.avi"
+You must have jmf in your classpath, to run the code or you can edit runtutorial and put the location of your jmf.jar. To use the webcam capture you need to have the linux (or windows vfw: ) performance pack
+also edit compile.sh to point to the right files.
+That's it, have fun!

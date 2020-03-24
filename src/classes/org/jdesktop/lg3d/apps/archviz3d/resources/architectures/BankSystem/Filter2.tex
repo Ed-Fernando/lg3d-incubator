@@ -1,0 +1,25 @@
+\begin{schema}{Filter2}
+input:  Port \\
+output: Port \\
+last: \nat \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port 
+\end{schema}
+
+
+\begin{zed}
+init\_Filter2 \sdef \lsch Filter2' \bbar last' = 0 \land input' = \new Port \land input'.setiVar(element,This) \land output' = \new Port \land output'.setiVar(element,This) \land  components' = \{ \} \land  connectors' = \{ \} \land events'= \{ in \}  \land ports' = \{ input', output'   \} \rsch  \end{zed}
+
+
+\begin{schema}{ProcessEvent}
+\Delta Filter2 \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST 
+\where event = in \\
+outputP = \sort( inputP , 3 ) \\
+last' = inputP
+\end{schema}

@@ -1,0 +1,308 @@
+\begin{zed}
+MESSAGE & \ddef & printing\_finished \\
+& \bbar & printing\_error \\
+& \bbar & printing\_abort \\
+& \bbar & printing\_assigned \\
+& \bbar & printing\_unassigned \\
+& \bbar & printer\_available \\
+& \bbar & printer\_non\_available \\
+& \bbar & printer\_occupied \\
+& \bbar & add\_job\_printing\_queue \\
+& \bbar & delete\_job\_printing\_queue \\
+& \bbar & printer\_exist \\
+& \bbar & printer\_not\_exist \\
+& \bbar & add\_printer\_ok \\
+& \bbar & delete\_printer\_ok \\
+& \bbar & printing\_finished\_in\_printer1 \\
+& \bbar & printing\_finished\_in\_printer2
+\end{zed}
+
+\begin{schema}{PrintDriver}
+caller:  Port \\
+called:  Port \\
+calledP1: Port \\
+calledP2: Port \\
+printingQueue: \nat \cross \nat \cross nat \\
+currentPrinting: \nat \cross \nat \cross nat \\
+components: \pset Element \\
+connectors: \pset Element \\
+ports: \pset Port
+\end{schema}
+
+
+\begin{zed}
+init\_PrintDriver \sdef \lsch PrintDriver'
+                  \bbar caller' = \new Port
+                  \land caller'.setiVar(element,This)
+                  \land called' = \new Port
+                  \land called'.setiVar(element,This)
+                  \land calledP1' = \new Port
+                  \land calledP1'.setiVar(element,This)
+                  \land calledP2' = \new Port
+                  \land calledP2'.setiVar(element,This)
+                  \land printingQueue' = \{ (2,2,job2) \}
+                  \land currentPrinting' = \{ (2,1,job1) \}
+                  \land components' = \{ \}
+                  \land connectors' = \{ \}
+                  \land ports' = \{ caller', called', calledP1', calledP2' \}  \rsch
+                  \end{zed}
+
+
+\begin{schema}{ListPrinters}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = listPrinters \\
+called.Initiate(listPrinters,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{VerifyPrinter}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = verifyPrinter \\
+Printer = \head inputP \\
+SE = \lseq Printer \rseq \\
+called.Initiate(verifyPrinter,This,SE,outputP)
+\end{schema}
+
+\begin{schema}{PrinterStateOk}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = printerState \\
+Printer = \head inputP \\
+SE = \lseq Printer \rseq \\
+called.Initiate(verifyPrinter,This,SE,R) \\
+R = printer\_exist \\
+called.Initiate(printerState,This,SE,outputP)
+\end{schema}
+
+\begin{schema}{PrinterStateFailed}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = printerState \\
+Printer = \head inputP \\
+SE = \lseq Printer \rseq \\
+called.Initiate(verifyPrinter,This,SE,R) \\
+R = printer\_not\_exist \\
+outputP = R
+\end{schema}
+
+\begin{schema}{FirstPrinterAvailable}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = firstPrinterAvailable \\
+called.Initiate(firstPrinterAvailable,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{FirstPrinterOccupied}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = firstPrinterOccupied \\
+called.Initiate(firstPrinterOccupied,This,inputP,outputP)
+\end{schema}
+
+
+\begin{schema}{AddPrinterOk}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = addPrinter \\
+Printer = \head inputP \\
+SE = \lseq Printer \rseq \\
+called.Initiate(verifyPrinter,This,SE,V) \\
+V = printer\_not\_exist \\
+called.Initiate(addPrinter,This,inputP,P) \\
+P = add\_printer\_ok \\
+report! = P
+\end{schema}
+
+\begin{schema}{AddPrinterFailed}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = addPrinter \\
+Printer = \head inputP \\
+SE = \lseq Printer \rseq \\
+called.Initiate(verifyPrinter,This,SE,V) \\
+V = printer\_exist \\
+report! = V
+\end{schema}
+
+
+\begin{schema}{DeletePrinterOk}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = deletePrinter \\
+Printer = \head inputP \\
+SE = \lseq Printer \rseq \\
+called.Initiate(verifyPrinter,This,SE,V) \\
+V = printer\_exist \\
+called.Initiate(deletePrinter,This,inputP,P) \\
+P = delete\_printer\_ok \\
+report! = P
+\end{schema}
+
+\begin{schema}{DeletePrinterFailed}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = deletePrinter \\
+Printer = \head inputP \\
+SE = \lseq Printer \rseq \\
+called.Initiate(verifyPrinter,This,SE,V) \\
+V = printer\_not\_exist \\
+report! = V
+\end{schema}
+
+\begin{schema}{AddCurrentPrinting}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = addCurrentPrinting \\
+Printer = \head inputP \\
+User = \head (\tail inputP) \\
+Job = \head (\tail (\tail inputP)) \\
+currentPrinting' = currentPrinting \uni \{ (Printer,User,Job) \} \\
+report! = printing\_assigned
+\end{schema}
+
+\begin{schema}{DeleteCurrentPrinting}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = deleteCurrentPrinting \\
+Printer = \head inputP \\
+User = \head (\tail inputP) \\
+Job = \head (\tail (\tail inputP)) \\
+currentPrinting' = currentPrinting \setminus \{ (Printer,User,Job) \} \\
+report! = printing\_unassigned
+\end{schema}
+
+\begin{schema}{AddJobPrintingQueue}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = addJobPrintingQueue \\
+Printer = \head inputP \\
+User = \head (\tail inputP) \\
+Job = \head (\tail (\tail inputP)) \\
+printingQueue' = printingQueue \uni \{ (Printer,User,Job) \} \\
+report! = add\_job\_printing\_queue
+\end{schema}
+
+\begin{schema}{DeleteJobPrintingQueue}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = deleteJobPrintingQueue \\
+Printer = \head inputP \\
+User = \head (\tail inputP) \\
+Job = \head (\tail (\tail inputP)) \\
+printingQueue' = printingQueue \setminus \{ (Printer,User,Job) \} \\
+report! = delete\_job\_printing\_queue
+\end{schema}
+
+\begin{schema}{ListCurrentPrinting}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = listCurrentPrinting \\
+report!= currentPrinting
+\end{schema}
+
+\begin{schema}{ListPrintingQueue}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = listPrintingQueue \\
+report!= printingQueue
+\end{schema}
+
+
+\begin{schema}{JobToPrinterPrinter1}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = jobToPrinter \\
+\nth( inputP , 1 ) = 1 \\
+calledP1.Initiate(jobToPrinter,This,inputP,R) \\
+R = printing\_finished \\
+report! = printing\_finished\_in\_printer1
+\end{schema}
+
+\begin{schema}{JobToPrinterPrinter2}
+\Delta PrintDriver \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = jobToPrinter \\
+\nth( inputP , 1 ) = 2 \\
+calledP2.Initiate(jobToPrinter,This,inputP,R) \\
+R = printing\_finished \\
+report! = printing\_finished\_in\_printer2
+
+\end{schema}
+
+
+\begin{zed}
+ProcessEvent 
+             \sdef ListPrinters 
+             \lor VerifyPrinter
+             \lor PrinterStateOk
+             \lor PrinterStateFailed
+             \lor FirstPrinterAvailable
+             \lor FirstPrinterOccupied
+             \lor AddPrinterOk
+             \lor AddPrinterFailed
+             \lor DeletePrinterOk
+             \lor DeletePrinterFailed
+             \lor AddCurrentPrinting
+             \lor DeleteCurrentPrinting
+             \lor AddJobPrintingQueue
+             \lor DeleteJobPrintingQueue
+             \lor ListCurrentPrinting
+             \lor ListPrintingQueue
+             \lor JobToPrinterPrinter1
+             \lor JobToPrinterPrinter2
+\end{zed}

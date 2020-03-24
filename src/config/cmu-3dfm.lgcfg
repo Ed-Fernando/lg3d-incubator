@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.5.0" class="java.beans.XMLDecoder">
+ <!-- Taskbar item -->
+
+ <!-- Start Menu item -->
+ <object class="org.jdesktop.lg3d.scenemanager.utils.startmenu.StartMenuItemConfig"> 
+  <void property="command"> 
+   <string>java edu.cmu.sun.exe.LaunchDemo</string> 
+  </void> 
+  <void property="desc"> 
+   <string>3D Filemanager</string> 
+  </void> 
+  <void property="displayResourceType">
+   <string>ICON</string>
+  </void> 
+  <void property="displayResourceUrlName">
+   <string>resource:///edu/cmu/sun/resources/icons/cmu-3dfm.png</string>
+  </void>
+  <void property="menuGroup"> 
+   <string>Early Prototypes</string> 
+  </void> 
+  <void property="name"> 
+   <string>3D Filemanager</string> 
+  </void> 
+  <void property="classpathJars">
+    <string>cmu-3dfm.jar</string>
+  </void>
+ </object> 
+</java>

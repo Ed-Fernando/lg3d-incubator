@@ -1,0 +1,12 @@
+#!/bin/bash
+LG3DHOME=/home/sat1196/JAVA/lg3d-core/release/linux/i686/lg3d
+CLASSPATH=".:${LG3DHOME}/lib/ext/lg3d-core.jar:${LG3DHOME}/"
+for arg in `ls ${LG3DHOME}/ext/*.jar`
+do
+  CLASSPATH="$CLASSPATH:$arg"
+done
+javac -cp ${CLASSPATH} -d . *.java
+serialver -classpath ${CLASSPATH} org.jdesktop.lg3d.apps.jmf23D.SerializableBuffer
+javadoc -classpath ${CLASSPATH} -d docs org.jdesktop.lg3d.apps.jmf23D -link http://javadesktop.org/lg3d/javadoc/0-7-0-latest/api \
+-link http://java.sun.com/products/java-media/jmf/2.1.1/apidocs *.java
+#java -cp ${CLASSPATH} JMFRegistry

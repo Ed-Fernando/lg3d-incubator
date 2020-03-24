@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="nlc" default="all" basedir=".">
+    <target name="compile" description="Compile NLC">
+        <javac debug="true"
+                deprecation="false"
+                destdir="${build.classes.dir}"
+                nowarn="true"
+                source="1.5"
+                sourcepath=""
+                target="1.5">
+            <classpath>
+                <pathelement location="${classpath}"/>
+                <pathelement path="${j3d.classpath}"/>
+                <pathelement location="ext/javanlp.jar"/>
+                <pathelement location="ext/nanoxml-lite-2.2.3.jar"/>
+            </classpath>
+            <src path="${javasrc.dir}"/>
+            <include name="org/jdesktop/lg3d/apps/nlc/**"/>
+
+        </javac>
+    </target>
+    <target name="extras" description="Extra steps for NLC build">
+		<copy todir="${core.etc.dir}" file="${javasrc.dir}/org/jdesktop/lg3d/apps/nlc/conf/englishPCFG.ser.gz"/>
+		<copy todir="${core.etc.dir}" file="${javasrc.dir}/org/jdesktop/lg3d/apps/nlc/conf/apps.xml"/>
+		<copy todir="${core.etc.dir}" file="${javasrc.dir}/org/jdesktop/lg3d/apps/nlc/conf/knowledge.xml"/>
+		<copy todir="${core.etc.dir}" file="${javasrc.dir}/org/jdesktop/lg3d/apps/nlc/conf/base.xml"/>
+		<copy todir="${build.classes.dir}/resources/images/icon" file="${javasrc.dir}/org/jdesktop/lg3d/apps/nlc/conf/nlc.png"/>
+
+    </target>
+
+    <target name="jar" depends="compile,extras" description="Jar up the clock app">
+        <jar compress="${jar.compress}" jarfile="${build.app.dir}/nlc.jar">
+             <manifest>
+                <attribute name="Config-File" value="nlc.lgcfg"/>
+             </manifest>
+             <fileset dir="${build.classes.dir}/">
+                <include name="org/jdesktop/lg3d/apps/nlc/**"/>
+                <include name="resources/images/icon/nlc.png"/>
+             </fileset>
+             <fileset dir="${src.dir}/config">
+                <include name="nlc.lgcfg"/>
+             </fileset>
+        </jar>
+    </target>
+</project>

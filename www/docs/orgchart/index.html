@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>Chart3D and Chat3D</TITLE>
+	<META NAME="GENERATOR" CONTENT="StarOffice 7  (Linux)">
+	<META NAME="CREATED" CONTENT="20050906;10435000">
+	<META NAME="CHANGED" CONTENT="20050907;17252000">
+	<STYLE>
+	<!--
+		@page { size: 8.27in 11.69in; margin-left: 1.25in; margin-right: 1.25in; margin-top: 1in; margin-bottom: 1in }
+		P { margin-bottom: 0.08in }
+		P.list-ctl { font-family: "Tahoma" }
+		H3 { margin-bottom: 0.08in }
+		H3.western { font-family: "Thorndale", serif }
+		H3.ctl { font-family: "Tahoma" }
+		CODE.western { font-family: "Thorndale", serif }
+		CODE.cjk { font-family: "Andale Sans UI" }
+		CODE.ctl { font-family: "Tahoma" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<H3 CLASS="western">Introduction</H3>
+<P CLASS="list-western">Contact3D, Chart3D, and Prefuse3D are demo
+programs written with the <A HREF="http://lg3d-core.dev.java.net/">Project
+Looking Glass</A> API to study and demonstrate the following.</P>
+<UL>
+	<LI><P CLASS="list-western">reusable 3D widgets such as text panels,
+	tiptext, buttons, and so forth;</P>
+	<LI><P CLASS="list-western">reusable software framework dealing with
+	contacts; and lastly,</P>
+	<LI><P CLASS="list-western">reusable 3D information visualization.</P>
+</UL>
+<P CLASS="list-western">Contact3D is derived from another project at
+Sun (<A HREF="http://www.sun.com/software/desktop-collaboration/">Desktop
+Collaboration and Communication Project</A>) at Sun.</P>
+<P CLASS="list-western">Chart3D and Prefuse3D are 3D organizational
+chart tools designed to demonstrate data visualization aspects.
+Prefuse3D, as its name suggests, is built on top of the popular open
+source <A HREF="http://prefuse.sourceforge.net/">2D Prefuse
+visualization library</A>.</P>
+<P CLASS="list-western">Since software reusability is an important
+goal, all three applications share the same application services
+framework, and common widgets where necessary. While all three of
+them are fully functioning, they are still work-in-progress, and
+hence are not as well organized as they ought to be unfortunately.</P>
+<P CLASS="list-western">The files are all under the
+org/jdesktop/lg3d/apps/orgchart package. Class diagrams and design
+notes will be provided as soon as they are done.</P>
+<H3 CLASS="western">Contact3D</H3>
+<P CLASS="list-western">Contact3D initializes its data using 2 files.</P>
+<P CLASS="list-western"><CODE CLASS="western"><FONT SIZE=2><FONT FACE="Courier, monospace">/src/classes/org/jdesktop/lg3d/apps/orgchart/framework/default.xml</FONT></FONT></CODE>
+is used to populate a set of preferences, and is shared with Chart3D.</P>
+<P CLASS="list-western">.<FONT SIZE=2><FONT FACE="Courier, monospace">/src/classes/org/jdesktop/lg3d/apps/orgchart/ui/contact/contacts.xml</FONT></FONT>
+is used to read a list of contacts. Read the comments in the file for
+modifications.</P>
+<P CLASS="list-western">Click on the “Contact3D” icon to launch
+Contact3D. Contact3D shows the contacts as panels either on the side
+of the screen (first figure), or in the middle (second figure). You
+can press “space” to toggle between the two of them. Contact3D
+has the following features.</P>
+<UL>
+	<LI><P CLASS="list-western">It demonstrates presence. If the
+	contact's panel is framed in red, it indicates that the contact is
+	not off-line. If the panel is framed in green, it indicates the
+	contact is on-line. Currently, the presence information is
+	randomized fake information.</P>
+	<LI><P CLASS="list-western">It shows the contact's calendar. To do
+	so, you can either click and hold on the contact's panel, or click
+	on the bottom left bottom for the panel. This will rotate the panel
+	to show the calendar. Currently, this too is fake calendar
+	information.</P>
+	<LI><P CLASS="list-western">You can click on one of the left buttons
+	to communicate with the contact. This is meant as a demo, so none of
+	the features are enabled.</P>
+</UL>
+<P CLASS="list-western">Lastly, the thumbnail of Contact3D provides
+for a simplified view of the contact presences.</P>
+<P STYLE="margin-bottom: 0in"><IMG SRC="contact1.png" NAME="Graphic1" ALIGN=LEFT WIDTH=486 HEIGHT=352 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><IMG SRC="contact2.png" NAME="Graphic2" ALIGN=LEFT WIDTH=484 HEIGHT=351 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<H3 CLASS="western">Chart3D</H3>
+<P CLASS="list-western">Chart3D uses the same
+<CODE CLASS="western"><FONT SIZE=2><FONT FACE="Courier, monospace">src/classes/org/jdesktop/lg3d/apps/orgchart/framework/default.xml</FONT></FONT></CODE>
+to populate its data in the interest of code reusability.</P>
+<P CLASS="list-western">By default, it uses the LDAP directory to
+obtain organizational hierarchy information with a schema used
+internally of Sun. You will most likely need to modify the way
+managers and direct reports are defined within your organizational
+schema. It is also possible to use Java preferences to simulate this
+information by using the PreferencesContactService used for
+Contact3D. However, some work will need to be done to support that.</P>
+<P CLASS="list-western">When you first launch Chart3D, you are first
+asked for a starting contact to build the tree. You can then expand
+your tree downwards by clicking on a contact, or upwards by clicking
+on the up arrow. Chart3D tries to make it easier to distinguish
+between managers and non-managers by painting the managers in red. If
+the contact has a photo, the photo will be displayed, using the same
+schema and algorithm (and code) used in Contact3D.</P>
+<P CLASS="list-western"><IMG SRC="chart1.png" NAME="Graphic3" ALIGN=LEFT WIDTH=504 HEIGHT=365 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<H3 CLASS="western">Prefuse3D</H3>
+<P CLASS="list-western">Prefuse3D is the Prefuse version of Chart3D.
+It shares the same underlying framework and mechanisms as Chart3D.
+However, the look-and-feel is different because it attempts to use
+the Prefuse layouts.</P>
+<P CLASS="list-western">Note that this is work-in-progress. We have
+chosen Prefuse as a demonstrator for understanding the requirements
+of building data visualization into the Project Looking Glass
+environment. This is because Prefuse provides for a rich and
+generalized API for building such visualizations easily. The Prefuse
+library, however, is optimized for Java2D, and hence some of the
+constructs are either useless or need to be worked around completely
+in the Project Looking Glass. The code has been hacked to display
+contacts in an existing radial form, but without the edges.</P>
+<P CLASS="list-western"><BR><BR>
+</P>
+<P CLASS="list-western"><IMG SRC="prefuse1.png" NAME="Graphic4" ALIGN=LEFT WIDTH=504 HEIGHT=365 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+</BODY>
+</HTML>

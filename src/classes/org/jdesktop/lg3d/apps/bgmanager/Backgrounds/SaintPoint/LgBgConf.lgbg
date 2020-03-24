@@ -1,0 +1,14 @@
+<Background>
+<Name>Saint Point</Name>
+<Thumbnail>resources/Backgrounds/SaintPoint/thumb.jpg</Thumbnail>
+<Author>Yves Lafon of www.raubacapeu.net/people/yves</Author>
+<Date>11-03-2005</Date>
+<Description>Saint Point</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>1</InitialBackground>
+	<Image>resources/Backgrounds/SaintPoint/Saint-point-0.jpg</Image>
+	<Image>resources/Backgrounds/SaintPoint/Saint-point-1.jpg</Image>
+	<Image>resources/Backgrounds/SaintPoint/Saint-point-2.jpg</Image>
+        <Image>resources/Backgrounds/SaintPoint/Saint-point-3.jpg</Image>
+
+</Background>

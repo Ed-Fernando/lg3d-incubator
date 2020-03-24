@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<uc:use-case-information xmlns:uc="http://reqarch3d.org">
+
+	<uc:ucmap>
+        <uc:name>Add User</uc:name>
+        <uc:component-list>
+			<uc:component>ApplicationServer</uc:component>
+			<uc:component>Client</uc:component>
+			<uc:component>RPC_11</uc:component>
+			<uc:component>RPC_12</uc:component>
+			<uc:component>ApplicationRouter</uc:component>
+			<uc:component>FunctionCall_11</uc:component>
+			<uc:component>FunctionCall_12</uc:component>
+			<uc:component>ClientAdministrator</uc:component>
+			<uc:component>FunctionCall_41</uc:component>
+			<uc:component>FunctionCall_42</uc:component>
+			<uc:component>FunctionCall_43</uc:component>
+			<uc:component>ApplicationRouterOut</uc:component>
+			<uc:component>ApplicationServer</uc:component>
+			<uc:component>PrintServer</uc:component>
+			<uc:component>PrintRouter</uc:component>
+			<uc:component>FunctionCall_61</uc:component>
+			<uc:component>FunctionCall_62</uc:component>
+			<uc:component>FunctionCall_63</uc:component>
+			<uc:component>DAO</uc:component>
+			<uc:component>FunctionCall_81</uc:component>
+			<uc:component>FunctionCall_82</uc:component>
+			<uc:component>Repository</uc:component>
+			<uc:component>Client</uc:component>
+			<uc:component>PrintServer</uc:component>
+		</uc:component-list>
+    </uc:ucmap>
+
+	<uc:ucmap>
+        <uc:name>List Printers</uc:name>
+        <uc:component-list>
+			<uc:component>ApplicationServer</uc:component>
+			<uc:component>Client</uc:component>
+			<uc:component>RPC_11</uc:component>
+			<uc:component>RPC_12</uc:component>
+			<uc:component>ApplicationRouter</uc:component>
+			<uc:component>FunctionCall_21</uc:component>
+			<uc:component>FunctionCall_22</uc:component>
+			<uc:component>FunctionCall_23</uc:component>
+			<uc:component>ApplicationManager</uc:component>
+			<uc:component>FunctionCall_31</uc:component>
+			<uc:component>ApplicationRouterOut</uc:component>
+			<uc:component>ApplicationServer</uc:component>
+			<uc:component>PrintServer</uc:component>
+			<uc:component>PrintRouter</uc:component>
+			<uc:component>FunctionCall_51</uc:component>
+			<uc:component>FunctionCall_52</uc:component>
+			<uc:component>PrintDriver</uc:component>
+			<uc:component>FunctionCall_71</uc:component>
+			<uc:component>FunctionCall_72</uc:component>
+			<uc:component>FunctionCall_73</uc:component>
+			<uc:component>DAO</uc:component>
+			<uc:component>FunctionCall_81</uc:component>
+			<uc:component>FunctionCall_82</uc:component>
+			<uc:component>Repository</uc:component>
+			<uc:component>Client</uc:component>
+			<uc:component>PrintServer</uc:component>
+        </uc:component-list>
+    </uc:ucmap>
+
+</uc:use-case-information>

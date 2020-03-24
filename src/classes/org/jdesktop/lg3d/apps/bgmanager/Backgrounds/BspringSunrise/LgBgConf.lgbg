@@ -1,0 +1,14 @@
+<Background>
+<Name>BspringSunrise</Name>
+<Thumbnail>resources/Backgrounds/BspringSunrise/thumb.jpg</Thumbnail>
+<Author>Brad Templeton of www.templetons.com/brad</Author>
+<Date>11-03-2005</Date>
+<Description>BspringSunrise</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>1</InitialBackground>
+	<Image>resources/Backgrounds/BspringSunrise/Bsprings-sunrise-0.jpg</Image>
+	<Image>resources/Backgrounds/BspringSunrise/Bsprings-sunrise-1.jpg</Image>
+	<Image>resources/Backgrounds/BspringSunrise/Bsprings-sunrise-2.jpg</Image>
+	<Image>resources/Backgrounds/BspringSunrise/Bsprings-sunrise-3.jpg</Image>
+
+</Background>

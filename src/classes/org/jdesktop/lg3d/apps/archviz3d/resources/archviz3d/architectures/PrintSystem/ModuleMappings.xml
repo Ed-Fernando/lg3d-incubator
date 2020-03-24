@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mo:visual-information xmlns:mo="http://module.org">
+
+    <mo:momap>
+        <mo:name value="Client" visible="true"/>
+		<mo:scale>0.02</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.0" y="0.09" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.2" green="0.2" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="requestImpression" value="request an impression"/>
+			<mo:property name="requestAddClient" value="request add the client"/>
+			<mo:property name="requestDeleteClient" value="request delete the client"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="ApplicationManager" visible="true"/>
+		<mo:scale>0.02</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="-0.08" y="0.02" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.2" green="0.6" blue="0.2"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="requestImpression" value="request an impression"/>
+			<mo:property name="requestCancelImpression" value="request cancel the impression"/>
+        </mo:property-list>
+    </mo:momap>
+	
+    <mo:momap>
+        <mo:name value="ClientAdministrator" visible="true"/>
+		<mo:scale>0.02</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.0" y="0.02" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.4" green="0.4" blue="0.2"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="addClient" value="add a new client"/>
+			<mo:property name="deleteClient" value="delete the client"/>
+			<mo:property name="managePermission" value="manage permission"/>
+        </mo:property-list>
+    </mo:momap>
+	
+    <mo:momap>
+        <mo:name value="PrintDriver" visible="true"/>
+		<mo:scale>0.02</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="-0.08" y="-0.05" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.1" green="0.1" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>halfsphere</mo:geon>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="manageSpoolImpression" value="manage spool impression"/>
+			<mo:property name="cancelImpression" value="cancel impression"/>
+        </mo:property-list>
+    </mo:momap>
+	
+    <mo:momap>
+        <mo:name value="DAO" visible="true"/>
+		<mo:scale>0.02</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.0" y="-0.05" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.8" green="0.2" blue="0.6"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>pyramid</mo:geon>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="addClient" value="add a new client"/>
+			<mo:property name="deleteClient" value="delete the client"/>
+			<mo:property name="addPrinter" value="add a new printer"/>
+			<mo:property name="deletePrinter" value="delete the printer"/>
+        </mo:property-list>
+    </mo:momap>
+	
+    <mo:momap>
+        <mo:name value="Repository" visible="true"/>
+		<mo:scale>0.02</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.09" y="-0.05" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.6" green="0.2" blue="0.6"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="addClient" value="add a new client"/>
+			<mo:property name="deleteClient" value="delete the client"/>
+			<mo:property name="addPrinter" value="add a new printer"/>
+			<mo:property name="deletePrinter" value="delete the printer"/>
+        </mo:property-list>
+    </mo:momap>
+	
+    <mo:momap> <!--Entre el Client y el ApplicationManager -->
+        <mo:name value="Use" visible="true"/>
+		<mo:scale>0.2</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="-0.08" y="0.45" z="0.0"/>
+			<mo:point x="-0.4" y="0.45" z="0.0"/>
+			<mo:point x="-0.4" y="0.2" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+	
+    <mo:momap> <!--Entre el ApplicationManager y PrintDriver -->
+        <mo:name value="Use" visible="true"/>
+		<mo:scale>0.2</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="-0.4" y="0.0" z="0.0"/>
+			<mo:point x="-0.4" y="-0.15" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+	
+    <mo:momap> <!--Entre el Client y ClientAdministrator -->
+        <mo:name value="Use" visible="true"/>
+		<mo:scale>0.2</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="0.0" y="0.35" z="0.0"/>
+			<mo:point x="0.0" y="0.2" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+	
+    <mo:momap> <!--Entre el ClientAdministrator y DAO -->
+        <mo:name value="Use" visible="true"/>
+		<mo:scale>0.2</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="0.0" y="0.0" z="0.0"/>
+			<mo:point x="0.0" y="-0.15" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+	
+    <mo:momap> <!--Entre el PrintDriver y DAO -->
+        <mo:name value="Use" visible="true"/>
+		<mo:scale>0.2</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="-0.3" y="-0.25" z="0.0"/>
+			<mo:point x="-0.08" y="-0.25" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+	
+    <mo:momap> <!--Entre el DAO y Repository -->
+        <mo:name value="Use" visible="true"/>
+		<mo:scale>0.2</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="0.08" y="-0.25" z="0.0"/>
+			<mo:point x="0.35" y="-0.25" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+	
+    <mo:momap> <!--Entre el ApplicationManager y DAO  -->
+        <mo:name value="Use" visible="true"/>
+		<mo:scale>0.2</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="-0.4" y="0.05" z="-0.05"/>
+			<mo:point x="-0.4" y="0.05" z="-0.3"/>
+			<mo:point x="0.0" y="0.05" z="-0.3"/>
+			<mo:point x="0.0" y="-0.25" z="-0.3"/>
+			<mo:point x="0.0" y="-0.25" z="-0.1"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+	
+</mo:visual-information>

@@ -1,0 +1,27 @@
+\begin{schema}{BankSystem}
+broker:  Broker \\
+client :  Client \\
+server: Server \\
+rpc1: RPC \\
+rpc2: RPC \\
+components: \pset Element \\
+connectors: \pset Element \\
+ports: \pset Port 
+\end{schema}
+
+\begin{zed}
+init\_BankSystem \sdef \lsch BankSystem' \bbar broker' = \new Broker  \land client' = \new ATM \land server' = \new BankServer 
+\land rpc1' = \new RPC \land rpc2' = \new RPC \land components' = \{ broker', client', server' \} \land connectors' = \{ rpc1', rpc2' \} \land ports' = \{ \}  \rsch  \end{zed}
+
+\begin{schema}{init\_Arch\_BankSystem}
+\Delta BankSystem 
+\where client.callerB.setiVar(next,rpc1.caller) \\
+rpc1.caller.setiVar(next,client.callerB) \\
+rpc1.called.setiVar(next,broker.definer) \\
+server.callerB.setiVar(next,rpc2.caller) \\
+rpc2.caller.setiVar(next,server.callerB) \\
+rpc2.called.setiVar(next,broker.definer) \\
+server.InitService() \\
+client.Connect() 
+\end{schema}
+

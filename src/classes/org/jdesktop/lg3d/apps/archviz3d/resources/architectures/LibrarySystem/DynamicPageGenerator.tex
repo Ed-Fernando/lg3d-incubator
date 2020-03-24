@@ -1,0 +1,28 @@
+\begin{schema}{DynamicPageGenerator}
+input:  Port \\
+output: Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port 
+\end{schema}
+
+
+\begin{zed}
+init\_DynamicPageGenerator \sdef \lsch DynamicPageGenerator' \bbar input' = \new Port \land input'.setiVar(element,This) \land output' = \new Port \land output'.setiVar(element,This) \land components' = \{ \} \land  connectors' = \{ \} \land events'= \{ generatePage \}  \land ports' = \{ input', output'   \} \rsch  \end{zed}
+
+\begin{schema}{Generate}
+\Delta DynamicPageGenerator \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = generatePage \\ 
+R = \head inputP \\
+GeneratedPage = R \\
+report! = GeneratedPage 
+\end{schema}
+
+
+\begin{zed} ProcessEvent \sdef Generate
+\end{zed}

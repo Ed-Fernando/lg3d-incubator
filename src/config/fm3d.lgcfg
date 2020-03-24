@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.5.0" class="java.beans.XMLDecoder">
+
+   <!-- Start Menu item -->
+   <object class="org.jdesktop.lg3d.scenemanager.utils.startmenu.StartMenuItemConfig"> 
+      <void property="command"> 
+         <string>java org.jdesktop.lg3d.apps.fm3d.Fm3DMain</string> 
+      </void> 
+      <void property="desc"> 
+         <string>3D File Manager</string> 
+      </void> 
+      <void property="displayResourceType"> 
+         <string>ICON</string> 
+      </void> 
+      <void property="displayResourceUrlName"> 
+         <string>resource:///resources/images/icon/fm3d.png</string> 
+      </void> 
+      <void property="menuGroup"> 
+         <string>Utilities</string> 
+      </void> 
+      <void property="name"> 
+         <string>fm3D File Manager</string> 
+      </void> 
+      <void property="classpathJars">
+        <string>fm3d.jar</string>
+      </void>
+   </object> 
+</java>
+

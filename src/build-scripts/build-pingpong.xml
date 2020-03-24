@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="pingpong" default="all" basedir=".">
+    <target name="compile" description="Compile pingpong">
+        <javac debug="true"
+                deprecation="false"
+                destdir="${build.classes.dir}"
+                nowarn="true"
+                source="1.5"
+                sourcepath=""
+                target="1.5">
+            <classpath>
+                <pathelement location="${classpath}"/>
+                <pathelement path="${j3d.classpath}"/>
+                <fileset dir="../lg3d-core/ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+            </classpath>
+            <src path="${javasrc.dir}"/>
+            <include name="org/jdesktop/lg3d/apps/pingpong/**"/>
+        </javac>
+        
+        <!-- copy the default preferences initialization files -->
+        <copy todir="${build.classes.dir}">
+           <fileset dir="${javasrc.dir}/">
+               <include name="org/jdesktop/lg3d/apps/pingpong/prefs.xml"/>
+           </fileset>
+        </copy>
+    </target>
+
+    <target name="extras" description="Extra steps for PingPong build">
+        <copy todir="${build.classes.dir}/resources/images/icon" file="src/classes/org/jdesktop/lg3d/apps/pingpong/PingPongIcon.png"/>
+    </target>
+
+    <target name="jar" depends="compile,extras" description="Jar up the PingPong app">
+        <jar compress="${jar.compress}" jarfile="${build.app.dir}/pingpong.jar">
+             <manifest>
+                <attribute name="Config-File" value="pingpong.lgcfg"/>
+             </manifest>
+             <fileset dir="${build.classes.dir}/">
+                <include name="org/jdesktop/lg3d/apps/pingpong/**"/>
+                <include name="resources/images/icon/PingPongIcon.png"/>
+             </fileset>
+             <fileset dir="${src.dir}/config">
+                <include name="pingpong.lgcfg"/>
+             </fileset>
+        </jar>
+    </target>
+</project>

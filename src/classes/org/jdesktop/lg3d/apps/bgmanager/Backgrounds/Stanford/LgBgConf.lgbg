@@ -1,0 +1,13 @@
+<Background>
+<Name>Stanford</Name>
+<Thumbnail>resources/Backgrounds/Stanford/thumb.jpg</Thumbnail>
+<Author>Hideya</Author>
+<Date>11-03-2005</Date>
+<Description>stanforg city panorama</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>2</InitialBackground>
+	<Image>resources/Backgrounds/Stanford/Stanford-0.jpg</Image>
+	<Image>resources/Backgrounds/Stanford/Stanford-1.jpg</Image>
+	<Image>resources/Backgrounds/Stanford/Stanford-2.jpg</Image>
+	<Image>resources/Backgrounds/Stanford/Stanford-3.jpg</Image>
+</Background>

@@ -1,0 +1,13 @@
+<Background>
+<Name>Golden Gate Bridge</Name>
+<Thumbnail>resources/Backgrounds/GoldenGateBridge/thumb.jpg</Thumbnail>
+<Author>Bob Douglas of Sun Microsystems</Author>
+<Date>11-03-2005</Date>
+<Description>Golden Gate Bridge,by Bob Douglas of Sun Microsystems. 
+  (C)Copyright 2003 Bob Douglas  All Rights Reserved.</Description>
+<BGType>Simple Background</BGType>
+
+	<Image>resources/Backgrounds/GoldenGateBridge/GoldenGateBridge.jpg</Image>
+	
+
+</Background>

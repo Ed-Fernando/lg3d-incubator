@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="periodictable" default="all" basedir=".">
+    <target name="compile" description="Compile Periodic Table 3D">
+        <javac debug="true"
+                deprecation="false"
+                destdir="${build.classes.dir}"
+                nowarn="true"
+                source="1.5"
+                sourcepath=""
+                target="1.5">
+            <classpath>
+                <pathelement location="${classpath}"/>
+                <pathelement path="${j3d.classpath}"/>
+                <fileset dir="../lg3d-core/ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+            </classpath>
+            <src path="${javasrc.dir}"/>
+            <include name="org/jdesktop/lg3d/apps/periodictable/**"/>
+
+        </javac>
+    </target>
+
+    <target name="extras" description="Extra steps for Periodic Table 3D">
+            <copy todir="${build.classes.dir}/org/jdesktop/lg3d/apps/periodictable/resources">
+                <fileset dir="${javasrc.dir}/org/jdesktop/lg3d/apps/periodictable/resources" />
+            </copy>
+    </target>
+
+    <target name="jar" depends="compile,extras" description="Jar up the Periodic Table 3D app">
+        <jar compress="${jar.compress}" jarfile="${build.app.dir}/PeriodicTable3D.jar">
+             <manifest>
+                <attribute name="Config-File" value="PeriodicTable3D.lgcfg"/>
+             </manifest>
+             <fileset dir="${build.classes.dir}/">
+                <include name="org/jdesktop/lg3d/apps/periodictable/**"/>
+             </fileset>
+             <fileset dir="${src.dir}/config">
+                <include name="PeriodicTable3D.lgcfg"/>
+             </fileset>
+        </jar>
+    </target>
+</project>

@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="EUC-JP"?>
+<cosmo>
+	<plan name="Exploratory Software Project application" priority="4" weight = "0">
+		<times>
+			<time>2004/09/30/10:00</time>
+		</times>
+		<category>mitou</category>
+		<reference>nu/koidelab/cosmo/apps/slideshow/resources/slides/Mitou-made.zoe</reference>
+	</plan>
+
+	<plan name="Travel to Japan" priority="4" weight = "0">
+		<times>
+			<time>2005/06/22/12:00</time>
+		</times>
+	</plan>
+	<plan name="JavaOne" priority="3" weight = "0">
+		<times>
+			<time>2005/06/26/12:00</time>
+		</times>
+		<category>Java</category>
+	</plan>
+	<plan name="Duke's Choice Awards" priority="5" weight = "0">
+		<times>
+			<time>2005/06/28/12:00</time>
+		</times>
+		<category>Java</category>
+	</plan>
+	<plan name="Office Meeting" priority="2" weight = "0">
+		<times>
+			<time>2005/06/28/12:00</time>
+		</times>
+		<category>Business</category>
+		<detail>Meeting every month</detail>
+	</plan>
+	<plan name="JavaOne Tokyo Participation registration" priority="2" weight = "0">
+		<times>
+			<time>2005/08/18/08:00</time>
+		</times>
+		<category>Java</category>
+	</plan>
+	<plan name="payday" priority="3" weight = "0">
+		<times>
+			<time>2005/09/25/07:00</time>
+		</times>
+	</plan>
+	<plan name="Office Meeting" priority="2" weight = "0">
+		<times>
+			<time>2005/10/03/13:00</time>
+		</times>
+		<category>Business</category>
+		<detail>Meeting every month</detail>
+	</plan>
+	<plan name="Debriefing session" priority="5" weight = "0">
+		<times>
+			<time>2005/10/20/12:00</time>
+		</times>
+		<detail>IPA-Exploratory Software Project</detail>
+	</plan>
+	<plan name="Super-Creater ceremony" priority="4" weight = "0">
+		<times>
+			<time>2005/10/24/13:00</time>
+		</times>
+		<detail>IPA-Exploratory Software Project</detail>
+	</plan>
+	<plan name="LG3D Session" priority="3" weight = "0">
+		<times>
+			<startTime>2005/11/08/17:00</startTime>
+			<time>2005/10/08/17:00</time>
+			<endTime>2005/11/08/17:45</endTime>
+		</times>
+		<detail>LG3D session in JavaOne Tokyo</detail>
+		<category>Java</category>
+	</plan>
+	<plan name="LG3D HoL" priority="2" weight = "0">
+		<times>
+			<startTime>2005/11/08/18:00</startTime>
+			<time>2005/10/08/18:00</time>
+			<endTime>2005/11/08/18:45</endTime>
+		</times>
+		<detail>LG3D HoL in JavaOne Tokyo</detail>
+		<category>Java</category>
+	</plan>
+	<plan name="LG3D HoL" priority="2" weight = "0">
+		<times>
+			<startTime>2005/11/08/18:00</startTime>
+			<time>2005/10/08/18:00</time>
+			<endTime>2005/11/08/18:45</endTime>
+		</times>
+		<detail>LG3D HoL in JavaOne Tokyo</detail>
+		<category>Java</category>
+	</plan>
+	<plan name="LG3D HoL" priority="2" weight = "0">
+		<times>
+			<startTime>2005/11/09/18:00</startTime>
+			<time>2005/10/09/18:00</time>
+			<endTime>2005/11/09/18:45</endTime>
+		</times>
+		<detail>LG3D HoL in JavaOne Tokyo</detail>
+		<category>Java</category>
+	</plan>
+	<plan name="LG3D BOF" priority="2" weight = "0">
+		<times>
+			<startTime>2005/11/10/20:00</startTime>
+			<time>2005/10/10/20:00</time>
+			<endTime>2005/11/10/20:45</endTime>
+		</times>
+		<detail>LG3D BOF in JavaOne Tokyo</detail>
+		<category>Java</category>
+	</plan>
+	<plan name="Go visit parents" priority="2" weight = "0">
+		<times>
+			<time>2005/11/25/12:00</time>
+		</times>
+		<category>Personal</category>
+	</plan>
+	<plan name="CSD new version release" priority="2" weight = "0">
+		<times>
+			<time>2005/11/30/12:00</time>
+		</times>
+	</plan>
+	<plan name="Project status meeting" priority="2" weight = "0">
+		<times>
+			<time>2005/12/01/15:00</time>
+		</times>
+		<category>Business</category>
+	</plan>
+	<plan name="Bob's Birthday" priority="4" weight = "0">
+		<times>
+			<time>2005/12/01/15:00</time>
+		</times>
+	</plan>
+	<plan name="Project status meeting" priority="2" weight = "0">
+		<times>
+			<time>2005/12/10/15:00</time>
+		</times>
+		<category>Business</category>
+	</plan>
+	<plan name="Lunch time seminar" priority="2" weight = "0">
+		<times>
+			<time>2005/12/15/12:00</time>
+		</times>
+		<category>Business</category>
+	</plan>
+	<plan name="New Year's Eve" priority="1" weight = "0">
+		<times>
+			<time>2005/12/31/23:00</time>
+		</times>
+	</plan>
+	<plan name="New Year" priority="2" weight = "0">
+		<times>
+			<time>2006/01/01/00:00</time>
+		</times>
+	</plan>
+<!-- February  -->	
+	<plan name="St.Valentine's Day" priority="2" weight = "0">
+		<times>
+			<time>2006/02/14/12:00</time>
+		</times>
+		<detail>Nobody ever gives me any Valentine cards</detail>
+	</plan>
+	<plan name="Torino 2006 open" priority="4" weight = "0">
+		<times>
+			<time>2006/02/10/20:00</time>
+		</times>
+		<detail>Opening Ceremony of the XX Torino 2006</detail>
+		<category>Personal</category>
+	</plan>
+	<plan name="SKI JUMPING PAIRS in XX Torino 2006" priority="1" weight = "0">
+		<times>
+			<time>2006/02/22/18:00</time>
+		</times>
+		<detail>It's joke.</detail>
+		<category>Personal</category>
+	</plan>
+	<plan name="Torino 2006 close" priority="4" weight = "0">
+		<times>
+			<time>2006/2/26/20:00</time>
+		</times>
+		<detail>Closing Ceremony of the XX Trino 2006</detail>
+		<category>Personal</category>
+	</plan>
+	<plan name="OSAKA AUTO MESSE 2006" priority="2" weight = "0">
+		<times>
+			<time>2006/02/12/08:00</time>
+		</times>
+		<detail>tuning Car Show</detail>
+		<category>Personal</category>
+	</plan>
+		
+<!-- March -->
+	<plan name="NINTENDO DS lite is out on sale" priority="5" weight = "0">
+		<times>
+			<time>2006/03/02/17:00</time>
+		</times>
+		<detail>I will get it as soon as possible!</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="A total eclipse" priority="2" weight = "0">
+		<times>
+			<time>2006/03/02/17:00</time>
+		</times>
+		<detail>In North Africa, and Central or West Asia</detail>
+	</plan>
+	
+	
+	
+
+<!-- pay day -->
+	<plan name="pay day" priority="5" weight = "0">
+		<times>
+			<time>2006/02/25/17:00</time>
+		</times>
+		<detail>Do not forget.</detail>
+		<category>Personal</category>
+	</plan>
+	<plan name="pay day" priority="5" weight = "0">
+		<times>
+			<time>2006/03/25/17:00</time>
+		</times>
+		<detail>Do not forget.</detail>
+		<category>Personal</category>
+	</plan>
+	<plan name="pay day" priority="5" weight = "0">
+		<times>
+			<time>2006/04/25/17:00</time>
+		</times>
+		<detail>Do not forget.</detail>
+		<category>Personal</category>
+	</plan>
+	<plan name="pay day" priority="5" weight = "0">
+		<times>
+			<time>2006/05/25/17:00</time>
+		</times>
+		<detail>Do not forget.</detail>
+		<category>Personal</category>
+	</plan>
+	
+	
+<!-- Office Meetings-->
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/01/07/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/01/21/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/01/28/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/02/04/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/02/11/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/02/18/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/02/25/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/03/04/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/03/11/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/03/18/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/03/25/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/04/01/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/04/08/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/04/15/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/04/22/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/04/29/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/05/06/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/05/13/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/05/20/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/05/27/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+	<plan name="Office Meeting" priority="3" weight = "0">
+		<times>
+			<time>2006/06/03/13:00</time>
+		</times>
+		<detail>Meeting every month</detail>
+		<category>Business</category>
+	</plan>
+</cosmo>

@@ -1,0 +1,12 @@
+<Background>
+<Name>TheRotenburo</Name>
+<Thumbnail>resources/Backgrounds/TheRotenburo/thumb.jpg</Thumbnail>
+<Author>Jon Ellis of Sun Microsystems</Author>
+<Date>11-03-2005</Date>
+<Description>The Rotenburo</Description>
+<BGType>Simple Background</BGType>
+
+	<Image>resources/Backgrounds/TheRotenburo/TheRotenburo.jpg</Image>
+	
+
+</Background>

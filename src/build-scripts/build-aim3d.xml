@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="aim3d" default="all" basedir=".">
+    <target name="compile" description="Compile aim3d">
+        <javac debug="true"
+                deprecation="false"
+                destdir="${build.classes.dir}"
+                nowarn="true"
+                source="1.5"
+                sourcepath=""
+                target="1.5">
+            <classpath>
+                <pathelement location="${classpath}"/>
+                <pathelement path="${j3d.classpath}"/>
+                <fileset dir="../lg3d-core/ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+            </classpath>
+            <src path="${javasrc.dir}"/>
+            <include name="org/jdesktop/lg3d/apps/aim3d/**"/>
+
+        </javac>
+    </target>
+
+    <target name="extras" description="Extra steps for jw_aim3d build">
+        <mkdir dir="${build.classes.dir}/resources/images/jw_aim3d"/>
+        <copy todir="${build.classes.dir}/resources/images/jw_aim3d">
+            <fileset dir="src/classes/org/jdesktop/lg3d/apps/wilkoaim3d/resources/images/jw_aim3d"/>
+        </copy>
+    </target>
+
+    <target name="jar" depends="compile,extras" description="Jar up the aim3d app">
+        <jar compress="${jar.compress}" jarfile="${build.app.dir}/aim3d.jar">
+             <manifest>
+                <attribute name="Config-File" value="aim3d.lgcfg"/>
+             </manifest>
+             <fileset dir="${build.classes.dir}/">
+                <include name="org/jdesktop/lg3d/apps/wilkoaim3d/**"/>
+                <include name="resources/images/jw_aim3d/**"/>
+             </fileset>
+             <fileset dir="${src.dir}/config">
+                <include name="aim3d.lgcfg"/>
+             </fileset>
+        </jar>
+    </target>
+</project>

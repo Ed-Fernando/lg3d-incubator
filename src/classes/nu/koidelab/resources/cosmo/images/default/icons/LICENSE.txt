@@ -1,0 +1,7 @@
+[Vista-Inspirate]
+Version:  1.0
+Author: saki
+HomePage: http://sa-ki.deviantart.com/
+Download: http://www.gnome-look.org/content/download.php?content=28352&id=2
+License: GPL
+

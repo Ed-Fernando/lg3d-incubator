@@ -1,0 +1,13 @@
+<Background>
+<Name>San Francisco Night</Name>
+<Thumbnail>resources/Backgrounds/SanFranciscoNight/thumb.jpg</Thumbnail>
+<Author>Brad Templeton of www.templetons.com/brad</Author>
+<Date>11-03-2005</Date>
+<Description>Saint Point</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>2</InitialBackground>
+	<Image>resources/Backgrounds/SanFranciscoNight/San-Francisco-night-0.jpg</Image>
+	<Image>resources/Backgrounds/SanFranciscoNight/San-Francisco-night-1.jpg</Image>
+	<Image>resources/Backgrounds/SanFranciscoNight/San-Francisco-night-2.jpg</Image>
+
+</Background>

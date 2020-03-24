@@ -1,0 +1,54 @@
+\begin{schema}{PrintSystem}
+applicationserver:  ApplicationServer \\
+client :  Client \\
+printserver: PrintServer \\
+printer1:  Printer \\
+printer2:  Printer \\
+rpc1: RPC \\
+rpc2: RPC \\
+rpc3P1 : RPC \\
+rpc3P2 : RPC \\
+components: \pset Element \\
+connectors: \pset Element \\
+ports: \pset Port
+\end{schema}
+
+\begin{zed}
+init\_PrintSystem \sdef \lsch PrintSystem'
+                  \bbar applicationserver' = \new ApplicationServer
+                  \land client' = \new Client
+                  \land printserver' = \new PrintServer
+                  \land rpc1' = \new RPC
+                  \land rpc2' = \new RPC
+                  \land rpc3P1' = \new RPC
+                  \land rpc3P2' = \new RPC
+
+                  \land printer1' = \new Printer
+                  \land printer2' = \new Printer
+
+                  \land components' = \{ applicationserver', client', printserver', printer1', printer2' \}
+                  \land connectors' = \{ rpc1', rpc2', rpc3P1', rpc3P2' \}
+                  \land ports' = \{ \}  \rsch
+                  \end{zed}
+
+\begin{schema}{init\_Arch\_PrintSystem}
+\Delta PrintSystem
+\where
+client.called.setiVar(next,rpc1.caller) \\
+rpc1.caller.setiVar(next,client.called) \\
+rpc1.called.setiVar(next,applicationserver.caller) \\
+applicationserver.applicationrouterout.called.setiVar(next,rpc2.caller) \\
+rpc2.called.setiVar(next,printserver.caller) \\
+rpc2.caller.setiVar(next,applicationserver.applicationrouterout.called) \\
+
+printserver.printdriver.calledP1.setiVar(next,rpc3P1.caller) \\
+rpc3P1.caller.setiVar(next,printserver.printdriver.calledP1) \\
+rpc3P1.called.setiVar(next,printer1.caller) \\
+
+printserver.printdriver.calledP2.setiVar(next,rpc3P2.caller) \\
+rpc3P2.caller.setiVar(next,printserver.printdriver.calledP2) \\
+rpc3P2.called.setiVar(next,printer2.caller) \\
+
+applicationserver.InitService() \\
+printserver.InitService()
+\end{schema}

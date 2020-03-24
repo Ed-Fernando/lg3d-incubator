@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd">
+<preferences EXTERNAL_XML_VERSION="1.0">
+    <root type="user">
+        <map/>
+        <node name="DefaultServiceContext">
+            <map>
+                <entry key="version" value="2"/>                
+                <entry key="log.level" value="FINEST"/>
+                <!-- service definition for ContactSerivce in Contact3D -->
+                <entry key="contacts.contact3d" value="contacts.pref"/>
+                <!-- service definition for ContactSerivce in Chart3D -->
+                <entry key="contacts.chart3d" value="contacts.ldap"/>
+            </map>
+            <node name="contacts.pref">
+                <map>
+                    <entry key="classname"
+                        value="org.jdesktop.lg3d.apps.orgchart.framework.contact.PreferenceContactService"/>
+                    <entry key="root" value="/contacts"/>
+                </map>
+            </node>
+            <node name="contacts.ldap">
+                <map>
+                    <entry key="classname"
+                        value="org.jdesktop.lg3d.apps.orgchart.framework.contact.LDAPContactService"/>
+                    <entry key="uri" value="ldap://sun-ds.sfbay.sun.com:389/"/>
+                    <entry key="basedn" value="ou=people,dc=sun,dc=com"/>
+                    <!-- the following is used for authentication
+                    <entry key="binddn" value="#####"/>
+                    <entry key="password" value="######"/>
+                    -->
+                    <!-- additional comma-delimited set of attributes to return -->
+                    <entry key="attributes" value="sunmanagerindicator"/>
+                    <!-- maximum results per query -->
+                    <entry key="limit" value="50"/>
+                    <!-- expression returning the lookup value for manager -->
+                    <entry key="manager" value="${manager}"/>
+                    <!-- optional flag to indicate that contact has reports -->
+                    <entry key="ismanager" value="${sunmanagerindicator}"/>
+                    <!-- expression returning query for reports -->
+                    <entry key="reports" value="reportsto=${employeeNumber}"/>
+                </map>
+            </node>
+        </node>
+   </root>
+</preferences>

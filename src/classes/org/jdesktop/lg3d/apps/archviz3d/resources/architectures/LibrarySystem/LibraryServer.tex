@@ -1,0 +1,890 @@
+\begin{zed}
+MESSAGE & \ddef & ok \\ 
+& \bbar & not\_valid\_user \\ 
+& \bbar & not\_valid\_data \\
+& \bbar & inexistent\_record \\
+& \bbar & not\_enough\_books \\
+& \bbar & not\_valid\_connection\_or\_expired\_session \\
+& \bbar & valid\_connection \\
+& \bbar & valid\_connection\_and\_active\_session \\
+& \bbar & member\_already\_existent \\
+& \bbar & book\_already\_existent \\
+& \bbar & book\_with\_loans
+\end{zed}
+
+\begin{schema}{LibraryServer}
+portSU:  Port \\
+portSA:  Port \\
+callerDAO: Port \\
+wc : Port \\
+fc1: FC \\
+wcS : WebContainer \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port
+\end{schema}
+
+\begin{zed}
+init\_LibraryServer \sdef \lsch 
+LibraryServer' \bbar 
+portSU' = \new Port
+\land fc1' = \new FC 
+\land wc' = \new Port
+\land wc'.setiVar(element,This)
+\land wcS' = \new WebContainer
+\land portSU'.setiVar(element,This)  
+\land portSA' = \new Port 
+\land portSA'.setiVar(element,This) 
+\land callerDAO' = \new Port 
+\land callerDAO'.setiVar(element,This)
+\land components' = \{ wcS' \}
+\land connectors' = \{ fc1'  \}
+\land ports' = \{ portSU', portSA', callerDAO', wc' \}  
+\land events' = \{ validateUser, booksRanking, searchBook, searchMember, searchLoan, addMember, addLoan, returnBook, deleteMember, deleteBook, addBook, logout \}
+\rsch \end{zed}
+
+\begin{schema}{InitServerSystem}
+\Delta LibraryServer
+\where
+wc.setiVar(next, fc1.caller) \\
+fc1.caller.setiVar(next, wc) \\
+fc1.called.setiVar(next, wcS.portLS) 
+\end{schema}  
+
+
+\begin{schema}{ValidateUserOk}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = validateUser \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnection, This, SR, CR) \\
+CR = valid\_connection \\
+Id = \head (\tail inputP) \\
+Password = \head (\tail (\tail inputP)) \\
+SR2 = \lseq user Id \rseq \\
+callerDAO.Initiate(searchRecord, This, SR2, US) \\
+US \neq \emptyset \\
+UR = \{ X : \nat \bbar X \mem US \land \nth( X , 2 ) = Password \} \\
+UR \neq \emptyset \\ 
+Device = \head (\tail (\tail (\tail inputP))) \\
+SD = \lseq Ip Device \rseq \\
+wcS.ProcessEvent(openSession, This, SD, R) \\
+R = ok \\
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = RFormatted 
+\end{schema}
+
+\begin{schema}{ValidateUserFailed}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = validateUser \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnection, This, SR, CR) \\
+CR = valid\_connection \\
+Id = \head (\tail inputP) \\
+Password = \head (\tail (\tail inputP)) \\
+SR2 = \lseq user Id \rseq \\
+callerDAO.Initiate(searchRecord, This, SR2, US) \\
+US \neq \emptyset \\
+UR = \{ X : \nat \bbar X \mem US \land \nth( X , 2 ) = Password \} \\
+UR = \emptyset \\ 
+R = not\_valid\_user \\
+report! = R 
+\end{schema}
+
+\begin{schema}{ValidateUserInvalidConnection}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = validateUser \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnection, This, SR, CR) \\
+CR = not\_valid\_connection\_or\_expired\_session \\ 
+report! = CR 
+\end{schema}
+
+\begin{schema}{ValidateUserInexistent}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = validateUser \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnection, This, SR, CR) \\
+CR = valid\_connection \\
+Id = \head (\tail inputP) \\
+Password = \head (\tail (\tail inputP)) \\
+SR2 = \lseq user Id \rseq \\
+callerDAO.Initiate(searchRecord, This, SR2, US) \\
+US =  \emptyset \\
+R = inexistent\_record \\
+report! = R 
+\end{schema}
+
+\begin{schema}{Logout}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = logout \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnection, This, SR, CR) \\
+CR = valid\_connection \\
+wcS.ProcessEvent(closeSession, This, SR, R) \\
+R = ok \\
+report! = R  
+\end{schema}
+
+\begin{schema}{BooksRankingInvalidConnection}
+\Xi LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = booksRanking \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = not\_valid\_connection\_or\_expired\_session \\ 
+report! = CR 
+\end{schema}
+
+\begin{schema}{BooksRanking}
+\Xi LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = booksRanking \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+SE = \lseq book \rseq \\
+callerDAO.Initiate(listing, This, SE, R) \\
+RS = \sort(R,4) \\ 
+PD = \lseq Ip RS \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report ! = RFormatted
+\end{schema}
+
+\begin{schema}{SearchBooksInvalidConnection}
+\Xi LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = searchBook \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = not\_valid\_connection\_or\_expired\_session \\ 
+report ! = CR
+\end{schema}
+
+\begin{schema}{SearchBooks}
+\Xi LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = searchBook \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+Name = \head (\tail inputP) \\
+SR2 = \lseq book Name \rseq \\
+callerDAO.Initiate(searchRecord, This, SR2, BOOKS) \\
+PD = \lseq Ip BOOKS \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = RFormatted
+\end{schema}
+
+\begin{schema}{SearchMembers}
+\Xi LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = searchMember \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+Id = \head (\tail inputP) \\
+SR2 = \lseq user Id \rseq \\
+callerDAO.Initiate(searchRecord, This, SR2, US) \\
+PD = \lseq Ip US \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = RFormatted
+\end{schema}
+
+\begin{schema}{SearchMembersInvalidConnection}
+\Xi LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = searchMember \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = not\_valid\_connection\_or\_expired\_session \\ 
+report ! = CR
+\end{schema}
+
+\begin{schema}{SearchLoansInvalidConnection}
+\Xi LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = searchLoan \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = not\_valid\_connection\_or\_expired\_session \\ 
+report ! = CR
+\end{schema}
+
+
+\begin{schema}{SearchLoans}
+\Xi LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = searchLoan \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+Id = \head (\tail inputP) \\ 
+SL = \lseq loan searchByIdM Id \rseq \\
+callerDAO.Initiate(searchRecord, This, SL, LN) \\
+PD = \lseq Ip LN \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = \sort( RFormatted , 2 )
+\end{schema}
+
+\begin{schema}{AddMemberAlreadyExistent} 
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = addMember \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+Id = \head (\tail inputP) \\
+Password = \head (\tail (\tail inputP)) \\
+Name = \head (\tail (\tail (\tail inputP))) \\
+Id > 0 \\
+Id \neq 0 \\
+Password \neq 0 \\
+Password \neq Name \\
+SR2 = \lseq user Id \rseq \\
+callerDAO.Initiate(searchRecord, This, SR2, US) \\
+US \neq \emptyset \\
+R = member\_already\_existent \\
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = RFormatted
+\end{schema}
+
+\begin{schema}{AddMemberInvalidConnection}
+\Xi LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = addMember \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = not\_valid\_connection\_or\_expired\_session \\ 
+report ! = CR
+\end{schema}
+
+\begin{schema}{AddMemberOK} 
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = addMember \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+Id = \head (\tail inputP) \\
+Password = \head (\tail (\tail inputP)) \\
+Name = \head (\tail (\tail (\tail inputP))) \\
+Id > 0 \\
+Id \neq 0 \\
+Password \neq 0 \\
+Password \neq Name \\
+SE = \lseq user Id Password Name \rseq \\
+callerDAO.Initiate(addRecord, This, SE, R) \\
+R = ok \\ 
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = RFormatted
+\end{schema}
+
+\begin{schema}{AddMemberInvalidData}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = addMember \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+Id = \head (\tail inputP) \\
+Password = \head (\tail (\tail inputP)) \\
+Name = \head (\tail (\tail (\tail inputP))) \\
+Password = Name \lor Id = 0 \lor Id < 0 \\
+R = not\_valid\_data \\
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = RFormatted
+\end{schema}
+
+\begin{schema}{AddLoanInvalidConnection}
+\Xi LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = addLoan \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = not\_valid\_connection\_or\_expired\_session \\ 
+report ! = CR
+\end{schema}
+
+\begin{schema}{AddLoanOK}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = addLoan \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+IdM = \head (\tail inputP) \\
+IdB = \head (\tail (\tail inputP)) \\
+IdM \neq 0 \\
+SM = \lseq user IdM \rseq \\
+callerDAO.Initiate(searchRecord, This, SM, US) \\
+US \neq \emptyset \\
+SB = \lseq book IdB \rseq \\
+callerDAO.Initiate(searchRecord, This, SB, BOOK) \\
+BOOK \neq \emptyset \\
+IdBB = \nth (\head BOOK, 1) \\
+SL = \lseq loan searchByIdB IdBB \rseq \\
+callerDAO.Initiate(searchRecord, This, SL, LOAN) \\
+\nth( \head BOOK, 3) > \# LOAN \\
+SE = \lseq loan IdM IdBB \rseq \\
+callerDAO.Initiate(addRecord, This, SE, R) \\
+R = ok \\
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = RFormatted 
+\end{schema}
+
+\begin{schema}{AddLoanInvalidData}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = addLoan \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+IdM = \head (\tail inputP) \\
+IdB = \head (\tail (\tail inputP)) \\
+SM = \lseq user IdM \rseq \\
+callerDAO.Initiate(searchRecord, This, SM, US) \\
+SB = \lseq book IdB \rseq \\
+callerDAO.Initiate(searchRecord, This, SB, BOOK) \\
+IdM = 0 \lor US = \emptyset \lor BOOK = \emptyset \\ 
+report! = not\_valid\_data
+\end{schema}
+
+
+\begin{schema}{AddLoanNotEnoughBooks}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = addLoan \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+IdM = \head (\tail inputP) \\
+IdB = \head (\tail (\tail inputP)) \\
+IdM \neq 0 \\
+SM = \lseq user IdM \rseq \\
+callerDAO.Initiate(searchRecord, This, SM, US) \\
+US \neq \emptyset \\
+SB = \lseq book IdB \rseq \\
+callerDAO.Initiate(searchRecord, This, SB, BOOK) \\
+BOOK \neq \emptyset \\
+IdBB = \nth (\head BOOK, 1) \\
+SL = \lseq loan searchByIdB IdBB \rseq \\
+callerDAO.Initiate(searchRecord, This, SL, LOAN) \\
+\nth( \head BOOK, 3) = \# LOAN \\
+R = not\_enough\_books \\
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = RFormatted 
+\end{schema}
+
+\begin{schema}{ReturnBookInvalidConnection}
+\Xi LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = returnBook \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = not\_valid\_connection\_or\_expired\_session \\ 
+report! = CR
+\end{schema}
+
+\begin{schema}{ReturnBookOK}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = returnBook \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+IdM = \head (\tail inputP) \\
+IdB = \head (\tail (\tail inputP)) \\
+IdM \neq 0 \\
+SM = \lseq user IdM \rseq \\
+callerDAO.Initiate(searchRecord, This, SM, US) \\
+US \neq \emptyset \\
+SB = \lseq book IdB \rseq \\
+callerDAO.Initiate(searchRecord, This, SB, BOOK) \\
+BOOK \neq \emptyset \\
+IdBB = \nth (\head BOOK, 1) \\
+SL = \lseq loan searchByIdB IdBB \rseq \\
+callerDAO.Initiate(searchRecord, This, SL, LOAN) \\
+LOAN \neq \emptyset \\
+IdM1 = \nth(\head LOAN, 1) \\
+IdB1 = \nth(\head LOAN, 2) \\
+DR = \lseq loan IdM1 IdB1 \rseq \\
+callerDAO.Initiate(deleteRecord, This, DR, R) \\
+R = ok \\
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = RFormatted 
+\end{schema}
+
+\begin{schema}{ReturnBookInvalidData}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = returnBook \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+IdM = \head (\tail inputP) \\
+IdB = \head (\tail (\tail inputP)) \\
+IdM = 0 \lor IdB = 0 \\ 
+R = not\_valid\_data \\
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report ! = RFormatted
+\end{schema}
+
+\begin{schema}{ReturnBookInexistent}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = returnBook \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+IdM = \head (\tail inputP) \\
+IdB = \head (\tail (\tail inputP)) \\
+SM = \lseq user IdM \rseq \\
+callerDAO.Initiate(searchRecord, This, SM, US) \\
+SB = \lseq book IdB \rseq \\
+callerDAO.Initiate(searchRecord, This, SB, BOOK) \\
+SL = \lseq loan searchByIdBIdM IdM IdB \rseq \\
+callerDAO.Initiate(searchRecord, This, SL, LOAN) \\
+US = \emptyset \lor BOOK = \emptyset \lor LOAN=\emptyset \\ 
+R = inexistent\_record \\
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report ! = RFormatted
+\end{schema}
+
+\begin{schema}{DeleteMemberInvalidConnection}
+\Xi LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = deleteMember \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = not\_valid\_connection\_or\_expired\_session \\ 
+report ! = CR
+\end{schema}
+
+
+\begin{schema}{DeleteMemberOK}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = deleteMember \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+Id = \head (\tail inputP) \\
+Id > 0 \\
+SR2 = \lseq user Id \rseq \\
+callerDAO.Initiate(searchRecord, This, SR2, US) \\
+US \neq \emptyset \\
+Id1 = \nth(\head US, 1) \\
+Passw1 = \nth(\head US, 2) \\
+UserName1 = \nth(\head US, 3) \\ 
+DR = \lseq user Id1 Passw1 UserName1 \rseq \\
+callerDAO.Initiate(deleteRecord, This, DR, R) \\
+R = ok \\
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = RFormatted 
+\end{schema}
+
+\begin{schema}{DeleteMemberInvalidData}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = deleteMember \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+Id = \head (\tail inputP) \\
+Id = 0 \lor Id < 0 \\
+R = not\_valid\_data \\
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = RFormatted 
+\end{schema}
+
+\begin{schema}{DeleteMemberInexistent}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = deleteMember \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+Id = \head (\tail inputP) \\
+Id > 0 \\
+SR2 = \lseq user Id \rseq \\
+callerDAO.Initiate(searchRecord, This, SR2, US) \\
+US = \emptyset \\
+R = inexistent\_record \\
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = RFormatted 
+\end{schema}
+
+\begin{schema}{DeleteBookInvalidData}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = deleteBook \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+Id = \head (\tail inputP) \\
+Id = 0 \lor Id < 0 \\
+R = not\_valid\_data \\
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report ! = RFormatted
+\end{schema}
+
+
+\begin{schema}{DeleteBookInvalidConnection}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = deleteBook \\
+Ip = \head inputP \\
+Id = \head (\tail inputP) \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = not\_valid\_connection\_or\_expired\_session \\ 
+report ! = CR
+\end{schema}
+
+\begin{schema}{DeleteBookInexistent}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = deleteBook \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+Id = \head (\tail inputP) \\
+Id > 0 \\
+SR2 = \lseq book Id \rseq \\
+callerDAO.Initiate(searchRecord, This, SR2, BOOKS) \\
+BOOKS = \emptyset \\
+R = inexistent\_record \\
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report ! = RFormatted
+\end{schema}
+
+\begin{schema}{DeleteBookOK}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = deleteBook \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+BookName = \head (\tail inputP) \\
+SR2 = \lseq book BookName \rseq \\
+callerDAO.Initiate(searchRecord, This, SR2, BOOK) \\
+BOOK \neq \emptyset \\
+Id1 = \nth(\head BOOK, 1) \\
+BookName1 = \nth(\head BOOK, 2) \\
+Items1 = \nth(\head BOOK, 3) \\ 
+SL = \lseq loan searchByIdB Id1 \rseq \\
+callerDAO.Initiate(searchRecord, This, SL, LOAN) \\
+LOAN = \emptyset \\
+DR = \lseq book Id1 BookName1 Items1 \rseq \\
+callerDAO.Initiate(deleteRecord, This, DR, R) \\
+R = ok \\
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = RFormatted 
+\end{schema}
+
+\begin{schema}{DeleteBookWithLoans}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = deleteBook \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+BookName = \head (\tail inputP) \\
+SR2 = \lseq book BookName \rseq \\
+callerDAO.Initiate(searchRecord, This, SR2, BOOK) \\
+BOOK \neq \emptyset \\
+Id1 = \nth(\head BOOK, 1) \\
+SL = \lseq loan searchByIdB Id1 \rseq \\
+callerDAO.Initiate(searchRecord, This, SL, LOAN) \\
+LOAN \neq \emptyset \\
+R = book\_with\_loans \\
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = RFormatted 
+\end{schema}
+
+
+\begin{schema}{AddBookInvalidConnection}
+\Xi LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = addBook \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = not\_valid\_connection\_or\_expired\_session \\ 
+report ! = CR
+\end{schema}
+
+\begin{schema}{AddBookOK}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = addBook \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+Id = \head (\tail inputP) \\
+Name = \head (\tail (\tail inputP)) \\
+Amount = \head (\tail (\tail (\tail inputP))) \\
+Id > 0 \\
+Id \neq 0 \\
+Amount \neq 0 \\
+SB = \lseq book Name \rseq \\
+callerDAO.Initiate(searchRecord, This, SB, BOOK) \\
+BOOK = \emptyset \\
+SE = \lseq book Id Name Amount \rseq \\
+callerDAO.Initiate(addRecord, This, SE, R) \\
+R = ok \\ 
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = RFormatted
+\end{schema}
+
+\begin{schema}{AddBookAlreadyExistent}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = addBook \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+Id = \head (\tail inputP) \\
+Name = \head (\tail (\tail inputP)) \\
+Amount = \head (\tail (\tail (\tail inputP))) \\
+Id > 0 \\
+Id \neq 0 \\
+Amount \neq 0 \\
+SB = \lseq book Name \rseq \\
+callerDAO.Initiate(searchRecord, This, SB, BOOK) \\
+BOOK \neq \emptyset \\
+R = book\_already\_existent \\ 
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report! = RFormatted
+\end{schema}
+
+\begin{schema}{AddBookInvalidData}
+\Delta LibraryServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = addBook \\
+Ip = \head inputP \\
+SR = \lseq Ip \rseq \\ 
+wcS.ProcessEvent(checkConnectionSession, This, SR, CR) \\
+CR = valid\_connection\_and\_active\_session \\
+Id = \head (\tail inputP) \\
+Name = \head (\tail (\tail inputP)) \\
+Amount = \head (\tail (\tail (\tail inputP))) \\
+Id = 0 \lor Id < 0 \lor Amount = 0 \\
+R = not\_valid\_data \\
+PD = \lseq Ip R \rseq \\
+wcS.ProcessEvent(generatePage , This, PD, RFormatted) \\
+report ! = RFormatted
+\end{schema}
+
+\begin{zed} ProcessEvent \sdef 
+ValidateUserFailed 
+\lor ValidateUserOk 
+\lor ValidateUserInvalidConnection 
+\lor ValidateUserInexistent
+\lor Logout
+\lor BooksRankingInvalidConnection
+\lor BooksRanking
+\lor SearchBooksInvalidConnection
+\lor SearchBooks
+\lor SearchMembersInvalidConnection
+\lor SearchMembers
+\lor SearchLoansInvalidConnection
+\lor SearchLoans
+\lor AddMemberAlreadyExistent
+\lor AddMemberInvalidConnection
+\lor AddMemberOK
+\lor AddMemberInvalidData
+\lor AddLoanInvalidConnection
+\lor AddLoanOK 
+\lor AddLoanNotEnoughBooks
+\lor AddLoanInvalidData
+\lor ReturnBookInvalidConnection
+\lor ReturnBookOK
+\lor ReturnBookInvalidData
+\lor ReturnBookInexistent
+\lor DeleteMemberInvalidConnection
+\lor DeleteMemberOK
+\lor DeleteMemberInvalidData
+\lor DeleteMemberInexistent
+\lor DeleteBookInvalidConnection
+\lor DeleteBookOK
+\lor DeleteBookInvalidData
+\lor DeleteBookInexistent
+\lor AddBookInvalidConnection
+\lor AddBookOK
+\lor AddBookInvalidData
+\lor AddBookAlreadyExistent
+\end{zed}

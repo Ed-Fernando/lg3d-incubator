@@ -1,0 +1,27 @@
+\begin{schema}{PipeLine}
+definer: Port \\
+p1:  Pipe \\
+p2:  Pipe \\
+f1: Filter \\
+f2: FilterOp \\
+f3: Filter2 \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port 
+\end{schema}
+
+
+\begin{zed}
+init\_PipeLine \sdef \lsch PipeLine' \bbar definer' = \new Port \land definer'.setiVar(element,This) \land f1' = \new Filter   \land f2' = \new FilterOp \land f3' = \new Filter2 \land p1' = \new Pipe \land p2' = \new Pipe \land f1'.output.setiVar(next,p1'.input) \land p1'.input.setiVar(next,f1'.output) \land p1'.output.setiVar(next,f2'.input) \land f2'.output.setiVar(next,p2'.input) \land p2'.input.setiVar(next,f2'.output) \land  p2'.output.setiVar(next,f3'.input) \land components' = \{  f1' , f2', f3' \} \land connectors' = \{ p1' , p2'  \}  \land events'= \{ in \} \land ports' = \{  definer'  \} \rsch  \end{zed}
+
+\begin{schema}{ProcessEvent}
+\Delta PipeLine \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST 
+\where event = in \\
+f1.ProcessEvent(event,This,inputP,outputP)
+\end{schema}
+

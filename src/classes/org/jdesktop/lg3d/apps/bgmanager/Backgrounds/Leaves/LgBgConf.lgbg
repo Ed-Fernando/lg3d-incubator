@@ -1,0 +1,21 @@
+<Background>
+<Name>Leaves And Sky</Name>
+<Thumbnail>resources/Backgrounds/Leaves/thumb.jpg</Thumbnail>
+<Author>Hideya</Author>
+<Date>11-03-2005</Date>
+<Description>Nice sky and Leaves. In field date time of
+creation this configuration file </Description>
+<BGType>Layered Background</BGType>
+<Layer>
+	<Image>resources/Backgrounds/Leaves/Leaves_and_Sky-0.jpg</Image>
+	<TranslationX>1.2</TranslationX>
+	<TranslationY>-0.1</TranslationY>
+	<TranslationZ>-1.5</TranslationZ>
+ </Layer>
+ <Layer>
+	<Image>resources/Backgrounds/Leaves/Leaves_and_Sky-1.png</Image>
+	<TranslationX>0.9</TranslationX>
+	<TranslationY>0.1</TranslationY>
+	<TranslationZ>1</TranslationZ>
+ </Layer>
+</Background>

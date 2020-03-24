@@ -1,0 +1,12 @@
+<Background>
+<Name>The Family</Name>
+<Thumbnail>resources/Backgrounds/TheFamily/thumb.jpg</Thumbnail>
+<Author>Ricardo Wagemaker of www.gcclinux.com</Author>
+<Date>11-03-2005</Date>
+<Description>The Family</Description>
+<BGType>Simple Background</BGType>
+
+	<Image>resources/Backgrounds/TheFamily/TheFamily.jpg</Image>
+	
+
+</Background>

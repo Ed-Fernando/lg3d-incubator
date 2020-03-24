@@ -1,0 +1,12 @@
+<Background>
+<Name>Vail Snow Maountains</Name>
+<Thumbnail>resources/Backgrounds/VailSnowMaountains/thumb.jpg</Thumbnail>
+<Author>Terry Jones of Sun Microsystems</Author>
+<Date>11-03-2005</Date>
+<Description>VailSnowMaountains</Description>
+<BGType>Simple Background</BGType>
+
+	<Image>resources/Backgrounds/VailSnowMaountains/VailSnowMountains.jpg</Image>
+	
+
+</Background>

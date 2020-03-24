@@ -1,0 +1,23 @@
+\begin{schema}{RPC}
+caller:  Port \\
+called: Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port 
+\where
+0=0
+\end{schema}
+
+
+\begin{zed}
+init\_RPC \sdef \lsch RPC' \bbar caller' = \new Port \land caller'.setiVar(element,This) \land called' = \new Port \land called'.setiVar(element,This) \land  components' = \{ \} \land  connectors' = \{ \} \land events'= \{ rpccall \} \land ports' = \{ caller', called' \} \rsch  \end{zed}
+
+\begin{schema}{ProcessEvent}
+\Delta RPC \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST 
+\where called.Initiate(event,This,inputP,outputP)
+\end{schema}

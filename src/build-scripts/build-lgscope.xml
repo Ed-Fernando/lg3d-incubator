@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="lgscope" default="all" basedir=".">
+    <target name="compile" description="Compile LgScope">
+        <javac debug="true"
+                deprecation="false"
+                destdir="${build.classes.dir}"
+                nowarn="true"
+                source="1.5"
+                sourcepath=""
+                target="1.5">
+            <classpath>
+                <pathelement location="${classpath}"/>
+                <pathelement path="${j3d.classpath}"/>
+                <fileset dir="../lg3d-core/ext">
+                    <include name="**/*.jar"/>
+        </fileset>
+            </classpath>
+            <src path="${javasrc.dir}"/>
+            <include name="org/jdesktop/lg3d/apps/lgscope/**"/>
+
+        </javac>
+    </target>
+
+    <target name="extras" description="Extra steps for LgScope build">
+
+        <copy todir="${build.classes.dir}/org/jdesktop/lg3d/apps/lgscope/resources">
+            <fileset dir="${javasrc.dir}/org/jdesktop/lg3d/apps/lgscope/resources" />
+        </copy>
+
+        <copy todir="${build.classes.dir}/org/jdesktop/lg3d/apps/lgscope/">
+            <fileset file="${javasrc.dir}/org/jdesktop/lg3d/apps/lgscope/icon.properties" />
+            <fileset file="${javasrc.dir}/org/jdesktop/lg3d/apps/lgscope/LgScopeIcon.png" />
+        </copy>
+
+    </target>
+
+    <target name="jar" depends="compile,extras" description="Jar up the LgScope app">
+        <jar compress="${jar.compress}" jarfile="${build.app.dir}/LgScope.jar">
+             <manifest>
+                <attribute name="Config-File" value="LgScope.lgcfg"/>
+             </manifest>
+             <fileset dir="${build.classes.dir}/">
+                <include name="org/jdesktop/lg3d/apps/lgscope/**"/>
+                <include name="org/jdesktop/lg3d/apps/lgscope/LgScopeIcon.png"/>
+             </fileset>
+             <fileset dir="${src.dir}/config">
+                <include name="LgScope.lgcfg"/>
+             </fileset>
+        </jar>
+    </target>
+</project>

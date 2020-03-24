@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="EUC-JP"?>
+<cosmo>
+	<plan name="JC2005" priority="3">
+		<startTime>2005/03/10/10:00</startTime>
+		<memo></memo>
+		<reference></reference>
+		<category>Java</category>
+	</plan>
+	<plan name="demonstration in LG3D BOF" priority="4">
+		<startTime>2005/03/11/17:00</startTime>
+		<memo></memo>
+		<reference></reference>
+		<category>Java</category>
+	</plan>
+	<plan name=" obligatory round of drinks" priority="2">
+		<startTime>2005/03/20/22:00</startTime>
+		<memo></memo>
+		<reference></reference>
+		<category>Business</category>
+	</plan>
+	<plan name="office meeting" priority="2">
+		<startTime>2005/04/09/00:15</startTime>
+		<memo></memo>
+		<reference></reference>
+		<category>Business</category>
+	</plan>
+	<plan name="obligatory round of drinks" priority="4">
+		<startTime>2005/04/10/22:00</startTime>
+		<memo></memo>
+		<reference></reference>
+		<category>Personal</category>
+	</plan>
+	<plan name="office meeting" priority="1">
+		<startTime>2005/04/18/00:15</startTime>
+		<memo></memo>
+		<reference></reference>
+		<category>Business</category>
+	</plan>
+	<plan name="payday" priority="3">
+		<startTime>2005/04/25/12:00</startTime>
+		<category>Business</category>
+	</plan>
+	<plan name="shopping" priority="1">
+		<startTime>2005/05/04/12:00</startTime>
+		<category>Personal</category>
+	</plan>
+	<plan name="office meeting" priority="1">
+		<startTime>2005/05/09/12:00</startTime>
+		<category>Business</category>
+	</plan>
+	<plan name="office meeting" priority="3">
+		<startTime>2005/05/16/12:00</startTime>
+		<category>Business</category>
+	</plan>
+	<plan name="overseas Business trip" priority="4">
+		<startTime>2005/05/17/12:00</startTime>
+		<memo></memo>
+		<reference></reference>
+		<category>Business</category>
+	</plan>
+	<plan name="payday" priority="3">
+		<startTime>2005/05/25/12:00</startTime>
+		<category>Business</category>
+	</plan>
+	<plan name="business trip in Japan" priority="2">
+		<startTime>2005/05/27/12:00</startTime>
+		<category>Business</category>
+	</plan>
+	<plan name="office meeting" priority="1">
+		<startTime>2005/06/06/12:00</startTime>
+		<category>Business</category>
+	</plan>
+	<plan name="Presentation" priority="2">
+		<startTime>2005/06/15/15:15</startTime>
+		<memo>launch a  application for presenatation</memo>
+		<reference>app slideIcon.png nu.koidelab.cosmo.apps.slideshow.SlideShowPanel</reference>
+	</plan>
+	<plan name="Travel to Japan" priority="4">
+		<startTime>2005/06/22/12:00</startTime>
+		<memo>demonstration for displaying picture(s)</memo>
+		<reference>resources/cosmo/app/ImageViewer/images/fujiyama.jpg</reference>
+		</plan>
+	<plan name="payday" priority="3">
+		<startTime>2005/06/25/12:00</startTime>
+		<category>Business</category>
+	</plan>
+	<plan name="office meeting" priority="1">
+		<startTime>2005/07/06/12:00</startTime>
+		<category>Business</category>
+	</plan>
+	<plan name="F1 - Great Britain GP" priority="1">
+		<startTime>2005/07/11/12:00</startTime>
+		<category>Personal</category>
+	</plan>
+	<plan name="Travel to Japan" priority="3">
+		<startTime>2005/07/11/12:00</startTime>
+		<memo>demonstration for displaying picture(s)</memo>
+		<reference>resources/cosmo/app/ImageViewer/images/fujiyama.jpg</reference>
+	</plan>
+	<plan name="F1 - Germany GP" priority="1">
+		<startTime>2005/07/24/12:00</startTime>
+		<category>Personal</category>
+	</plan>
+	<plan name="payday" priority="3">
+		<startTime>2005/07/25/12:00</startTime>
+		<category>Business</category>
+	</plan>
+	<plan name="F1 - Hungary" priority="1">
+		<startTime>2005/07/31/12:00</startTime>
+		<category>Personal</category>
+	</plan>
+	<plan name="trip priparation" priority="2">
+		<startTime>2005/08/15/00:15</startTime>
+		<memo></memo>
+		<reference></reference>
+		<category>Personal</category>
+	</plan>
+	<plan name="trip to L.A." priority="4">
+		<startTime>2005/08/16/12:00</startTime>
+		<memo></memo>
+		<reference></reference>
+		<category>Personal</category>
+	</plan>
+	<plan name="F1 - Turkey GP" priority="1">
+		<startTime>2005/08/21/12:00</startTime>
+		<category>Personal</category>
+	</plan>
+	<plan name="payday" priority="3">
+		<startTime>2005/08/25/12:00</startTime>
+		<category>Business</category>
+	</plan>
+	<plan name="deadline for Exploratoly Software Project" priority="5">
+		<startTime>2005/08/31/12:00</startTime>
+		<memo></memo>
+		<reference></reference>
+	</plan>
+	<plan name="F1 - Italy GP" priority="1">
+		<startTime>2005/09/04/12:00</startTime>
+		<category>Personal</category>
+	</plan>
+	<plan name="F1 - Begium GP" priority="1">
+		<startTime>2005/09/11/12:00</startTime>
+		<category>Personal</category>
+	</plan>
+	<plan name="office meeting" priority="2">
+		<startTime>2005/09/12/22:00</startTime>
+		<memo></memo>
+		<reference></reference>
+		<category>Business</category>
+	</plan>
+	<plan name="F1 - Brazil GP" priority="1">
+		<startTime>2005/09/25/22:00</startTime>
+		<memo></memo>
+		<reference></reference>
+		<category>Personal</category>
+	</plan>
+	<plan name="payday" priority="3">
+		<startTime>2005/09/25/07:00</startTime>
+		<memo></memo>
+		<reference></reference>
+		<category>Business</category>
+	</plan>
+	<plan name="office meeting" priority="1">
+		<startTime>2005/10/05/22:00</startTime>
+		<memo></memo>
+		<reference></reference>
+		<category>Business</category>
+	</plan>
+	<plan name="payday" priority="3">
+		<startTime>2005/10/25/22:00</startTime>
+		<memo></memo>
+		<reference></reference>
+		<category>Business</category>
+	</plan>
+	<plan name="JavaOne" priority="3">
+		<startTime>2005/06/26/12:00</startTime>
+		<category>Java</category>
+		<reference>app zoetrope.png org.jdesktop.lg3d.apps.zoetrope.Zoetrope resources/cosmo/app/SlideShow/slides/JavaOne.zoe</reference>
+	</plan>
+	<plan name="Duke's Choice Awards" priority="5">
+		<startTime>2005/06/28/12:00</startTime>
+		<memo>Duke's choice award</memo>
+		<category>Java</category>
+	</plan>
+	<plan name="leave for Hokkaido" priority="2">
+		<startTime>2005/07/12/12:00</startTime>
+		<memo></memo>
+		<reference></reference>
+	</plan>
+	<plan name="research presentation in Hokkaido" priority="4">
+		<startTime>2005/07/13/12:00</startTime>
+		<memo></memo>
+		<reference>app zoetrope.png org.jdesktop.lg3d.apps.zoetrope.Zoetrope resources/cosmo/app/SlideShow/slides/hakodate.zoe</reference>
+	</plan>
+	<plan name="return from Hokkaido" priority="2">
+		<startTime>2005/07/15/12:00</startTime>
+		<memo></memo>
+		<reference></reference>
+	</plan>
+</cosmo>

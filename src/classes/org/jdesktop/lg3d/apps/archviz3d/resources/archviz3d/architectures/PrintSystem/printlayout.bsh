@@ -1,0 +1,8 @@
+import reqviz.manifest3D.layouts.*;
+import reqviz.manifest3D.layouts.graph.*;
+import javax.vecmath.*;
+
+layout = new DepthFirstLayout3D(1);
+((MultipleDimension3D)layout).setRadiousIni(4);
+
+return layout;

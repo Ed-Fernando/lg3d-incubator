@@ -1,0 +1,1311 @@
+value(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),'Z_portSU',Z_portSU).
+setValue(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_NEW_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),'Z_portSU',Z_NEW_portSU).
+value(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),'Z_portSA',Z_portSA).
+setValue(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_NEW_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),'Z_portSA',Z_NEW_portSA).
+value(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),'Z_callerDAO',Z_callerDAO).
+setValue(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_NEW_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),'Z_callerDAO',Z_NEW_callerDAO).
+value(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),'Z_wc',Z_wc).
+setValue(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_NEW_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),'Z_wc',Z_NEW_wc).
+value(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),'Z_fc1',Z_fc1).
+setValue(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_NEW_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),'Z_fc1',Z_NEW_fc1).
+value(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),'Z_wcS',Z_wcS).
+setValue(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_NEW_wcS,Z_components,Z_connectors,Z_events,Z_ports),'Z_wcS',Z_NEW_wcS).
+value(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),'Z_components',Z_components).
+setValue(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_NEW_components,Z_connectors,Z_events,Z_ports),'Z_components',Z_NEW_components).
+value(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),'Z_connectors',Z_connectors).
+setValue(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_NEW_connectors,Z_events,Z_ports),'Z_connectors',Z_NEW_connectors).
+value(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),'Z_events',Z_events).
+setValue(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_NEW_events,Z_ports),'Z_events',Z_NEW_events).
+value(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),'Z_ports',Z_ports).
+setValue(z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_NEW_ports),'Z_ports',Z_NEW_ports).
+
+z_LibraryServer(globalState(This,Z_State,Z_State),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+z_init_LibraryServer(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV)):-
+	new(This,'Port',Z_TEMP2),
+	Z_portSU_DECORV=Z_TEMP2,
+	new(This,'FC',Z_TEMP3),
+	Z_fc1_DECORV=Z_TEMP3,
+	new(This,'Port',Z_TEMP4),
+	Z_wc_DECORV=Z_TEMP4,
+	setIvar(Z_wc_DECORV,'Z_element',This),
+	new(This,'WebContainer',Z_TEMP5),
+	Z_wcS_DECORV=Z_TEMP5,
+	setIvar(Z_portSU_DECORV,'Z_element',This),
+	new(This,'Port',Z_TEMP6),
+	Z_portSA_DECORV=Z_TEMP6,
+	setIvar(Z_portSA_DECORV,'Z_element',This),
+	new(This,'Port',Z_TEMP7),
+	Z_callerDAO_DECORV=Z_TEMP7,
+	setIvar(Z_callerDAO_DECORV,'Z_element',This),
+	Z_components_DECORV=[Z_wcS_DECORV],
+	Z_connectors_DECORV=[Z_fc1_DECORV],
+	Z_ports_DECORV=[Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV],
+	Z_events_DECORV=[searchBook,searchMember,addMember,deleteBook,addBook]
+	,addChangeOp(Z_State,z_init_LibraryServer,[va('Z_portSU'),va('Z_portSA'),va('Z_callerDAO'),va('Z_wc'),va('Z_fc1'),va('Z_wcS'),va('Z_components'),va('Z_connectors'),va('Z_events'),va('Z_ports')],Z_NewState).
+
+z_InitServerSystem(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports)):-
+	ivar(Z_fc1,'Z_caller',Z_TEMP1),	setIvar(Z_wc,'Z_next',Z_TEMP1),
+	ivar(Z_fc1,'Z_caller',Z_TEMP2),	setIvar(Z_TEMP2,'Z_next',Z_wc),
+	ivar(Z_fc1,'Z_called',Z_TEMP3),	ivar(Z_wcS,'Z_portLS',Z_TEMP4),	setIvar(Z_TEMP3,'Z_next',Z_TEMP4),
+	addChangeOp(Z_State,z_InitServerSystem,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_ValidateUserOk(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=validateUser,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnection,This,SR,CR]],_),
+	CR='valid_connection',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	Password=Z_TEMP6,
+	SR2=[user,Id],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SR2,US]],_),
+	US\=[],
+fAll([	mem(X,US),
+	nth(tuple(X,2),Z_TEMP7),
+	Z_TEMP7=Password
+],X,Z_TEMP8),
+	UR=Z_TEMP8,
+	UR\=[],
+	tail(Z_inputP,Z_TEMP9),
+	tail(Z_TEMP9,Z_TEMP10),
+	tail(Z_TEMP10,Z_TEMP11),
+	head(Z_TEMP11,Z_TEMP12),
+	Device=Z_TEMP12,
+	SD=[Ip,Device],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[openSession,This,SD,R]],_),
+	R='ok',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_ValidateUserOk,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_ValidateUserFailed(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=validateUser,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnection,This,SR,CR]],_),
+	CR='valid_connection',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	Password=Z_TEMP6,
+	SR2=[user,Id],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SR2,US]],_),
+	US\=[],
+fAll([	mem(X,US),
+	nth(tuple(X,2),Z_TEMP7),
+	Z_TEMP7=Password
+],X,Z_TEMP8),
+	UR=Z_TEMP8,
+	UR=[],
+	R='not_valid_user',
+	Z_report=R,
+	addChangeOp(Z_State,z_ValidateUserFailed,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_ValidateUserInvalidConnection(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=validateUser,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnection,This,SR,CR]],_),
+	CR='not_valid_connection_or_expired_session',
+	Z_report=CR,
+	addChangeOp(Z_State,z_ValidateUserInvalidConnection,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_ValidateUserInexistent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=validateUser,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnection,This,SR,CR]],_),
+	CR='valid_connection',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	Password=Z_TEMP6,
+	SR2=[user,Id],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SR2,US]],_),
+	US=[],
+	R='inexistent_record',
+	Z_report=R,
+	addChangeOp(Z_State,z_ValidateUserInexistent,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_Logout(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=logout,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnection,This,SR,CR]],_),
+	CR='valid_connection',
+	sendV(Z_wcS,execute,['z_ProcessEvent',[closeSession,This,SR,R]],_),
+	R='ok',
+	Z_report=R,
+	addChangeOp(Z_State,z_Logout,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_BooksRankingInvalidConnection(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=booksRanking,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='not_valid_connection_or_expired_session',
+	Z_report=CR,
+	addChangeOp(Z_State,z_BooksRankingInvalidConnection,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_BooksRanking(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=booksRanking,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	SE=[book],
+	sendV(Z_callerDAO,execute,['z_Initiate',[listing,This,SE,R]],_),
+	sort(tuple(R,4),Z_TEMP2),
+	RS=Z_TEMP2,
+	PD=[Ip,RS],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_BooksRanking,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_SearchBooksInvalidConnection(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=searchBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='not_valid_connection_or_expired_session',
+	Z_report=CR,
+	addChangeOp(Z_State,z_SearchBooksInvalidConnection,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_SearchBooks(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=searchBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Name=Z_TEMP3,
+	SR2=[book,Name],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SR2,BOOKS]],_),
+	PD=[Ip,BOOKS],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_SearchBooks,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_SearchMembers(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=searchMember,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	SR2=[user,Id],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SR2,US]],_),
+	PD=[Ip,US],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_SearchMembers,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_SearchMembersInvalidConnection(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=searchMember,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='not_valid_connection_or_expired_session',
+	Z_report=CR,
+	addChangeOp(Z_State,z_SearchMembersInvalidConnection,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_SearchLoansInvalidConnection(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=searchLoan,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='not_valid_connection_or_expired_session',
+	Z_report=CR,
+	addChangeOp(Z_State,z_SearchLoansInvalidConnection,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_SearchLoans(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=searchLoan,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	SL=[loan,searchByIdM,Id],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SL,LN]],_),
+	PD=[Ip,LN],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	sort(tuple(RFormatted,2),Z_TEMP4),
+	Z_report=Z_TEMP4,
+	addChangeOp(Z_State,z_SearchLoans,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddMemberAlreadyExistent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addMember,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	Password=Z_TEMP6,
+	tail(Z_inputP,Z_TEMP7),
+	tail(Z_TEMP7,Z_TEMP8),
+	tail(Z_TEMP8,Z_TEMP9),
+	head(Z_TEMP9,Z_TEMP10),
+	Name=Z_TEMP10,
+	Id>0,
+	Id\=0,
+	Password\=0,
+	Password\=Name,
+	SR2=[user,Id],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SR2,US]],_),
+	US\=[],
+	R='member_already_existent',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_AddMemberAlreadyExistent,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddMemberInvalidConnection(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addMember,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='not_valid_connection_or_expired_session',
+	Z_report=CR,
+	addChangeOp(Z_State,z_AddMemberInvalidConnection,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddMemberOK(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addMember,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	Password=Z_TEMP6,
+	tail(Z_inputP,Z_TEMP7),
+	tail(Z_TEMP7,Z_TEMP8),
+	tail(Z_TEMP8,Z_TEMP9),
+	head(Z_TEMP9,Z_TEMP10),
+	Name=Z_TEMP10,
+	Id>0,
+	Id\=0,
+	Password\=0,
+	Password\=Name,
+	SE=[user,Id,Password,Name],
+	sendV(Z_callerDAO,execute,['z_Initiate',[addRecord,This,SE,R]],_),
+	R='ok',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_AddMemberOK,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddMemberInvalidData(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addMember,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	Password=Z_TEMP6,
+	tail(Z_inputP,Z_TEMP7),
+	tail(Z_TEMP7,Z_TEMP8),
+	tail(Z_TEMP8,Z_TEMP9),
+	head(Z_TEMP9,Z_TEMP10),
+	Name=Z_TEMP10,
+	Password=Name,
+	R='not_valid_data',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_AddMemberInvalidData,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddMemberInvalidData(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addMember,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	Password=Z_TEMP6,
+	tail(Z_inputP,Z_TEMP7),
+	tail(Z_TEMP7,Z_TEMP8),
+	tail(Z_TEMP8,Z_TEMP9),
+	head(Z_TEMP9,Z_TEMP10),
+	Name=Z_TEMP10,
+	Id=0,
+	R='not_valid_data',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_AddMemberInvalidData,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddMemberInvalidData(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addMember,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	Password=Z_TEMP6,
+	tail(Z_inputP,Z_TEMP7),
+	tail(Z_TEMP7,Z_TEMP8),
+	tail(Z_TEMP8,Z_TEMP9),
+	head(Z_TEMP9,Z_TEMP10),
+	Name=Z_TEMP10,
+	Id<0,
+	R='not_valid_data',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_AddMemberInvalidData,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddLoanInvalidConnection(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addLoan,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='not_valid_connection_or_expired_session',
+	Z_report=CR,
+	addChangeOp(Z_State,z_AddLoanInvalidConnection,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddLoanOK(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addLoan,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	IdM=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	IdB=Z_TEMP6,
+	IdM\=0,
+	SM=[user,IdM],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SM,US]],_),
+	US\=[],
+	SB=[book,IdB],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SB,BOOK]],_),
+	BOOK\=[],
+	head(BOOK,Z_TEMP7),
+	nth(tuple(Z_TEMP7,1),Z_TEMP8),
+	IdBB=Z_TEMP8,
+	SL=[loan,searchByIdB,IdBB],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SL,LOAN]],_),
+	head(BOOK,Z_TEMP9),
+	nth(tuple(Z_TEMP9,3),Z_TEMP10),
+	length(LOAN,Z_TEMP11),
+	Z_TEMP10>Z_TEMP11,
+	SE=[loan,IdM,IdBB],
+	sendV(Z_callerDAO,execute,['z_Initiate',[addRecord,This,SE,R]],_),
+	R='ok',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_AddLoanOK,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddLoanInvalidData(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addLoan,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	IdM=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	IdB=Z_TEMP6,
+	SM=[user,IdM],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SM,US]],_),
+	SB=[book,IdB],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SB,BOOK]],_),
+	IdM=0,
+	Z_report='not_valid_data',
+	addChangeOp(Z_State,z_AddLoanInvalidData,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddLoanInvalidData(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addLoan,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	IdM=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	IdB=Z_TEMP6,
+	SM=[user,IdM],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SM,US]],_),
+	SB=[book,IdB],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SB,BOOK]],_),
+	US=[],
+	Z_report='not_valid_data',
+	addChangeOp(Z_State,z_AddLoanInvalidData,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddLoanInvalidData(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addLoan,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	IdM=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	IdB=Z_TEMP6,
+	SM=[user,IdM],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SM,US]],_),
+	SB=[book,IdB],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SB,BOOK]],_),
+	BOOK=[],
+	Z_report='not_valid_data',
+	addChangeOp(Z_State,z_AddLoanInvalidData,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddLoanNotEnoughBooks(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addLoan,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	IdM=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	IdB=Z_TEMP6,
+	IdM\=0,
+	SM=[user,IdM],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SM,US]],_),
+	US\=[],
+	SB=[book,IdB],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SB,BOOK]],_),
+	BOOK\=[],
+	head(BOOK,Z_TEMP7),
+	nth(tuple(Z_TEMP7,1),Z_TEMP8),
+	IdBB=Z_TEMP8,
+	SL=[loan,searchByIdB,IdBB],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SL,LOAN]],_),
+	head(BOOK,Z_TEMP9),
+	nth(tuple(Z_TEMP9,3),Z_TEMP10),
+	length(LOAN,Z_TEMP11),
+	Z_TEMP10=Z_TEMP11,
+	R='not_enough_books',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_AddLoanNotEnoughBooks,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_ReturnBookInvalidConnection(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=returnBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='not_valid_connection_or_expired_session',
+	Z_report=CR,
+	addChangeOp(Z_State,z_ReturnBookInvalidConnection,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_ReturnBookOK(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=returnBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	IdM=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	IdB=Z_TEMP6,
+	IdM\=0,
+	SM=[user,IdM],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SM,US]],_),
+	US\=[],
+	SB=[book,IdB],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SB,BOOK]],_),
+	BOOK\=[],
+	head(BOOK,Z_TEMP7),
+	nth(tuple(Z_TEMP7,1),Z_TEMP8),
+	IdBB=Z_TEMP8,
+	SL=[loan,searchByIdB,IdBB],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SL,LOAN]],_),
+	LOAN\=[],
+	head(LOAN,Z_TEMP9),
+	nth(tuple(Z_TEMP9,1),Z_TEMP10),
+	IdM1=Z_TEMP10,
+	head(LOAN,Z_TEMP11),
+	nth(tuple(Z_TEMP11,2),Z_TEMP12),
+	IdB1=Z_TEMP12,
+	DR=[loan,IdM1,IdB1],
+	sendV(Z_callerDAO,execute,['z_Initiate',[deleteRecord,This,DR,R]],_),
+	R='ok',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_ReturnBookOK,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_ReturnBookInvalidData(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=returnBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	IdM=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	IdB=Z_TEMP6,
+	IdM=0,
+	R='not_valid_data',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_ReturnBookInvalidData,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_ReturnBookInvalidData(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=returnBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	IdM=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	IdB=Z_TEMP6,
+	IdB=0,
+	R='not_valid_data',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_ReturnBookInvalidData,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_ReturnBookInexistent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=returnBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	IdM=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	IdB=Z_TEMP6,
+	SM=[user,IdM],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SM,US]],_),
+	SB=[book,IdB],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SB,BOOK]],_),
+	SL=[loan,searchByIdBIdM,IdM,IdB],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SL,LOAN]],_),
+	US=[],
+	R='inexistent_record',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_ReturnBookInexistent,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_ReturnBookInexistent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=returnBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	IdM=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	IdB=Z_TEMP6,
+	SM=[user,IdM],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SM,US]],_),
+	SB=[book,IdB],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SB,BOOK]],_),
+	SL=[loan,searchByIdBIdM,IdM,IdB],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SL,LOAN]],_),
+	BOOK=[],
+	R='inexistent_record',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_ReturnBookInexistent,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_ReturnBookInexistent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=returnBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	IdM=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	IdB=Z_TEMP6,
+	SM=[user,IdM],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SM,US]],_),
+	SB=[book,IdB],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SB,BOOK]],_),
+	SL=[loan,searchByIdBIdM,IdM,IdB],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SL,LOAN]],_),
+	LOAN=[],
+	R='inexistent_record',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_ReturnBookInexistent,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_DeleteMemberInvalidConnection(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=deleteMember,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='not_valid_connection_or_expired_session',
+	Z_report=CR,
+	addChangeOp(Z_State,z_DeleteMemberInvalidConnection,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_DeleteMemberOK(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=deleteMember,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	Id>0,
+	SR2=[user,Id],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SR2,US]],_),
+	US\=[],
+	head(US,Z_TEMP4),
+	nth(tuple(Z_TEMP4,1),Z_TEMP5),
+	Id1=Z_TEMP5,
+	head(US,Z_TEMP6),
+	nth(tuple(Z_TEMP6,2),Z_TEMP7),
+	Passw1=Z_TEMP7,
+	head(US,Z_TEMP8),
+	nth(tuple(Z_TEMP8,3),Z_TEMP9),
+	UserName1=Z_TEMP9,
+	DR=[user,Id1,Passw1,UserName1],
+	sendV(Z_callerDAO,execute,['z_Initiate',[deleteRecord,This,DR,R]],_),
+	R='ok',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_DeleteMemberOK,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_DeleteMemberInvalidData(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=deleteMember,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	Id=0,
+	R='not_valid_data',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_DeleteMemberInvalidData,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_DeleteMemberInvalidData(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=deleteMember,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	Id<0,
+	R='not_valid_data',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_DeleteMemberInvalidData,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_DeleteMemberInexistent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=deleteMember,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	Id>0,
+	SR2=[user,Id],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SR2,US]],_),
+	US=[],
+	R='inexistent_record',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_DeleteMemberInexistent,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_DeleteBookInvalidData(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=deleteBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	Id=0,
+	R='not_valid_data',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_DeleteBookInvalidData,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_DeleteBookInvalidData(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=deleteBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	Id<0,
+	R='not_valid_data',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_DeleteBookInvalidData,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_DeleteBookInvalidConnection(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=deleteBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='not_valid_connection_or_expired_session',
+	Z_report=CR,
+	addChangeOp(Z_State,z_DeleteBookInvalidConnection,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_DeleteBookInexistent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=deleteBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	Id>0,
+	SR2=[book,Id],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SR2,BOOKS]],_),
+	BOOKS=[],
+	R='inexistent_record',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_DeleteBookInexistent,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_DeleteBookOK(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=deleteBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	BookName=Z_TEMP3,
+	SR2=[book,BookName],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SR2,BOOK]],_),
+	BOOK\=[],
+	head(BOOK,Z_TEMP4),
+	nth(tuple(Z_TEMP4,1),Z_TEMP5),
+	Id1=Z_TEMP5,
+	head(BOOK,Z_TEMP6),
+	nth(tuple(Z_TEMP6,2),Z_TEMP7),
+	BookName1=Z_TEMP7,
+	head(BOOK,Z_TEMP8),
+	nth(tuple(Z_TEMP8,3),Z_TEMP9),
+	Items1=Z_TEMP9,
+	SL=[loan,searchByIdB,Id1],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SL,LOAN]],_),
+	LOAN=[],
+	DR=[book,Id1,BookName1,Items1],
+	sendV(Z_callerDAO,execute,['z_Initiate',[deleteRecord,This,DR,R]],_),
+	R='ok',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_DeleteBookOK,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_DeleteBookWithLoans(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=deleteBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	BookName=Z_TEMP3,
+	SR2=[book,BookName],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SR2,BOOK]],_),
+	BOOK\=[],
+	head(BOOK,Z_TEMP4),
+	nth(tuple(Z_TEMP4,1),Z_TEMP5),
+	Id1=Z_TEMP5,
+	SL=[loan,searchByIdB,Id1],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SL,LOAN]],_),
+	LOAN\=[],
+	R='book_with_loans',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_DeleteBookWithLoans,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddBookInvalidConnection(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='not_valid_connection_or_expired_session',
+	Z_report=CR,
+	addChangeOp(Z_State,z_AddBookInvalidConnection,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddBookOK(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	Name=Z_TEMP6,
+	tail(Z_inputP,Z_TEMP7),
+	tail(Z_TEMP7,Z_TEMP8),
+	tail(Z_TEMP8,Z_TEMP9),
+	head(Z_TEMP9,Z_TEMP10),
+	Amount=Z_TEMP10,
+	Id>0,
+	Id\=0,
+	Amount\=0,
+	SB=[book,Name],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SB,BOOK]],_),
+	BOOK=[],
+	SE=[book,Id,Name,Amount],
+	sendV(Z_callerDAO,execute,['z_Initiate',[addRecord,This,SE,R]],_),
+	R='ok',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_AddBookOK,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddBookAlreadyExistent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	Name=Z_TEMP6,
+	tail(Z_inputP,Z_TEMP7),
+	tail(Z_TEMP7,Z_TEMP8),
+	tail(Z_TEMP8,Z_TEMP9),
+	head(Z_TEMP9,Z_TEMP10),
+	Amount=Z_TEMP10,
+	Id>0,
+	Id\=0,
+	Amount\=0,
+	SB=[book,Name],
+	sendV(Z_callerDAO,execute,['z_Initiate',[searchRecord,This,SB,BOOK]],_),
+	BOOK\=[],
+	R='book_already_existent',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_AddBookAlreadyExistent,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddBookInvalidData(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	Name=Z_TEMP6,
+	tail(Z_inputP,Z_TEMP7),
+	tail(Z_TEMP7,Z_TEMP8),
+	tail(Z_TEMP8,Z_TEMP9),
+	head(Z_TEMP9,Z_TEMP10),
+	Amount=Z_TEMP10,
+	Id=0,
+	R='not_valid_data',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_AddBookInvalidData,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddBookInvalidData(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	Name=Z_TEMP6,
+	tail(Z_inputP,Z_TEMP7),
+	tail(Z_TEMP7,Z_TEMP8),
+	tail(Z_TEMP8,Z_TEMP9),
+	head(Z_TEMP9,Z_TEMP10),
+	Amount=Z_TEMP10,
+	Id<0,
+	R='not_valid_data',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_AddBookInvalidData,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_AddBookInvalidData(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addBook,
+	head(Z_inputP,Z_TEMP1),
+	Ip=Z_TEMP1,
+	SR=[Ip],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[checkConnectionSession,This,SR,CR]],_),
+	CR='valid_connection_and_active_session',
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	Name=Z_TEMP6,
+	tail(Z_inputP,Z_TEMP7),
+	tail(Z_TEMP7,Z_TEMP8),
+	tail(Z_TEMP8,Z_TEMP9),
+	head(Z_TEMP9,Z_TEMP10),
+	Amount=Z_TEMP10,
+	Amount=0,
+	R='not_valid_data',
+	PD=[Ip,R],
+	sendV(Z_wcS,execute,['z_ProcessEvent',[generatePage,This,PD,RFormatted]],_),
+	Z_report=RFormatted,
+	addChangeOp(Z_State,z_AddBookInvalidData,[],Z_NewState),
+	z_LibraryServer(globalState(This,Z_NewState,Z_NewState),Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_ValidateUserFailed(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_ValidateUserOk(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_ValidateUserInvalidConnection(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_ValidateUserInexistent(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_Logout(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_BooksRankingInvalidConnection(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_BooksRanking(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_SearchBooksInvalidConnection(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_SearchBooks(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_SearchMembersInvalidConnection(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_SearchMembers(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_SearchLoansInvalidConnection(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_SearchLoans(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_AddMemberAlreadyExistent(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_AddMemberInvalidConnection(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_AddMemberOK(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_AddMemberInvalidData(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_AddLoanInvalidConnection(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_AddLoanOK(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_AddLoanNotEnoughBooks(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_AddLoanInvalidData(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_ReturnBookInvalidConnection(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_ReturnBookOK(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_ReturnBookInvalidData(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_ReturnBookInexistent(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_DeleteMemberInvalidConnection(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_DeleteMemberOK(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_DeleteMemberInvalidData(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_DeleteMemberInexistent(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_DeleteBookInvalidConnection(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_DeleteBookOK(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_DeleteBookInvalidData(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_DeleteBookInexistent(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_AddBookInvalidConnection(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_AddBookOK(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_AddBookInvalidData(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_AddBookAlreadyExistent(globalState(This,Z_State,Z_TEMP1),z_LibraryServer(Z_portSU,Z_portSA,Z_callerDAO,Z_wc,Z_fc1,Z_wcS,Z_components,Z_connectors,Z_events,Z_ports),z_LibraryServer(Z_portSU_DECORV,Z_portSA_DECORV,Z_callerDAO_DECORV,Z_wc_DECORV,Z_fc1_DECORV,Z_wcS_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+init_LibraryServer_stateIni(tree('Root',[tree('LibraryServer',['portSU','portSA','callerDAO','wc','fc1','wcS','components','connectors','events','ports'])])).

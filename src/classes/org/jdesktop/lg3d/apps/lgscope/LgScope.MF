@@ -1,0 +1,4 @@
+Implementation-Title: LgScope
+Main-Class: org.jdesktop.lg3d.apps.lgscope.LgScope
+Icon-Filename: LgScopeIcon.png
+

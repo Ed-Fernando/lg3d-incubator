@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.5.0" class="java.beans.XMLDecoder"> 
+ <!-- Taskbar item -->
+ <!--
+ <object class="org.jdesktop.lg3d.scenemanager.config.ApplicationDescription"> 
+  <void property="exec"> 
+   <string>java org.jdesktop.lg3d.apps.zoetrope.Zoetrope</string> 
+  </void> 
+  <void property="iconFilename"> 
+   <string>resources/images/icon/zoetrope.png</string> 
+  </void> 
+  <void property="name"> 
+   <string>Zoetrope - Image Viewer</string> 
+  </void> 
+ </object> 
+ -->
+ <!-- Start Menu item -->
+ <object class="org.jdesktop.lg3d.scenemanager.utils.startmenu.StartMenuItemConfig"> 
+  <void property="command"> 
+   <string>java org.jdesktop.lg3d.apps.zoetrope.Zoetrope</string> 
+  </void> 
+  <void property="desc"> 
+   <string>Image viewer</string> 
+  </void> 
+  <void property="displayResourceType">
+   <string>ICON</string>
+  </void> 
+  <void property="displayResourceUrlName">
+   <string>resource:///resources/images/icon/zoetrope.png</string>
+  </void>
+  <void property="menuGroup"> 
+   <string>Media</string> 
+  </void> 
+  <void property="name"> 
+   <string>Zoetrope</string> 
+  </void> 
+  <void property="classpathJars">
+    <string>zoetrope.jar</string>
+  </void>
+ </object> 
+</java> 

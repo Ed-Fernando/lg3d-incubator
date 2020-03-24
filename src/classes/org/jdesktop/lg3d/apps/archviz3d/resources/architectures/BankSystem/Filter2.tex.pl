@@ -1,0 +1,39 @@
+value(z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),'Z_input',Z_input).
+setValue(z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),z_Filter2(Z_NEW_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),'Z_input',Z_NEW_input).
+value(z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),'Z_output',Z_output).
+setValue(z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),z_Filter2(Z_input,Z_NEW_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),'Z_output',Z_NEW_output).
+value(z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),'Z_last',Z_last).
+setValue(z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),z_Filter2(Z_input,Z_output,Z_NEW_last,Z_components,Z_connectors,Z_events,Z_ports),'Z_last',Z_NEW_last).
+value(z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),'Z_components',Z_components).
+setValue(z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),z_Filter2(Z_input,Z_output,Z_last,Z_NEW_components,Z_connectors,Z_events,Z_ports),'Z_components',Z_NEW_components).
+value(z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),'Z_connectors',Z_connectors).
+setValue(z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_NEW_connectors,Z_events,Z_ports),'Z_connectors',Z_NEW_connectors).
+value(z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),'Z_events',Z_events).
+setValue(z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_NEW_events,Z_ports),'Z_events',Z_NEW_events).
+value(z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),'Z_ports',Z_ports).
+setValue(z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_NEW_ports),'Z_ports',Z_NEW_ports).
+
+z_Filter2(globalState(This,Z_State,Z_State),Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports).
+z_init_Filter2(globalState(This,Z_State,Z_NewState),z_Filter2(Z_input_DECORV,Z_output_DECORV,Z_last_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_events_DECORV,Z_ports_DECORV)):-
+	Z_last_DECORV=0,
+	new(This,'Port',Z_TEMP2),
+	Z_input_DECORV=Z_TEMP2,
+	setIvar(Z_input_DECORV,'Z_element',This),
+	new(This,'Port',Z_TEMP3),
+	Z_output_DECORV=Z_TEMP3,
+	setIvar(Z_output_DECORV,'Z_element',This),
+	Z_components_DECORV=[],
+	Z_connectors_DECORV=[],
+	Z_events_DECORV=[in],
+	Z_ports_DECORV=[Z_input_DECORV,Z_output_DECORV]
+	,addChangeOp(Z_State,z_init_Filter2,[va('Z_input'),va('Z_output'),va('Z_last'),va('Z_components'),va('Z_connectors'),va('Z_events'),va('Z_ports')],Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_Filter2(Z_input,Z_output,Z_last,Z_components,Z_connectors,Z_events,Z_ports),z_Filter2(Z_input,Z_output,Z_last_DECORV,Z_components,Z_connectors,Z_events,Z_ports),Z_event,Z_instance,Z_inputP,Z_outputP):-
+	Z_event=in,
+	sort(tuple(Z_inputP,3),Z_TEMP1),
+	Z_outputP=Z_TEMP1,
+	Z_last_DECORV=Z_inputP,
+	addChangeOp(Z_State,z_ProcessEvent,[va('Z_last')],Z_NewState),
+	z_Filter2(globalState(This,Z_NewState,Z_NewState),Z_input,Z_output,Z_last_DECORV,Z_components,Z_connectors,Z_events,Z_ports).
+
+init_Filter2_stateIni(tree('Root',[tree('Filter2',['input','output','last','components','connectors','events','ports'])])).

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE types SYSTEM "/home/teyseyre/WorkSpace/ReqViz3DEclipse/src/schema/VisualMappings.xsd">
+
+<cc:visual-information xmlns:cc="http://candc.org"> 
+    <cc:name>LibrarySystem</cc:name>
+    <cc:architecture-scale>0.03</cc:architecture-scale>
+    <cc:architecture-translation x="0.01" y="0.03" z="0.0"/>
+
+    <cc:ccmap>
+        <cc:component>LibrarySystem</cc:component>
+		<cc:class>archviz.geons.GeonCluster</cc:class>
+		<cc:builder>archviz.geons.builders.GeonBuilderCluster</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+		<cc:layout>archviz/architectures/LibrarySystem/librarylayout.bsh</cc:layout>
+        <cc:wrapper-class>archviz.geons.wrappers.SphereWrapper</cc:wrapper-class>
+        <cc:color red="0.3" green="0.2" blue="0.7"/>
+        <cc:geon-list>
+           <cc:geon>cylinder</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+           <cc:geon>handle</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>
+
+    <cc:ccmap>
+        <cc:component>WebContainer</cc:component>
+		<cc:class>archviz.geons.GeonCluster</cc:class>
+		<cc:builder>archviz.geons.builders.GeonBuilderCluster</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:layout>archviz/architectures/LibrarySystem/webcontainerlayout.bsh</cc:layout> 
+        <cc:wrapper-class>archviz.geons.wrappers.GeonWrapperLineal</cc:wrapper-class>
+        <cc:color red="0.8" green="0.0" blue="0.0"/>
+        <cc:geon-list>
+           <cc:geon>cube</cc:geon>
+           <cc:geon>cylinder</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+           <cc:geon>handle</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>
+
+    <cc:ccmap>
+        <cc:component>Firewall</cc:component>
+        <cc:class>archviz.geons.GeonSimple</cc:class>
+        <cc:builder>archviz.geons.builders.GeonBuilderSimple</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.0" green="0.6" blue="0.0"/>
+        <cc:geon-list>
+           <cc:geon>barrel</cc:geon>
+           <cc:geon>halfcone-cylinder</cc:geon>
+           <cc:geon>halfsphere-large</cc:geon>
+           <cc:geon>cone</cc:geon>
+           <cc:geon>cube</cc:geon>
+           <cc:geon>cylinder</cc:geon>
+           <cc:geon>halfcone</cc:geon>
+           <cc:geon>halfsphere-cube</cc:geon>
+           <cc:geon>halfsphere</cc:geon>
+           <cc:geon>pyramid</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+           <cc:geon>handle</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>    
+
+    <cc:ccmap>
+        <cc:component>DynamicPageGenerator</cc:component>
+        <cc:class>archviz.geons.GeonSimple</cc:class>
+        <cc:builder>archviz.geons.builders.GeonBuilderSimple</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.0" green="0.0" blue="0.6"/>
+        <cc:geon-list>
+           <cc:geon>cube</cc:geon>
+           <cc:geon>barrel</cc:geon>
+           <cc:geon>halfcone-cylinder</cc:geon>
+           <cc:geon>halfsphere-large</cc:geon>
+           <cc:geon>cone</cc:geon>
+           <cc:geon>cylinder</cc:geon>
+           <cc:geon>halfcone</cc:geon>
+           <cc:geon>halfsphere-cube</cc:geon>
+           <cc:geon>halfsphere</cc:geon>
+           <cc:geon>pyramid</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+           <cc:geon>handle</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>    
+
+    <cc:ccmap>
+        <cc:component>WAPFormatter</cc:component>
+        <cc:class>archviz.geons.GeonSimple</cc:class>
+        <cc:builder>archviz.geons.builders.GeonBuilderSimple</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.0" green="0.6" blue="0.6"/>
+        <cc:geon-list>
+           <cc:geon>cone</cc:geon>
+           <cc:geon>barrel</cc:geon>
+           <cc:geon>halfcone-cylinder</cc:geon>
+           <cc:geon>halfsphere-large</cc:geon>
+           <cc:geon>cube</cc:geon>
+           <cc:geon>cylinder</cc:geon>
+           <cc:geon>halfcone</cc:geon>
+           <cc:geon>halfsphere-cube</cc:geon>
+           <cc:geon>halfsphere</cc:geon>
+           <cc:geon>pyramid</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+           <cc:geon>handle</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>    
+
+    <cc:ccmap>
+        <cc:component>HTMLFormatter</cc:component>
+        <cc:class>archviz.geons.GeonSimple</cc:class>
+        <cc:builder>archviz.geons.builders.GeonBuilderSimple</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.6" green="0.0" blue="0.6"/>
+        <cc:geon-list>
+           <cc:geon>cylinder</cc:geon>
+           <cc:geon>barrel</cc:geon>
+           <cc:geon>halfcone-cylinder</cc:geon>
+           <cc:geon>halfsphere-large</cc:geon>
+           <cc:geon>cone</cc:geon>
+           <cc:geon>cube</cc:geon>
+           <cc:geon>halfcone</cc:geon>
+           <cc:geon>halfsphere-cube</cc:geon>
+           <cc:geon>halfsphere</cc:geon>
+           <cc:geon>pyramid</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+           <cc:geon>handle</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>    
+
+    <cc:ccmap>
+        <cc:component>Admin</cc:component>
+        <cc:class>archviz.geons.GeonSimple</cc:class>
+        <cc:builder>archviz.geons.builders.GeonBuilderSimple</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.6" green="0.6" blue="0.3"/>
+        <cc:geon-list>
+           <cc:geon>barrel</cc:geon>
+           <cc:geon>halfcone-cylinder</cc:geon>
+           <cc:geon>halfsphere-large</cc:geon>
+           <cc:geon>cone</cc:geon>
+           <cc:geon>cube</cc:geon>
+           <cc:geon>cylinder</cc:geon>
+           <cc:geon>halfcone</cc:geon>
+           <cc:geon>halfsphere-cube</cc:geon>
+           <cc:geon>halfsphere</cc:geon>
+           <cc:geon>pyramid</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+           <cc:geon>handle</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>    
+
+    <cc:ccmap>
+        <cc:component>Member</cc:component>
+        <cc:class>archviz.geons.GeonSimple</cc:class>
+        <cc:builder>archviz.geons.builders.GeonBuilderSimple</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.8" green="0.4" blue="0.6"/>
+        <cc:geon-list>
+           <cc:geon>halfsphere-cube</cc:geon>
+           <cc:geon>halfcone-cylinder</cc:geon>
+           <cc:geon>halfsphere-large</cc:geon>
+           <cc:geon>barrel</cc:geon>
+           <cc:geon>cone</cc:geon>
+           <cc:geon>cube</cc:geon>
+           <cc:geon>cylinder</cc:geon>
+           <cc:geon>halfcone</cc:geon>
+           <cc:geon>halfsphere</cc:geon>
+           <cc:geon>pyramid</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+           <cc:geon>handle</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap> 
+
+    <cc:ccmap>
+        <cc:component>SessionManager</cc:component>
+        <cc:class>archviz.geons.GeonSimple</cc:class>
+        <cc:builder>archviz.geons.builders.GeonBuilderSimple</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.2" green="0.6" blue="0.2"/>
+        <cc:geon-list>
+           <cc:geon>pyramid</cc:geon>
+           <cc:geon>barrel</cc:geon>
+           <cc:geon>halfcone-cylinder</cc:geon>
+           <cc:geon>halfsphere-large</cc:geon>
+           <cc:geon>cone</cc:geon>
+           <cc:geon>cube</cc:geon>
+           <cc:geon>cylinder</cc:geon>
+           <cc:geon>halfcone</cc:geon>
+           <cc:geon>halfsphere-cube</cc:geon>
+           <cc:geon>halfsphere</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+           <cc:geon>handle</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap> 
+
+    <cc:ccmap>
+        <cc:component>LibraryServer</cc:component>
+		<cc:class>archviz.geons.GeonCluster</cc:class>
+		<cc:builder>archviz.geons.builders.GeonBuilderCluster</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:layout>archviz/architectures/LibrarySystem/webcontainerlayout.bsh</cc:layout> 
+        <cc:wrapper-class>archviz.geons.wrappers.GeonWrapperSpherical</cc:wrapper-class>
+        <cc:color red="0.8" green="0.6" blue="0.2"/>
+        <cc:geon-list>
+           <cc:geon>barrel</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+           <cc:geon>handle</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>
+
+    <cc:ccmap>
+        <cc:component>DAO</cc:component>
+        <cc:class>archviz.geons.GeonSimple</cc:class>
+        <cc:builder>archviz.geons.builders.GeonBuilderSimple</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.0" green="0.8" blue="0.8"/>
+        <cc:geon-list>
+           <cc:geon>halfcone</cc:geon>
+           <cc:geon>halfcone-cylinder</cc:geon>
+           <cc:geon>halfsphere-large</cc:geon>
+           <cc:geon>barrel</cc:geon>
+           <cc:geon>cone</cc:geon>
+           <cc:geon>cube</cc:geon>
+           <cc:geon>cylinder</cc:geon>
+           <cc:geon>halfsphere-cube</cc:geon>
+           <cc:geon>halfsphere</cc:geon>
+           <cc:geon>pyramid</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+           <cc:geon>handle</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>    
+
+    <cc:ccmap>
+        <cc:component>DB</cc:component>
+        <cc:class>archviz.geons.GeonSimple</cc:class>
+        <cc:builder>archviz.geons.builders.GeonBuilderSimple</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.8" green="0.8" blue="0.2"/>
+        <cc:geon-list>
+           <cc:geon>halfcone-cylinder</cc:geon>
+           <cc:geon>halfsphere-large</cc:geon>
+           <cc:geon>barrel</cc:geon>
+           <cc:geon>cone</cc:geon>
+           <cc:geon>cube</cc:geon>
+           <cc:geon>cylinder</cc:geon>
+           <cc:geon>halfcone</cc:geon>
+           <cc:geon>halfsphere-cube</cc:geon>
+           <cc:geon>halfsphere</cc:geon>
+           <cc:geon>pyramid</cc:geon>
+        </cc:geon-list>
+        <cc:geon-event-list>
+           <cc:geon>handle</cc:geon>
+        </cc:geon-event-list>
+    </cc:ccmap>    
+    
+   <cc:ccmap>
+        <cc:component>RPC</cc:component>
+        <cc:class>reqviz.manifest3D.objects.ManhatanLink3D</cc:class>
+        <cc:builder>reqviz.manifest3D.builders.ManhatanLinkBuilder3D</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.1" green="0.1" blue="0.6"/>
+        <cc:geon-list>
+           <cc:geon>cylinder</cc:geon>
+        </cc:geon-list>
+    </cc:ccmap>  
+    
+    <cc:ccmap>
+        <cc:component>FC</cc:component>
+        <cc:class>reqviz.manifest3D.objects.ManhatanLink3D</cc:class>
+        <cc:builder>reqviz.manifest3D.builders.ManhatanLinkBuilder3D</cc:builder>
+        <cc:builder-type>Class</cc:builder-type>
+        <cc:color red="0.4" green="0.4" blue="0.8"/>
+        <cc:geon-list>
+           <cc:geon>cylinder</cc:geon>
+        </cc:geon-list>
+    </cc:ccmap>
+
+</cc:visual-information>

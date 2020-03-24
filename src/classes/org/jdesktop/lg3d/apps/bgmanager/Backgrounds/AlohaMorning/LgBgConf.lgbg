@@ -1,0 +1,12 @@
+<Background>
+<Name>Aloha morning</Name>
+<Thumbnail>resources/Backgrounds/AlohaMorning/thumb.jpg</Thumbnail>
+<Author></Author>
+<Date>11-03-2005</Date>
+<Description>Aloha morning</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>1</InitialBackground>
+	<Image>resources/Backgrounds/AlohaMorning/aloha-morning-0.jpg</Image>
+	<Image>resources/Backgrounds/AlohaMorning/aloha-morning-1.jpg</Image>
+	<Image>resources/Backgrounds/AlohaMorning/aloha-morning-2.jpg</Image>
+</Background>

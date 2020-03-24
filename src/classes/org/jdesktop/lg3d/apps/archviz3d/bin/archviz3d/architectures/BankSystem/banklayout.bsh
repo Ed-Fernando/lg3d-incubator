@@ -1,0 +1,8 @@
+import org.jdesktop.lg3d.apps.archviz3d.manifest3D.layouts.*;
+import org.jdesktop.lg3d.apps.archviz3d.manifest3D.layouts.graph.*;
+import javax.vecmath.*;
+
+       layout = new DepthFirstLayout3D(6);
+       ((MultipleDimension3D)layout).setRadiousIni(4);
+
+       return layout;

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE types SYSTEM "//ArchivosMios/ArchiEclipse/LG3D-ReqViz3D/ReqViz3D/src/schema/VisualMappings.xsd">
+
+<mo:visual-information xmlns:mo="http://module.org">
+
+    <mo:momap>
+        <mo:name value="ATM" visible="true"/>
+		<mo:scale>0.04</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.0" y="0.075" z="0.0"/>
+        <mo:abstraction level1="true" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.5" blue="0.5"/>
+		<mo:transparent>true</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>pipeline-halfsphere</mo:geon>
+			<mo:geon>pipeline-cylinder</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="balance" value="check the balance"/>
+			<mo:property name="withdraw" value="withdraw"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="Presentation" visible="true"/>
+		<mo:scale>0.015</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="-0.025" y="0.075" z="0.0"/>
+        <mo:abstraction level1="true" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.5" green="0.5" blue="0.0"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="balance" value="show balance"/>
+			<mo:property name="withdraw" value="show withdraw"/>
+        </mo:property-list>
+    </mo:momap>
+	
+    <mo:momap>
+        <mo:name value="Controller" visible="true"/>
+		<mo:scale>0.015</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.02" y="0.075" z="0.0"/>
+        <mo:abstraction level1="true" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.5" green="0.5" blue="0.0"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="balance" value="process balance"/>
+			<mo:property name="withdraw" value="process withdraw"/>
+        </mo:property-list>
+    </mo:momap>
+	
+    <mo:momap>
+        <mo:name value="Broker" visible="true"/>
+		<mo:scale>0.02</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="-0.02" y="0.01" z="0.0"/>
+        <mo:abstraction level1="true" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.4" green="0.2" blue="0.0"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="lookup" value="lookup a direction"/>
+			<mo:property name="registry" value="record a direction"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="BankServer" visible="true"/>
+		<mo:scale>0.05</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+		<mo:translation x="0.0" y="-0.05" z="0.0"/>
+        <mo:color red="1.0" green="0.8" blue="0.8"/>
+		<mo:transparent>true</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>pipeline-halfsphere</mo:geon>
+			<mo:geon>pipeline-cylinder</mo:geon>
+			<mo:geon>pipeline-rectangle</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="withdraw" value="withdraw"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="Filter" visible="true"/>
+		<mo:scale>0.015</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="-0.04" y="-0.05" z="0.0"/>
+        <mo:abstraction level1="false" level2="false" level3="true" level4="true"/>
+        <mo:color red="0.8" green="0.0" blue="0.0"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="in" value="in"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="FilterOp" visible="true"/>
+		<mo:scale>0.015</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.0" y="-0.05" z="0.0"/>
+        <mo:abstraction level1="false" level2="false" level3="true" level4="true"/>
+        <mo:color red="0.8" green="0.0" blue="0.0"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="in" value="in"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="Filter2" visible="true"/>
+		<mo:scale>0.015</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.04" y="-0.05" z="0.0"/>
+        <mo:abstraction level1="false" level2="false" level3="true" level4="true"/>
+        <mo:color red="0.8" green="0.0" blue="0.0"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+			<mo:geon>cube</mo:geon>
+			<mo:geon>halfsphere-large</mo:geon>
+			<mo:geon>barrel</mo:geon>
+			<mo:geon>cone</mo:geon>
+			<mo:geon>cylinder</mo:geon>
+			<mo:geon>halfsphere</mo:geon>
+			<mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+			<mo:property name="in" value="in"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap> <!--Entre el ATM y el Broker -->
+        <mo:name value="Use" visible="true"/>
+		<mo:scale>0.2</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="true" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="-0.1" y="0.28" z="0.0"/>
+			<mo:point x="-0.1" y="0.12" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+    <mo:momap> <!--Entre el Broker y el BankServer -->
+        <mo:name value="Use" visible="true"/>
+		<mo:scale>0.2</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="-0.1" y="-0.13" z="0.0"/>
+			<mo:point x="-0.1" y="-0.02" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+	
+    <mo:momap> <!--Entre el ATM y el BankServer -->
+        <mo:name value="Use" visible="true"/>
+		<mo:scale>0.2</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="0.05" y="0.28" z="0.0"/>
+			<mo:point x="0.05" y="-0.15" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+	
+    <mo:momap> <!--Entre el Filter y FilterOp -->
+        <mo:name value="Call" visible="true"/>
+		<mo:scale>0.2</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="false" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="-0.15" y="-0.25" z="0.0"/>
+			<mo:point x="-0.05" y="-0.25" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+    <mo:momap> <!--Entre el FilterOp y Filte2 -->
+        <mo:name value="Call" visible="true"/>
+		<mo:scale>0.2</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="false" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="0.05" y="-0.25" z="0.0"/>
+			<mo:point x="0.15" y="-0.25" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+    <mo:momap> <!--Entre el Presentation y Controller-->
+        <mo:name value="Call" visible="true"/>
+		<mo:scale>0.2</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="false" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="0.1" y="0.35" z="0.0"/>
+			<mo:point x="-0.05" y="0.35" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+			<mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+</mo:visual-information>

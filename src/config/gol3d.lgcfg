@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.5.0" class="java.beans.XMLDecoder">
+ <!-- Taskbar item -->
+ <!--
+ <object class="org.jdesktop.lg3d.scenemanager.config.ApplicationDescription">$
+  <void property="exec">
+   <string>java org.jdesktop.lg3d.apps.gol3d.Gol3D</string>
+  </void>
+  <void property="iconFilename">
+   <string>org/jdesktop/lg3d/apps/gol3d/images/gol3dicon.png</string>
+  </void>
+  <void property="name">
+   <string>Gol3D</string>
+  </void>
+ </object>
+ -->
+ <!-- Start Menu item -->
+ <object class="org.jdesktop.lg3d.scenemanager.utils.startmenu.StartMenuItemConfig"> 
+  <void property="command"> 
+   <string>java org.jdesktop.lg3d.apps.gol3d.Gol3D</string> 
+  </void> 
+  <void property="desc"> 
+   <string>Game of Life</string> 
+  </void> 
+  <void property="menuGroup"> 
+   <string>Games</string> 
+  </void> 
+  <void property="name"> 
+   <string>Gol3D</string> 
+  </void>
+  <void property="displayResourceType">
+   <string>ICON</string>
+  </void>
+  <void property="displayResourceUrlName">
+   <string>resource:///org/jdesktop/lg3d/apps/gol3d/images/gol3dicon.png</string>
+  </void>
+  <void property="classpathJars">
+    <string>gol3d.jar</string>
+  </void>
+ </object> 
+</java>

@@ -1,0 +1,13 @@
+<Background>
+<Name>Dunes</Name>
+<Thumbnail>resources/Backgrounds/Dunes/thumb.jpg</Thumbnail>
+<Author></Author>
+<Date>11-03-2005</Date>
+<Description>Dunes</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>2</InitialBackground>
+	<Image>resources/Backgrounds/Dunes/dunes-0.jpg</Image>
+	<Image>resources/Backgrounds/Dunes/dunes-1.jpg</Image>
+	<Image>resources/Backgrounds/Dunes/dunes-2.jpg</Image>
+	<Image>resources/Backgrounds/Dunes/dunes-3.jpg</Image>
+</Background>

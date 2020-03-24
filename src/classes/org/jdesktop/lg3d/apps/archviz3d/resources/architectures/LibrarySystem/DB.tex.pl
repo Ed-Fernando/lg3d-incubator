@@ -1,0 +1,377 @@
+value(z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),'Z_portDAO',Z_portDAO).
+setValue(z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_NEW_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),'Z_portDAO',Z_NEW_portDAO).
+value(z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),'Z_components',Z_components).
+setValue(z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_NEW_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),'Z_components',Z_NEW_components).
+value(z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),'Z_connectors',Z_connectors).
+setValue(z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_NEW_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),'Z_connectors',Z_NEW_connectors).
+value(z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),'Z_ports',Z_ports).
+setValue(z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_NEW_ports,Z_events,Z_users,Z_books,Z_loans),'Z_ports',Z_NEW_ports).
+value(z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),'Z_events',Z_events).
+setValue(z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_NEW_events,Z_users,Z_books,Z_loans),'Z_events',Z_NEW_events).
+value(z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),'Z_users',Z_users).
+setValue(z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_NEW_users,Z_books,Z_loans),'Z_users',Z_NEW_users).
+value(z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),'Z_books',Z_books).
+setValue(z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_NEW_books,Z_loans),'Z_books',Z_NEW_books).
+value(z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),'Z_loans',Z_loans).
+setValue(z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_NEW_loans),'Z_loans',Z_NEW_loans).
+
+z_DB(globalState(This,Z_State,Z_State),Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans).
+z_init_DB(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV)):-
+	new(This,'Port',Z_TEMP2),
+	Z_portDAO_DECORV=Z_TEMP2,
+	setIvar(Z_portDAO_DECORV,'Z_element',This),
+	Z_loans_DECORV=[],
+	Z_users_DECORV=[tuple(1,1111,carolinaTommasi),tuple(2,2222,cristianGarciaBauza)],
+	Z_books_DECORV=[tuple(1,elPrincipito,3,0),tuple(2,softwareDesign,1,0),tuple(3,softwareInPractice,2,0)],
+	Z_components_DECORV=[],
+	Z_connectors_DECORV=[],
+	Z_ports_DECORV=[Z_portDAO_DECORV],
+	Z_events_DECORV=[]
+	,addChangeOp(Z_State,z_init_DB,[va('Z_portDAO'),va('Z_components'),va('Z_connectors'),va('Z_ports'),va('Z_events'),va('Z_users'),va('Z_books'),va('Z_loans')],Z_NewState).
+
+z_AddRecordMember(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users_DECORV,Z_books,Z_loans),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addRecord,
+	head(Z_inputP,Z_TEMP1),
+	Table=Z_TEMP1,
+	Table=user,
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	Password=Z_TEMP6,
+	tail(Z_inputP,Z_TEMP7),
+	tail(Z_TEMP7,Z_TEMP8),
+	tail(Z_TEMP8,Z_TEMP9),
+	head(Z_TEMP9,Z_TEMP10),
+	Name=Z_TEMP10,
+	uni(Z_users,[tuple(Id,Password,Name)],Z_TEMP11),
+	Z_users_DECORV=Z_TEMP11,
+	Z_report='ok',
+	addChangeOp(Z_State,z_AddRecordMember,[va('Z_users')],Z_NewState),
+	z_DB(globalState(This,Z_NewState,Z_NewState),Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users_DECORV,Z_books,Z_loans).
+
+z_AddRecordBook(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books_DECORV,Z_loans),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addRecord,
+	head(Z_inputP,Z_TEMP1),
+	Table=Z_TEMP1,
+	Table=book,
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	Name=Z_TEMP6,
+	tail(Z_inputP,Z_TEMP7),
+	tail(Z_TEMP7,Z_TEMP8),
+	tail(Z_TEMP8,Z_TEMP9),
+	head(Z_TEMP9,Z_TEMP10),
+	Amount=Z_TEMP10,
+	uni(Z_books,[tuple(Id,Name,Amount,0)],Z_TEMP11),
+	Z_books_DECORV=Z_TEMP11,
+	Z_report='ok',
+	addChangeOp(Z_State,z_AddRecordBook,[va('Z_books')],Z_NewState),
+	z_DB(globalState(This,Z_NewState,Z_NewState),Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books_DECORV,Z_loans).
+
+z_AddRecordLoan(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=addRecord,
+	head(Z_inputP,Z_TEMP1),
+	Table=Z_TEMP1,
+	Table=loan,
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	IdM=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	IdB=Z_TEMP6,
+	uni(Z_loans,[tuple(IdM,IdB)],Z_TEMP7),
+	Z_loans_DECORV=Z_TEMP7,
+fAll([	mem(X,Z_books),
+	nth(tuple(X,1),Z_TEMP8),
+	Z_TEMP8=IdB
+],X,Z_TEMP9),
+	BOOK=Z_TEMP9,
+	head(BOOK,Z_TEMP10),
+	nth(tuple(Z_TEMP10,1),Z_TEMP11),
+	Id=Z_TEMP11,
+	head(BOOK,Z_TEMP12),
+	nth(tuple(Z_TEMP12,2),Z_TEMP13),
+	BookName=Z_TEMP13,
+	head(BOOK,Z_TEMP14),
+	nth(tuple(Z_TEMP14,3),Z_TEMP15),
+	Items=Z_TEMP15,
+	head(BOOK,Z_TEMP16),
+	nth(tuple(Z_TEMP16,4),Z_TEMP17),
+	LoansA=Z_TEMP17,
+	setminus(Z_books,[tuple(Id,BookName,Items,LoansA)],Z_TEMP18),
+	Books2=Z_TEMP18,
+	Z_TEMP19 is LoansA+1,
+	LoansB=Z_TEMP19,
+	uni(Books2,[tuple(IdB,BookName,Items,LoansB)],Z_TEMP20),
+	Z_books_DECORV=Z_TEMP20,
+	Z_report='ok',
+	addChangeOp(Z_State,z_AddRecordLoan,[va('Z_books'),va('Z_loans')],Z_NewState),
+	z_DB(globalState(This,Z_NewState,Z_NewState),Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books_DECORV,Z_loans_DECORV).
+
+z_BooksListing(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=listing,
+	head(Z_inputP,Z_TEMP1),
+	Table=Z_TEMP1,
+	Table=book,
+	Z_report=Z_books,
+	addChangeOp(Z_State,z_BooksListing,[],Z_NewState),
+	z_DB(globalState(This,Z_NewState,Z_NewState),Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans).
+
+z_MembersListing(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=listing,
+	head(Z_inputP,Z_TEMP1),
+	Table=Z_TEMP1,
+	Table=user,
+	Z_report=Z_users,
+	addChangeOp(Z_State,z_MembersListing,[],Z_NewState),
+	z_DB(globalState(This,Z_NewState,Z_NewState),Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans).
+
+z_SearchRecordMember(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=searchRecord,
+	head(Z_inputP,Z_TEMP1),
+	Table=Z_TEMP1,
+	Table=user,
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+fAll([	mem(X,Z_users),
+	nth(tuple(X,1),Z_TEMP4),
+	Z_TEMP4=Id
+],X,Z_TEMP5),
+	US=Z_TEMP5,
+	Z_report=US,
+	addChangeOp(Z_State,z_SearchRecordMember,[],Z_NewState),
+	z_DB(globalState(This,Z_NewState,Z_NewState),Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans).
+
+z_SearchRecordBook(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=searchRecord,
+	head(Z_inputP,Z_TEMP1),
+	Table=Z_TEMP1,
+	Table=book,
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Name=Z_TEMP3,
+fAll([	mem(X,Z_books),
+	nth(tuple(X,2),Z_TEMP4),
+	Z_TEMP4=Name
+],X,Z_TEMP5),
+	BOOK=Z_TEMP5,
+	Z_report=BOOK,
+	addChangeOp(Z_State,z_SearchRecordBook,[],Z_NewState),
+	z_DB(globalState(This,Z_NewState,Z_NewState),Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans).
+
+z_SearchRecordLoanByIdM(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=searchRecord,
+	head(Z_inputP,Z_TEMP1),
+	Table=Z_TEMP1,
+	Table=loan,
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Criteria=Z_TEMP3,
+	Criteria=searchByIdM,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	IdM=Z_TEMP6,
+fAll([	mem(X,Z_loans),
+	nth(tuple(X,1),Z_TEMP7),
+	Z_TEMP7=IdM
+],X,Z_TEMP8),
+	LOAN=Z_TEMP8,
+	Z_report=LOAN,
+	addChangeOp(Z_State,z_SearchRecordLoanByIdM,[],Z_NewState),
+	z_DB(globalState(This,Z_NewState,Z_NewState),Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans).
+
+z_SearchRecordLoanByIdB(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=searchRecord,
+	head(Z_inputP,Z_TEMP1),
+	Table=Z_TEMP1,
+	Table=loan,
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Criteria=Z_TEMP3,
+	Criteria=searchByIdB,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	IdB=Z_TEMP6,
+fAll([	mem(X,Z_loans),
+	nth(tuple(X,2),Z_TEMP7),
+	Z_TEMP7=IdB
+],X,Z_TEMP8),
+	LOAN=Z_TEMP8,
+	Z_report=LOAN,
+	addChangeOp(Z_State,z_SearchRecordLoanByIdB,[],Z_NewState),
+	z_DB(globalState(This,Z_NewState,Z_NewState),Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans).
+
+z_SearchRecordLoanByIdBIdM(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=searchRecord,
+	head(Z_inputP,Z_TEMP1),
+	Table=Z_TEMP1,
+	Table=loan,
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Criteria=Z_TEMP3,
+	Criteria=searchByIdBIdM,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	IdM=Z_TEMP6,
+	tail(Z_inputP,Z_TEMP7),
+	tail(Z_TEMP7,Z_TEMP8),
+	tail(Z_TEMP8,Z_TEMP9),
+	head(Z_TEMP9,Z_TEMP10),
+	IdB=Z_TEMP10,
+fAll([	mem(X,Z_loans),
+	nth(tuple(X,1),Z_TEMP11),
+	Z_TEMP11=IdM,
+	nth(tuple(X,2),Z_TEMP12),
+	Z_TEMP12=IdB
+],X,Z_TEMP13),
+	LOAN=Z_TEMP13,
+	Z_report=LOAN,
+	addChangeOp(Z_State,z_SearchRecordLoanByIdBIdM,[],Z_NewState),
+	z_DB(globalState(This,Z_NewState,Z_NewState),Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans).
+
+z_DeleteRecordMember(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users_DECORV,Z_books,Z_loans),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=deleteRecord,
+	head(Z_inputP,Z_TEMP1),
+	Table=Z_TEMP1,
+	Table=user,
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	Passw=Z_TEMP6,
+	tail(Z_inputP,Z_TEMP7),
+	tail(Z_TEMP7,Z_TEMP8),
+	tail(Z_TEMP8,Z_TEMP9),
+	head(Z_TEMP9,Z_TEMP10),
+	UserName=Z_TEMP10,
+	setminus(Z_users,[tuple(Id,Passw,UserName)],Z_TEMP11),
+	Z_users_DECORV=Z_TEMP11,
+	Z_report='ok',
+	addChangeOp(Z_State,z_DeleteRecordMember,[va('Z_users')],Z_NewState),
+	z_DB(globalState(This,Z_NewState,Z_NewState),Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users_DECORV,Z_books,Z_loans).
+
+z_DeleteRecordBook(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books_DECORV,Z_loans),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=deleteRecord,
+	head(Z_inputP,Z_TEMP1),
+	Table=Z_TEMP1,
+	Table=book,
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	Id=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	BookName=Z_TEMP6,
+	tail(Z_inputP,Z_TEMP7),
+	tail(Z_TEMP7,Z_TEMP8),
+	tail(Z_TEMP8,Z_TEMP9),
+	head(Z_TEMP9,Z_TEMP10),
+	Items=Z_TEMP10,
+fAll([	mem(X,Z_books),
+	nth(tuple(X,1),Z_TEMP11),
+	Z_TEMP11=Id
+],X,Z_TEMP12),
+	BOOK=Z_TEMP12,
+	head(BOOK,Z_TEMP13),
+	nth(tuple(Z_TEMP13,1),Z_TEMP14),
+	Id1=Z_TEMP14,
+	head(BOOK,Z_TEMP15),
+	nth(tuple(Z_TEMP15,2),Z_TEMP16),
+	BookName1=Z_TEMP16,
+	head(BOOK,Z_TEMP17),
+	nth(tuple(Z_TEMP17,3),Z_TEMP18),
+	Items1=Z_TEMP18,
+	head(BOOK,Z_TEMP19),
+	nth(tuple(Z_TEMP19,4),Z_TEMP20),
+	Loans1=Z_TEMP20,
+	setminus(Z_books,[tuple(Id1,BookName1,Items1,Loans1)],Z_TEMP21),
+	Z_books_DECORV=Z_TEMP21,
+	Z_report='ok',
+	addChangeOp(Z_State,z_DeleteRecordBook,[va('Z_books')],Z_NewState),
+	z_DB(globalState(This,Z_NewState,Z_NewState),Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books_DECORV,Z_loans).
+
+z_DeleteRecordLoan(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	Z_event=deleteRecord,
+	head(Z_inputP,Z_TEMP1),
+	Table=Z_TEMP1,
+	Table=loan,
+	tail(Z_inputP,Z_TEMP2),
+	head(Z_TEMP2,Z_TEMP3),
+	IdMember=Z_TEMP3,
+	tail(Z_inputP,Z_TEMP4),
+	tail(Z_TEMP4,Z_TEMP5),
+	head(Z_TEMP5,Z_TEMP6),
+	IdBook=Z_TEMP6,
+	setminus(Z_loans,[tuple(IdMember,IdBook)],Z_TEMP7),
+	Z_loans_DECORV=Z_TEMP7,
+	Z_report='ok',
+	addChangeOp(Z_State,z_DeleteRecordLoan,[va('Z_loans')],Z_NewState),
+	z_DB(globalState(This,Z_NewState,Z_NewState),Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans_DECORV).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_AddRecordBook(globalState(This,Z_State,Z_TEMP1),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_AddRecordMember(globalState(This,Z_State,Z_TEMP1),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_AddRecordLoan(globalState(This,Z_State,Z_TEMP1),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_SearchRecordMember(globalState(This,Z_State,Z_TEMP1),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_SearchRecordBook(globalState(This,Z_State,Z_TEMP1),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_SearchRecordLoanByIdBIdM(globalState(This,Z_State,Z_TEMP1),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_SearchRecordLoanByIdM(globalState(This,Z_State,Z_TEMP1),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_SearchRecordLoanByIdB(globalState(This,Z_State,Z_TEMP1),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_BooksListing(globalState(This,Z_State,Z_TEMP1),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_MembersListing(globalState(This,Z_State,Z_TEMP1),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_DeleteRecordMember(globalState(This,Z_State,Z_TEMP1),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_DeleteRecordBook(globalState(This,Z_State,Z_TEMP1),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+z_ProcessEvent(globalState(This,Z_State,Z_NewState),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report):-
+	z_DeleteRecordLoan(globalState(This,Z_State,Z_TEMP1),z_DB(Z_portDAO,Z_components,Z_connectors,Z_ports,Z_events,Z_users,Z_books,Z_loans),z_DB(Z_portDAO_DECORV,Z_components_DECORV,Z_connectors_DECORV,Z_ports_DECORV,Z_events_DECORV,Z_users_DECORV,Z_books_DECORV,Z_loans_DECORV),Z_event,Z_instance,Z_inputP,Z_report),
+	addChangeOp(Z_TEMP1,z_ProcessEvent,Z_NewState).
+
+init_DB_stateIni(tree('Root',[tree('DB',['portDAO','components','connectors','ports','events','users','books','loans'])])).

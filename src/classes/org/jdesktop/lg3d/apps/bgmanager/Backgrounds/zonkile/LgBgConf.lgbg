@@ -1,0 +1,20 @@
+<Background>
+<Name>Zonkile</Name>
+<Thumbnail>resources/Backgrounds/zonkile/thumb.jpg</Thumbnail>
+<Author>TODO</Author>
+<Date>11-03-2005</Date>
+<Description>Zonkile</Description>
+<BGType>Layered Background</BGType>
+<Layer>
+	<Image>resources/Backgrounds/zonkile/zakile.jpg</Image>
+	<TranslationX>1.2</TranslationX>
+	<TranslationY>0.1</TranslationY>
+	<TranslationZ>1.5</TranslationZ>
+ </Layer>
+ <Layer>
+	<Image>resources/Backgrounds/zonkile/zakile-1.png</Image>
+	<TranslationX>0.7</TranslationX>
+	<TranslationY>-0.15</TranslationY>
+	<TranslationZ>0.5</TranslationZ>
+ </Layer>
+</Background>

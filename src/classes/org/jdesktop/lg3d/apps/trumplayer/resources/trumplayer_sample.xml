@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : trumplayer.xml
+    Created on : 2005/11/11, 23:15
+    Author     : yasuhiro
+    Description:
+        Sample XML File of trumplayer.
+-->
+
+<root>
+    <encode>ISO-8859-1</encode>
+    <fontname>Arial</fontname>
+    <album>
+        <artist>BoA</artist>
+        <title>BEST OF SOUL</title>
+        <image>/windows/D/mp3/BoA/BEST OF SOUL.jpg</image>
+        <m3u>/windows/D/mp3/BoA/BEST OF SOUL.m3u</m3u>
+    </album>
+    <album>
+        <artist>TWO-MIX Delta</artist>
+        <title>dELTA ONE</title>
+        <image>/windows/D/mp3/two-mix/dELTA ONE.jpg</image>
+        <m3u>/windows/D/mp3/two-mix/dELTA ONE.m3u</m3u>
+    </album>
+    <album>
+        <artist>Air Supply</artist>
+        <title>THE DEFINITIVE COLLECTION</title>
+        <image>/windows/D/mp3/THE DEFINITIVE COLLECTION.jpg</image>
+        <m3u>/windows/D/mp3/THE DEFINITIVE COLLECTION.m3u</m3u>
+    </album>
+    <album>
+        <artist>Mai.K</artist>
+        <title>FUSE OF LOVE</title>
+        <image>/windows/D/mp3/Mai.K/FUSE OF LOVE.jpg</image>
+        <m3u>/windows/D/mp3/Mai.K/FUSE OF LOVE.m3u</m3u>
+    </album>
+    <album>
+        <artist>QUEEN</artist>
+        <title>JEWELS</title>
+        <image>/windows/D/mp3/jewels.jpg</image>
+        <m3u>/windows/D/mp3/jewels.m3u</m3u>
+    </album>
+    <album>
+        <artist>melody.</artist>
+        <title>Sincerely</title>
+        <image>/windows/D/mp3/melody/Sincerely.jpg</image>
+        <m3u>/windows/D/mp3/melody/Sincerely.m3u</m3u>
+    </album>
+    <album>
+        <artist>Sting</artist>
+        <title>SACRED LOVE</title>
+        <image>/windows/D/mp3/SACRED LOVE.jpg</image>
+        <m3u>/windows/D/mp3/SACRED LOVE.m3u</m3u>
+    </album>
+    <album>
+        <artist>Nami Tamaki</artist>
+        <title>Make Progress</title>
+        <image>/windows/D/mp3/Nami Tamaki/Make Progress.jpg</image>
+        <m3u>/windows/D/mp3/Nami Tamaki/Make Progress.m3u</m3u>
+    </album>
+    <album>
+        <artist/>
+        <title>Gran Turismo 4 Sound Track</title>
+        <image>/windows/D/mp3/Gran Turismo 4.jpg</image>
+        <m3u>/windows/D/mp3/Gran Turismo 4.m3u</m3u>
+    </album>
+    <album>
+        <artist>Aya Ueto</artist>
+        <title>Re.</title>
+        <image>org/jdesktop/lg3d/apps/trumplayer/resources/sample3.jpg</image>
+        <m3u>/windows/D/mp3/Aya Ueto/Re.m3u</m3u>
+    </album>
+    <album>
+        <artist>Coco dO'r</artist>
+        <title>Coco dO'r</title>
+        <image>org/jdesktop/lg3d/apps/trumplayer/resources/sample2.jpg</image>
+        <m3u>/windows/D/mp3/Coco dor.m3u</m3u>
+    </album>
+    <album>
+        <artist>Various</artist>
+        <title>Ukulele Force</title>
+        <image>org/jdesktop/lg3d/apps/trumplayer/resources/sample1.jpg</image>
+        <m3u>/windows/D/mp3/Ukulele Force.m3u</m3u>
+    </album>
+</root>

@@ -1,0 +1,12 @@
+<Background>
+<Name>Maroon Bells</Name>
+<Thumbnail>resources/Backgrounds/MaroonBells/thumb.jpg</Thumbnail>
+<Author>Tom Salvesen of Sun Microsystem</Author>
+<Date>11-03-2005</Date>
+<Description>Maroon Bells, Provided for free by Tom Salvesen of Sun Microsystems</Description>
+<BGType>Simple Background</BGType>
+
+	<Image>resources/Backgrounds/MaroonBells/MaroonBells.jpg</Image>
+	
+
+</Background>

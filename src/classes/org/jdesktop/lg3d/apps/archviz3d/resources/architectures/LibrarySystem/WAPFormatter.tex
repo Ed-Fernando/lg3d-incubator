@@ -1,0 +1,28 @@
+\begin{schema}{WAPFormatter}
+input:  Port \\
+output: Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port 
+\end{schema}
+
+
+\begin{zed}
+init\_WAPFormatter \sdef \lsch WAPFormatter' \bbar input' = \new Port \land input'.setiVar(element,This) \land output' = \new Port \land output'.setiVar(element,This) \land components' = \{ \} \land  connectors' = \{ \} \land events'= \{ format \}  \land ports' = \{ input', output'   \} \rsch  \end{zed}
+
+\begin{schema}{Format}
+\Delta WAPFormatter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = format \\ 
+R = \head inputP \\
+FormattedPage = R \\
+report! = FormattedPage 
+\end{schema}
+
+
+\begin{zed} ProcessEvent \sdef Format
+\end{zed}

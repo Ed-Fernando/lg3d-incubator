@@ -1,0 +1,32 @@
+<Background>
+<Name>Moon</Name>
+<Thumbnail>resources/Backgrounds/Moon/thumb.jpg</Thumbnail>
+<Author>Radek Kierner</Author>
+<Date>11-03-2005</Date>
+<Description>Earth, Moon and IIS </Description>
+<BGType>Layered Background</BGType>
+<Layer>
+	<Image>resources/Backgrounds/Moon/0.png</Image>
+	<TranslationX>1</TranslationX>
+	<TranslationY>0</TranslationY>
+	<TranslationZ>1.5</TranslationZ>
+ </Layer>
+ <Layer>
+	<Image>resources/Backgrounds/Moon/1.png</Image>
+	<TranslationX>1</TranslationX>
+	<TranslationY>0</TranslationY>
+	<TranslationZ>1.0</TranslationZ>
+ </Layer>
+<Layer>
+	<Image>resources/Backgrounds/Moon/2.png</Image>
+	<TranslationX>0.5</TranslationX>
+	<TranslationY>-0.25</TranslationY>
+	<TranslationZ>0.5</TranslationZ>
+ </Layer>
+ <Layer>
+	<Image>resources/Backgrounds/Moon/3.png</Image>
+	<TranslationX>0.5</TranslationX>
+	<TranslationY>0.15</TranslationY>
+	<TranslationZ>-0.5</TranslationZ>
+ </Layer>
+</Background>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="cmu3dfm" default="all" basedir=".">
+    <target name="compile" description="Compile CMU's 3D Filemanager">
+        <javac debug="true"
+                deprecation="false"
+                destdir="${build.classes.dir}"
+                nowarn="true"
+                source="1.5"
+                sourcepath=""
+                target="1.5">
+            <classpath>
+                <pathelement location="${classpath}"/>
+                <pathelement path="${j3d.classpath}"/>
+                <fileset dir="../lg3d-core/ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+                <fileset dir="ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+            </classpath>
+            <src path="${javasrc.dir}"/>
+            <include name="edu/**"/>
+
+        </javac>
+    </target>
+
+    <target name="extras" description="Extra steps for CMU's 3D Filemanager build">
+        <copy todir="${build.classes.dir}">
+            <fileset dir="${javasrc.dir}" includes="edu/cmu/sun/resources/**/*" />
+        </copy>
+    </target>
+
+    <target name="jar" depends="compile,extras" description="Jar up the cmu3dfm app">
+        <jar compress="${jar.compress}" jarfile="${build.app.dir}/cmu-3dfm.jar">
+             <manifest>
+                <attribute name="Config-File" value="cmu-3dfm.lgcfg"/>
+             </manifest>
+             <fileset dir="${build.classes.dir}/">
+                <include name="edu/cmu/sun/**"/>
+             </fileset>
+             <fileset dir="${src.dir}/config">
+                <include name="cmu-3dfm.lgcfg"/>
+             </fileset>
+        </jar>
+    </target>
+</project>

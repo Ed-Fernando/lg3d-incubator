@@ -1,0 +1,79 @@
+\begin{zed}
+MESSAGE & \ddef & ok 
+\end{zed}
+
+\begin{schema}{DAO}
+portLS:  Port \\
+callerDB: Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port
+\end{schema}
+
+\begin{zed}
+init\_DAO \sdef \lsch 
+DAO' \bbar 
+portLS' = \new Port 
+\land portLS'.setiVar(element,This) 
+\land callerDB' = \new Port 
+\land callerDB'.setiVar(element,This) 
+\land components' = \{ \}
+\land connectors' = \{  \}
+\land ports' = \{ callerDB', portLS' \}  
+\land events' = \{ addRecord, searchRecord, listing, deleteRecord \}
+\rsch \end{zed}
+
+
+\begin{schema}{AddRecord}
+\Delta DAO \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = addRecord \\
+callerDB.Initiate(addRecord, This, inputP, R) \\
+R = ok \\ 
+report! = R
+\end{schema}
+
+\begin{schema}{Listing}
+\Delta DAO \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = listing \\
+callerDB.Initiate(listing, This, inputP, R) \\
+report!= R
+\end{schema}
+
+\begin{schema}{SearchRecord}
+\Delta DAO \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = searchRecord \\
+callerDB.Initiate(searchRecord, This, inputP, R) \\
+report!= R
+\end{schema}
+
+\begin{schema}{DeleteRecord}
+\Delta DAO \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = deleteRecord \\
+callerDB.Initiate(deleteRecord, This, inputP, R) \\
+R = ok \\ 
+report! = R
+\end{schema}
+
+
+\begin{zed} ProcessEvent \sdef  AddRecord 
+\lor SearchRecord 
+\lor Listing
+\lor DeleteRecord
+\end{zed}

@@ -1,0 +1,15 @@
+<Background>
+<Name>Miyajima</Name>
+<Thumbnail>resources/Backgrounds/Miyajima/thumb.jpg</Thumbnail>
+<Author>Miyajima,Brad Templeton of www.templetons.com/brad</Author>
+<Date>11-03-2005</Date>
+<Description>Miyajima</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>1</InitialBackground>
+	<Image>resources/Backgrounds/Miyajima/Miyajima-0.jpg</Image>
+	<Image>resources/Backgrounds/Miyajima/Miyajima-1.jpg</Image>
+	<Image>resources/Backgrounds/Miyajima/Miyajima-2.jpg</Image>
+        <Image>resources/Backgrounds/Miyajima/Miyajima-3.jpg</Image>
+    
+
+</Background>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Zoetrope</title>
+</head>
+
+<body>
+<h1>Zoetrope - Image Viewer for LG3D</h1>
+<h3>How to execute Zoetrope</h3>
+<h4>Linux</h4>
+<ol>
+  <li>Copy <span style="font-family: mono">build.xml</span> and <span style="font-family: mono">zoetrope.sh</span> to <span style="font-family: mono">lg3d-incubator</span> directory.</li>
+  <li>Go into <span style="font-family: mono">lg3d-incubator</span> directory </li>
+  <li>Run the ant command
+  <pre>&gt; ant sample-jar</pre>
+  </li>
+  <li>If the directory installed LG3D is not <span style="font-family: mono">../lg3d</span>, edit <span style="font-family: mono">zoetrope.sh</span> and change LG3DHOME property.</li>
+  <li>Run <span style="font-family: mono">zoetrope.sh</span></li>
+</ol>
+<h4>Windows</h4>
+<ol>
+  <li>Copy <span style="font-family: mono">build.xml</span> and <span style="font-family: mono">zoetrope.bat</span> to <span style="font-family: mono">lg3d-incubator</span> directory.</li>
+  <li>Go into <span style="font-family: mono">lg3d-incubator</span> directory.</li>
+  <li>Run the ant command<pre>ant sample-jar</pre></li>
+  <li>If the directory installed LG3D is not <span style="font-family: mono">..\lg3d</span>, edit <span style="font-family: mono">zoetrope.bat</span> and change LG3DHOME property.</li>
+  <li>Run <span style="font-family: mono">zoetrope.bat</span></li>
+</ol>
+<p>Zoetrope reads <span style="font-family: mono">images.txt</span> in CLASSPATH, and determines the images files to display. Image files are not only usual files but also files included in JAR file.</p>
+<p>Sample <span style="font-family: mono">images.txt</span> file is located in <span style="font-family: mono">org/jdesktop/lg3d/apps/zoetrope/resources/images/sample</span>, and there are some sample images in the same directory.</p>
+<p>If there are  <span style="font-family: mono">images.txt</span> in <span style="font-family: mono">lg3d-incubator</span> directory, Zoetrope reads it prior. The contents of <span style="font-family: mono">images.txt</span> is just list of image files. </p>
+<p>In addition, you can run <span style="font-family: mono">zoetrope.sh/zoetrope.bat</span> with the argument:</p>
+<pre>&gt; zoetrope.sh image-list.txt </pre>
+<p>&nbsp; </p>
+</body>
+</html>

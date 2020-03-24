@@ -1,0 +1,14 @@
+<Background>
+<Name>Crater Lake</Name>
+<Thumbnail>resources/Backgrounds/CraterLake/thumb.jpg</Thumbnail>
+<Author>Crater Lake</Author>
+<Date>11-03-2005</Date>
+<Description>Crater Lake</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>1</InitialBackground>
+	<Image>resources/Backgrounds/CraterLake/Crater-Lake-0.jpg</Image>
+	<Image>resources/Backgrounds/CraterLake/Crater-Lake-1.jpg</Image>
+	<Image>resources/Backgrounds/CraterLake/Crater-Lake-2.jpg</Image>
+	<Image>resources/Backgrounds/CraterLake/Crater-Lake-3.jpg</Image>
+
+</Background>

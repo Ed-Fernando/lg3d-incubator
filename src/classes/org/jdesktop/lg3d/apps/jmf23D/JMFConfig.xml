@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.5.0" class="java.beans.XMLDecoder"> 
+ <object class="org.jdesktop.lg3d.apps.jmf23D.JMFConfig"> 
+  <void property="mediaLocation"> 
+   <string>v4l:0</string> 
+  </void> 
+ </object> 
+</java> 

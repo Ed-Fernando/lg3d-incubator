@@ -1,0 +1,191 @@
+\begin{zed}
+MESSAGE & \ddef & ok \\ 
+& \bbar & not\_valid\_user \\
+& \bbar & not\_valid\_data \\
+& \bbar & inexistent\_record \\
+& \bbar & not\_enough\_books \\
+& \bbar & not\_valid\_connection\_or\_expired\_session
+\end{zed}
+
+\begin{schema}{Member}
+ip: \nat \\
+device: \nat \\
+callerSU:  Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port 
+\end{schema}
+
+\begin{zed}
+init\_Member \sdef \lsch 
+Member' \bbar 
+ip'=0
+\land device'=0 
+\land callerSU' = \new Port 
+\land callerSU'.setiVar(element,This)
+\land components' = \{ \}
+\land connectors' = \{  \}
+\land events' = \{ login, assignIP, getIP, assignDevice, getDevice, logout, searchBook \}
+\land ports' = \{ callerSU' \}  
+\rsch \end{zed}
+
+
+\begin{schema}{LoginMemberOK}
+\Delta Member \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = login \\
+Id = \head inputP \\
+Password = \head (\tail inputP) \\
+SE = \lseq ip Id Password device \rseq \\
+callerSU.Initiate(validateUser, This, SE, R)\\
+R = ok \\
+report! = R
+\end{schema}
+
+\begin{schema}{LoginMemberFailed}
+\Delta Member \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = login \\
+Id = \head inputP \\
+Password = \head (\tail inputP) \\
+SE = \lseq ip Id Password device \rseq \\
+callerSU.Initiate(validateUser, This, SE, R)\\
+R = not\_valid\_user \\ 
+report! = R
+\end{schema}
+
+\begin{schema}{LoginMemberInvalidConnection}
+\Delta Member \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = login \\
+Id = \head inputP \\
+SE = \lseq Ip \rseq \\
+callerSU.Initiate(validateUser, This, SE, R) \\
+R = not\_valid\_connection\_or\_expired\_session \\ 
+report! = R
+\end{schema}
+
+\begin{schema}{LoginMemberInexistent}
+\Delta Member \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = login \\
+Id = \head inputP \\
+Password = \head (\tail inputP) \\
+SE = \lseq ip Id Password  \rseq \\
+callerSU.Initiate(validateUser, This, SE, R)\\
+R = inexistent\_record \\
+report! = R 
+\end{schema}
+
+\begin{schema}{AssignIP}
+\Delta Member \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = assignIP \\
+IpAssigned = \head inputP \\
+ip' = IpAssigned \\
+report! = ok 
+\end{schema}
+
+\begin{schema}{GetIP}
+\Delta Member \\ 
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = getIP \\
+report! = ip 
+\end{schema}
+
+\begin{schema}{AssignDevice}
+\Delta Member \\ 
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = assignDevice \\
+DeviceAssigned = \head inputP \\
+device' = DeviceAssigned \\
+report! = ok 
+\end{schema}
+
+\begin{schema}{GetDevice}
+\Delta Member \\ 
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = getDevice \\
+report! = device 
+\end{schema}
+
+\begin{schema}{Logout}
+\Delta Member \\ 
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = logout \\
+SD = \lseq ip \rseq \\
+callerSU.Initiate(logout, This, SD, R) \\
+R = ok \\
+ip' = 0 \\
+report! = R 
+\end{schema}
+
+\begin{schema}{SearchBookOK}
+\Xi Member \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = searchBook \\
+BookName = \head inputP \\
+SE = \lseq ip BookName \rseq \\
+callerSU.Initiate(searchBook,This,SE,R) \\
+R = ok \\
+report! = R
+\end{schema}
+
+\begin{schema}{SearchBookInvalidConnection}
+\Xi Member \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE 
+\where event = searchBook \\
+SE = \lseq ip \rseq \\
+callerSU.Initiate(searchBook,This,SE,R) \\
+R = not\_valid\_connection\_or\_expired\_session \\ 
+report! = R
+\end{schema}
+
+\begin{zed} ProcessEvent \sdef AssignIP
+\lor GetIP
+\lor AssignDevice
+\lor GetDevice
+\lor LoginMemberOK
+\lor LoginMemberFailed
+\lor LoginMemberInvalidConnection
+\lor LoginMemberInexistent
+\lor Logout
+\lor SearchBookOK
+\lor SearchBookInvalidConnection
+\end{zed}
+
+

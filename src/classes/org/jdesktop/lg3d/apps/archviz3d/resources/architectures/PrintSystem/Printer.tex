@@ -1,0 +1,37 @@
+\begin{zed}
+MESSAGE & \ddef & printing\_finished \\
+& \bbar & printing\_error \\
+& \bbar & printing\_abort \\
+& \bbar & printing\_finished\_in\_printer1 \\
+& \bbar & printing\_finished\_in\_printer2
+\end{zed}
+
+\begin{schema}{Printer}
+caller:  Port \\
+called:  Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+ports: \pset Port
+\end{schema}
+
+\begin{zed}
+init\_Printer \sdef \lsch Printer'
+                   \bbar caller' = \new Port
+                   \land caller'.setiVar(element,This)
+                   \land called' = \new Port
+                   \land called'.setiVar(element,This)
+                   \land components' = \{ \} 
+                   \land connectors' = \{ \} 
+                   \land ports' = \{ caller', called' \}  \rsch  
+                   \end{zed}
+
+
+\begin{schema}{ProcessEvent}
+\Delta Printer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = jobToPrinter \\
+report!= printing\_finished
+\end{schema}

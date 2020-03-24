@@ -1,0 +1,29 @@
+\begin{schema}{DAOSystem}
+dao: DAO \\ 
+db: DB \\
+rpc1: RPC \\
+components: \pset Element \\
+connectors: \pset Element \\
+ports: \pset Port 
+\end{schema}
+
+\begin{zed}
+init\_DAOSystem \sdef \lsch 
+DAOSystem' \bbar 
+dao' = \new DAO
+\land db' = \new DB
+\land rpc1' = \new RPC
+\land components' = \{ dao', db' \}
+\land connectors' = \{ rpc1' \}
+\land ports' = \{ \}  
+\rsch  
+\end{zed}
+
+\begin{schema}{Link}
+\Delta DAOSystem 
+\where 
+dao.callerDB.setiVar(next,rpc1.caller) \\
+rpc1.caller.setiVar(next, dao.callerDB) \\
+rpc1.called.setiVar(next, db.portDAO) 
+\end{schema}
+

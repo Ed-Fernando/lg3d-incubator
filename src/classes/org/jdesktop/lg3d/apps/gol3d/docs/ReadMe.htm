@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN"
+"http://style.tigris.org/tigris_transitional.dtd">
+<html>
+<head>
+<title>Running the Project Looking Glass Developer's Release on Microsoft Windows</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body> 
+<div id="projectdocumentview" class="app"> 
+  <hr /> 
+  <h2>Game Of Life 3D Read Me.</h2>
+  <p><b>Package org.jdesktop.lg3d.apps.gol3d</b></p> 
+  <p>Game Of Life 3D is a lg3d implementation of Conway's Game Of Life</p>
+  <p>For more informations about Game Of Life :</p>
+  <p><a href="http://www.bitstorm.org/gameoflife/">http://www.bitstorm.org/gameoflife/</a></p>
+  <p><a href="http://www.math.com/students/wonders/life/life.html">http://www.math.com/students/wonders/life/life.html</a></p>
+  <p>Or simply type &quot;game of life&quot; in google :)</p>
+  <p><strong>A . Running Gol3D :</strong></p>
+  <p><strong>1.</strong> U need to have lg3d-core , lg3d-demo-apps and lg3d-incubator 
+    ( see : <a href="https://lg3d.dev.java.net/">https://lg3d.dev.java.net/</a> 
+    )</p>
+  <p><strong>2.</strong> U need to run :</p>
+  <p>java org.jdesktop.lg3d.apps.gol3d.Gol3D</p>
+  <p>or : java org.jdesktop.lg3d.apps.gol3d.Gol3D <strong>X</strong> <strong>Y</strong> 
+    <strong>Z</strong></p>
+  <p> where<strong> X</strong> = minimum number of neighbours to survive<br />
+    and <strong>Y</strong> = maximum number of neighbours to survive<br />
+    and <strong>Z</strong> = number of neighbours to born.</p>
+  <p>Theses are the rules of the game of life.</p>
+  <p>And that's it !</p>
+  <p><strong>B . Using Gol3D :</strong></p>
+  <p><strong><img src="imagehelp.jpg" width="525" height="380" /></strong></p>
+  <p><strong>1.</strong> This is the previous button, a single click on it will 
+    stop the simulation load the previous grid config (see C.)</p>
+  <p><strong> 2. </strong>This is the next button, a single click on it will stop 
+    the simulation and load the next grid config (see C.)</p>
+  <p><strong>3. </strong>This is a title bar, it displays the name of the actually 
+    loaded grid config.<strong> </strong>A single click on it will stop the simulation 
+    and reload the current grid config.</p>
+  <p><strong>4. </strong>This is the main part of the application, by clicking 
+    on it you will start/pause the simulation. Here you will see the small boxes 
+    live and die and it's what is called the &quot;game of life&quot;.</p>
+  <p>&nbsp;</p>
+  <p><strong> C . Custom Grid Config files :</strong></p>
+  <p>U can test custom grid configuration in the game of life.</p>
+  <p>A custom grid configuration is the initial state and size of the grid.</p>
+  <p>A grid configuration is a text file that must be located in lg3d-incubator/src/classe/org/jdesktop/lg3d/apps/gol3d/configs</p>
+  <p>The format of the text file is like follow :</p>
+  <p>on the first line the size of the matrix</p>
+  <p>on the next lines : each line of the initial boolean matrix</p>
+  <p><strong>example :</strong></p>
+  <p>6<br />
+    001100<br />
+    001100<br />
+    001100<br />
+    001100<br />
+    001100<br />
+    001100</p>
+  <p>which defines a 6*6 boolean matrix with a double column of living cells in 
+    the center</p>
+  <p>The program doesn't make any check on the maximal size of the matrix but 
+    a 100 * 100 matrix should allready be huge .</p>
+  <p>&nbsp;</p>
+  <p><strong>D. Configuration :</strong></p>
+  <p>Just take a look at lg3d-incubator/src/classes/org/jdesktop/lg3d/apps/gol3d/GolConfig.xml 
+    And edit it to change preferences ...</p>
+  <p>Here is what it looks :</p>
+  <p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; <br />
+    &lt;java version=&quot;1.5.0_02&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; 
+    <br />
+    &lt;object class=&quot;org.jdesktop.lg3d.apps.gol3d.GolConfig&quot;&gt; <br />
+    &lt;void property=&quot;<strong>barsColorB</strong>&quot;&gt; <br />
+    &lt;float&gt;0.6&lt;/float&gt; <br />
+    &lt;/void&gt; <br />
+    &lt;void property=&quot;<strong>barsColorG</strong>&quot;&gt; <br />
+    &lt;float&gt;0.6&lt;/float&gt; <br />
+    &lt;/void&gt; <br />
+    &lt;void property=&quot;<strong>barsColorR</strong>&quot;&gt; <br />
+    &lt;float&gt;1.0&lt;/float&gt; <br />
+    &lt;/void&gt; <br />
+    &lt;void property=<strong>&quot;buttonColorB</strong>&quot;&gt; <br />
+    &lt;float&gt;0.6&lt;/float&gt; <br />
+    &lt;/void&gt; <br />
+    &lt;void property=&quot;<strong>buttonColorG</strong>&quot;&gt; <br />
+    &lt;float&gt;1.0&lt;/float&gt; <br />
+    &lt;/void&gt; <br />
+    &lt;void property=&quot;<strong>buttonColorR</strong>&quot;&gt; <br />
+    &lt;float&gt;0.6&lt;/float&gt; <br />
+    &lt;/void&gt; <br />
+    &lt;void property=&quot;<strong>fontColorB</strong>&quot;&gt; <br />
+    &lt;float&gt;0.6&lt;/float&gt; <br />
+    &lt;/void&gt; <br />
+    &lt;void property=&quot;<strong>fontColorG</strong>&quot;&gt; <br />
+    &lt;float&gt;0.6&lt;/float&gt; <br />
+    &lt;/void&gt; <br />
+    &lt;void property=&quot;<strong>fontColorR</strong>&quot;&gt; <br />
+    &lt;float&gt;1.0&lt;/float&gt; <br />
+    &lt;/void&gt; <br />
+    &lt;void property=&quot;<strong>groundColorB</strong>&quot;&gt; <br />
+    &lt;float&gt;0.6&lt;/float&gt; <br />
+    &lt;/void&gt; <br />
+    &lt;void property=&quot;<strong>groundColorG</strong>&quot;&gt; <br />
+    &lt;float&gt;1.0&lt;/float&gt; <br />
+    &lt;/void&gt; <br />
+    &lt;void property=<strong>&quot;groundColorR</strong>&quot;&gt; <br />
+    &lt;float&gt;0.6&lt;/float&gt; <br />
+    &lt;/void&gt; <br />
+    &lt;void property=&quot;<strong>interGenTime</strong>&quot;&gt; <br />
+    &lt;int&gt;750&lt;/int&gt; <br />
+    &lt;/void&gt; <br>
+    &lt;void property=&quot;<strong>transparency</strong>&quot;&gt; <br />
+    &lt;int&gt;1.0&lt;/int&gt; <br />
+    &lt;/void&gt; <br />
+  &lt;/object&gt; <br />
+    &lt;/java&gt; </p>
+  <p>It should be pretty intuitive ...</p>
+  <p><strong>barsColor</strong> is the color of the 'living bars' (the red bars 
+    in the picture above) </p>
+  <p><strong>buttonColor</strong> is the color of the next and previous button 
+    and the background of the text panel.</p>
+  <p><strong>fontColor</strong> is the text panel font color.</p>
+  <p><strong>groundColor</strong> is the color of the ground (the biggest green 
+    box in the picture above)</p>
+  <p><strong>interGenTime</strong> is the time (in ms) between each refresh (each 
+    passage to the next generation of life)</p>
+  <p><strong>transparency</strong> is the transparency (1.0 = opaque , 0.0 = invisible:)</p>
+  <p>&nbsp;</p>
+  <p>Van der Haegen Mathieu (dwarfy) 2005</p>
+</div> 
+</body>
+</html>

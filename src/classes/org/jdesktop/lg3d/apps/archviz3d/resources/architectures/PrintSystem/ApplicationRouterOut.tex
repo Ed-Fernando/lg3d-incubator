@@ -1,0 +1,40 @@
+\begin{schema}{ApplicationRouterOut}
+callerC:  Port \\
+callerS:  Port \\
+callerA: Port \\
+called:  Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+ports: \pset Port
+\end{schema}
+
+
+\begin{zed}
+init\_ApplicationRouterOut \sdef \lsch ApplicationRouterOut'
+                           \bbar callerC' = \new Port
+                           \land callerC'.setiVar(element,This)
+                           \land callerS' = \new Port
+                           \land callerS'.setiVar(element,This)
+                           \land callerA' = \new Port
+                           \land callerA'.setiVar(element,This)
+                           \land called' = \new Port
+                           \land called'.setiVar(element,This)
+                           \land components' = \{ \}
+                           \land connectors' = \{ \}
+                           \land ports' = \{ callerC', callerS', callerA', called' \}  \rsch
+                           \end{zed}
+
+
+\begin{schema}{ProcessEventRouter}
+\Delta ApplicationRouterOut \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where
+called.Initiate(event,This,inputP,outputP)
+\end{schema}
+
+\begin{zed}
+ProcessEvent \sdef ProcessEventRouter \end{zed}
+

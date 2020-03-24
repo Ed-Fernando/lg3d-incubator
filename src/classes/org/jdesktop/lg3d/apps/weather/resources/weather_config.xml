@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.5.0" class="java.beans.XMLDecoder">
+ <object class="org.jdesktop.lg3d.scenemanager.config.ApplicationDescription">$
+  <void property="exec">
+   <string>java org.jdesktop.lg3d.apps.weather</string>
+  </void>
+  <void property="iconFilename">
+   <string>org/jdesktop/lg3d/apps/weather/images/weather.png</string>
+  </void>
+  <void property="name">
+   <string>Weather</string>
+  </void>
+  <void property="location">
+    <string>station code goes here</string>
+  </void>
+  <void property="rate">
+    <int>20</int>
+  </void>
+  <void property="temp_unit">
+    <string>Fahrenheit</string>
+  </void>
+  <void property="wind_unit">
+    <string>mph</string>
+  </void>
+  <void property="pressure_unit">
+    <string>mb</string>
+  </void>
+  <void property="vis_unit">
+    <string>miles</string>
+  </void>
+  <void property="show_radar">
+    <boolean>1</boolean>
+  </void>
+  <void property="background_mode">
+    <boolean>1</boolean>
+  </void>
+ </object>
+</java>

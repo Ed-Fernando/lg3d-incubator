@@ -1,0 +1,306 @@
+\begin{zed}
+MESSAGE & \ddef & add\_user\_ok \\
+& \bbar & delete\_user\_ok \\
+& \bbar & exist\_user \\
+& \bbar & not\_exist\_user \\
+& \bbar & printing\_finished \\
+& \bbar & printing\_error \\
+& \bbar & printing\_abort \\
+& \bbar & printing\_assigned \\
+& \bbar & printer\_available \\
+& \bbar & printer\_occupied \\
+& \bbar & add\_job\_printing\_queue \\
+& \bbar & delete\_job\_printing\_queue \\
+& \bbar & printer\_exist \\
+& \bbar & printer\_not\_exist \\
+& \bbar & add\_printer\_ok \\
+& \bbar & delete\_printer\_ok \\
+& \bbar & printing\_finished\_in\_printer1 \\
+& \bbar & printing\_finished\_in\_printer2
+\end{zed}
+
+\begin{schema}{Client}
+called:  Port \\
+caller: Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port
+\end{schema}
+
+
+\begin{zed}
+init\_Client \sdef \lsch Client'
+             \bbar called' = \new Port
+             \land called'.setiVar(element,This)
+             \land caller' = \new Port
+             \land caller'.setiVar(element,This)
+             \land components' = \{ \}
+             \land connectors' = \{ \}
+             \land events'= \{ addUser, deleteUser, listUsers, listPrinters, jobToPrinter, jobToPrintersPool, printerState, verifyPrinter, verifyPermission, firstPrinterAvailable, firstPrinterOccupied, addPrinter, deletePrinter \}
+             \land ports' = \{ called', caller' \}  \rsch
+             \end{zed}
+
+\begin{schema}{AddUserOk}
+\Xi Client \\
+nick? : \nat \\
+password? : \nat \\
+user? : \nat \\
+permission? : \nat \\
+report! : MESSAGE
+\where
+SE = \lseq nick password user permission \rseq \\
+called.Initiate(addUser, This, SE, R) \\
+R = add\_user\_ok \\
+report! = add\_user\_ok
+\end{schema}
+
+\begin{schema}{AddUserFailed}
+\Xi Client \\
+nick? : \nat \\
+password? : \nat \\
+user? : \nat \\
+permission? : \nat \\
+report! : MESSAGE
+\where
+SE = \lseq nick password user permission \rseq \\
+called.Initiate(addUser, This, SE, R) \\
+R = exist\_user \\
+report! = exist\_user
+\end{schema}
+
+\begin{zed}
+AddUser \sdef AddUserOk \lor AddUserFailed \end{zed}
+
+
+\begin{schema}{DeleteUserOk}
+\Xi Client \\
+nick? : \nat \\
+password? : \nat \\
+user? : \nat \\
+permission? : \nat \\
+report! : MESSAGE
+\where 
+SE = \lseq nick password user permission \rseq \\
+called.Initiate(deleteUser, This, SE, R) \\
+R = delete\_user\_ok \\
+report! = delete\_user\_ok
+\end{schema}
+
+\begin{schema}{DeleteUserFailed}
+\Xi Client \\
+nick? : \nat \\
+password? : \nat \\
+user? : \nat \\
+permission? : \nat \\
+report! : MESSAGE
+\where 
+SE = \lseq nick password user permission \rseq \\
+called.Initiate(deleteUser, This, SE, R) \\
+R = not\_exist\_user \\
+report! = not\_exist\_user
+\end{schema}
+
+
+\begin{zed}
+DeleteUser \sdef DeleteUserOk \lor DeleteUserFailed \end{zed}
+
+
+\begin{schema}{VerifyPermission}
+\Xi Client \\
+printer? : \nat \\
+user? : \nat \\
+report! : MESSAGE
+\where
+SE = \lseq printer user \rseq \\
+called.Initiate(verifyPermission, This, SE, R) \\
+report! = R
+\end{schema}
+
+\begin{zed}
+VerifyPermission \sdef VerifyPermission \end{zed}
+
+\begin{schema}{ListUsers}
+\Delta Client \\
+report!: LIST
+\where
+SE = \lseq  \rseq \\
+called.Initiate(listUsers, This, SE, R) \\
+report!= R
+\end{schema}
+
+\begin{zed}
+ListingUsers \sdef ListUsers \end{zed}
+
+\begin{schema}{ListPrinters}
+\Delta Client \\
+report!: LIST
+\where
+SE = \lseq  \rseq \\
+called.Initiate(listPrinters, This, SE, R) \\
+report!= R
+\end{schema}
+
+\begin{zed}
+ListingPrinters \sdef ListPrinters \end{zed}
+
+\begin{schema}{VerifyPrinterOk}
+\Xi Client \\
+printer? : \nat \\
+report! : MESSAGE
+\where
+SE = \lseq printer \rseq \\
+called.Initiate(verifyPrinter,This,SE,R) \\
+R = printer\_exist \\
+report! = printer\_exist
+\end{schema}
+
+
+\begin{schema}{VerifyPrinterFailed}
+\Xi Client \\
+printer? : \nat \\
+report! : MESSAGE
+\where
+SE = \lseq printer \rseq \\
+called.Initiate(verifyPrinter,This,SE,R) \\
+R = printer\_not\_exist \\
+report! = printer\_not\_exist
+\end{schema}
+
+
+\begin{zed}
+VerifyPrinter \sdef VerifyPrinterOk \lor VerifyPrinterFailed \end{zed}
+
+\begin{schema}{PrinterState}
+\Delta Client \\
+printer? : \nat \\
+report!: MESSAGE
+\where
+SE = \lseq printer \rseq \\
+called.Initiate(printerState,This,SE,R) \\
+report!= R
+\end{schema}
+
+\begin{zed}
+PrinterState \sdef PrinterState \end{zed}
+
+
+
+\begin{schema}{FirstPrinterAvailable}
+\Delta Client \\
+report!: LIST
+\where
+SE = \lseq  \rseq \\
+called.Initiate(firstPrinterAvailable, This, SE, R) \\
+report!= R
+\end{schema}
+
+\begin{zed}
+FirstPrinterAvailable \sdef FirstPrinterAvailable \end{zed}
+
+\begin{schema}{FirstPrinterOccupied}
+\Delta Client \\
+report!: LIST
+\where
+SE = \lseq  \rseq \\
+called.Initiate(firstPrinterOccupied, This, SE, R) \\
+report!= R
+\end{schema}
+
+\begin{zed}
+FirstPrinterOccupied \sdef FirstPrinterOccupied \end{zed}
+
+\begin{schema}{AddPrinterOk}
+\Xi Client \\
+printer? : \nat \\
+bandeja? : \nat \\
+type? : \nat \\
+state? : \nat \\
+typePrinter? : \nat \\
+report! : MESSAGE
+\where
+SE = \lseq printer bandeja type state typePrinter \rseq \\
+called.Initiate(addPrinter, This, SE, R) \\
+R = add\_printer\_ok \\
+report! = add\_printer\_ok
+\end{schema}
+
+\begin{schema}{AddPrinterFailed}
+\Xi Client \\
+printer? : \nat \\
+bandeja? : \nat \\
+type? : \nat \\
+state? : \nat \\
+typePrinter? : \nat \\
+report! : MESSAGE
+\where
+SE = \lseq printer bandeja type state typePrinter \rseq \\
+called.Initiate(addPrinter, This, SE, R) \\
+R = printer\_exist \\
+report! = printer\_exist
+\end{schema}
+
+\begin{zed}
+AddPrinter \sdef AddPrinterOk \lor AddPrinterFailed \end{zed}
+
+
+\begin{schema}{DeletePrinterOk}
+\Xi Client \\
+printer? : \nat \\
+bandeja? : \nat \\
+type? : \nat \\
+state? : \nat \\
+typePrinter? : \nat \\
+report! : MESSAGE
+\where
+SE = \lseq printer bandeja type state typePrinter \rseq \\
+called.Initiate(deletePrinter, This, SE, R) \\
+R = delete\_printer\_ok \\
+report! = delete\_printer\_ok
+\end{schema}
+
+\begin{schema}{DeletePrinterFailed}
+\Xi Client \\
+printer? : \nat \\
+bandeja? : \nat \\
+type? : \nat \\
+state? : \nat \\
+typePrinter? : \nat \\
+report! : MESSAGE
+\where
+SE = \lseq printer bandeja type state typePrinter \rseq \\
+called.Initiate(deletePrinter, This, SE, R) \\
+R = printer\_not\_exist \\
+report! = printer\_not\_exist
+\end{schema}
+
+\begin{zed}
+DeletePrinter \sdef DeletePrinterOk \lor DeletePrinterFailed \end{zed}
+
+
+\begin{schema}{JobToPrinter}
+\Delta Client \\
+printer? : \nat \\
+user? : \nat \\
+job? : \nat \\
+report!: MESSAGE
+\where
+SE = \lseq printer user job \rseq \\
+called.Initiate(jobToPrinter, This, SE, R) \\
+report!= R
+\end{schema}
+
+\begin{schema}{JobToPrintersPool}
+\Delta Client \\
+user? : \nat \\
+job? : \nat \\
+report!: MESSAGE
+\where
+SE = \lseq user job \rseq \\
+called.Initiate(jobToPrintersPool, This, SE, R) \\
+report!= R
+\end{schema}
+
+
+\begin{zed}
+ExecuteJobToPrinter \sdef JobToPrinter \lor JobToPrintersPool \end{zed}

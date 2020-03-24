@@ -1,0 +1,22 @@
+\begin{schema}{FC}
+caller:  Port \\
+called: Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+ports: \pset Port 
+\where
+0=0
+\end{schema}
+
+
+\begin{zed}
+init\_FC \sdef \lsch FC' \bbar caller' = \new Port \land caller'.setiVar(element,This) \land called' = \new Port \land called'.setiVar(element,This) \land  components' = \{ \} \land  connectors' = \{ \} \land ports' = \{ caller', called' \} \rsch  \end{zed}
+
+\begin{schema}{ProcessEvent}
+\Delta FC \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST 
+\where called.Initiate(event,This,inputP,outputP)
+\end{schema}

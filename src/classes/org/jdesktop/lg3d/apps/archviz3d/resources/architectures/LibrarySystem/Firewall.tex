@@ -1,0 +1,60 @@
+\begin{zed}
+MESSAGE & \ddef & not\_valid\_connection\_or\_expired\_session \\
+& \bbar & valid\_connection 
+\end{zed}
+
+\begin{schema}{Firewall}
+minIP: \nat \\
+maxIP: \nat \\
+input:  Port \\
+output: Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port 
+\end{schema}
+
+
+\begin{zed}
+init\_Firewall \sdef \lsch Firewall' \bbar 
+input' = \new Port 
+\land input'.setiVar(element,This) 
+\land output' = \new Port 
+\land output'.setiVar(element,This) 
+\land  minIP' = 1 
+\land maxIP' = 100 
+\land components' = \{ \} 
+\land  connectors' = \{ \} 
+\land events'= \{ checkConnection \}  
+\land ports' = \{ input', output'   \} 
+\rsch  \end{zed}
+
+\begin{schema}{CheckConnectionInvalid}
+\Delta Firewall \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = checkConnection \\ 
+Ip = \head inputP \\
+Ip < minIP \lor Ip > maxIP \\ 
+report! = not\_valid\_connection\_or\_expired\_session 
+\end{schema}
+
+\begin{schema}{CheckConnectionValid}
+\Delta Firewall \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = checkConnection \\ 
+Ip = \head inputP \\
+Ip > minIP \land Ip < maxIP \\ 
+report! = valid\_connection 
+\end{schema}
+
+
+\begin{zed} ProcessEvent \sdef 
+CheckConnectionInvalid
+\lor CheckConnectionValid
+\end{zed}

@@ -1,0 +1,34 @@
+\begin{schema}{DAO}
+caller:  Port \\
+callerD:  Port \\
+called:  Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+ports: \pset Port
+\end{schema}
+
+
+\begin{zed}
+init\_DAO \sdef \lsch DAO'
+                  \bbar caller' = \new Port
+                  \land caller'.setiVar(element,This)
+                  \land callerD' = \new Port
+                  \land callerD'.setiVar(element,This)
+                  \land called' = \new Port
+                  \land called'.setiVar(element,This)
+                  \land components' = \{ \}
+                  \land connectors' = \{ \}
+                  \land events'= \{ \}
+                  \land ports' = \{ caller', callerD', called' \}  \rsch
+                  \end{zed}
+
+
+\begin{schema}{ProcessEvent}
+\Delta DAO \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where
+called.Initiate(event,This,inputP,outputP)
+\end{schema}

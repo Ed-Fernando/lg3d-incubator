@@ -1,0 +1,18 @@
+<Background>
+<Name>Kasprowy Mountain</Name>
+<Thumbnail>resources/Backgrounds/KasprowyMountain/thumb.jpg</Thumbnail>
+<Author>Arek Zylka</Author>
+<Date>11-03-2005</Date>
+<Description>Panorama of bigger Polish mountain "Kasprowy"</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>4</InitialBackground>
+	<Image>resources/Backgrounds/KasprowyMountain/1.png</Image>
+	<Image>resources/Backgrounds/KasprowyMountain/2.png</Image>
+	<Image>resources/Backgrounds/KasprowyMountain/3.png</Image>
+        <Image>resources/Backgrounds/KasprowyMountain/4.png</Image>
+        <Image>resources/Backgrounds/KasprowyMountain/5.png</Image>
+        <Image>resources/Backgrounds/KasprowyMountain/6.png</Image>
+        <Image>resources/Backgrounds/KasprowyMountain/7.png</Image>
+        <Image>resources/Backgrounds/KasprowyMountain/8.png</Image>
+
+</Background>

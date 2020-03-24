@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ls3d" default="compile" basedir=".">
+    <target name="compile" description="Compile ls3d">
+        <javac debug="true"
+                deprecation="false"
+                destdir="${build.classes.dir}"
+                nowarn="true"
+                source="1.5"
+                sourcepath=""
+                target="1.5">
+            <classpath>
+                <pathelement location="${classpath}"/>
+                <pathelement path="${j3d.classpath}"/>
+                <fileset dir="ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+            </classpath>
+            <src path="${javasrc.dir}"/>
+            <include name="org/jdesktop/lg3d/apps/ls3d/**"/>
+
+        </javac>
+    </target>
+
+    <target name="extras" description="Extra steps for Ls3D build">
+        <copy todir="${build.classes.dir}/resources/images/icon" file="src/classes/org/jdesktop/lg3d/apps/ls3d/ls3d.png"/>
+        <copy todir="${build.classes.dir}/resources/images/icon" file="src/classes/org/jdesktop/lg3d/apps/ls3d/Folder.png"/>
+        <copy todir="${build.classes.dir}/resources/images/icon" file="src/classes/org/jdesktop/lg3d/apps/ls3d/File.png"/>
+        <copy todir="${build.classes.dir}/resources/images/icon" file="src/classes/org/jdesktop/lg3d/apps/ls3d/CompressFiles.png"/>
+        <copy todir="${build.classes.dir}/resources/images/icon" file="src/classes/org/jdesktop/lg3d/apps/ls3d/executable.png"/>
+    </target>
+
+    <target name="jar" depends="compile,extras" description="Jar up the ls3d app">
+        <jar compress="${jar.compress}" jarfile="${build.app.dir}/ls3d.jar">
+             <manifest>
+                <attribute name="Config-File" value="ls3d.lgcfg"/>
+             </manifest>
+             <fileset dir="${build.classes.dir}/">
+                <include name="org/jdesktop/lg3d/apps/ls3d/**"/>
+                <include name="resources/images/icon/ls3d.png"/>
+                <include name="resources/images/icon/Folder.png"/>
+                <include name="resources/images/icon/File.png"/>
+                <include name="resources/images/icon/CompressFiles.png"/>
+                <include name="resources/images/icon/executable.png"/>
+             </fileset>
+             <fileset dir="${src.dir}/config">
+                <include name="ls3d.lgcfg"/>
+             </fileset>
+        </jar>
+    </target>
+</project>

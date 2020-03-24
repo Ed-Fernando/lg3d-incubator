@@ -1,0 +1,99 @@
+This directory is used by the incubator build process to compile, and jar 
+the individual incubator projects. The following steps are followed:
+1. initialize the build environment
+2. for each file in the src/build-scripts directory matching the regular
+   expressiong build-*.xml call the ant target 'compile'
+3. copy any built jar files across to the lg3d-core/ext/app directory for
+   deployment when the system is started.
+
+
+The following parameters are available:
+  ${build.dir}    - the build directory
+  ${app.dir}      - the directory where application jars are stored
+  ${classes.dir}  - the classes directory
+  ${src.dir}      - the source directory
+  ${javasrc.dir}  - the java source classes directory
+  ${release.dir}  - the release directory
+  ${core.etc.dir} - the lg3d-core/etc directory
+  ${core.ext.dir} - the lg3d-core/ext directory
+  ${project.name} - the name of the project
+  ${classpath}    - the classpath for lg3d core components
+
+
+The following is a skeleton build-<project>.xml file:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- declare the standard ant header -->
+<project name="skeleton" default="all" basedir=".">
+
+    <!-- create the compile target. this is called by the
+         compile target of the lg3d-incubator build.xml
+         it should also do any extra processing, and end up
+         creating a jar file read to be deployed stored in
+         the ${app.dir} directory -->
+    <target name="compile" description="Compile skeleton">
+        <javac debug="true" 
+                deprecation="false" 
+                destdir="${classes.dir}" 
+                nowarn="true" 
+                source="1.5" 
+                sourcepath=""
+                target="1.5">
+            <classpath>
+		<!-- include any dependencies such as the lg3d-core class -->
+                <pathelement location="${classpath}"/>
+                <!-- or the lg3d-core/ext libraries -->
+                <fileset dir="../lg3d-core/ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+		<!-- or the lg3d-incubator/ext libraries -->
+                <fileset dir="ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+            </classpath>
+            <src path="${javasrc.dir}"/>
+	    <!-- include the directories from the incubator that should
+                 be built as part of this packages build process -->
+            <include name="org/jdesktop/lg3d/apps/skeleton/**"/>
+
+        </javac>    
+ 
+	<!-- call any extra work that needs to be done - such as copying
+             files -->       
+        <antcall inheritall="true" target="extras"/>
+        <!-- call the target to crate the deployable jar -->
+        <antcall inheritall="true" target="jar"/>
+
+    </target>
+    
+    <target name="extras" description="Extra steps for skeleton build">
+        <copy todir="build/classes/resources/images/icon" file="src/classes/org/jdesktop/lg3d/apps/skeleton/SkeletonIcon.png"/>
+    </target>
+    
+    <!-- the jar target handles the creation of the deployable jar.
+         A deployable jar should have everything required incorporated
+         into the jar. This includes the icons and lgcfg file.
+         the jar must be built to the ${app.dir} directory, from where
+         it is automatically copied to the lg3d-core/ext/app directory -->
+    <target name="jar" description="Jar up the skeleton app">
+	<!-- create the jar file in the ${app.dir} directory -->
+        <jar compress="${jar.compress}" jarfile="${app.dir}/skeleton.jar">
+             <manifest>
+		<!-- add the name of the configuration file to the manifest
+                     so that the config loader can find it -->
+                <attribute name="Config-File" value="skeleton.lgcfg"/>
+             </manifest>
+	     <!-- include all the class files and resources that were built
+                  to the ${classes.dir} directory -->
+             <fileset dir="${classes.dir}/">
+                <include name="org/jdesktop/lg3d/apps/skeleton/**"/>
+                <include name="resources/images/icon/SkeletonIcon.png"/>
+             </fileset>
+	     <!-- include the lgcfg configuration file to load the application
+                  appropriately at startup -->
+             <fileset dir="${src.dir}/config">
+                <include name="skeleton.lgcfg"/>
+             </fileset>
+        </jar>    
+    </target>
+</project>

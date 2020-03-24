@@ -1,0 +1,58 @@
+\begin{schema}{LibrarySystem}
+member:  Client \\
+admin: Client \\
+server: Server \\
+dao: DAO \\ 
+db: DB \\
+rpc1: RPC \\
+rpc2: RPC \\
+fc1: FC \\
+fc2: FC \\
+components: \pset Element \\
+connectors: \pset Element \\
+ports: \pset Port 
+\end{schema}
+
+\begin{zed}
+init\_LibrarySystem \sdef \lsch 
+LibrarySystem' \bbar 
+member' = \new Member 
+\land admin' = \new Admin 
+\land server' = \new LibraryServer
+\land dao' = \new DAO
+\land db' = \new DB
+\land rpc1' = \new RPC
+\land rpc2' = \new RPC
+\land fc1' = \new FC 
+\land fc2' = \new FC 
+\land components' = \{ admin', member', server', dao', db' \}
+\land connectors' = \{ rpc1', rpc2', fc1', fc2' \}
+\land ports' = \{ \}  
+\rsch  
+\end{zed}
+
+\begin{schema}{init\_Arch\_LibrarySystem}
+\Delta LibrarySystem 
+\where 
+member.callerSU.setiVar(next, rpc1.caller) \\
+rpc1.caller.setiVar(next, member.callerSU ) \\
+rpc1.called.setiVar(next, server.portSU) \\
+
+admin.callerSA.setiVar(next, rpc2.caller) \\
+rpc2.caller.setiVar(next, admin.callerSA) \\
+rpc2.called.setiVar(next, server.portSA) \\
+
+server.callerDAO.setiVar(next,fc1.caller) \\
+fc1.caller.setiVar(next, server.callerDAO) \\
+fc1.called.setiVar(next, dao.portLS) \\
+
+dao.callerDB.setiVar(next,fc2.caller) \\
+fc2.caller.setiVar(next, dao.callerDB) \\
+fc2.called.setiVar(next, db.portDAO) \\
+
+server.InitServerSystem()
+ 
+\end{schema}
+
+
+

@@ -1,0 +1,366 @@
+\begin{zed}
+MESSAGE & \ddef & add\_user\_ok \\
+& \bbar & delete\_user\_ok \\
+& \bbar & exist\_user \\
+& \bbar & not\_exist\_user
+& \bbar & printing\_finished \\
+& \bbar & printing\_error \\
+& \bbar & printing\_abort \\
+& \bbar & printing\_assigned \\
+& \bbar & printer\_available \\
+& \bbar & printer\_non\_available \\
+& \bbar & printer\_occupied \\
+& \bbar & printer\_exist \\
+& \bbar & printer\_not\_exist \\
+& \bbar & add\_printer\_ok \\
+& \bbar & delete\_printer\_ok \\
+& \bbar & permission\_accepted \\
+& \bbar & permission\_rejected \\
+& \bbar & printing\_finished\_in\_printer1 \\
+& \bbar & printing\_finished\_in\_printer2
+\end{zed}
+
+\begin{schema}{Repository}
+caller:  Port \\
+called:  Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+users: \nat \cross \nat \cross nat \cross nat \\
+printers: \nat \cross \nat \cross nat \cross nat \cross nat \\
+ports: \pset Port
+\end{schema}
+
+
+\begin{zed}
+init\_Repository \sdef \lsch Repository'
+                  \bbar caller' = \new Port
+                  \land caller'.setiVar(element,This)
+                  \land called' = \new Port
+                  \land called'.setiVar(element,This)
+                  \land users' = \{ (1,1111,adrian,2),(2,2222,sergio,1) \}
+                  \land printers' = \{ (1,1,color,available,inkjet),(2,1,bn,occupied,laserjet) \}
+                  \land components' = \{ \}
+                  \land connectors' = \{ \}
+                  \land ports' = \{ caller', called' \}  \rsch
+                  \end{zed}
+
+
+\begin{schema}{AddUserOk}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = addUser \\
+Nick = \head inputP \\
+Password = \head (\tail inputP) \\
+User = \head (\tail (\tail inputP)) \\
+Permission = \head (\tail (\tail (\tail inputP))) \\
+users' = users \uni \{ (Nick,Password,User,Permission) \} \\
+report! = add\_user\_ok
+\end{schema}
+
+\begin{schema}{DeleteUserOk}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = deleteUser \\
+Nick = \head inputP \\
+Password = \head (\tail inputP) \\
+User = \head (\tail (\tail inputP)) \\
+Permission = \head (\tail (\tail (\tail inputP))) \\
+users' = users \setminus \{ (Nick,Password,User,Permission) \} \\
+report! = delete\_user\_ok
+\end{schema}
+
+\begin{schema}{VerifyPermissionOk1}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = verifyPermission \\
+Printer = \head inputP \\
+User = \head (\tail inputP) \\
+NL = \{ X : \nat \bbar X \mem printers \land \nth( X , 1 ) = Printer \} \\
+NL \neq \emptyset \\
+P = \head NL \\
+\nth( P , 5) = inkjet \\
+NU = \{ X : \nat \bbar X \mem users \land \nth( X , 1 ) = User \} \\
+NU \neq \emptyset \\
+T = \head NU \\
+\nth( T , 4) = 1 \\
+report! = permission\_accepted
+\end{schema}
+
+\begin{schema}{VerifyPermissionFailed1}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = verifyPermission \\
+Printer = \head inputP \\
+User = \head (\tail inputP) \\
+NL = \{ X : \nat \bbar X \mem printers \land \nth( X , 1 ) = Printer \} \\
+NL \neq \emptyset \\
+P = \head NL \\
+\nth( P , 5) = laserjet \\
+NU = \{ X : \nat \bbar X \mem users \land \nth( X , 1 ) = User \} \\
+NU \neq \emptyset \\
+T = \head NU \\
+\nth( T , 4) = 1 \\
+report! = permission\_rejected
+\end{schema}
+
+\begin{schema}{VerifyPermissionOk2}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = verifyPermission \\
+User = \head (\tail inputP) \\
+NU = \{ X : \nat \bbar X \mem users \land \nth( X , 1 ) = User \} \\
+NU \neq \emptyset \\
+T = \head NU \\
+\nth( T , 4) = 2 \\
+report! = permission\_accepted
+\end{schema}
+
+\begin{schema}{ValidateUserOk}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = validateUser \\
+Nick = \head inputP \\
+NL = \{ X : \nat \bbar X \mem users \land \nth( X , 1 ) = Nick \} \\
+NL \neq \emptyset \\
+report! = exist\_user
+\end{schema}
+
+
+\begin{schema}{ValidateUserBad}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = validateUser \\
+Nick = \head inputP \\
+NL = \{ X : \nat \bbar X \mem users \land \nth( X , 1 ) = Nick \} \\
+NL = \emptyset \\
+report! = not\_exist\_user
+\end{schema}
+
+\begin{schema}{ListUsers}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = listUsers \\
+report!= users
+\end{schema}
+
+\begin{schema}{ListPrinters}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = listPrinters \\
+report!= printers
+\end{schema}
+
+\begin{schema}{VerifyPrinterOk}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = verifyPrinter \\
+Printer = \head inputP \\
+NL = \{ X : \nat \bbar X \mem printers \land \nth( X , 1 ) = Printer \} \\
+NL \neq \emptyset \\
+report! = printer\_exist
+\end{schema}
+
+
+\begin{schema}{VerifyPrinterFailed}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = verifyPrinter \\
+Printer = \head inputP \\
+NL = \{ X : \nat \bbar X \mem printers \land \nth( X , 1 ) = Printer \} \\
+NL = \emptyset \\
+report! = printer\_not\_exist
+\end{schema}
+
+\begin{schema}{PrinterStateAvailable}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = printerState \\
+Printer = \head inputP \\
+NL = \{ X : \nat \bbar X \mem printers \land \nth( X , 1 ) = Printer \} \\
+NL \neq \emptyset \\
+JR = \{ X : \nat \bbar X \mem NL \land \nth( X , 4 ) = available \} \\
+JR \neq \emptyset \\
+report! = printer\_available
+\end{schema}
+
+\begin{schema}{PrinterStateNonAvailable}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = printerState \\
+Printer = \head inputP \\
+NL = \{ X : \nat \bbar X \mem printers \land \nth( X , 1 ) = Printer \} \\
+NL \neq \emptyset \\
+JR = \{ X : \nat \bbar X \mem NL \land \nth( X , 4 ) = nonavailable \} \\
+JR \neq \emptyset \\
+report! = printer\_non\_available
+\end{schema}
+
+\begin{schema}{PrinterStateOccupied}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = printerState \\
+Printer = \head inputP \\
+NL = \{ X : \nat \bbar X \mem printers \land \nth( X , 1 ) = Printer \} \\
+NL \neq \emptyset \\
+JR = \{ X : \nat \bbar X \mem NL \land \nth( X , 4 ) = occupied \} \\
+JR \neq \emptyset \\
+report! = printer\_occupied
+\end{schema}
+
+
+\begin{schema}{FirstPrinterAvailableOk}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = firstPrinterAvailable \\
+NL = \{ X : \nat \bbar X \mem printers \land \nth( X , 4 ) = available \} \\
+NL \neq \emptyset \\
+P = \head NL \\
+T = \nth( P , 1) \\
+report! = T
+\end{schema}
+
+\begin{schema}{FirstPrinterAvailableFailed}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = firstPrinterAvailable \\
+NL = \{ X : \nat \bbar X \mem printers \land \nth( X , 4 ) = available \} \\
+NL = \emptyset \\
+report! = NL
+\end{schema}
+
+\begin{schema}{FirstPrinterOccupiedOk}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = firstPrinterOccupied \\
+NL = \{ X : \nat \bbar X \mem printers \land \nth( X , 4 ) = occupied \} \\
+NL \neq \emptyset \\
+P = \head NL \\
+T = \nth( P , 1) \\
+report! = T
+\end{schema}
+
+\begin{schema}{FirstPrinterOccupiedFailed}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = firstPrinterOccupied \\
+NL = \{ X : \nat \bbar X \mem printers \land \nth( X , 4 ) = occupied \} \\
+NL = \emptyset \\
+report! = NL
+\end{schema}
+
+
+
+
+\begin{schema}{AddPrinterOk}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = addPrinter \\
+Printer = \head inputP \\
+Bandeja = \head (\tail inputP) \\
+Color = \head (\tail (\tail inputP)) \\
+State = \head (\tail (\tail (\tail inputP))) \\
+TypePrinter = \head (\tail (\tail (\tail (\tail inputP)))) \\
+printers' = printers \uni \{ (Printer,Bandeja,Color,State,TypePrinter) \} \\
+report! = add\_printer\_ok
+\end{schema}
+
+\begin{schema}{DeletePrinterOk}
+\Delta Repository \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = deletePrinter \\
+Printer = \head inputP \\
+Bandeja = \head (\tail inputP) \\
+Color = \head (\tail (\tail inputP)) \\
+State = \head (\tail (\tail (\tail inputP))) \\
+TypePrinter = \head (\tail (\tail (\tail (\tail inputP)))) \\
+printers' = printers \setminus \{ (Printer,Bandeja,Color,State,TypePrinter) \} \\
+report! = delete\_printer\_ok
+\end{schema}
+
+
+
+
+
+\begin{zed}
+ProcessEvent
+             \sdef ValidateUserOk
+             \lor ValidateUserBad
+             \lor AddUserOk
+             \lor DeleteUserOk
+             \lor VerifyPermissionOk1
+             \lor VerifyPermissionFailed1
+             \lor VerifyPermissionOk2
+             \lor ListUsers
+             \lor ListPrinters
+             \lor VerifyPrinterOk
+             \lor VerifyPrinterFailed
+             \lor PrinterStateAvailable
+             \lor PrinterStateNonAvailable
+             \lor PrinterStateOccupied
+             \lor FirstPrinterAvailableOk
+             \lor FirstPrinterAvailableFailed
+             \lor FirstPrinterOccupiedOk
+             \lor FirstPrinterOccupiedFailed
+             \lor AddPrinterOk
+             \lor DeletePrinterOk
+\end{zed}

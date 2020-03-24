@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="LgScope" default="main" basedir=".">
+  
+  <property name="home" value="."/>
+  <property name="src.dir" value="${home}/src"/>
+  <property name="build.dir" value="${home}/build"/>
+  <property name="classes.dir" value="${build.dir}/classes"/>
+  <property name="lg3d.dir" value="/LG3D/080"/>
+  
+  <!-- =================================================================== -->
+  <!-- all                                                                 -->
+  <!-- =================================================================== -->
+  <target name="main" depends="all">
+  </target>
+
+  <target name="all" depends="compile">
+  </target>
+
+  <target name="init">
+    <mkdir dir="${classes.dir}"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Compiles the source code                                            -->
+  <!-- =================================================================== -->
+  <target name="compile" depends="init">
+    <mkdir dir="${classes.dir}"/>
+    <javac srcdir="${src.dir}"
+           deprecation="true" 
+           classpath="${lg3d.dir}/lib/lg3d-core.jar"
+           debug="on"
+           destdir="${classes.dir}">
+    </javac>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Making the JAR file                                                 -->
+  <!-- =================================================================== -->
+  <target name="makejar" depends="compile">
+
+    <copy todir="${classes.dir}/org/jdesktop/lg3d/apps/lgscope/resources">
+        <fileset dir="${src.dir}/org/jdesktop/lg3d/apps/lgscope/resources" />
+    </copy>
+
+    <copy todir="${classes.dir}/org/jdesktop/lg3d/apps/lgscope/">
+        <fileset file="${src.dir}/org/jdesktop/lg3d/apps/lgscope/icon.properties" />
+    </copy>
+
+    <mkdir dir="${build.dir}/lib"/>
+    <jar 
+        jarfile="${build.dir}/lib/LgScope.jar"
+        manifest="LgScope.MF">
+        <fileset dir="${classes.dir}/"/>
+        <fileset file="${home}/LgScopeIcon.png" />
+    </jar>
+
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Cleans up generated stuff                                           -->
+  <!-- =================================================================== -->
+  <target name="clean">
+    <delete>
+      <fileset defaultexcludes="no" dir="${home}" includes="**/*~" />
+    </delete>
+    <delete>
+      <fileset dir="${home}" includes="**/*.class" />
+      <fileset dir="${build.dir}" includes="**/*"/>
+    </delete>
+  </target>
+
+</project>
+

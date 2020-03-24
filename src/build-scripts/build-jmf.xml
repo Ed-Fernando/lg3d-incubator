@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="jmf" default="all" basedir=".">
+    <target name="compile" description="Compile algea3d">
+        <javac debug="true"
+                deprecation="false"
+                destdir="${build.classes.dir}"
+                nowarn="true"
+                source="1.5"
+                sourcepath=""
+                target="1.5">
+            <classpath>
+                <pathelement location="${classpath}"/>
+                <pathelement path="${j3d.classpath}"/>
+                <pathelement path="${javaext.classpath}"/>
+                <pathelement location="ext/jxta.jar"/>
+                <pathelement location="ext/commons-cli-1.0.jar"/>
+                <pathelement location="ext/fobs4jmf.jar"/>
+                <pathelement location="ext/svgSalamander.jar"/>
+            </classpath>
+            <src path="${javasrc.dir}"/>
+            <include name="org/jdesktop/lg3d/apps/jmf23D/**"/>
+
+        </javac>
+    </target>
+
+    <target name="extras" description="Extra steps for algea3d build">
+      	<copy todir="${build.classes.dir}/resources/images/icon">
+	    <fileset dir="src/classes/org/jdesktop/lg3d/apps/jmf23D/resources/images"
+		    includes="**/*.png"/>
+	</copy>
+      	<mkdir dir="${build.classes.dir}/resources/models"/>
+      	<copy todir="${build.classes.dir}/resources/models">
+	    <fileset dir="src/classes/org/jdesktop/lg3d/apps/jmf23D/resources/models"
+		     includes="**/*.obj"/>
+	</copy>
+      	<copy todir="${build.classes.dir}/resources">
+	    <fileset dir="src/classes/org/jdesktop/lg3d/apps/jmf23D/resources"
+		     includes="**/*.ogg"/>
+	</copy>
+    </target>
+
+    <target name="jar" depends="compile,extras" description="Jar up the algea3d app">
+        <jar compress="${jar.compress}" jarfile="${build.app.dir}/algea3d.jar">
+             <manifest>
+                <attribute name="Config-File" value="algea3d.lgcfg"/>
+             </manifest>
+             <fileset dir="${build.classes.dir}/">
+                <include name="org/jdesktop/lg3d/apps/jmf23D/**"/>
+                <include name="resources/images/icon/alg*.png"/>
+                <include name="resources/models/**"/>
+             </fileset>
+             <fileset dir="${src.dir}/config">
+                <include name="algea3d.lgcfg"/>
+             </fileset>
+        </jar>
+    </target>
+</project>

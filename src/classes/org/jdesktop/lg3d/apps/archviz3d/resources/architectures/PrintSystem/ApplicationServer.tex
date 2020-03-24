@@ -1,0 +1,78 @@
+\begin{schema}{ApplicationServer}
+called: Port \\
+caller: Port \\
+applicationrouterport: Port \\
+functioncall1: FunctionCall \\
+functioncall2: FunctionCall \\
+functioncall3: FunctionCall \\
+functioncall4: FunctionCall \\
+functioncall5: FunctionCall \\
+
+applicationrouter: ApplicationRouter \\
+applicationmanager:  ApplicationManager \\
+clientadministrator: ClientAdministrator \\
+applicationrouterout : ApplicationRouterOut \\
+
+services : \nat \pfun \nat \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port
+\end{schema}
+
+
+\begin{zed}
+init\_ApplicationServer \sdef \lsch ApplicationServer'
+                        \bbar called' = \new Port
+                        \land called'.setiVar(element,This)
+                        \land caller' = \new Port
+                        \land caller'.setiVar(element,This)
+                        \land applicationrouterport' = \new Port
+                        \land applicationrouterport'.setiVar(element,This)
+                        \land applicationrouter' = \new ApplicationRouter
+                        \land applicationmanager' = \new ApplicationManager
+                        \land clientadministrator' = \new ClientAdministrator
+                        \land applicationrouterout' = \new ApplicationRouterOut
+                        \land functioncall1' = \new FunctionCall
+                        \land functioncall2' = \new FunctionCall
+                        \land functioncall3' = \new FunctionCall
+                        \land functioncall4' = \new FunctionCall
+                        \land functioncall5' = \new FunctionCall
+                        \land services' = \{ \}
+                        \land components' = \{ applicationrouter', applicationmanager', clientadministrator', applicationrouterout' \}
+                        \land connectors' = \{ functioncall1', functioncall2', functioncall3', functioncall4', functioncall5' \}
+                        \land events'= \{ addUser, deleteUser, listUsers, listPrinters, jobToPrinter, jobToPrintersPool, printerState, verifyPrinter, verifyPermission, firstPrinterAvailable, firstPrinterOccupied, addPrinter, deletePrinter, validateUser \}
+                        \land ports' = \{ applicationrouterport', caller', called' \}  \rsch
+                        \end{zed}
+
+\begin{schema}{InitService}
+\Delta ApplicationServer
+\where
+applicationrouter.callerA.setiVar(next,functioncall1.caller) \\
+functioncall1.caller.setiVar(next,applicationrouter.callerA) \\
+functioncall1.called.setiVar(next,applicationmanager.caller) \\
+applicationrouter.callerC.setiVar(next,functioncall3.caller) \\
+functioncall3.caller.setiVar(next,applicationrouter.callerC) \\
+functioncall3.called.setiVar(next,clientadministrator.caller) \\
+clientadministrator.called.setiVar(next,functioncall4.caller) \\
+functioncall4.caller.setiVar(next,clientadministrator.called) \\
+functioncall4.called.setiVar(next,applicationrouterout.callerC) \\
+applicationmanager.called.setiVar(next,functioncall5.caller) \\
+functioncall5.caller.setiVar(next,applicationmanager.called) \\
+functioncall5.called.setiVar(next,applicationrouterout.callerA)
+\end{schema}
+
+\begin{schema}{ProcessEventAS}
+\Delta ApplicationServer  \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where
+applicationrouterport.setiVar(next,applicationrouter.caller) \\
+applicationrouterport.Initiate(event,This,inputP,outputP)
+\end{schema}
+
+\begin{zed}
+ProcessEvent \sdef ProcessEventAS \end{zed}
+

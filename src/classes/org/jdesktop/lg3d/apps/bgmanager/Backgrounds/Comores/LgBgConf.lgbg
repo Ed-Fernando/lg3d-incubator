@@ -1,0 +1,17 @@
+<Background>
+<Name>Comores</Name>
+<Thumbnail>resources/Backgrounds/Comores/thumb.jpg</Thumbnail>
+<Author>Fl0rian of somewhere</Author>
+<Date>11-03-2005</Date>
+<Description>Comores</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>3</InitialBackground>
+	<Image>resources/Backgrounds/Comores/Comores-0.jpg</Image>
+	<Image>resources/Backgrounds/Comores/Comores-1.jpg</Image>
+	<Image>resources/Backgrounds/Comores/Comores-2.jpg</Image>
+	<Image>resources/Backgrounds/Comores/Comores-3.jpg</Image>
+	<Image>resources/Backgrounds/Comores/Comores-4.jpg</Image>
+	<Image>resources/Backgrounds/Comores/Comores-5.jpg</Image>
+	<Image>resources/Backgrounds/Comores/Comores-6.jpg</Image>
+
+</Background>

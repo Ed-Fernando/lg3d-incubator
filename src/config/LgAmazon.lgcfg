@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.5.0" class="java.beans.XMLDecoder"> 
+<!-- <object class="org.jdesktop.lg3d.scenemanager.config.ApplicationDescription"> 
+
+  <void property="exec"> 
+  <string>java org.jdesktop.lg3d.apps.lgamazon.LgAmazon</string>
+  </void> 
+
+  <void property= "iconFilename">  
+    <string>org/jdesktop/lg3d/apps/lgamazon/resources/lgAmazon.png</string>
+  </void> 
+  <void property="name"> 
+   <string>LgAmazon</string>
+  </void>
+
+   <void property="classpathJars">
+    <string>LgAmazon.jar</string>
+  </void>
+</object> -->
+
+ <!-- Start Menu item -->
+ <object class="org.jdesktop.lg3d.scenemanager.utils.startmenu.StartMenuItemConfig"> 
+  <void property="command"> 
+   <string>java org.jdesktop.lg3d.apps.lgamazon.LgAmazon</string> 
+  </void> 
+  <void property="desc"> 
+   <string>Amazon WebService on LG3D</string> 
+  </void> 
+  <void property="displayResourceType">
+   <string>ICON</string>
+  </void> 
+  <void property="displayResourceUrlName">
+   <string>resource:///org/jdesktop/lg3d/apps/lgamazon/resources/lgAmazon.png</string>
+  </void>
+  <void property="menuGroup"> 
+   <string>Internet</string> 
+  </void> 
+  <void property="name"> 
+   <string>LgAmazon AWS</string> 
+  </void> 
+  <void property="classpathJars">
+    <string>LgAmazon.jar  ../axis/jaxrpc.jar ../axis/axis.jar ../axis/commons-logging-1.0.4.jar ../axis/commons-discovery-0.2.jar ../axis/wsdl4j-1.5.1.jar ../activation.jar ../mail.jar</string>
+  </void>
+ </object> 
+</java>  

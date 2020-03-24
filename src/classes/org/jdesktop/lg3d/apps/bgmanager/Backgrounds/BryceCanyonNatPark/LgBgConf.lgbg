@@ -1,0 +1,13 @@
+<Background>
+<Name>Bryce Canyon Nat Park</Name>
+<Thumbnail>resources/Backgrounds/BryceCanyonNatPark/thumb.jpg</Thumbnail>
+<Author>Brad Templeton of www.templetons.com/brad</Author>
+<Date>11-03-2005</Date>
+<Description>Bryce Canyon Nat Park</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>1</InitialBackground>
+	<Image>resources/Backgrounds/BryceCanyonNatPark/Bryce-Canyon-Nat-Park-0.jpg</Image>
+	<Image>resources/Backgrounds/BryceCanyonNatPark/Bryce-Canyon-Nat-Park-1.jpg</Image>
+	<Image>resources/Backgrounds/BryceCanyonNatPark/Bryce-Canyon-Nat-Park-2.jpg</Image>
+
+</Background>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="googler" default="compile" basedir=".">
+    <target name="compile" description="Compile Googler">
+        <javac debug="true"
+                deprecation="false"
+                destdir="${build.classes.dir}"
+                nowarn="true"
+                source="1.5"
+                sourcepath=""
+                target="1.5">
+            <classpath>
+                <pathelement location="${classpath}"/>
+                <pathelement path="${j3d.classpath}"/>
+                <fileset dir="../lg3d-core/ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+                <fileset dir="ext">
+                    <include name="**/*.jar"/>
+		</fileset>
+            </classpath>
+            <src path="${javasrc.dir}"/>
+            <include name="org/jdesktop/lg3d/apps/googler/**"/>
+
+        </javac>
+    </target>
+
+    <target name="extras" description="Extra steps for Googler build">
+        <copy todir="${build.classes.dir}/resources/images/icon" file="src/classes/org/jdesktop/lg3d/apps/googler/GooglerIcon.png"/>
+	<copy todir="../lg3d-core/ext/app/libs">
+            <fileset dir="ext/axis">
+                <include name="**"/>
+            </fileset>
+        </copy>
+        <copy todir="../lg3d-core/src/resources/googler">
+            <fileset dir="src/classes/org/jdesktop/lg3d/apps/googler/engine/internal">
+                <include name="GoogleSearch.wsdl"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="jar" depends="compile,extras" description="Jar up the googler app">
+        <jar compress="${jar.compress}" jarfile="${build.app.dir}/googler.jar">
+             <manifest>
+                <attribute name="Config-File" value="googler.lgcfg"/>
+             </manifest>
+             <fileset dir="${build.classes.dir}/">
+                <include name="org/jdesktop/lg3d/apps/googler/**"/>
+                <include name="resources/images/icon/GooglerIcon.png"/>
+             </fileset>
+             <fileset dir="${src.dir}/config">
+                <include name="googler.lgcfg"/>
+             </fileset>
+        </jar>
+    </target>
+</project>

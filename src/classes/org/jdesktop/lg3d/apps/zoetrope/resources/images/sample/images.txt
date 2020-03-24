@@ -1,0 +1,14 @@
+org/jdesktop/lg3d/apps/zoetrope/resources/images/sample/sample01.jpg
+org/jdesktop/lg3d/apps/zoetrope/resources/images/sample/sample02.jpg
+org/jdesktop/lg3d/apps/zoetrope/resources/images/sample/sample03.jpg
+org/jdesktop/lg3d/apps/zoetrope/resources/images/sample/sample04.jpg
+org/jdesktop/lg3d/apps/zoetrope/resources/images/sample/sample05.jpg
+org/jdesktop/lg3d/apps/zoetrope/resources/images/sample/sample06.jpg
+org/jdesktop/lg3d/apps/zoetrope/resources/images/sample/sample07.jpg
+org/jdesktop/lg3d/apps/zoetrope/resources/images/sample/sample08.jpg
+org/jdesktop/lg3d/apps/zoetrope/resources/images/sample/sample09.jpg
+org/jdesktop/lg3d/apps/zoetrope/resources/images/sample/sample10.jpg
+org/jdesktop/lg3d/apps/zoetrope/resources/images/sample/sample11.jpg
+org/jdesktop/lg3d/apps/zoetrope/resources/images/sample/sample12.jpg
+org/jdesktop/lg3d/apps/zoetrope/resources/images/sample/sample13.jpg
+org/jdesktop/lg3d/apps/zoetrope/resources/images/sample/sample14.jpg

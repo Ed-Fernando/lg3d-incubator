@@ -1,0 +1,12 @@
+<Background>
+<Name>The Bubbles</Name>
+<Thumbnail>resources/Backgrounds/TheBubbles/thumb.jpg</Thumbnail>
+<Author>Dana Fagerstrom of Sun Microsystems</Author>
+<Date>11-03-2005</Date>
+<Description>The Bubbles</Description>
+<BGType>Simple Background</BGType>
+
+	<Image>resources/Backgrounds/TheBubbles/TheBubbles.jpg</Image>
+	
+
+</Background>

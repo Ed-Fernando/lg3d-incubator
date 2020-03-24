@@ -1,0 +1,20 @@
+<Background>
+<Name>Three Flovers</Name>
+<Thumbnail>resources/Backgrounds/ThreeFlowers/thumb.jpg</Thumbnail>
+<Author>TODO</Author>
+<Date>11-03-2005</Date>
+<Description>Three Flovers</Description>
+<BGType>Layered Background</BGType>
+<Layer>
+	<Image>resources/Backgrounds/zonkile/zakile.jpg</Image>
+	<TranslationX>1.2</TranslationX>
+	<TranslationY>-0.1</TranslationY>
+	<TranslationZ>-1.5</TranslationZ>
+ </Layer>
+ <Layer>
+	<Image>resources/Backgrounds/ThreeFlowers/three-flowers.png</Image>
+	<TranslationX>0.5</TranslationX>
+	<TranslationY>-0.25</TranslationY>
+	<TranslationZ>1</TranslationZ>
+ </Layer>
+</Background>

@@ -1,0 +1,177 @@
+\begin{schema}{ApplicationRouter}
+callerC:  Port \\
+callerS:  Port \\
+callerA: Port \\
+caller:  Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+ports: \pset Port
+\end{schema}
+
+
+\begin{zed}
+init\_ApplicationRouter \sdef \lsch ApplicationRouter'
+                        \bbar callerC' = \new Port
+                        \land callerC'.setiVar(element,This)
+                        \land callerS' = \new Port
+                        \land callerS'.setiVar(element,This)
+                        \land callerA' = \new Port
+                        \land callerA'.setiVar(element,This)
+                        \land caller' = \new Port
+                        \land caller'.setiVar(element,This)
+                        \land components' = \{ \}
+                        \land connectors' = \{ \}
+                        \land ports' = \{ callerC', callerS', callerA', caller' \}  \rsch
+                        \end{zed}
+
+
+\begin{schema}{ProcessEventAddUser}
+\Delta ApplicationRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = addUser \\
+callerC.Initiate(addUser,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{ProcessEventDeleteUser}
+\Delta ApplicationRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = deleteUser \\
+callerC.Initiate(deleteUser,This,inputP,outputP)
+\end{schema}
+
+
+
+\begin{schema}{ProcessEventVerifyPermission}
+\Delta ApplicationRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = verifyPermission \\
+callerC.Initiate(verifyPermission,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{ProcessEventListUsers}
+\Delta ApplicationRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = listUsers \\
+callerC.Initiate(listUsers,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{ProcessEventListPrinters}
+\Delta ApplicationRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = listPrinters \\
+callerA.Initiate(listPrinters,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{ProcessEventVerifyPrinter}
+\Delta ApplicationRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = verifyPrinter \\
+callerA.Initiate(verifyPrinter,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{ProcessEventPrinterState}
+\Delta ApplicationRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = printerState \\
+callerA.Initiate(printerState,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{ProcessEventFirstPrinterAvailable}
+\Delta ApplicationRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = firstPrinterAvailable \\
+callerA.Initiate(firstPrinterAvailable,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{ProcessEventFirstPrinterOccupied}
+\Delta ApplicationRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = firstPrinterOccupied \\
+callerA.Initiate(firstPrinterOccupied,This,inputP,outputP)
+\end{schema}
+
+
+\begin{schema}{AddPrinter}
+\Delta ApplicationRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = addPrinter \\
+callerA.Initiate(addPrinter,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{DeletePrinter}
+\Delta ApplicationRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = deletePrinter \\
+callerA.Initiate(deletePrinter,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{ProcessEventJobToPrinter}
+\Delta ApplicationRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = jobToPrinter \\
+callerA.Initiate(jobToPrinter,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{ProcessEventJobToPrintersPool}
+\Delta ApplicationRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = jobToPrintersPool \\
+callerA.Initiate(jobToPrintersPool,This,inputP,outputP)
+\end{schema}
+
+\begin{zed}
+ProcessEvent
+             \sdef ProcessEventAddUser
+             \lor ProcessEventDeleteUser
+             \lor ProcessEventVerifyPermission
+             \lor ProcessEventListUsers
+             \lor ProcessEventListPrinters
+             \lor ProcessEventVerifyPrinter
+             \lor ProcessEventPrinterState
+             \lor ProcessEventFirstPrinterAvailable
+             \lor ProcessEventFirstPrinterOccupied
+             \lor AddPrinter
+             \lor DeletePrinter
+             \lor ProcessEventJobToPrinter
+             \lor ProcessEventJobToPrintersPool
+\end{zed}
+

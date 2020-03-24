@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.5.0_03" class="java.beans.XMLDecoder"> 
+ <object class="org.jdesktop.lg3d.apps.gol3d.GolConfig"> 
+  <void property="barsColorB"> 
+   <float>0.6</float> 
+  </void> 
+  <void property="barsColorG"> 
+   <float>0.6</float> 
+  </void> 
+  <void property="barsColorR"> 
+   <float>1.0</float> 
+  </void> 
+  <void property="buttonColorB"> 
+   <float>1.0</float> 
+  </void> 
+  <void property="buttonColorG"> 
+   <float>0.6</float> 
+  </void> 
+  <void property="buttonColorR"> 
+   <float>0.6</float> 
+  </void> 
+  <void property="fontColorB"> 
+   <float>0.6</float> 
+  </void> 
+  <void property="fontColorG"> 
+   <float>0.6</float> 
+  </void> 
+  <void property="fontColorR"> 
+   <float>1.0</float> 
+  </void> 
+  <void property="groundColorB"> 
+   <float>1.0</float> 
+  </void> 
+  <void property="groundColorG"> 
+   <float>0.6</float> 
+  </void> 
+  <void property="groundColorR"> 
+   <float>0.6</float> 
+  </void> 
+  <void property="interGenTime"> 
+   <int>50</int> 
+  </void> 
+  <void property="transparency"> 
+   <float>0.8</float> 
+  </void> 
+ </object> 
+</java> 

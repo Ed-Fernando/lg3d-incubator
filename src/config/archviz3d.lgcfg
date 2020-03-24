@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.5.0" class="java.beans.XMLDecoder">
+ <object class="org.jdesktop.lg3d.scenemanager.utils.startmenu.StartMenuItemConfig">
+  <void property="command">
+   <string>java org.jdesktop.lg3d.apps.archviz3d.geons.main.ArchViz3D</string>
+  </void>
+  <void property="desc">
+   <string>ArchViz3D</string>
+  </void>
+  <void property="menuGroup">
+   <string>Developers</string>
+  </void>
+  <void property="name">
+   <string>ArchViz3D</string>
+  </void>
+  <void property="displayResourceType">
+   <string>ICON</string>
+  </void>
+  <void property="displayResourceUrlName">
+   <string>resource:///resources/images/icon/ArchViz3DIcon.png</string>
+  </void>
+  <void property="classpathJars">
+    <string>ArchViz3D.jar
+            libs-archviz3d/antlrall.jar
+            libs-archviz3d/bsh-2.0b4.jar
+            libs-archviz3d/JavaLog.jar
+            libs-archviz3d/jgl3.1.0.jar
+            libs-archviz3d/schema-ar.jar
+            libs-archviz3d/schema-cc.jar
+            libs-archviz3d/schema-mo-de.jar
+            libs-archviz3d/schema-uc.jar
+            libs-archviz3d/threeds-loader-2.0.jar
+            libs-archviz3d/xbean.jar
+    </string>
+  </void>
+ </object>
+</java>

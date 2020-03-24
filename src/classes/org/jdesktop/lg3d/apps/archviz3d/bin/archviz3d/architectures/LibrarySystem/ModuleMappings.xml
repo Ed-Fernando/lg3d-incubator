@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mo:visual-information xmlns:mo="http://module.org">
+
+    <mo:momap>
+        <mo:name value="Client" visible="true"/>
+		<mo:scale>0.025</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.001" y="0.068" z="0.0"/>
+        <mo:abstraction level1="true" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.46" green="0.90" blue="0.51"/>
+		<mo:transparent>true</mo:transparent>
+        <mo:geon-list>
+           <mo:geon>pipeline-rectangle</mo:geon>
+           <mo:geon>pipeline-halfsphere</mo:geon>
+           <mo:geon>pipeline-cylinder</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+           <mo:property name="lucas" value="vigneau"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="Admin" visible="true"/>
+		<mo:scale>0.01</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.02" y="0.067" z="0.0"/>
+        <mo:abstraction level1="true" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.6" green="0.6" blue="0.3"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+           <mo:geon>pyramid</mo:geon>
+           <mo:geon>halfsphere-large</mo:geon>
+           <mo:geon>barrel</mo:geon>
+           <mo:geon>cone</mo:geon>
+           <mo:geon>cube</mo:geon>
+           <mo:geon>cylinder</mo:geon>
+           <mo:geon>halfsphere</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+           <mo:property name="lucas" value="vigneau"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="Member" visible="true"/>
+		<mo:scale>0.01</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="-0.017" y="0.067" z="0.0"/>
+        <mo:abstraction level1="true" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.8" green="0.4" blue="0.6"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+           <mo:geon>pyramid</mo:geon>
+           <mo:geon>halfsphere-large</mo:geon>
+           <mo:geon>barrel</mo:geon>
+           <mo:geon>cone</mo:geon>
+           <mo:geon>cube</mo:geon>
+           <mo:geon>cylinder</mo:geon>
+           <mo:geon>halfsphere</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+           <mo:property name="lucas" value="vigneau"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="Middleware" visible="true"/>
+		<mo:scale>0.07</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.0" y="0.007" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.8" green="0.6" blue="0.2"/>
+		<mo:transparent>true</mo:transparent>
+        <mo:geon-list>
+           <mo:geon>cylinder</mo:geon>
+           <mo:geon>barrel</mo:geon>
+           <mo:geon>cube</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+           <mo:property name="add Book" value="book"/>
+           <mo:property name="delete Book" value="book"/>
+           <mo:property name="search Book" value="book"/>
+           <mo:property name="add Member" value="member"/>
+           <mo:property name="delete Member" value="member"/>
+           <mo:property name="search Member" value="member"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="Application Tier" visible="true"/>
+		<mo:scale>0.015</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.027" y="0.028" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.8" green="0.59" blue="0.0"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+           <mo:geon>halfsphere-large</mo:geon>
+           <mo:geon>barrel</mo:geon>
+           <mo:geon>cone</mo:geon>
+           <mo:geon>cube</mo:geon>
+           <mo:geon>cylinder</mo:geon>
+           <mo:geon>halfsphere</mo:geon>
+           <mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+           <mo:property name="lucas" value="vigneau"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="Administrator Tier" visible="true"/>
+		<mo:scale>0.015</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.027" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.8" green="0.59" blue="0.0"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+           <mo:geon>halfsphere-large</mo:geon>
+           <mo:geon>barrel</mo:geon>
+           <mo:geon>cone</mo:geon>
+           <mo:geon>cube</mo:geon>
+           <mo:geon>cylinder</mo:geon>
+           <mo:geon>halfsphere</mo:geon>
+           <mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+           <mo:property name="lucas" value="vigneau"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="DAO" visible="true"/>
+		<mo:scale>0.023</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.0" y="-0.027" z="0.0"/>
+        <mo:abstraction level1="true" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.8" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+           <mo:geon>pipeline-cylinder</mo:geon>
+           <mo:geon>pipeline-halfsphere</mo:geon>
+           <mo:geon>pipeline-rectangle</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+           <mo:property name="lucas" value="vigneau"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="Web Container" visible="true"/>
+		<mo:scale>0.04</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="-0.01" y="0.015" z="0.0"/>
+        <mo:abstraction level1="false" level2="false" level3="true" level4="true"/>
+        <mo:color red="0.8" green="0.0" blue="0.0"/>
+		<mo:transparent>true</mo:transparent>
+        <mo:geon-list>
+           <mo:geon>cube</mo:geon>
+           <mo:geon>barrel</mo:geon>
+           <mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+           <mo:property name="open Session" value="session"/>
+           <mo:property name="close Session" value="session"/>
+           <mo:property name="generate Page" value="page"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="HTMLFormat" visible="true"/>
+		<mo:scale>0.007</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="-0.02" y="0.035" z="0.0"/>
+        <mo:abstraction level1="false" level2="false" level3="true" level4="true"/>
+        <mo:color red="0.6" green="0.0" blue="0.6"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+           <mo:geon>halfsphere</mo:geon>
+           <mo:geon>cylinder</mo:geon>
+           <mo:geon>halfsphere-large</mo:geon>
+           <mo:geon>barrel</mo:geon>
+           <mo:geon>cone</mo:geon>
+           <mo:geon>cube</mo:geon>
+           <mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+           <mo:property name="lucas" value="vigneau"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="WAPFormat" visible="true"/>
+		<mo:scale>0.007</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="-0.02" y="0.025" z="0.0"/>
+        <mo:abstraction level1="false" level2="false" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.6" blue="0.6"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+           <mo:geon>halfsphere</mo:geon>
+           <mo:geon>cylinder</mo:geon>
+           <mo:geon>halfsphere-large</mo:geon>
+           <mo:geon>barrel</mo:geon>
+           <mo:geon>cone</mo:geon>
+           <mo:geon>cube</mo:geon>
+           <mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+           <mo:property name="lucas" value="vigneau"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="SesManager" visible="true"/>
+		<mo:scale>0.011</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.0" y="0.03" z="0.0"/>
+        <mo:abstraction level1="false" level2="false" level3="true" level4="true"/>
+        <mo:color red="0.2" green="0.6" blue="0.2"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+           <mo:geon>cylinder</mo:geon>
+           <mo:geon>halfsphere-large</mo:geon>
+           <mo:geon>barrel</mo:geon>
+           <mo:geon>cone</mo:geon>
+           <mo:geon>cube</mo:geon>
+           <mo:geon>halfsphere</mo:geon>
+           <mo:geon>pyramid</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+           <mo:property name="lucas" value="vigneau"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="DynPageGen" visible="true"/>
+		<mo:scale>0.015</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="-0.013" y="0.012" z="0.0"/>
+        <mo:abstraction level1="false" level2="false" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.6"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+           <mo:geon>pipeline-rectangle</mo:geon>
+           <mo:geon>pipeline-halfsphere</mo:geon>
+           <mo:geon>pipeline-cylinder</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+           <mo:property name="lucas" value="vigneau"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="Firewall" visible="true"/>
+		<mo:scale>0.015</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="-0.013" y="-0.002" z="0.0"/>
+        <mo:abstraction level1="false" level2="false" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.6" blue="0.0"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+           <mo:geon>pipeline-rectangle</mo:geon>
+           <mo:geon>pipeline-halfsphere</mo:geon>
+           <mo:geon>pipeline-cylinder</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+           <mo:property name="check Connection" value="cheked"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap>
+        <mo:name value="Data Base" visible="true"/>
+		<mo:scale>0.021</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+		<mo:translation x="0.0" y="-0.057" z="0.0"/>
+        <mo:abstraction level1="true" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.46" green="0.90" blue="0.51"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:geon-list>
+           <mo:geon>pipeline-rectangle</mo:geon>
+           <mo:geon>pipeline-halfsphere</mo:geon>
+           <mo:geon>pipeline-cylinder</mo:geon>
+        </mo:geon-list>
+        <mo:property-list>
+           <mo:property name="lucas" value="vigneau"/>
+        </mo:property-list>
+    </mo:momap>
+
+    <mo:momap> <!--Entre el Client y el Middleware -->
+        <mo:name value="Use" visible="true"/>
+		<mo:scale>0.11</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="-0.26" y="0.65" z="0.0"/>
+			<mo:point x="-0.36" y="0.65" z="0.0"/>
+			<mo:point x="-0.36" y="0.45" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+           <mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+    <mo:momap> <!--Entre el Middleware y el Client -->
+        <mo:name value="Use" visible="true"/>
+		<mo:scale>0.11</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="false" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="0.38" y="0.45" z="0.0"/>
+			<mo:point x="0.38" y="0.65" z="0.0"/>
+			<mo:point x="0.28" y="0.65" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+           <mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+    <mo:momap> <!--Entre el Middleware y la DataBase -->
+        <mo:name value="Use" visible="true"/>
+		<mo:scale>0.11</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="true" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="-0.36" y="-0.36" z="0.0"/>
+			<mo:point x="-0.36" y="-0.56" z="0.0"/>
+			<mo:point x="-0.25" y="-0.56" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+           <mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+    <mo:momap> <!--Entre la DataBase y el Middleware -->
+        <mo:name value="Use" visible="true"/>
+		<mo:scale>0.11</mo:scale>
+		<mo:rotation x="0.0" y="0.0" z="0.0"/>
+        <mo:abstraction level1="true" level2="true" level3="true" level4="true"/>
+        <mo:color red="0.0" green="0.0" blue="0.8"/>
+		<mo:transparent>false</mo:transparent>
+        <mo:connector type="0" arrow="true">
+			<mo:point x="0.25" y="-0.56" z="0.0"/>
+			<mo:point x="0.36" y="-0.56" z="0.0"/>
+			<mo:point x="0.36" y="-0.37" z="0.0"/>
+        </mo:connector>
+        <mo:geon-list>
+           <mo:geon>cylinder</mo:geon>
+        </mo:geon-list>
+    </mo:momap>
+
+</mo:visual-information>

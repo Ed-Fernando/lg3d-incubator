@@ -1,0 +1,20 @@
+<Background>
+<Name>Mountain</Name>
+<Thumbnail>resources/Backgrounds/Mountain/thumb.jpg</Thumbnail>
+<Author>Radek Kierner</Author>
+<Date>11-03-2005</Date>
+<Description>Everest</Description>
+<BGType>Layered Background</BGType>
+<Layer>
+	<Image>resources/Backgrounds/Mountain/back.png</Image>
+	<TranslationX>1</TranslationX>
+	<TranslationY>0</TranslationY>
+	<TranslationZ>-0.5</TranslationZ>
+ </Layer>
+ <Layer>
+	<Image>resources/Backgrounds/Mountain/mountain.png</Image>
+	<TranslationX>1</TranslationX>
+	<TranslationY>-0.2</TranslationY>
+	<TranslationZ>0.5</TranslationZ>
+ </Layer>
+</Background>

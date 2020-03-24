@@ -1,0 +1,222 @@
+\begin{schema}{PrintRouter}
+callerM:  Port \\
+callerD:  Port \\
+callerDao: Port \\
+caller:  Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+ports: \pset Port
+\end{schema}
+
+
+\begin{zed}
+init\_PrintRouter \sdef \lsch PrintRouter'
+                  \bbar callerM' = \new Port
+                  \land callerM'.setiVar(element,This)
+                  \land callerD' = \new Port
+                  \land callerD'.setiVar(element,This)
+                  \land callerDao' = \new Port
+                  \land callerDao'.setiVar(element,This)
+                  \land caller' = \new Port
+                  \land caller'.setiVar(element,This)
+                  \land components' = \{ \}
+                  \land connectors' = \{ \}
+                  \land ports' = \{ callerM', callerD', callerDao', caller' \}  \rsch
+                  \end{zed}
+
+
+\begin{schema}{AddUser}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = addUser \\
+callerDao.Initiate(addUser,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{DeleteUser}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = deleteUser \\
+callerDao.Initiate(deleteUser,This,inputP,outputP)
+\end{schema}
+
+
+\begin{schema}{VerifyPermission}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = verifyPermission \\
+callerDao.Initiate(verifyPermission,This,inputP,outputP)
+\end{schema}
+
+
+\begin{schema}{ValidateUser}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = validateUser \\
+callerDao.Initiate(validateUser,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{ListUsers}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = listUsers \\
+callerDao.Initiate(listUsers,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{ListPrinters}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = listPrinters \\
+callerD.Initiate(listPrinters,This,inputP,outputP)
+\end{schema}
+
+
+\begin{schema}{VerifyPrinter}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = verifyPrinter \\
+callerD.Initiate(verifyPrinter,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{PrinterState}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = printerState \\
+callerD.Initiate(printerState,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{FirstPrinterAvailable}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = firstPrinterAvailable \\
+callerD.Initiate(firstPrinterAvailable,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{FirstPrinterOccupied}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = firstPrinterOccupied \\
+callerD.Initiate(firstPrinterOccupied,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{AddPrinter}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = addPrinter \\
+callerD.Initiate(addPrinter,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{DeletePrinter}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = deletePrinter \\
+callerD.Initiate(deletePrinter,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{AddCurrentPrinting}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = addCurrentPrinting \\
+callerD.Initiate(addCurrentPrinting,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{DeleteCurrentPrinting}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = deleteCurrentPrinting \\
+callerD.Initiate(deleteCurrentPrinting,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{AddJobPrintingQueue}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = addJobPrintingQueue \\
+callerD.Initiate(addJobPrintingQueue,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{DeleteJobPrintingQueue}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = deleteJobPrintingQueue \\
+callerD.Initiate(deleteJobPrintingQueue,This,inputP,outputP)
+\end{schema}
+
+
+\begin{schema}{JobToPrinter}
+\Delta PrintRouter \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = jobToPrinter \\
+callerD.Initiate(jobToPrinter,This,inputP,outputP)
+\end{schema}
+
+
+\begin{zed}
+ProcessEvent
+             \sdef AddUser
+             \lor DeleteUser
+             \lor VerifyPermission
+             \lor ValidateUser
+             \lor ListUsers
+             \lor ListPrinters 
+             \lor VerifyPrinter
+             \lor PrinterState
+             \lor FirstPrinterAvailable
+             \lor FirstPrinterOccupied
+             \lor AddPrinter
+             \lor DeletePrinter
+             \lor JobToPrinter
+             \lor AddCurrentPrinting
+             \lor DeleteCurrentPrinting
+             \lor AddJobPrintingQueue
+             \lor DeleteJobPrintingQueue
+\end{zed}

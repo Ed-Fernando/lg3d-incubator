@@ -1,0 +1,166 @@
+\begin{zed}
+MESSAGE & \ddef & wap\_Device \\ 
+& \bbar & html\_Device \\ 
+& \bbar & not\_valid\_connection\_or\_expired\_session \\
+& \bbar & valid\_connection \\
+& \bbar & valid\_connection\_and\_active\_session 
+\end{zed}
+
+\begin{schema}{WebContainer}
+portLS: Port \\
+fw:  Firewall \\
+dpg: DynamicPageGenerator \\
+wapF: WAPFormatter \\
+htmlF: HTMLFormatter \\
+sm: SessionManager \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port 
+\end{schema}
+
+
+\begin{zed}
+init\_WebContainer \sdef \lsch WebContainer' \bbar 
+portLS' = \new Port 
+\land portLS'.setiVar(element,This) 
+\land wapF' = \new WAPFormatter 
+\land htmlF' = \new HTMLFormatter 
+\land fw' = \new Firewall
+\land sm' = \new SessionManager
+\land dpg' = \new DynamicPageGenerator
+\land components' = \{ wapF', htmlF', fw', sm', dpg' \}  
+\land connectors' = \{ \} 
+\land events'= \{ generatePage, checkConnection, checkConnectionSession, openSession, closeSession \} 
+\land ports' = \{ portLS' \} 
+\rsch \end{zed}
+
+
+\begin{schema}{GenerateDynamicPageWAP}
+\Delta WebContainer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = generatePage \\
+Ip = \head inputP \\
+Page = \head (\tail inputP) \\
+SE = \lseq Ip \rseq \\
+sm.ProcessEvent(getDevice, This, SE, R ) \\
+\nth(\head R,3) = wap\_Device \\
+SE1 = \lseq Page \rseq \\
+dpg.ProcessEvent(generatePage ,This,SE1,PageGenerated) \\
+SE2 = \lseq PageGenerated \rseq \\
+wapF.ProcessEvent(format, This, SE2, PageFormatted) \\
+report! = PageFormatted
+\end{schema}
+
+\begin{schema}{GenerateDynamicPageHTML}
+\Delta WebContainer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = generatePage \\
+Ip = \head inputP \\
+Page = \head (\tail inputP) \\
+SE = \lseq Ip \rseq \\
+sm.ProcessEvent(getDevice, This, SE, R ) \\
+\nth(\head R,3) = html\_Device \\
+SE1 = \lseq Page \rseq \\
+dpg.ProcessEvent(generatePage ,This,SE1,PageGenerated) \\
+SE2 = \lseq PageGenerated \rseq \\
+htmlF.ProcessEvent(format, This, SE2, PageFormatted) \\
+report! = PageFormatted
+\end{schema}
+
+\begin{schema}{CheckConnection}
+\Delta WebContainer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST 
+\where event = checkConnection \\
+fw.ProcessEvent(event,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{CheckConnectionValidSessionValid}
+\Delta WebContainer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE 
+\where event = checkConnectionSession \\
+Ip = \head inputP \\
+SD = \lseq Ip \rseq \\
+fw.ProcessEvent(checkConnection, This, SD, R) \\
+R = valid\_connection \\
+sm.ProcessEvent(checkSession, This, SD, RS) \\
+RS = valid\_connection\_and\_active\_session \\
+report! = RS
+\end{schema}
+
+\begin{schema}{CheckConnectionSessionInvalid}
+\Delta WebContainer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE 
+\where event = checkConnectionSession \\
+Ip = \head inputP \\
+SD = \lseq Ip \rseq \\
+fw.ProcessEvent(checkConnection, This, SD, R) \\
+R = not\_valid\_connection\_or\_expired\_session \\
+report! = R
+\end{schema}
+
+\begin{schema}{CheckConnectionValidSessionInvalid}
+\Delta WebContainer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE 
+\where event = checkConnectionSession \\
+Ip = \head inputP \\
+SD = \lseq Ip \rseq \\
+fw.ProcessEvent(checkConnection, This, SD, R) \\
+R = valid\_connection \\
+sm.ProcessEvent(checkSession, This, SD, RS) \\
+RS = not\_valid\_connection\_or\_expired\_session \\
+report! = R
+\end{schema}
+
+\begin{schema}{OpenSession}
+\Delta WebContainer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST 
+\where event = openSession \\
+sm.ProcessEvent(event,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{CloseSession}
+\Delta WebContainer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST 
+\where event = closeSession \\
+sm.ProcessEvent(event,This,inputP,outputP)
+\end{schema}
+
+\begin{zed} ProcessEvent \sdef  
+CheckConnectionValidSessionValid
+\lor CheckConnectionSessionInvalid
+\lor CheckConnectionValidSessionInvalid
+\lor CheckConnection
+\lor OpenSession
+\lor CloseSession
+\lor GenerateDynamicPageHTML
+\lor GenerateDynamicPageWAP
+\end{zed}
+
+
+
+

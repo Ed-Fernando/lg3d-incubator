@@ -1,0 +1,39 @@
+\begin{schema}{Broker}
+definer: Port \\
+services : \nat \pfun \nat \\
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port 
+\end{schema}
+
+
+\begin{zed}
+init\_Broker \sdef \lsch Broker' \bbar definer' = \new Port \land definer'.setiVar(element,This) \land services' = \{ \} \land components' = \{ \} \land connectors' = \{ \} \land events'= \{ registry , lookUp \}  \land ports' = \{ definer' \}  \rsch  \end{zed}
+
+
+\begin{schema}{ProcessEvent1}
+\Delta Broker \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST 
+\where event = registry \\
+Name = \head inputP \\
+Component =  \head (\tail inputP) \\
+services' = services  \oplus \{ Name \map Component \} \\
+outputP = ok 
+\end{schema}
+
+\begin{schema}{ProcessEvent2}
+\Delta Broker \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST 
+\where event = lookUp \\
+outputP = services ( inputP ) 
+\end{schema}
+
+\begin{zed}
+ProcessEvent \sdef  ProcessEvent1 \lor ProcessEvent2    \end{zed}

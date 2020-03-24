@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.5.0" class="java.beans.XMLDecoder"> 
+<!-- <object class="org.jdesktop.lg3d.scenemanager.config.ApplicationDescription"> 
+
+  <void property="exec"> 
+  <string>java org.jdesktop.lg3d.apps.lgscope.LgScope</string>
+  </void> 
+
+  <void property= "iconFilename">  
+    <string>org/jdesktop/lg3d/apps/lgscope/LgScopeIcon.png</string>
+  </void> 
+  <void property="name"> 
+   <string>LgScope</string>
+  </void>
+
+   <void property="classpathJars">
+    <string>LgScope.jar</string>
+  </void>
+</object> -->
+
+ <!-- Start Menu item -->
+ <object class="org.jdesktop.lg3d.scenemanager.utils.startmenu.StartMenuItemConfig"> 
+  <void property="command"> 
+   <string>java org.jdesktop.lg3d.apps.lgscope.LgScope</string> 
+  </void> 
+  <void property="desc"> 
+   <string>LgScope 3D Filemanager</string> 
+  </void> 
+  <void property="displayResourceType">
+   <string>ICON</string>
+  </void> 
+  <void property="displayResourceUrlName">
+   <string>resource:///org/jdesktop/lg3d/apps/lgscope/LgScopeIcon.png</string>
+  </void>
+  <void property="menuGroup"> 
+   <string>Utilities</string> 
+  </void> 
+  <void property="name"> 
+   <string>LgScope 3D Filemanager</string> 
+  </void> 
+  <void property="classpathJars">
+    <string>LgScope.jar</string>
+  </void>
+ </object> 
+</java>  

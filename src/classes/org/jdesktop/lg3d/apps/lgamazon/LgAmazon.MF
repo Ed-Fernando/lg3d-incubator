@@ -1,0 +1,5 @@
+Implementation-Title: LgAmazon
+Main-Class: org.jdesktop.lg3d.apps.lgamazon.LgAmazon
+Icon-Filename: org/jdesktop/lg3d/apps/lgamazon/resources/lgAmazon.png
+Config-File: LgAmazon.lgcfg
+

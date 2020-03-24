@@ -1,0 +1,14 @@
+<Background>
+<Name>Black Lake</Name>
+<Thumbnail>resources/Backgrounds/BlackLake/thumb.jpg</Thumbnail>
+<Author>arek Zylka</Author>
+<Date>11-03-2005</Date>
+<Description>Black lake in Polish mountin "Tatry"</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>2</InitialBackground>
+	<Image>resources/Backgrounds/BlackLake/1.jpg</Image>
+	<Image>resources/Backgrounds/BlackLake/2.jpg</Image>
+	<Image>resources/Backgrounds/BlackLake/3.jpg</Image>
+	<Image>resources/Backgrounds/BlackLake/4.jpg</Image>
+
+</Background>

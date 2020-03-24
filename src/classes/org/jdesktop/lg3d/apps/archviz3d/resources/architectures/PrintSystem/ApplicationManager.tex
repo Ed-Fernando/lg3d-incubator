@@ -1,0 +1,398 @@
+\begin{zed}
+MESSAGE & \ddef & add\_user\_ok \\
+& \bbar & delete\_user\_ok \\
+& \bbar & exist\_user \\
+& \bbar & not\_exist\_user \\
+& \bbar & printing\_finished \\
+& \bbar & printing\_error \\
+& \bbar & printing\_abort \\
+& \bbar & printing\_assigned \\
+& \bbar & printing\_unassigned \\
+& \bbar & printer\_available \\
+& \bbar & printer\_non\_available \\
+& \bbar & printer\_occupied \\
+& \bbar & add\_job\_printing\_queue \\
+& \bbar & delete\_job\_printing\_queue \\
+& \bbar & printer\_exist \\
+& \bbar & printer\_not\_exist \\
+& \bbar & permission\_accepted \\
+& \bbar & permission\_rejected \\
+& \bbar & printing\_finished\_in\_printer1 \\
+& \bbar & printing\_finished\_in\_printer2
+\end{zed}
+
+\begin{schema}{ApplicationManager}
+caller:  Port \\
+called:  Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+ports: \pset Port
+\end{schema}
+
+
+\begin{zed}
+init\_ApplicationManager \sdef \lsch ApplicationManager'
+                  \bbar caller' = \new Port
+                  \land caller'.setiVar(element,This)
+                  \land called' = \new Port
+                  \land called'.setiVar(element,This)
+                  \land components' = \{ \} 
+                  \land connectors' = \{ \}
+                  \land ports' = \{ caller', called' \}  \rsch
+                  \end{zed}
+
+
+\begin{schema}{ListPrinters}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = listPrinters \\
+called.Initiate(listPrinters,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{VerifyPrinter}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = verifyPrinter \\
+called.Initiate(verifyPrinter,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{PrinterState}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = printerState \\
+called.Initiate(printerState,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{FirstPrinterAvailable}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = firstPrinterAvailable \\
+called.Initiate(firstPrinterAvailable,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{FirstPrinterOccupied}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = firstPrinterOccupied \\
+called.Initiate(firstPrinterOccupied,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{AddPrinter}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = addPrinter \\
+called.Initiate(addPrinter,This,inputP,outputP)
+\end{schema}
+
+\begin{schema}{DeletePrinter}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where event = deletePrinter \\
+called.Initiate(deletePrinter,This,inputP,outputP)
+\end{schema}
+
+
+\begin{schema}{JobToPrinterFinished}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = jobToPrinter \\
+Printer = \head inputP \\
+PR = \lseq Printer \rseq \\
+User = \head (\tail inputP) \\
+SE = \lseq User \rseq \\
+called.Initiate(validateUser,This,SE,R) \\
+R = exist\_user \\
+called.Initiate(verifyPrinter,This,PR,RE) \\
+RE = printer\_exist \\
+
+SV = \lseq Printer User \rseq \\
+called.Initiate(verifyPermission, This, SV, RV) \\
+RV = permission\_accepted \\
+
+called.Initiate(printerState,This,PR,RA) \\
+RA = printer\_available \\
+
+called.Initiate(addCurrentPrinting,This,inputP,RS) \\
+RS = printing\_assigned \\
+
+called.Initiate(jobToPrinter,This,inputP,RF) \\
+
+called.Initiate(deleteCurrentPrinting,This,inputP,RU) \\
+RU = printing\_unassigned \\
+
+report! = RF
+\end{schema}
+
+\begin{schema}{JobToPrinterQueue}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = jobToPrinter \\
+Printer = \head inputP \\
+PR = \lseq Printer \rseq \\
+User = \head (\tail inputP) \\
+SE = \lseq User \rseq \\
+called.Initiate(validateUser,This,SE,R) \\
+R = exist\_user \\
+called.Initiate(verifyPrinter,This,PR,RE) \\
+RE = printer\_exist \\
+
+SV = \lseq Printer User \rseq \\
+called.Initiate(verifyPermission, This, SV, RV) \\
+RV = permission\_accepted \\
+
+called.Initiate(printerState,This,PR,RO) \\
+RO = printer\_occupied \\
+
+called.Initiate(addJobPrintingQueue,This,inputP,RA) \\
+RA = add\_job\_printing\_queue \\
+report! = RA
+\end{schema}
+
+\begin{schema}{JobToPrinterNonAvailable}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = jobToPrinter \\
+Printer = \head inputP \\
+PR = \lseq Printer \rseq \\
+User = \head (\tail inputP) \\
+SE = \lseq User \rseq \\
+called.Initiate(validateUser,This,SE,R) \\
+R = exist\_user \\
+called.Initiate(verifyPrinter,This,PR,RE) \\
+RE = printer\_exist \\
+
+SV = \lseq Printer User \rseq \\
+called.Initiate(verifyPermission, This, SV, RV) \\
+RV = permission\_accepted \\
+
+called.Initiate(printerState,This,PR,RN) \\
+RN = printer\_non\_available \\
+
+report! = RN
+\end{schema}
+
+\begin{schema}{JobToPrinterPermissionRejected}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = jobToPrinter \\
+Printer = \head inputP \\
+PR = \lseq Printer \rseq \\
+User = \head (\tail inputP) \\
+SE = \lseq User \rseq \\
+called.Initiate(validateUser,This,SE,R) \\
+R = exist\_user \\
+called.Initiate(verifyPrinter,This,PR,RE) \\
+RE = printer\_exist \\
+
+SV = \lseq Printer User \rseq \\
+called.Initiate(verifyPermission, This, SV, RV) \\
+RV = permission\_rejected \\
+
+report! = RV
+\end{schema}
+
+\begin{schema}{JobToPrinterNotExistUser}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = jobToPrinter \\
+User = \head (\tail inputP) \\
+SE = \lseq User \rseq \\
+called.Initiate(validateUser,This,SE,R) \\
+R = not\_exist\_user \\
+report! = R
+\end{schema}
+
+\begin{schema}{JobToPrinterNotExist}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = jobToPrinter \\
+Printer = \head inputP \\
+PR = \lseq Printer \rseq \\
+called.Initiate(verifyPrinter,This,PR,RE) \\
+RE = printer\_not\_exist \\
+report! = RE
+\end{schema}
+
+
+
+
+
+\begin{schema}{JobToPrintersPoolFinished}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = jobToPrintersPool \\
+User = \head inputP \\
+SE = \lseq User \rseq \\
+called.Initiate(validateUser,This,SE,R) \\
+R = exist\_user \\
+SA = \lseq  \rseq \\
+called.Initiate(firstPrinterAvailable,This,SA,RA) \\
+RA \neq \emptyset \\
+User = \head inputP \\
+Job = \head (\tail inputP) \\
+
+SV = \lseq RA User \rseq \\
+called.Initiate(verifyPermission, This, SV, RV) \\
+RV = permission\_accepted \\
+
+SC = \lseq RA User Job \rseq \\
+called.Initiate(addCurrentPrinting,This,SC,RS) \\
+RS = printing\_assigned \\
+
+called.Initiate(jobToPrinter,This,SC,RF) \\
+
+called.Initiate(deleteCurrentPrinting,This,SC,RU) \\
+RU = printing\_unassigned \\
+
+report! = RF
+\end{schema}
+
+
+
+\begin{schema}{JobToPrintersPoolQueue}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = jobToPrintersPool \\
+User = \head inputP \\
+SE = \lseq User \rseq \\
+called.Initiate(validateUser,This,SE,R) \\
+R = exist\_user \\
+SA = \lseq  \rseq \\
+called.Initiate(firstPrinterOccupied,This,SA,RO) \\
+RO \neq \emptyset \\
+User = \head inputP \\
+Job = \head (\tail inputP) \\
+
+SV = \lseq RO User \rseq \\
+called.Initiate(verifyPermission, This, SV, RV) \\
+RV = permission\_accepted \\
+
+SC = \lseq RO User Job \rseq \\
+called.Initiate(addJobPrintingQueue,This,SC,RA) \\
+RA = add\_job\_printing\_queue \\
+report! = RA
+\end{schema}
+
+\begin{schema}{JobToPrintersPoolNonAvailable}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = jobToPrintersPool \\
+User = \head inputP \\
+SE = \lseq User \rseq \\
+called.Initiate(validateUser,This,SE,R) \\
+R = exist\_user \\
+SA = \lseq  \rseq \\
+called.Initiate(firstPrinterAvailable,This,SA,RA) \\
+RA = \emptyset \\
+called.Initiate(firstPrinterOccupied,This,SA,RO) \\
+RO = \emptyset \\
+report! = printer\_non\_available
+\end{schema}
+
+\begin{schema}{JobToPrintersPoolPermissionRejected}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = jobToPrintersPool \\
+User = \head inputP \\
+SE = \lseq User \rseq \\
+called.Initiate(validateUser,This,SE,R) \\
+R = exist\_user \\
+SA = \lseq  \rseq \\
+called.Initiate(firstPrinterOccupied,This,SA,RO) \\
+RO \neq \emptyset \\
+User = \head inputP \\
+Job = \head (\tail inputP) \\
+
+SV = \lseq RO User \rseq \\
+called.Initiate(verifyPermission, This, SV, RV) \\
+RV = permission\_rejected \\
+
+report! = RV
+\end{schema}
+
+\begin{schema}{JobToPrintersPoolNotExistUser}
+\Delta ApplicationManager \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report! : MESSAGE
+\where event = jobToPrintersPool \\
+User = \head inputP \\
+SE = \lseq User \rseq \\
+called.Initiate(validateUser,This,SE,R) \\
+R = not\_exist\_user \\
+report! = R
+\end{schema}
+
+\begin{zed}
+ProcessEvent
+             \sdef ListPrinters 
+             \lor VerifyPrinter
+             \lor PrinterState
+             \lor FirstPrinterAvailable
+             \lor FirstPrinterOccupied
+             \lor AddPrinter
+             \lor DeletePrinter
+             \lor JobToPrinterFinished
+             \lor JobToPrinterQueue
+             \lor JobToPrinterNonAvailable
+             \lor JobToPrinterPermissionRejected
+             \lor JobToPrinterNotExistUser
+             \lor JobToPrinterNotExist
+             \lor JobToPrintersPoolFinished
+             \lor JobToPrintersPoolQueue
+             \lor JobToPrintersPoolNonAvailable
+             \lor JobToPrintersPoolPermissionRejected
+             \lor JobToPrintersPoolNotExistUser
+\end{zed}

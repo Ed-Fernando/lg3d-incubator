@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.5.0" class="java.beans.XMLDecoder"> 
+ <!-- Taskbar item -->
+ <!--
+ <object class="org.jdesktop.lg3d.scenemanager.config.ApplicationDescription"> 
+  <void property="exec"> 
+   <string>java org.jdesktop.lg3d.apps.physics.PhysTest</string>
+  </void>
+  <void property="iconFilename"> 
+   <string>resources/images/icon/zoetrope.png</string>
+  </void> 
+  <void property="name"> 
+   <string>Physics</string>
+  </void> 
+ </object> 
+  -->
+ <!-- Start Menu item -->
+  <object class="org.jdesktop.lg3d.scenemanager.utils.startmenu.StartMenuItemConfig"> 
+  <void property="command">
+   <string>java org.jdesktop.lg3d.apps.physics.NewtonCradleDemo</string>
+  </void>
+  <void property="desc">
+   <string>Newton Cradle Demo</string>
+  </void>
+  <void property="menuGroup">
+   <string>Tests</string>
+  </void>
+  <void property="name">
+   <string>Newton Cradle Demo</string>
+  </void>
+  <void property="classpathJars">
+    <string>physics.jar</string>
+  </void>
+ </object>
+ 
+  <!-- Start Menu item -->
+  <object class="org.jdesktop.lg3d.scenemanager.utils.startmenu.StartMenuItemConfig"> 
+  <void property="command">
+   <string>java org.jdesktop.lg3d.apps.physics.PhysicsTutorial1</string>
+  </void>
+  <void property="desc">
+   <string>Physics Tutorial 1</string>
+  </void>
+  <void property="menuGroup">
+   <string>Tests</string>
+  </void>
+  <void property="name">
+   <string>Physics Tutorial 1</string>
+  </void>
+  <void property="classpathJars">
+    <string>physics.jar</string>
+  </void>
+ </object>
+
+  <!-- Start Menu item -->
+  <object class="org.jdesktop.lg3d.scenemanager.utils.startmenu.StartMenuItemConfig"> 
+  <void property="command">
+   <string>java org.jdesktop.lg3d.apps.physics.PhysicsTutorial2</string>
+  </void>
+  <void property="desc">
+   <string>Physics Tutorial 2</string>
+  </void>
+  <void property="menuGroup">
+   <string>Tests</string>
+  </void>
+  <void property="name">
+   <string>Physics Tutorial 2</string>
+  </void>
+  <void property="classpathJars">
+    <string>physics.jar</string>
+  </void>
+ </object>
+</java>

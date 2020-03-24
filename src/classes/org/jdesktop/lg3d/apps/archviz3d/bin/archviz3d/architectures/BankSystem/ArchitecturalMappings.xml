@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<po:architectural-information xmlns:po="http://reqarch3d.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://reqarch3d.org
+ArchitecturalMappings.xsd">
+	<po:system> Bank System</po:system>
+
+	<po:map>
+		<po:component>Port</po:component>
+		<po:type>Port</po:type>
+		<po:arc-type>Port</po:arc-type>
+	</po:map>
+
+	<po:map>
+		<po:component>BankSystem</po:component>
+		<po:type>Configuration</po:type>
+		<po:arc-type>Broker</po:arc-type>
+	</po:map>
+
+	<po:map>
+		<po:component>PipeLine</po:component>
+		<po:type>Configuration</po:type>
+		<po:arc-type>PipeFilter</po:arc-type>		
+		<po:property name="Modificability" value="6"/>
+	</po:map>
+
+	<po:map>
+		<po:component>ATM</po:component>
+		<po:type>Component</po:type>
+		<po:arc-type>Client</po:arc-type>
+		<po:property name="Performance" value="9"/>
+		<po:property name="Reliability" value="8"/>
+		<po:property name="Reusability" value="8"/>
+		<po:property name="Modificability" value="3"/>
+	</po:map>
+
+	<po:map>
+		<po:component>BankServer</po:component>
+		<po:type>Configuration</po:type>
+		<po:arc-type>Server</po:arc-type>
+		<po:property name="Modificability" value="2"/>
+	</po:map>
+
+	<po:map>
+		<po:component>Broker</po:component>
+		<po:type>Component</po:type>
+		<po:arc-type>Broker</po:arc-type>
+		<po:property name="Performance" value="1.4"/>
+		<po:property name="Reliability" value="5.4"/>
+		<po:property name="Reusability" value="5.7"/>
+		<po:property name="Modificability" value="1"/>
+	</po:map>
+
+	<po:map>
+		<po:component>Filter</po:component>
+		<po:type>Component</po:type>
+		<po:arc-type>Filter</po:arc-type>
+		<po:property name="Performance" value="5.2"/>
+		<po:property name="Reliability" value="6.5"/>
+		<po:property name="Reusability" value="3.6"/>
+		<po:property name="Modificability" value="2"/>
+	</po:map>
+
+	<po:map>
+		<po:component>Filter2</po:component>
+		<po:type>Component</po:type>
+		<po:arc-type>Filter</po:arc-type>
+		<po:property name="Performance" value="5"/>
+		<po:property name="Reliability" value="9.8"/>
+		<po:property name="Reusability" value="10"/>
+		<po:property name="Modificability" value="8"/>
+	</po:map>
+
+	<po:map>
+		<po:component>FilterOp</po:component>
+		<po:type>Component</po:type>
+		<po:arc-type>Filter</po:arc-type>
+		<po:property name="Performance" value="4"/>
+		<po:property name="Reliability" value="5.2"/>
+		<po:property name="Reusability" value="4.5"/>
+		<po:property name="Modificability" value="7"/>
+	</po:map>
+
+	<po:map>
+		<po:component>Pipe</po:component>
+		<po:type>Connector</po:type>
+		<po:arc-type>Pipe</po:arc-type>
+		<po:property name="Performance" value="2"/>
+		<po:property name="Reliability" value="7.3"/>
+		<po:property name="Reusability" value="2.4"/>
+		<po:property name="Modificability" value="5.5"/>
+	</po:map>
+
+	<po:map>
+		<po:component>RPC</po:component>
+		<po:type>Connector</po:type>
+		<po:arc-type>RPC</po:arc-type>
+		<po:property name="Performance" value="5.7"/>
+		<po:property name="Reliability" value="5.3"/>
+		<po:property name="Reusability" value="3.6"/>
+		<po:property name="Modificability" value="6.65"/>
+	</po:map>
+
+</po:architectural-information>

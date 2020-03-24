@@ -1,0 +1,78 @@
+\begin{schema}{PrintServer}
+caller:  Port \\
+printrouterport: Port \\
+functioncall1: FunctionCall \\
+functioncall2: FunctionCall \\
+functioncall3: FunctionCall \\
+functioncall4: FunctionCall \\
+printrouter: PrintRouter \\
+printdriver:  PrintDriver \\
+dao: DAO \\
+repository: Repository \\
+bal : \nat \pfun \nat \\
+pass : \nat \pfun \nat  \\
+
+components: \pset Element \\
+connectors: \pset Element \\
+events: \pset EVENT \\
+ports: \pset Port
+\end{schema}
+
+\begin{zed}
+init\_PrintServer \sdef \lsch PrintServer'
+                  \bbar caller' = \new Port
+                  \land caller'.setiVar(element,This)
+                  \land printrouterport' = \new Port
+                  \land printrouterport'.setiVar(element,This)
+
+                  \land printdriver' = \new PrintDriver
+                  \land functioncall1' = \new FunctionCall
+                  \land functioncall2' = \new FunctionCall
+                  \land functioncall3' = \new FunctionCall
+                  \land functioncall4' = \new FunctionCall
+                  \land dao' = \new DAO
+                  \land repository' = \new Repository
+                  \land printrouter' = \new PrintRouter
+
+                  \land bal' = \{ 1 \map 100 , 2 \map 0 \} \land pass' = \{ 1 \map 1111 , 2 \map 2222 \}
+
+                  \land components' = \{ printrouter', printdriver', dao', repository' \}
+                  \land connectors' = \{ functioncall1', functioncall2', functioncall3', functioncall4' \}
+                  \land events'= \{ addUser, deleteUser, validateUser, listUsers, listPrinters, jobToPrinter, jobToPrintersPool, printerState, verifyPrinter, verifyPermission, firstPrinterAvailable, firstPrinterOccupied, addPrinter, deletePrinter, addCurrentPrinting, deleteCurrentPrinting, addJobPrintingQueue, deleteJobPrintingQueue, listCurrentPrinting, listPrintingQueue \}
+                  \land ports' = \{ caller', printrouterport' \}  \rsch
+                  \end{zed}
+
+\begin{schema}{InitService}
+\Delta PrintServer
+\where
+printrouter.callerD.setiVar(next,functioncall1.caller) \\
+functioncall1.caller.setiVar(next,printrouter.callerD) \\
+functioncall1.called.setiVar(next,printdriver.caller) \\
+
+printrouter.callerDao.setiVar(next,functioncall2.caller) \\
+functioncall2.caller.setiVar(next,printrouter.callerDao) \\
+functioncall2.called.setiVar(next,dao.caller) \\
+
+printdriver.called.setiVar(next,functioncall3.caller) \\
+functioncall3.caller.setiVar(next,printdriver.called) \\
+functioncall3.called.setiVar(next,dao.callerD) \\
+
+dao.called.setiVar(next,functioncall4.caller) \\
+functioncall4.caller.setiVar(next,dao.called) \\
+functioncall4.called.setiVar(next,repository.caller)
+\end{schema}
+
+
+
+\begin{schema}{ProcessEvent2}
+\Delta PrintServer \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+outputP: LIST
+\where
+printrouterport.setiVar(next,printrouter.caller) \\
+printrouterport.Initiate(event,This,inputP,outputP)
+\end{schema}
+
+\begin{zed} ProcessEvent \sdef  ProcessEvent2  \end{zed}

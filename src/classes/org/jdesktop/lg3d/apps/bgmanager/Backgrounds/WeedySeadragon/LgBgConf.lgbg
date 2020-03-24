@@ -1,0 +1,12 @@
+<Background>
+<Name>Weedy Seadragon</Name>
+<Thumbnail>resources/Backgrounds/WeedySeadragon/thumb.jpg</Thumbnail>
+<Author>Peter Lees of Sun Microsystems</Author>
+<Date>11-03-2005</Date>
+<Description>Weedy Seadragon</Description>
+<BGType>Simple Background</BGType>
+
+	<Image>resources/Backgrounds/WeedySeadragon/WeedySeadragon.jpg</Image>
+	
+
+</Background>

@@ -1,0 +1,12 @@
+<Background>
+<Name>Leigh Lake</Name>
+<Thumbnail>resources/Backgrounds/LeighLake/thumb.jpg</Thumbnail>
+<Author></Author>
+<Date>11-03-2005</Date>
+<Description>Leigh Lake</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>1</InitialBackground>
+	<Image>resources/Backgrounds/LeighLake/leigh-lake-0.jpg</Image>
+	<Image>resources/Backgrounds/LeighLake/leigh-lake-1.jpg</Image>
+	<Image>resources/Backgrounds/LeighLake/leigh-lake-2.jpg</Image>
+</Background>

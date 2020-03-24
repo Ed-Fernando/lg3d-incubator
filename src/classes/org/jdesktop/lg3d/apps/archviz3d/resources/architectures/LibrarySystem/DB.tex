@@ -1,0 +1,253 @@
+\begin{zed}
+MESSAGE & \ddef & ok 
+\end{zed}
+
+\begin{schema}{DB}
+portDAO: Port \\
+components: \pset Element \\
+connectors: \pset Element \\
+ports: \pset Port \\
+events: \pset EVENT \\
+users: \nat \cross \nat \cross nat \\
+books: \nat \cross \nat \cross \nat \cross \nat \\
+loans: \nat \rel \nat 
+\end{schema}
+
+\begin{zed}
+init\_DB \sdef \lsch 
+DB' \bbar 
+portDAO' = \new Port 
+\land portDAO'.setiVar(element,This)  
+\land loans' = \{ \}
+\land users' = \{ (1,1111,carolinaTommasi),(2,2222,cristianGarciaBauza) \}
+\land books' = \{ (1,elPrincipito,3,0),(2,softwareDesign,1,0),(3,softwareInPractice,2,0) \}
+\land components' = \{ \}
+\land connectors' = \{  \}
+\land ports' = \{ portDAO' \}  
+\land events' = \{ addRecord, listing, searchRecord, deleteRecord \}
+\rsch \end{zed}
+
+
+\begin{schema}{AddRecordMember}
+\Delta DB \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = addRecord \\
+Table = \head inputP \\
+Table = user \\
+Id = \head (\tail inputP) \\
+Password = \head (\tail (\tail inputP)) \\
+Name = \head (\tail (\tail (\tail inputP))) \\
+users' = users \uni \{ (Id,Password,Name) \} \\
+report! = ok 
+\end{schema}
+
+\begin{schema}{AddRecordBook}
+\Delta DB \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = addRecord \\
+Table = \head inputP \\
+Table = book \\
+Id = \head (\tail inputP) \\
+Name = \head (\tail (\tail inputP)) \\
+Amount = \head (\tail (\tail (\tail (inputP)))) \\
+books' = books \uni \{ (Id,Name,Amount,0) \} \\
+report! = ok 
+\end{schema}
+
+\begin{schema}{AddRecordLoan}
+\Delta DB \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE 
+\where event = addRecord \\
+Table = \head inputP \\
+Table = loan \\
+IdM = \head (\tail inputP) \\
+IdB = \head (\tail (\tail inputP)) \\
+loans' = loans \uni \{ (IdM,IdB) \} \\
+BOOK = \{ X : \nat \bbar X \mem books \land \nth( X , 1 ) = IdB  \} \\
+Id = \nth( \head BOOK, 1) \\
+BookName = \nth( \head BOOK, 2) \\
+Items = \nth( \head BOOK, 3) \\
+LoansA = \nth( \head BOOK, 4) \\
+Books2 = books \setminus \{ (Id,BookName,Items,LoansA) \} \\
+LoansB = LoansA + 1 \\
+books' = Books2 \uni \{ (IdB,BookName,Items,LoansB) \} \\
+report! = ok 
+\end{schema}
+
+\begin{schema}{BooksListing}
+\Delta DB \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = listing \\
+Table = \head inputP \\
+Table = book \\
+report!= books
+\end{schema}
+
+\begin{schema}{MembersListing}
+\Delta DB \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = listing \\
+Table = \head inputP \\
+Table = user \\
+report!= users
+\end{schema}
+
+\begin{schema}{SearchRecordMember}
+\Delta DB \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = searchRecord \\
+Table = \head inputP \\
+Table = user \\
+Id = \head (\tail inputP) \\
+US = \{ X : \nat \bbar X \mem users \land \nth( X , 1 ) = Id \} \\
+report!= US
+\end{schema}
+
+\begin{schema}{SearchRecordBook}
+\Delta DB \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = searchRecord \\
+Table = \head inputP \\
+Table = book \\
+Name = \head (\tail inputP) \\
+BOOK = \{ X : \nat \bbar X \mem books \land \nth( X , 2 ) = Name \} \\
+report!= BOOK
+\end{schema}
+
+\begin{schema}{SearchRecordLoanByIdM}
+\Delta DB \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = searchRecord \\
+Table = \head inputP \\
+Table = loan \\
+Criteria = \head (\tail inputP) \\
+Criteria = searchByIdM \\
+IdM = \head (\tail (\tail inputP)) \\
+LOAN = \{ X : \nat \bbar X \mem loans \land \nth( X , 1 ) = IdM \} \\
+report!= LOAN
+\end{schema}
+
+\begin{schema}{SearchRecordLoanByIdB}
+\Delta DB \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = searchRecord \\
+Table = \head inputP \\
+Table = loan \\
+Criteria = \head (\tail inputP) \\
+Criteria = searchByIdB \\
+IdB = \head (\tail (\tail inputP)) \\
+LOAN = \{ X : \nat \bbar X \mem loans \land \nth( X , 2 ) = IdB \} \\
+report!= LOAN
+\end{schema}
+
+\begin{schema}{SearchRecordLoanByIdBIdM}
+\Delta DB \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: LIST
+\where event = searchRecord \\
+Table = \head inputP \\
+Table = loan \\
+Criteria = \head (\tail inputP) \\
+Criteria = searchByIdBIdM \\
+IdM = \head (\tail (\tail inputP)) \\
+IdB = \head (\tail (\tail (\tail inputP))) \\
+LOAN = \{ X : \nat \bbar X \mem loans \land \nth( X, 1) = IdM \land \nth( X , 2 ) = IdB \} \\
+report!= LOAN
+\end{schema}
+
+\begin{schema}{DeleteRecordMember}
+\Delta DB \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = deleteRecord \\
+Table = \head inputP \\
+Table = user \\
+Id = \head (\tail inputP) \\
+Passw = \head (\tail (\tail inputP)) \\
+UserName = \head (\tail (\tail (\tail inputP))) \\
+users' = users \setminus \{ (Id, Passw, UserName) \} \\
+report! = ok 
+\end{schema}
+
+\begin{schema}{DeleteRecordBook}
+\Delta DB \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = deleteRecord \\
+Table = \head inputP \\
+Table = book \\
+Id = \head (\tail inputP) \\
+BookName = \head (\tail (\tail inputP)) \\
+Items = \head (\tail (\tail (\tail inputP))) \\
+BOOK = \{ X : \nat \bbar X \mem books \land \nth( X , 1 ) = Id  \} \\
+Id1 = \nth( \head BOOK, 1) \\
+BookName1 = \nth( \head BOOK, 2) \\
+Items1 = \nth( \head BOOK, 3) \\
+Loans1 = \nth( \head BOOK, 4) \\
+books' = books \setminus \{ (Id1,BookName1,Items1,Loans1) \} \\
+report! = ok
+\end{schema}
+
+\begin{schema}{DeleteRecordLoan}
+\Delta DB \\
+event: EVENT \\
+instance: ELEMENT \\
+inputP: LIST \\
+report!: MESSAGE
+\where event = deleteRecord \\
+Table = \head inputP \\
+Table = loan \\
+IdMember = \head (\tail inputP) \\
+IdBook = \head (\tail (\tail inputP)) \\
+loans' = loans \setminus \{ (IdMember, IdBook) \} \\
+report! = ok 
+\end{schema}
+
+\begin{zed} ProcessEvent \sdef  
+AddRecordBook 
+\lor AddRecordMember 
+\lor AddRecordLoan
+\lor SearchRecordMember 
+\lor SearchRecordBook 
+\lor SearchRecordLoanByIdBIdM
+\lor SearchRecordLoanByIdM 
+\lor SearchRecordLoanByIdB 
+\lor BooksListing
+\lor MembersListing
+\lor DeleteRecordMember 
+\lor DeleteRecordBook 
+\lor DeleteRecordLoan
+\end{zed}

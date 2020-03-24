@@ -1,0 +1,15 @@
+<Background>
+<Name>Pyramid Lake Sunrise</Name>
+<Thumbnail>resources/Backgrounds/PyramidLakeSunrise/thumb.jpg</Thumbnail>
+<Author></Author>
+<Date>11-03-2005</Date>
+<Description>Pyramid Lake Sunrise</Description>
+<BGType>Panorama Background</BGType>
+<InitialBackground>2</InitialBackground>
+	<Image>resources/Backgrounds/PyramidLakeSunrise/pyramid-lake-sunraise-0.jpg</Image>
+	<Image>resources/Backgrounds/PyramidLakeSunrise/pyramid-lake-sunraise-1.jpg</Image>
+	<Image>resources/Backgrounds/PyramidLakeSunrise/pyramid-lake-sunraise-2.jpg</Image>
+        <Image>resources/Backgrounds/PyramidLakeSunrise/pyramid-lake-sunraise-3.jpg</Image>
+        <Image>resources/Backgrounds/PyramidLakeSunrise/pyramid-lake-sunraise-4.jpg</Image>
+
+</Background>

@@ -1,0 +1,13 @@
+PingPong is a little application displaying a table tennis table. The ball
+is flying back and forth as two virtual players are playing with each other.
+
+A German intro to LG3D including the development of this application can be
+found at
+  http://www.pl-berichte.de/berichte/LG3D-Tutorial/LG3D-Tutorial.html
+
+To compile simply use
+  javac PingPong.java
+Probably you have to setup some environment variables before like
+  export JAVA_HOME=/opt/jdk1.5.0/
+  export PATH=$JAVA_HOME/bin:$PATH
+  export CLASSPATH=/home/[username]/lg3d/lib/ext/lg3d-core.jar
